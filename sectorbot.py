@@ -69,7 +69,7 @@ async def on_message(message):
 # DICE ROLL
     if message.content.startswith('-diceroll') or message.content.startswith('-dr'):
         randomlist = ['1','2','3','4','5','6',]
-        em = discord.Embed(title= '<:die:000000000000000000> Game: Dice Roll',  color=0xffffff, description= 'You rolled a %s' %(random.choice(randomlist),))
+        em = discord.Embed(title= '<:die:498871525450186753> Game: Dice Roll',  color=0xffffff, description= 'You rolled a %s' %(random.choice(randomlist),))
         em.add_field(name='`Other Games:`', value='Coin flip | -coinflip/-cf', inline=True)
         await client.send_message(message.channel, embed=em)
 # COIN FLIP
@@ -78,4 +78,6 @@ async def on_message(message):
         em = discord.Embed(title= '<:token:498835395270803466> Game: Coin Flip',  color=0xffffff, description= 'You flipped %s' %(random.choice(randomlist),))
         em.add_field(name='`Other Games:`', value='Dice Roll | -diceroll/-dr', inline=True)
         await client.send_message(message.channel, embed=em)
+
+#Bot Token
 client.login(process.env.NDk2MjE0OTc3MjY3NjMwMDgw.DpzbkQ.yr0iPeKu_pRdoGOZ9RYIQArjYFw)
