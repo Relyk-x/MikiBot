@@ -1,3 +1,4 @@
+# Initialise
 import discord
 from discord.ext.commands import Bot
 from discord.ext import commands
@@ -18,7 +19,7 @@ async def on_member_join(member):
     await client.send_message(member, "Hey there I'm Sector Bot")
     print('Sent message to ' + member.name)
 
-# start up
+# Start Up
 @client.event
 async def on_ready():
    await client.change_presence(game=discord.Game(name="over the server",url="https://www.twitch.tv/streamer",type=3))
@@ -68,7 +69,7 @@ async def on_message(message):
 # DICE ROLL
     if message.content.startswith('-diceroll') or message.content.startswith('-dr'):
         randomlist = ['1','2','3','4','5','6',]
-        em = discord.Embed(title= ':game_die: Game: Dice Roll',  color=0xffffff, description= 'You rolled a %s' %(random.choice(randomlist),))
+        em = discord.Embed(title= '<:die:000000000000000000> Game: Dice Roll',  color=0xffffff, description= 'You rolled a %s' %(random.choice(randomlist),))
         em.add_field(name='`Other Games:`', value='Coin flip | -coinflip/-cf', inline=True)
         await client.send_message(message.channel, embed=em)
 # COIN FLIP
