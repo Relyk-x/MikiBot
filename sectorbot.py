@@ -47,22 +47,19 @@ async def on_message(message):
 
 # Memes
     if message.content.startswith('-meme'):
-        randomlist = ['https://goo.gl/dwJD8o',
-                      'https://goo.gl/1wezZw',
-                      'https://goo.gl/nB6oCw',
-                      'https://goo.gl/viStSC',
-                      'https://goo.gl/U3pEhp',
-                      'https://goo.gl/YZSPxx',
-                      'https://goo.gl/n2Hajn',
-                      'https://goo.gl/CDwmTj',
-                      'https://goo.gl/6Ev4Rb',
-                      'https://goo.gl/qXNdPY',
-                      'https://goo.gl/pjkwqZ',
-                      'https://goo.gl/79AANm',
-                      'https://goo.gl/AxaSrv',
-                      'https://goo.gl/WB1PTd',
-                      'https://goo.gl/Kx7auW',
-                      'https://goo.gl/y3Sb22',]
+        randomlist = ['https://goo.gl/dwJD8o',  #Batman
+                      'https://goo.gl/1wezZw',  #Dr. Phill
+                      'https://goo.gl/nB6oCw',  #Gandalf
+                      'https://goo.gl/viStSC',  #Zach Galifianakis
+                      'https://goo.gl/U3pEhp',  #Chuck Norris
+                      'https://goo.gl/YZSPxx',  #Fat Controller
+                      'https://goo.gl/n2Hajn',  #Ocean
+                      'https://goo.gl/CDwmTj',  #Austin Powers
+                      'https://goo.gl/pjkwqZ',  #Nemo
+                      'https://goo.gl/79AANm',  #Knights
+                      'https://goo.gl/AxaSrv',  #Carl, Wheels
+                      'https://goo.gl/WB1PTd',  #Carl, Vader
+                      'https://goo.gl/Kx7auW',  #Carl, Pew
         em = discord.Embed(title= 'Meme:',  color=0xffffff,)
         em.set_image(url='%s' %(random.choice(randomlist),))
         await client.send_message(message.channel, embed=em)
