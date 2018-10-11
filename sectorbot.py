@@ -3,9 +3,6 @@ import discord
 from discord.ext.commands import Bot
 from discord.ext import commands
 import asyncio
-from discord.ext.commands import Bot
-from discord.ext import commands
-import asyncio
 import time
 import os
 import random
@@ -13,7 +10,7 @@ from discord import Game
 
 # Member Join
 Client = discord.client
-client = commands.Bot(command_prefix = 's.')
+client = commands.Bot(command_prefix = '-')
 Clientdiscord = discord.Client()
 async def on_member_join(member):
     print('Recognised that a member called ' + member.name + ' joined')
@@ -30,7 +27,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
     if message.content == 'hello' or message.content == 'Hello' or message.content == 'hello?' or message.content == 'Hello?' or message.content == 'hey' or message.content == 'Hey':
-            await client.send_message(message.channel,'Hey there buddy!')
+        await client.send_message(message.channel,'Hey there buddy!')
 
 # Translate
     if message.content:
@@ -48,7 +45,7 @@ async def on_message(message):
             await client.send_message(message.channel, embed=em)
 
 # Memes
-    if message.content.startswith('s.meme'):
+    if message.content.startswith('-meme'):
         randomlist = ['https://goo.gl/dwJD8o',  #Batman
                       'https://goo.gl/1wezZw',  #Dr. Phill
                       'https://goo.gl/nB6oCw',  #Gandalf
@@ -62,23 +59,26 @@ async def on_message(message):
                       'https://goo.gl/AxaSrv',  #Carl, Wheels
                       'https://goo.gl/WB1PTd',  #Carl, Vader
                       'https://goo.gl/Kx7auW',  #Carl, Pew
-        em = discord.Embed(title= 'Meme:', color=0xffffff,)
+                      ]
+        em = discord.Embed(title= 'Meme:',  color=0xffffff,)
         em.set_image(url='%s' %(random.choice(randomlist),))
         await client.send_message(message.channel, embed=em)
-        
+
 # Games
 # DICE ROLL
-    if message.content.startswith('s.diceroll') or message.content.startswith('-dr'):
+    if message.content.startswith('-diceroll') or message.content.startswith('-dr'):
         randomlist = ['1','2','3','4','5','6',]
-        em = discord.Embed(title= '<:die:498871525450186753> Game: Dice Roll',  color=0xffffff, description= 'You rolled a %s' %(random.choice(randomlist),))
-        em.add_field(name='`Other Games:`', value='Coin flip | -coinflip/-cf', inline=True)
+        em = discord.Embed(title= 'Game: Dice Roll',  color=0xffffff, description= '<:die:498871525450186753> You rolled a %s' %(random.choice(randomlist),))
+        em.add_field(name='`Other Games:`', value='Coin flip | -coinflip/-cf \nTic Tac Toe | `COMING SOON`', inline=True)
         await client.send_message(message.channel, embed=em)
 # COIN FLIP
-    elif message.content.startswith('s.coinflip') or message.content.startswith('-cf'):
-        randomlist = ['heads','tails',]
-        em = discord.Embed(title= '<:token:498835395270803466> Game: Coin Flip',  color=0xffffff, description= 'You flipped %s' %(random.choice(randomlist),))
-        em.add_field(name='`Other Games:`', value='Dice Roll | -diceroll/-dr', inline=True)
+    elif message.content.startswith('-coinflip') or message.content.startswith('-cf'):
+        randomlist = ['Heads','Tails',]
+        em = discord.Embed(title= 'Game: Coin Flip',  color=0xffffff, description= '<:token:498835395270803466> You flipped %s' %(random.choice(randomlist),))
+        em.add_field(name='`Other Games:`', value='Dice Roll | -diceroll/-dr \nTic Tac Toe | `COMING SOON`', inline=True)
         await client.send_message(message.channel, embed=em)
+# TICTACTOE
+        # COMING SOON
 
 #Bot Token
 client.run(os.getenv('BOT_TOKEN'))
