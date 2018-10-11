@@ -32,15 +32,15 @@ async def on_message(message):
 # Translate
     if message.content:
 #YES
-        if message.content == 'yes' or message.content == 'Yes' or message.content == 'Yea' or message.content == 'yea' or message.content == 'Yeah' or message.content == 'yeah' or message.content == 'yep' or message.content == 'Yep' or message.content == 'Ye' or message.content == 'ye':
+        if message.content == 'yes' or message.content == 'yea' or message.content == 'yeah' or message.content == 'yep' or message.content == 'ye':
             em = discord.Embed(title= '<:translate:498838802064867329> Sector Translate:', description= 'English: Yes | Latin: Etiam', color=0xffffff,)
             await client.send_message(message.channel, embed=em)
 #NO
-        elif message.content == 'no' or message.content == 'No' or message.content == 'nope' or message.content == 'nah' or message.content == 'Nah' or message.content == 'Nope':
+        elif message.content == 'no' or message.content == 'nope' or message.content == 'nah':
             em = discord.Embed(title= '<:translate:498838802064867329> Sector Translate:', description= 'English: No | Latin: Nihil', color=0xffffff,)
             await client.send_message(message.channel, embed=em)
 #WHAT
-        elif message.content == 'What?' or message.content == 'what?' or message.content == 'What' or message.content == 'what' or message.content == 'Wha' or message.content == 'wha' or message.content == 'Wha?' or message.content == 'wha?':
+        elif message.content == 'what?' or message.content == 'what' or message.content == 'wha' or message.content == 'wha?':
             em = discord.Embed(title= '<:translate:498838802064867329> Sector Translate:', description= 'English: What? | Latin: Quid est?', color=0xffffff,)
             await client.send_message(message.channel, embed=em)
 
