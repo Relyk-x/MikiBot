@@ -80,4 +80,4 @@ async def on_message(message):
         await client.send_message(message.channel, embed=em)
 
 #Bot Token
-client.login(process.env.NDk2MjE0OTc3MjY3NjMwMDgw.DpzbkQ.yr0iPeKu_pRdoGOZ9RYIQArjYFw)
+client.login(process.env.*****)
