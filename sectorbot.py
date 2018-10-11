@@ -12,7 +12,7 @@ from discord import Game
 
 # Member Join
 Client = discord.client
-client = commands.Bot(command_prefix = '-')
+client = commands.Bot(command_prefix = 's.')
 Clientdiscord = discord.Client()
 async def on_member_join(member):
     print('Recognised that a member called ' + member.name + ' joined')
@@ -47,7 +47,7 @@ async def on_message(message):
             await client.send_message(message.channel, embed=em)
 
 # Memes
-    if message.content.startswith('-meme'):
+    if message.content.startswith('s.meme'):
         randomlist = ['https://goo.gl/dwJD8o',  #Batman
                       'https://goo.gl/1wezZw',  #Dr. Phill
                       'https://goo.gl/nB6oCw',  #Gandalf
@@ -67,13 +67,13 @@ async def on_message(message):
         
 # Games
 # DICE ROLL
-    if message.content.startswith('-diceroll') or message.content.startswith('-dr'):
+    if message.content.startswith('s.diceroll') or message.content.startswith('-dr'):
         randomlist = ['1','2','3','4','5','6',]
         em = discord.Embed(title= '<:die:498871525450186753> Game: Dice Roll',  color=0xffffff, description= 'You rolled a %s' %(random.choice(randomlist),))
         em.add_field(name='`Other Games:`', value='Coin flip | -coinflip/-cf', inline=True)
         await client.send_message(message.channel, embed=em)
 # COIN FLIP
-    elif message.content.startswith('-coinflip') or message.content.startswith('-cf'):
+    elif message.content.startswith('s.coinflip') or message.content.startswith('-cf'):
         randomlist = ['heads','tails',]
         em = discord.Embed(title= '<:token:498835395270803466> Game: Coin Flip',  color=0xffffff, description= 'You flipped %s' %(random.choice(randomlist),))
         em.add_field(name='`Other Games:`', value='Dice Roll | -diceroll/-dr', inline=True)
