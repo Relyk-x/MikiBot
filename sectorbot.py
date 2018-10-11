@@ -26,7 +26,7 @@ async def on_ready():
 # Greetings
 @client.event
 async def on_message(message):
-    if message.content == 'hello' or message.content == 'Hello' or message.content == 'hello?' or message.content == 'Hello?' or message.content == 'hey' or message.content == 'Hey':
+    if message.content.lower() == 'hello' or message.content == 'hello?' or message.content == 'hey':
         await client.send_message(message.channel,'Hey there buddy!')
 
 # Translate
