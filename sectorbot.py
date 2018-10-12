@@ -61,7 +61,8 @@ async def on_message(message):
                       'https://goo.gl/AxaSrv',  #Carl, Wheels
                       'https://goo.gl/WB1PTd',  #Carl, Vader
                       'https://goo.gl/Kx7auW',  #Carl, Pew
-                      ]
+                      'https://goo.gl/N9m7kF',  #Slut
+                    ]
         em = discord.Embed(title= 'Meme:',  color=0xffffff,)
         em.set_image(url='%s' %(random.choice(randomlist),))
         await client.send_message(message.channel, embed=em)
