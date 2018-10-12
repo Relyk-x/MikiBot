@@ -15,7 +15,7 @@ Clientdiscord = discord.Client()
 
 @client.event
 async def on_member_join(member):
-    await client.change_presence(game=Game(name=str(len(client.servers)) + ' servers', type=1))
+    await client.change_presence(game=Game(name=' ' + str(len(client.servers)) + ' servers', type=1))
     print('Sent message to ' + member.name)
     servers = list(client.servers)
     print("Connected on " + str(len(client.servers)) + "servers:")
@@ -23,7 +23,7 @@ async def on_member_join(member):
      print(' ' + servers[x-1].name)
 
 async def on_ready():
-    await client.change_presence(game=Game(name=str(len(client.servers)) + ' servers', type=1))
+    await client.change_presence(game=Game(name=' ' + str(len(client.servers)) + ' servers', type=1))
     print('Sector bot is up and running...')
 
 # Greetings
