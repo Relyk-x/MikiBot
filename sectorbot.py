@@ -43,6 +43,9 @@ async def on_message(message):
         elif message.content == 'what?' or message.content == 'what' or message.content == 'wha' or message.content == 'wha?':
             em = discord.Embed(title= '<:translate:498838802064867329> Sector Translate:', description= 'English: What? | Latin: Quid est?', color=0xffffff,)
             await client.send_message(message.channel, embed=em)
+#FUCK YOU!
+    if message.content.lower() == '-fu':
+        await client.send_message(message.channel,':joy::joy::joy:   :joy:         :joy:      :joy::joy::joy:    :joy:            :joy:               :joy:       :joy:    :joy::joy::joy:   :joy:         :joy:   :joy:\n:joy:                 :joy:         :joy:      :joy:                   :joy:      :joy:                     :joy:     :joy:     :joy:       :joy:   :joy:         :joy:   :joy:\n:joy::joy::joy:   :joy:         :joy:      :joy:                   :joy::joy:                             :joy:  :joy:      :joy:       :joy:   :joy:         :joy:   :joy:\n:joy:                 :joy:         :joy:      :joy:                   :joy:      :joy:                           :joy:           :joy:       :joy:   :joy:         :joy:\n:joy:                     :joy: :joy:           :joy::joy::joy:   :joy:             :joy:                     :joy:           :joy::joy::joy:       :joy: :joy:       :joy:')
 
 # Memes
     if message.content.startswith('-meme'):
