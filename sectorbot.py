@@ -123,13 +123,13 @@ async def on_message(message):
     if message.content.startswith('-diceroll') or message.content.startswith('-dr'):
         randomlist = ['1','2','3','4','5','6',]
         em = discord.Embed(title= 'Game: Dice Roll',  color=0xffffff, description= '<:die:500434709835153408> You rolled a %s' %(random.choice(randomlist),))
-        em.add_field(name='`Other Games:`', value='Coin flip | -coinflip/-cf \nTic Tac Toe | `COMING SOON`', inline=True)
+        em.add_field(name='`Other Games:`', value='Coin flip | -coinflip / -cf \nTic Tac Toe | `COMING SOON`', inline=True)
         await client.send_message(message.channel, embed=em)
 # COIN FLIP
     elif message.content.startswith('-coinflip') or message.content.startswith('-cf'):
         randomlist = ['Heads','Tails',]
         em = discord.Embed(title= 'Game: Coin Flip',  color=0xffffff, description= '<:token:500434456734203904> You flipped %s' %(random.choice(randomlist),))
-        em.add_field(name='`Other Games:`', value='Dice Roll | -diceroll/-dr \nTic Tac Toe | `COMING SOON`', inline=True)
+        em.add_field(name='`Other Games:`', value='Dice Roll | -diceroll / -dr \nTic Tac Toe | `COMING SOON`', inline=True)
         await client.send_message(message.channel, embed=em)
 # TICTACTOE
         # COMING SOON
