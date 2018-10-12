@@ -112,7 +112,7 @@ async def on_message(message):
         if count8 >= 13: 
             key8 = (random.choice(encryptcode))
 
-# There are about 23535820 different password combinations that can be generated.
+# There are about 23,535,820 different password combinations that can be generated.
         encryptedpass = (key1 + key2 + key3 + key4 + key5 + key6 + key7 + key8)
         await client.send_message(message.author,'Here is your random generated password: ' + encryptedpass)
         f = open('authpass.txt','a')
