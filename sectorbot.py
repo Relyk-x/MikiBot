@@ -68,7 +68,7 @@ async def on_message(message):
         await client.send_message(message.channel, embed=em)
 
 #password generator
-    if message.content == '-randompassword':
+    if message.content == '-password':
         encryptkey = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',]
         encryptcode = ['1','2','3','4','5','6','7','8','9',]
         count1 = random.randint(1, 26)
@@ -111,7 +111,8 @@ async def on_message(message):
            key8 = (random.choice(encryptkey))
         if count8 >= 13: 
             key8 = (random.choice(encryptcode))
-    # There are about 23535820 different password combinations that can be generated.
+
+# There are about 23535820 different password combinations that can be generated.
         encryptedpass = (key1 + key2 + key3 + key4 + key5 + key6 + key7 + key8)
         await client.send_message(message.author,'Here is your random generated password: ' + encryptedpass)
         f = open('authpass.txt','a')
