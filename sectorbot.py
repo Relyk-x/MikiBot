@@ -108,7 +108,7 @@ async def on_message(message):
         if count7 >= 13: 
             key7 = (random.choice(encryptcode))
         if count8 < 13:
-           key8 = (random.choice(encryptkey))
+            key8 = (random.choice(encryptkey))
         if count8 >= 13: 
             key8 = (random.choice(encryptcode))
 # There are about 23,535,820 different password combinations that can be generated.
