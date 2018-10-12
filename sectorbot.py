@@ -12,16 +12,19 @@ from discord import Game
 Client = discord.client
 client = commands.Bot(command_prefix = '-')
 Clientdiscord = discord.Client()
-async def on_member_join(member):
-    print('Recognised that a member called ' + member.name + ' joined')
-    await client.send_message(member, "Hey there I'm Sector Bot")
-    print('Sent message to ' + member.name)
 
-# Start Up
 @client.event
+async def on_member_join(member):
+    await client.change_presence(game=Game(name=str(len(client.servers)) + ' servers', type=1))
+    print('Sent message to ' + member.name)
+    servers = list(client.servers)
+    print("Connected on " + str(len(client.servers)) + "servers:")
+    for x in range(len(servers)):
+     print(' ' + servers[x-1].name)
+
 async def on_ready():
-   await client.change_presence(game=discord.Game(name="over the server",url="https://www.twitch.tv/streamer",type=3))
-   print('Sector bot is up and running...')
+    await client.change_presence(game=Game(name=str(len(client.servers)) + ' servers', type=1))
+    print('Sector bot is up and running...')
 
 # Greetings
 @client.event
