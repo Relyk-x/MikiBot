@@ -137,13 +137,13 @@ async def on_message(message):
     # Dice Roll
     if message.content.startswith('s/diceroll') or message.content.startswith('s/dr'):
         randomlist = ['1','2','3','4','5','6',]
-        em = discord.Embed(title = '<:die:500434709835153408> **Game: Dice Roll**', color=0xffffff, description="You rolled the number... %s \n\n <:discordp:500719998172659713> If you'd like to invite Sector Bot to your own server go to: \n https://goo.gl/2rp6n2" %(random.choice(randomlist),))
+        em = discord.Embed(title = '<:die:500434709835153408> **Game: Dice Roll**', color=0xffffff, description="You rolled the number... %s" %(random.choice(randomlist),))
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
     # Coin Flip
     elif message.content.startswith('s/coinflip') or message.content.startswith('s/cf'):
         randomlist = ['Heads','Tails',]
-        em = discord.Embed(title = '<:token:500434456734203904> **Game: Coin Flip**', color=0xffffff, description="You flipped... %s \n\n <:discordp:500719998172659713> If you'd like to invite Sector Bot to your own server go to: \n https://goo.gl/2rp6n2" %(random.choice(randomlist),))
+        em = discord.Embed(title = '<:token:500434456734203904> **Game: Coin Flip**', color=0xffffff, description="You flipped... %s" %(random.choice(randomlist),))
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
     # Help
