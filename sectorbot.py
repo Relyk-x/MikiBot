@@ -23,9 +23,9 @@ async def on_ready():
    await client.change_presence(game=discord.Game(name='over ' + str(len(client.servers)) + ' servers', url="https://www.twitch.tv/streamer",type=3))
    print('Sector bot is up and running...')
 
-# Greetings
 @client.event
 async def on_message(message):
+
 # Memes
     if message.content.startswith('s/meme'):
         randomlist = ['https://goo.gl/dwJD8o',  #Batman
@@ -124,9 +124,8 @@ async def on_message(message):
 # TICTACTOE
         # COMING SOON
 
-
-
-if ('s/help') in message.content:
+# Help
+    if ('s/help') in message.content:
         em = discord.Embed(title=“Sector Bot Commands”, description="Some commands might require a prefix while others may trigger just by typing \n Prefix: `s/`“, color=0xffffff)
         em.add_field(name=“hello”, value=“Sends a greeting in the channel”, inline=False)
         em.add_field(name=“s/meme“, value=“Sends a random meme from Sector Bot’s stash.“, inline=False)
