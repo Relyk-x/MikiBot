@@ -115,7 +115,7 @@ async def on_message(message):
 # DICE ROLL
     if message.content.startswith('-diceroll') or message.content.startswith('-dr'):
         randomlist = ['1','2','3','4','5','6',]
-        em = discord.Embed(title = 'Dice Roll', color=0xffffff, description="<:die:500434709835153408> You rolled the number %s \n\n <:discord:500467821034078218> If you'dlike to invite Sector Bot to your own server go to https://goo.gl/2rp6n2" %(random.choice(randomlist),))
+        em = discord.Embed(title = 'Dice Roll', color=0xffffff, description="<:die:500434709835153408> You rolled the number %s \n\n <:discord:500467821034078218> If you'd like to invite Sector Bot to your own server go to https://goo.gl/2rp6n2" %(random.choice(randomlist),))
         em.set_author(name='Game:')
         await client.send_message(message.channel, embed=em)
 # COIN FLIP
