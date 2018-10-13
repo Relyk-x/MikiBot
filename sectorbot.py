@@ -136,7 +136,8 @@ async def on_message(message):
         await client.send_message(message.channel, embed=em)
     # Help
     if ('s/help') in message.content:
-        em = discord.Embed(title="Sector Bot Commands", description = "Some commands might require a prefix while others may trigger just by typing \n Prefix: `s/`", color=0xffffff)
+        em = discord.Embed(title="Sector Bot", url="https://discord.gg/eRHsyFg", description = "Commands:", color=0xffffff)
+        em.set_author(name='**Prefix: s/**')
         em.add_field(name="s/hello", value="Sends a greeting in the channel.", inline=False)
         em.add_field(name="s/vote", value="Vote for this bot.", inline=False)
         em.add_field(name="s/meme", value="Sends a random meme from Sector Bot’s stash.", inline=False)
