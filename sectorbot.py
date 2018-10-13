@@ -35,7 +35,7 @@ async def on_message(message):
         if message.content.lower() == 'si':
             em = discord.Embed(title= '<:translate:499778047357222927> Sector Translate:', description= 'Spanish: Si | English: Yes', color=0xffffff,)
 #WHAT
-        elif message.content == '¿Que?':
+        elif message.content.lower() == '¿que?':
             em = discord.Embed(title= '<:translate:499778047357222927> Sector Translate:', description= 'Spanish: ¿Que? | English: What?', color=0xffffff,)
             await client.send_message(message.channel, embed=em)
 #FUCK YOU!
