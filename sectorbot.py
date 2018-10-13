@@ -38,7 +38,7 @@ async def on_member_join(member):
     print('Sent message to ' + member.name)
 async def on_ready():
    print('Sector Bot is up and running with ' + str(len(client.servers)) + ' servers connected!')
-   print('Sector bot is up and running...')
+   print'Sector bot is up and running...'
 
 # Multiple Commands
 @client.event
