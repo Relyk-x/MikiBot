@@ -33,15 +33,15 @@ async def on_message(message):
     if message.content:
 #YES
         if message.content == 'yes' or message.content == 'yea' or message.content == 'yeah' or message.content == 'yep' or message.content == 'ye':
-            em = discord.Embed(title= '<:translate:498838802064867329> Sector Translate:', description= 'English: Yes | Latin: Etiam', color=0xffffff,)
+            em = discord.Embed(title= '<:translate:499778047357222927> Sector Translate:', description= 'English: Yes | Latin: Etiam', color=0xffffff,)
             await client.send_message(message.channel, embed=em)
 #NO
         elif message.content == 'no' or message.content == 'nope' or message.content == 'nah':
-            em = discord.Embed(title= '<:translate:498838802064867329> Sector Translate:', description= 'English: No | Latin: Nihil', color=0xffffff,)
+            em = discord.Embed(title= '<:translate:499778047357222927> Sector Translate:', description= 'English: No | Latin: Nihil', color=0xffffff,)
             await client.send_message(message.channel, embed=em)
 #WHAT
         elif message.content == 'what?' or message.content == 'what' or message.content == 'wha' or message.content == 'wha?':
-            em = discord.Embed(title= '<:translate:498838802064867329> Sector Translate:', description= 'English: What? | Latin: Quid est?', color=0xffffff,)
+            em = discord.Embed(title= '<:translate:499778047357222927> Sector Translate:', description= 'English: What? | Latin: Quid est?', color=0xffffff,)
             await client.send_message(message.channel, embed=em)
 #FUCK YOU!
     if message.content == '-fu':
