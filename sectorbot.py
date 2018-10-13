@@ -146,7 +146,9 @@ async def on_message(message):
         em = discord.Embed(title = '<:token:500434456734203904> **Game: Coin Flip**', color=0xffffff, description="You flipped... %s" %(random.choice(randomlist),))
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
-    # Help
+    # Russian Roulette
+        # coming soon #
+# Help
     if ('s/help') in message.content:
         em = discord.Embed(title="Discord Server", description="For any other help please join our Discord server...", url="https://discord.gg/eRHsyFg", color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
