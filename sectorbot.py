@@ -15,7 +15,7 @@ Clientdiscord = discord.Client()
 
 servers = list(client.servers)
 status = ['for s/help | v0.0.1', 'for bot suggestions']
-# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.0.1,36 ##
+# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.0.1,37 ##
 
 async def change_status():
   await client.wait_until_ready()
@@ -137,14 +137,14 @@ async def on_message(message):
     # Dice Roll
     if message.content.startswith('s/diceroll') or message.content.startswith('s/dr'):
         randomlist = ['1','2','3','4','5','6',]
-        em = discord.Embed(title ='<:die:500434709835153408> **Game: Dice Roll**', color=0xffffff, description="You rolled the number... %s" %(random.choice(randomlist),))
+        em = discord.Embed(title ='**Game: Dice Roll**', color=0xffffff, description="<:die:500434709835153408> You rolled the number... %s" %(random.choice(randomlist),))
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         em.add_field(name="Other Games:", value="s/coinflip | <:token:500434456734203904> Coin Flip", inline=True)
         await client.send_message(message.channel, embed=em)
     # Coin Flip
     elif message.content.startswith('s/coinflip') or message.content.startswith('s/cf'):
         randomlist = ['Heads','Tails',]
-        em = discord.Embed(title ='<:token:500434456734203904> **Game: Coin Flip**', color=0xffffff, description="You flipped... %s" %(random.choice(randomlist),))
+        em = discord.Embed(title ='**Game: Coin Flip**', color=0xffffff, description="<:token:500434456734203904> You flipped... %s" %(random.choice(randomlist),))
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         em.add_field(name="Other Games:", value="s/dicerole | <:die:500434709835153408> Dice Roll", inline=True)
         await client.send_message(message.channel, embed=em)
