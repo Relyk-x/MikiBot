@@ -115,13 +115,13 @@ async def on_message(message):
 # Games
 # DICE ROLL
     if message.content.startswith('-diceroll') or message.content.startswith('-dr'):
-        randomlist = ['__1__','__2__','__3__','__4__','__5__','__6__',]
+        randomlist = ['1','2','3','4','5','6',]
         em = discord.Embed(title = '<:die:500434709835153408> **Dice Roll**', color=0xffffff, description="You rolled the number... %s \n\n <:discord:500467821034078218> If you'd like to invite Sector Bot to your own server go to: \n https://goo.gl/2rp6n2" %(random.choice(randomlist),))
         em.set_author(name='Game:')
         await client.send_message(message.channel, embed=em)
 # COIN FLIP
     elif message.content.startswith('-coinflip') or message.content.startswith('-cf'):
-        randomlist = ['__heads__','__tails__',]
+        randomlist = ['Heads','Tails',]
         em = discord.Embed(title = '<:token:500434456734203904> **Coin Flip**', color=0xffffff, description="You flipped... %s \n\n <:discord:500467821034078218> If you'd like to invite Sector Bot to your own server go to: \n https://goo.gl/2rp6n2" %(random.choice(randomlist),))
         em.set_author(name='Game:')
         await client.send_message(message.channel, embed=em)
