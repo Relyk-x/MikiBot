@@ -14,7 +14,8 @@ client = commands.Bot(command_prefix = 's/')
 Clientdiscord = discord.Client()
 
 servers = list(client.servers)
-status = ['for s/help','over ' + str(len(client.servers)) + ' servers']
+status = ['for s/help', 'for bot suggestions']
+# WATCHING 'over ' + str(len(client.servers)) + ' servers'
 
 async def change_status():
   await client.wait_until_ready()
