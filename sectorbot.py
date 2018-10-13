@@ -130,7 +130,6 @@ async def on_message(message):
         em = discord.Embed(title = '<:token:500434456734203904> **Coin Flip**', color=0xffffff, description="You flipped... %s \n\n <:discord:500467821034078218> If you'd like to invite Sector Bot to your own server go to: \n https://goo.gl/2rp6n2" %(random.choice(randomlist),))
         em.set_author(name='Game:')
         await client.send_message(message.channel, embed=em)
-
     # Help
     if ('s/help') in message.content:
         em = discord.Embed(title="Sector Bot Commands", description = "Some commands might require a prefix while others may trigger just by typing \n Prefix: `s/`", color=0xffffff)
