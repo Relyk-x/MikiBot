@@ -33,12 +33,12 @@ async def on_message(message):
     if message.content:
 #YES
         if message.content.lower() == 'si':
-            em = discord.Embed(title= '<:translate:499778047357222927> Sector Translate:', description= 'Spanish: Si | English: Yes', color=0xffffff,)
+            em = discord.Embed(title= '<:translate:499778047357222927> Sector Translate:', description= ':flag_es: Spanish: Si | :flag_gb: English: Yes', color=0xffffff,)
             em.set_footer(text='If you want to invite Sector Bot to your own server go to https://goo.gl/2rp6n2',)
             await client.send_message(message.channel, embed=em)
 #WHAT
         elif message.content.lower() == '¿que?' or message.content.lower() == 'que?' or message.content.lower() == 'que':
-            em = discord.Embed(title= '<:translate:499778047357222927> Sector Translate:', description= 'Spanish: ¿Que? | English: What?', color=0xffffff,)
+            em = discord.Embed(title= '<:translate:499778047357222927> Sector Translate:', description= ':flag_es: Spanish: ¿Que? | :flag_gb: English: What?', color=0xffffff,)
             em.set_footer(text='If you want to invite Sector Bot to your own server go to https://goo.gl/2rp6n2',)
             await client.send_message(message.channel, embed=em)
 # Memes
