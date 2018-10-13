@@ -116,11 +116,11 @@ async def on_message(message):
         f.close()
     # Hello
     if message.content == 's/greet':
-        em = discord.Embed(description='Hey there buddy! :wave:',)
+        em = discord.Embed(description='Hey there buddy! :wave:', color=0xffffff)
         await client.send_message(message.channel, embed=em)
     # Vote
     if message.content == 's/vote':
-        em = discord.Embed(description='You can vote here: https://discordbots.org/bot/496214977267630080/vote',)
+        em = discord.Embed(description='You can vote here: https://discordbots.org/bot/496214977267630080/vote', color=0xffffff)
         await client.send_message(message.channel, embed=em)
     # Dice Roll
     if message.content.startswith('s/diceroll') or message.content.startswith('s/dr'):
