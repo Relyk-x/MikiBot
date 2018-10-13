@@ -123,6 +123,7 @@ async def on_message(message):
     if message.content.startswith('-diceroll') or message.content.startswith('-dr'):
         randomlist = ['1','2','3','4','5','6',]
         em = discord.Embed(title= 'Game: Coin Flip',  color=0xffffff, description= '<:token:500434456734203904> You flipped %s\n\nInvite me to your server!\n<:discord:500467821034078218> Sector Bot: https://goo.gl/2rp6n2' %(random.choice(randomlist),))
+        embed.set_footer(text="<:discord:500467821034078218> Sector Bot", url='https://goo.gl/2rp6n2')
         await client.send_message(message.channel, embed=em)
 # COIN FLIP
     elif message.content.startswith('-coinflip') or message.content.startswith('-cf'):
