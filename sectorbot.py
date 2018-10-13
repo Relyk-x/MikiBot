@@ -7,13 +7,14 @@ import time
 import os
 import random
 from discord import Game
+from itertools import cycle
 
 # Member Join
 Client = discord.client
 client = commands.Bot(command_prefix = 's/')
 Clientdiscord = discord.Client()
 
-servers = list(client.servers
+servers = list(client.servers)
 status = ['for s/help', 'over' + str(len(client.servers)) + 'servers']
 
 async def on_member_join(member):
