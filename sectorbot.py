@@ -122,12 +122,12 @@ async def on_message(message):
 # DICE ROLL
     if message.content.startswith('-diceroll') or message.content.startswith('-dr'):
         randomlist = ['1','2','3','4','5','6',]
-        em = discord.Embed(title= 'Game: Coin Flip',  color=0xffffff, description= '<:token:500434456734203904> You flipped %s' + %(random.choice(randomlist) + '\n\nInvite me to your server! :grin:\n<:discord:500467821034078218> bot link: https://goo.gl/2rp6n2',))
+        em = discord.Embed(title= 'Game: Coin Flip',  color=0xffffff, description= '<:token:500434456734203904> You flipped %s\n\nInvite me to your server! :grin:\n<:discord:500467821034078218> bot link: https://goo.gl/2rp6n2' %(random.choice(randomlist),))
         await client.send_message(message.channel, embed=em)
 # COIN FLIP
     elif message.content.startswith('-coinflip') or message.content.startswith('-cf'):
         randomlist = ['Heads','Tails',]
-        em = discord.Embed(title= 'Game: Coin Flip',  color=0xffffff, description= '<:token:500434456734203904> You flipped %s' + %(random.choice(randomlist) + '\n\nInvite me to your server! :grin:\n<:discord:500467821034078218> bot link: https://goo.gl/2rp6n2',))
+        em = discord.Embed(title= 'Game: Coin Flip',  color=0xffffff, description= '<:token:500434456734203904> You flipped %s\n\nInvite me to your server! :grin:\n<:discord:500467821034078218> bot link: https://goo.gl/2rp6n2' %(random.choice(randomlist),))
         await client.send_message(message.channel, embed=em)
 # TICTACTOE
         # COMING SOON
