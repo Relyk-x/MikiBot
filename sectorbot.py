@@ -119,13 +119,13 @@ async def on_message(message):
     if message.content.startswith('-diceroll') or message.content.startswith('-dr'):
         randomlist = ['1','2','3','4','5','6',]
         em = discord.Embed(title= 'Game: Coin Flip',  color=0xffffff, description= '<:token:500434456734203904> You flipped %s' %(random.choice(randomlist),))
-        em.set_footer(text='If you want to invite me to your own server go to https://goo.gl/2rp6n2',)
+        em.set_footer(text='If you want to invite Sector Bot to your own server go to https://goo.gl/2rp6n2',)
         await client.send_message(message.channel, embed=em)
 # COIN FLIP
     elif message.content.startswith('-coinflip') or message.content.startswith('-cf'):
         randomlist = ['Heads','Tails',]
         em = discord.Embed(title= 'Game: Coin Flip',  color=0xffffff, description= '<:token:500434456734203904> You flipped %s' %(random.choice(randomlist),))
-        em.set_footer(text='If you want to invite me to your own server go to https://goo.gl/2rp6n2',)
+        em.set_footer(text='If you want to invite Sector Bot to your own server go to https://goo.gl/2rp6n2',)
         await client.send_message(message.channel, embed=em)
 # TICTACTOE
         # COMING SOON
