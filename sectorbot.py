@@ -139,7 +139,7 @@ async def on_message(message):
         em = discord.Embed(title="Discord Server", description="For any other help please join our Discord server...", url="https://discord.gg/eRHsyFg", color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         em.add_field(name="Commands:", value="s/<command>", inline=False)
-        em.add_field(name="s/hello", value="Sends a greeting in the channel.", inline=False)
+        em.add_field(name="s/greet", value="Sends a greeting in the channel.", inline=False)
         em.add_field(name="s/vote", value="Vote for this bot.", inline=False)
         em.add_field(name="s/meme", value="Sends a random meme from Sector Bot’s stash.", inline=False)
         em.add_field(name="s/password", value="Generates a random password.", inline=False)
