@@ -14,7 +14,7 @@ client = commands.Bot(command_prefix = 's/')
 Clientdiscord = discord.Client()
 
 servers = list(client.servers)
-status = ['for s/help', 'over ' + str(len(client.servers)) + ' servers']
+status = ['for s/help','over ' + str(len(client.servers)) + ' servers']
 
 async def change_status():
   await client.wait_until_ready()
@@ -137,7 +137,8 @@ async def on_message(message):
 # Help
     if ('s/help') in message.content:
         em = discord.Embed(title="Sector Bot Commands", description = "Some commands might require a prefix while others may trigger just by typing \n Prefix: `s/`", color=0xffffff)
-        em.add_field(name="hello", value="Sends a greeting in the channel", inline=False)
+        em.add_field(name="hello", value="Sends a greeting in the channel.", inline=False)
+        em.add_field(name="s/vote", value="vote for this bot.", inline=False)
         em.add_field(name="s/meme", value="Sends a random meme from Sector Bot’s stash.", inline=False)
         em.add_field(name="s/password", value="Generates a random password.", inline=False)
         em.add_field(name="s/diceroll", value="Rolls a six sided die.", inline=False)
