@@ -23,7 +23,8 @@ async def change_status():
   while not client.is_closed:
      current_status = next(msgs)
      await client.change_presence(game=discord.Game(name=current_status, url="https://www.twitch.tv/streamer",type=3))
-
+     await asyncio.sleep(10)
+      
 # Start Up
 @client.event
 async def on_member_join(member):
