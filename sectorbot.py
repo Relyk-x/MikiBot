@@ -115,16 +115,14 @@ async def on_message(message):
 # DICE ROLL
     if message.content.startswith('-diceroll') or message.content.startswith('-dr'):
         randomlist = ['1','2','3','4','5','6',]
-        em = discord.Embed(title = '<:die:500434709835153408> **Dice Roll**', color=0xffffff, description="You rolled the number %s" %(random.choice(randomlist),))
+        em = discord.Embed(title = '<:die:500434709835153408> **Dice Roll**', color=0xffffff, description="You rolled the number %s \n\n <:discord:500467821034078218> If you'd like to invite Sector Bot to your own server go to: \n https://goo.gl/2rp6n2" %(random.choice(randomlist),))
         em.set_author(name='Game:')
-        em.add_field(name="<:discord:500467821034078218> If you'd like to invite Sector Bot to your own server go to:", value="https://goo.gl/2rp6n2", inline=False)
         await client.send_message(message.channel, embed=em)
 # COIN FLIP
     elif message.content.startswith('-coinflip') or message.content.startswith('-cf'):
         randomlist = ['Heads','Tails',]
-        em = discord.Embed(title = '<:token:500434456734203904> **Coin Flip**', color=0xffffff, description="You flipped %s" %(random.choice(randomlist),))
+        em = discord.Embed(title = '<:token:500434456734203904> **Coin Flip**', color=0xffffff, description="You flipped %s \n\n <:discord:500467821034078218> If you'd like to invite Sector Bot to your own server go to: \n https://goo.gl/2rp6n2" %(random.choice(randomlist),))
         em.set_author(name='Game:')
-        em.add_field(name="<:discord:500467821034078218> If you'd like to invite Sector Bot to your own server go to:", value="https://goo.gl/2rp6n2", inline=False)
         await client.send_message(message.channel, embed=em)
 # TICTACTOE
         # COMING SOON
