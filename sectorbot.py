@@ -12,15 +12,27 @@ from discord import Game
 Client = discord.client
 client = commands.Bot(command_prefix = 's/')
 Clientdiscord = discord.Client()
+
+servers = list(client.servers
+status = ['for s/help', 'over' + str(len(client.servers)) + 'servers']
+
 async def on_member_join(member):
     print('Recognised that a member called ' + member.name + ' joined')
     await client.send_message(member, "Hey there I'm Sector Bot")
     print('Sent message to ' + member.name)
 
+async def change_status():
+  await client.wait_until_ready()
+  msgs = cycle(status)
+
+  while not client.is_closed:
+     current_status = next(msgs)
+     await client.change_presence(game=discord.Game(name=current_status, url="https://www.twitch.tv/streamer",type=3))
+     await asyncio.sleep(10)
+        
 # Start Up
 @client.event
 async def on_ready():
-   await client.change_presence(game=discord.Game(name='over ' + str(len(client.servers)) + ' servers', url="https://www.twitch.tv/streamer",type=3))
    print('Sector bot is up and running...')
 
 @client.event
