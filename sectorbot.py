@@ -116,7 +116,7 @@ async def on_message(message):
         f.close()
     # Hello
     if message.content == 's/greet':
-        em = discord.Embed(description='Hey there buddy!',)
+        em = discord.Embed(description='Hey there buddy! :wave:',)
         await client.send_message(message.channel, embed=em)
     # Vote
     if message.content == 's/vote':
