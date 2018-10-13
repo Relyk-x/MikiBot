@@ -39,9 +39,6 @@ async def on_message(message):
         elif message.content.lower() == '¿que?' or message.content.lower() == 'que?' or message.content.lower() == 'que':
             em = discord.Embed(title= '<:translate:499778047357222927> Sector Translate:', description= 'Spanish: ¿Que? | English: What?', color=0xffffff,)
             await client.send_message(message.channel, embed=em)
-#FUCK YOU!
-    if message.content == '-fu':
-        await client.send_message(message.channel,':joy::joy::joy:   :joy:         :joy:   :joy::joy::joy:   :joy:            :joy:             :joy:       :joy:   :joy::joy::joy:   :joy:         :joy:   :joy:\n:joy:                 :joy:         :joy:   :joy:                 :joy:      :joy:                    :joy:     :joy:    :joy:       :joy:   :joy:         :joy:   :joy:\n:joy::joy::joy:   :joy:         :joy:   :joy:                 :joy::joy:                            :joy:  :joy:     :joy:       :joy:   :joy:         :joy:   :joy:\n:joy:                 :joy:         :joy:   :joy:                 :joy:      :joy:                          :joy:          :joy:       :joy:   :joy:         :joy:\n:joy:                     :joy: :joy:       :joy::joy::joy:   :joy:             :joy:                   :joy:          :joy::joy::joy:       :joy: :joy:       :joy:')
 # Memes
     if message.content.startswith('-meme'):
         randomlist = ['https://goo.gl/dwJD8o',  #Batman
@@ -118,7 +115,7 @@ async def on_message(message):
 # DICE ROLL
     if message.content.startswith('-diceroll') or message.content.startswith('-dr'):
         randomlist = ['1','2','3','4','5','6',]
-        em = discord.Embed(title = 'Dice Roll', color=0xffffff, description='<:die:500434709835153408> You rolled %s' %(random.choice(randomlist),))
+        em = discord.Embed(title = 'Dice Roll', color=0xffffff, description='<:die:500434709835153408> You rolled the number %s' %(random.choice(randomlist),))
         em.set_author(name='Game:')
         em.set_footer(text='If you want to invite Sector Bot to your own server go to https://goo.gl/2rp6n2',)
         await client.send_message(message.channel, embed=em)
