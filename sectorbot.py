@@ -15,7 +15,7 @@ Clientdiscord = discord.Client()
 
 servers = list(client.servers)
 status = ['for s/help | v0.0.1', 'for bot suggestions']
-# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.0.1,30 ##
+# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.0.1,32 ##
 
 async def change_status():
   await client.wait_until_ready()
