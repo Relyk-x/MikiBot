@@ -123,7 +123,6 @@ async def on_message(message):
         randomlist = ['Heads','Tails',]
         em = discord.Embed(title = 'Coin Flip', color=0xffffff, description= '<:token:500434456734203904> You flipped %s \n\n <:discord:500467821034078218> If you want to invite Sector Bot to your own server go to https://goo.gl/2rp6n2' %(random.choice(randomlist),))
         em.set_author(name='Game:')
-        em.set_footer(text='If you want to invite Sector Bot to your own server go to https://goo.gl/2rp6n2',)
         await client.send_message(message.channel, embed=em)
 # TICTACTOE
         # COMING SOON
