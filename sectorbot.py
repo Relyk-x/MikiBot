@@ -144,7 +144,7 @@ async def on_message(message):
         em.add_field(name="s/password", value="Generates a random password.", inline=False)
         em.add_field(name="s/diceroll", value="Rolls a six sided die.", inline=False)
         em.add_field(name="s/coinflip", value="Flips a coin, could be heads could be tails.", inline=False)
-        await client.send_message(message.channel, embed=embed)
+        await client.send_message(message.channel, embed=em)
 
 #Bot Token
 client.loop.create_task(change_status())
