@@ -34,12 +34,10 @@ async def on_message(message):
 #YES
         if message.content.lower() == 'si':
             em = discord.Embed(title= '<:translate:499778047357222927> Sector Translate:', description= ':flag_es: Spanish: Si | :flag_gb: English: Yes', color=0xffffff,)
-            em.set_footer(text='If you want to invite Sector Bot to your own server go to https://goo.gl/2rp6n2',)
             await client.send_message(message.channel, embed=em)
 #WHAT
         elif message.content.lower() == '¿que?' or message.content.lower() == 'que?' or message.content.lower() == 'que':
             em = discord.Embed(title= '<:translate:499778047357222927> Sector Translate:', description= ':flag_es: Spanish: ¿Que? | :flag_gb: English: What?', color=0xffffff,)
-            em.set_footer(text='If you want to invite Sector Bot to your own server go to https://goo.gl/2rp6n2',)
             await client.send_message(message.channel, embed=em)
 # Memes
     if message.content.startswith('-meme'):
@@ -60,7 +58,6 @@ async def on_message(message):
                     ]
         em = discord.Embed(title= 'Meme:',  color=0xffffff,)
         em.set_image(url='%s' %(random.choice(randomlist),))
-        em.set_footer(text='If you want to invite Sector Bot to your own server go to https://goo.gl/2rp6n2',)
         await client.send_message(message.channel, embed=em)
 
 #password generator
@@ -118,14 +115,13 @@ async def on_message(message):
 # DICE ROLL
     if message.content.startswith('-diceroll') or message.content.startswith('-dr'):
         randomlist = ['1','2','3','4','5','6',]
-        em = discord.Embed(title = 'Dice Roll', color=0xffffff, description='<:die:500434709835153408> You rolled the number %s' %(random.choice(randomlist),))
+        em = discord.Embed(title = 'Dice Roll', color=0xffffff, description='<:die:500434709835153408> You rolled the number %s\n\n\<:discord:500467821034078218> If you want to invite Sector Bot to your own server go to https://goo.gl/2rp6n2' %(random.choice(randomlist),))
         em.set_author(name='Game:')
-        em.set_footer(text='If you want to invite Sector Bot to your own server go to https://goo.gl/2rp6n2',)
         await client.send_message(message.channel, embed=em)
 # COIN FLIP
     elif message.content.startswith('-coinflip') or message.content.startswith('-cf'):
         randomlist = ['Heads','Tails',]
-        em = discord.Embed(title = 'Coin Flip', color=0xffffff, description= '<:token:500434456734203904> You flipped %s' %(random.choice(randomlist),))
+        em = discord.Embed(title = 'Coin Flip', color=0xffffff, description= '<:token:500434456734203904> You flipped %s\n\n<:discord:500467821034078218> If you want to invite Sector Bot to your own server go to https://goo.gl/2rp6n2' %(random.choice(randomlist),))
         em.set_author(name='Game:')
         em.set_footer(text='If you want to invite Sector Bot to your own server go to https://goo.gl/2rp6n2',)
         await client.send_message(message.channel, embed=em)
