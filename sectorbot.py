@@ -15,7 +15,7 @@ Clientdiscord = discord.Client()
 
 servers = list(client.servers)
 status = ['for s/help | v0.0.1', 'for bot suggestions']
-# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.0.1,29 ##
+# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.0.1,30 ##
 
 async def change_status():
   await client.wait_until_ready()
@@ -62,6 +62,7 @@ async def on_message(message):
                     ]
         em = discord.Embed(title= 'Meme:',  color=0xffffff,)
         em.set_image(url='%s' %(random.choice(randomlist),))
+        em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
     # Password Generator
     if message.content == 's/password':
@@ -115,31 +116,35 @@ async def on_message(message):
         f.close()
     # Invite
     if message.content == 's/invite':
-        em = discord.Embed(description="<:sector:500718768842866702> Sector Bot \n If you'd like to add Sector Bot to your server, Click here: https://goo.gl/2rp6n2", color=0xffffff)
+        em = discord.Embed(description="If you'd like to add Sector Bot to your server, Click here: https://goo.gl/2rp6n2", color=0xffffff)
+        em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
     # Server Count
     if message.content == 's/servercount':
         em = discord.Embed(description='Currently watching ' + str(len(client.servers)) + ' servers', color=0xffffff)
+        em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
     # Hello
     if message.content == 's/greet':
         em = discord.Embed(description='Hey there buddy! :wave:', color=0xffffff)
+        em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
     # Vote
     if message.content == 's/vote':
         em = discord.Embed(description='You can vote here: https://discordbots.org/bot/496214977267630080/vote', color=0xffffff)
+        em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
     # Dice Roll
     if message.content.startswith('s/diceroll') or message.content.startswith('s/dr'):
         randomlist = ['1','2','3','4','5','6',]
-        em = discord.Embed(title = '<:die:500434709835153408> **Dice Roll**', color=0xffffff, description="You rolled the number... %s \n\n <:discordp:500719998172659713> If you'd like to invite Sector Bot to your own server go to: \n https://goo.gl/2rp6n2" %(random.choice(randomlist),))
-        em.set_author(name='Game:')
+        em = discord.Embed(title = '<:die:500434709835153408> **Game: Dice Roll**', color=0xffffff, description="You rolled the number... %s \n\n <:discordp:500719998172659713> If you'd like to invite Sector Bot to your own server go to: \n https://goo.gl/2rp6n2" %(random.choice(randomlist),))
+        em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
     # Coin Flip
     elif message.content.startswith('s/coinflip') or message.content.startswith('s/cf'):
         randomlist = ['Heads','Tails',]
-        em = discord.Embed(title = '<:token:500434456734203904> **Coin Flip**', color=0xffffff, description="You flipped... %s \n\n <:discordp:500719998172659713> If you'd like to invite Sector Bot to your own server go to: \n https://goo.gl/2rp6n2" %(random.choice(randomlist),))
-        em.set_author(name='Game:')
+        em = discord.Embed(title = '<:token:500434456734203904> **Game: Coin Flip**', color=0xffffff, description="You flipped... %s \n\n <:discordp:500719998172659713> If you'd like to invite Sector Bot to your own server go to: \n https://goo.gl/2rp6n2" %(random.choice(randomlist),))
+        em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
     # Help
     if ('s/help') in message.content:
