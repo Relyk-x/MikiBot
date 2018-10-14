@@ -15,7 +15,7 @@ Clientdiscord = discord.Client()
 
 servers = list(client.servers)
 status = ['for s/help | v0.0.1', 'for bot suggestions']
-# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.0.1,43 ##
+# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.0.1,44 ##
 
 async def change_status():
   await client.wait_until_ready()
@@ -156,7 +156,7 @@ async def on_message(message):
     if ('s/help') in message.content:
         em = discord.Embed(title="Discord Server", description="For any other help please join our Discord server...", url="https://discord.gg/eRHsyFg", color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
-        em.add_field(name="Prefix: s/", value="|", inline=False
+        em.add_field(name="Prefix: s/", value="|", inline=False)
         em.add_field(name="Commands: s/<command>", value="|", inline=False)
         em.add_field(name="greet", value="Sends a greeting in the channel.", inline=False)
         em.add_field(name="invite", value="Sends the invite to add Sector Bot to your server.", inline=False)
