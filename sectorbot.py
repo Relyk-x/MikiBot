@@ -15,7 +15,7 @@ Clientdiscord = discord.Client()
 
 servers = list(client.servers)
 status = ['for s/help | v0.0.1', 'for bot suggestions']
-# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.0.1,41 ##
+# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.0.1,42 ##
 
 async def change_status():
   await client.wait_until_ready()
@@ -31,7 +31,7 @@ async def change_status():
 async def on_member_join(member):
     print('Sent message to ' + member.name)
     servers = list(client.servers)
-    print("Connected on " + str(len(client.servers)) + "servers:")
+    print("Connected on " + str(len(client.servers)) + " servers:")
     for x in range(len(servers)):
      print(' ' + servers[x-1].name)
     await client.send_message(member, "Hey there I'm Sector Bot")
