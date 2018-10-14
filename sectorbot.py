@@ -15,7 +15,7 @@ Clientdiscord = discord.Client()
 
 servers = list(client.servers)
 status = ['for s/help | v0.0.1', 'for bot suggestions']
-# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.0.1,45 ##
+# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.0.1,46 ##
 
 async def change_status():
   await client.wait_until_ready()
@@ -154,7 +154,7 @@ async def on_message(message):
         # coming soon #
 # Help
     if ('s/help') in message.content:
-        em = discord.Embed(title="Discord Server", description="For any other help please join our Discord server...", url="https://discord.gg/eRHsyFg", color=0xffffff)
+        em = discord.Embed(title="Discord Server", url="https://discord.gg/eRHsyFg", color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         em.add_field(name="For any other help please join our Discord server...", value="Prefix: s/ \n Commands: s/<command> \n |", inline=False)
         em.add_field(name="greet", value="Sends a greeting in the channel.", inline=False)
