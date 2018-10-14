@@ -15,7 +15,7 @@ Clientdiscord = discord.Client()
 
 servers = list(client.servers)
 status = ['for s/help | v0.1.5', 'for bot suggestions']
-# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.5,1 ##
+# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.5,2 ##
 
 async def change_status():
   await client.wait_until_ready()
@@ -110,7 +110,7 @@ async def on_message(message):
             key8 = (random.choice(encryptcode))
     # There are about 23,535,820 different password combinations that can be generated.
         encryptedpass = (key1 + key2 + key3 + key4 + key5 + key6 + key7 + key8)
-        em = discord.Embed(description='Here is your randomly generated password: ' + encryptedpass, color=0xffffff)
+        em = discord.Embed(description='Here is your randomly generated password: ' + '`' + encryptedpass + '`', color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.author, embed=em)
         f = open('authpass.txt','a')
