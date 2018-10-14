@@ -15,7 +15,7 @@ Clientdiscord = discord.Client()
 
 servers = list(client.servers)
 status = ['for s/help | v0.1.5', 'for bot suggestions']
-# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.5,6 ##
+# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.5,7 ##
 
 async def change_status():
   await client.wait_until_ready()
@@ -126,6 +126,8 @@ async def on_message(message):
         em = discord.Embed(description='Currently watching over ' + str(len(client.servers)) + ' servers', color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
+    # Listed Servers
+    
     # Hello
     if ('s/greet') in message.content:
         em = discord.Embed(description='Hey there buddy! :wave:', color=0xffffff)
