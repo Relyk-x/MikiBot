@@ -15,7 +15,7 @@ Clientdiscord = discord.Client()
 
 servers = list(client.servers)
 status = ['for s/help | v0.1.4', 'for bot suggestions']
-# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.4,8 ##
+# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.4,9 ##
 
 async def change_status():
   await client.wait_until_ready()
@@ -138,7 +138,7 @@ async def on_message(message):
         await client.send_message(message.channel, embed=em)
     # Version
     if message.content == 's/version':
-        em = discord.Embed(description='The current version of Sector Bot is: v0.1.4', color=0xffffff)
+        em = discord.Embed(description='The current version of Sector Bot is: `v0.1.4`', color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
     # Dice Roll
