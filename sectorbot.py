@@ -15,7 +15,7 @@ Clientdiscord = discord.Client()
 
 servers = list(client.servers)
 status = ['for s/help | v0.0.1', 'for bot suggestions']
-# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.0.1,47 ##
+# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.4,8 ##
 
 async def change_status():
   await client.wait_until_ready()
@@ -136,6 +136,11 @@ async def on_message(message):
         em = discord.Embed(description='You can vote here: https://discordbots.org/bot/496214977267630080/vote', color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
+    # Version
+    if message.content == 's/version':
+        em = discord.Embed(description='The current version of Sector Bot is: v0.1.4', color=0xffffff)
+        em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
+        await client.send_message(message.channel, embed=em)
     # Dice Roll
     if message.content.startswith('s/diceroll') or message.content.startswith('s/dr'):
         randomlist = ['1','2','3','4','5','6',]
@@ -154,13 +159,14 @@ async def on_message(message):
         # coming soon #
 # Help
     if ('s/help') in message.content:
-        em = discord.Embed(title="Discord Server", url="https://discord.gg/eRHsyFg", color=0xffffff)
+        em = discord.Embed(title="Discord Server", description="For any other help please join our Discord server...", url="https://discord.gg/eRHsyFg", color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
-        em.add_field(name="For any other help please join our Discord server...", value="idk", inline=False)
-        em.add_field(name="Prefix: s/ \nCommands: s/<command>", value="_____________________")
+        em.add_field(name="Prefix:", value="`s/`", inline=True)
+        em.add_field(name="Commands:", value="`s/<command>`", inline =True)
         em.add_field(name="greet", value="Sends a greeting in the channel.", inline=False)
         em.add_field(name="invite", value="Sends the invite to add Sector Bot to your server.", inline=False)
         em.add_field(name="servercount", value="Shows how many servers this bot occupies.", inline=False)
+        em.add_field(name="version", value="The current version of Sector Bot", inline=False)
         em.add_field(name="vote", value="Vote for this bot.", inline=False)
         em.add_field(name="meme", value="Sends a random meme from Sector Bot’s stash.", inline=False)
         em.add_field(name="password", value="Generates a random password.", inline=False)
