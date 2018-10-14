@@ -15,7 +15,7 @@ Clientdiscord = discord.Client()
 
 servers = list(client.servers)
 status = ['for s/help | v0.0.1', 'for bot suggestions']
-# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.0.1,40 ##
+# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.0.1,41 ##
 
 async def change_status():
   await client.wait_until_ready()
@@ -156,15 +156,15 @@ async def on_message(message):
     if ('s/help') in message.content:
         em = discord.Embed(title="Discord Server", description="For any other help please join our Discord server...", url="https://discord.gg/eRHsyFg", color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
-        em.add_field(name="Commands: s/<command>", value="|", inline=False)
-        em.add_field(name="s/greet", value="Sends a greeting in the channel.", inline=False)
-        em.add_field(name="s/invite", value="Sends the invite to add Sector Bot to your server.", inline=False)
-        em.add_field(name="s/servercount", value="Shows how many servers this bot occupies.", inline=False)
-        em.add_field(name="s/vote", value="Vote for this bot.", inline=False)
-        em.add_field(name="s/meme", value="Sends a random meme from Sector Bot’s stash.", inline=False)
-        em.add_field(name="s/password", value="Generates a random password.", inline=False)
-        em.add_field(name="s/diceroll", value="Rolls a six sided die.", inline=False)
-        em.add_field(name="s/coinflip", value="Flips a coin, could be heads could be tails.", inline=False)
+        em.add_field(name="Commands: `s/<command>`", value="|", inline=False)
+        em.add_field(name="greet", value="Sends a greeting in the channel.", inline=False)
+        em.add_field(name="invite", value="Sends the invite to add Sector Bot to your server.", inline=False)
+        em.add_field(name="servercount", value="Shows how many servers this bot occupies.", inline=False)
+        em.add_field(name="vote", value="Vote for this bot.", inline=False)
+        em.add_field(name="meme", value="Sends a random meme from Sector Bot’s stash.", inline=False)
+        em.add_field(name="password", value="Generates a random password.", inline=False)
+        em.add_field(name="diceroll", value="Rolls a six sided die.", inline=False)
+        em.add_field(name="coinflip", value="Flips a coin, could be heads could be tails.", inline=False)
         await client.send_message(message.channel, embed=em)
 
 #Bot Token
