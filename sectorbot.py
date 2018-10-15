@@ -387,7 +387,7 @@ async def on_message(message):
         em.add_field(name="s/emojify <text>", value="Emojifies your text.", inline=False)
         em.add_field(name="s/compress <text>", value="compresses your text to make it smaller.", inline=False)
         em.add_field(name="s/say <text>", value="rewrites your text.", inline=False)
-        em.add_field(name="s/purge <amount>", value="purges a specific amount of messages in a channel", inline=False
+        em.add_field(name="s/purge <amount>", value="purges a specific amount of messages in a channel", inline=False)
         em.add_field(name="s/password", value="Generates a random password.", inline=False)
         em.add_field(name="s/diceroll", value="Rolls a six sided die.", inline=False)
         em.add_field(name="s/coinflip", value="Flips a coin, could be heads could be tails.", inline=False)
