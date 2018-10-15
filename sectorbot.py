@@ -519,8 +519,9 @@ async def on_message(message):
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
     # Purge
-    #if ('s/purge'in message.content:
-        
+	  if message.content == 's/purge':
+		    deleted = await client.purge_from(channel, limit=100, check=is_me)
+		    await client.send_message(channel, 'Deleted {} message(s)'.format(len(deleted)))
     # Vote
     if ('s/vote') in message.content:
         em = discord.Embed(description='You can vote here: https://discordbots.org/bot/496214977267630080/vote', color=0xffffff)
