@@ -21,7 +21,7 @@ async def change_status():
   await bot.wait_until_ready()
   msgs = cycle(status)
 
-  while not client.is_closed:
+  while not bot.is_closed:
      current_status = next(msgs)
      await bot.change_presence(game=discord.Game(name=current_status, url="https://www.twitch.tv/streamer",type=3))
      await asyncio.sleep(10)
