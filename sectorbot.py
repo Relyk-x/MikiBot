@@ -35,8 +35,17 @@ async def on_member_join(member):
     await client.send_message(member, "Hey there I'm Sector Bot")
 async def on_ready():
    print('Sector Bot is up and running with ' + str(len(client.servers)) + ' servers connected!')
-
-em = discord.Embed
+    
+#purge
+@client.evemt
+async def on_m(message):
+    return m.author == client.user
+    if message.content.startswith('s/purge'):
+        message_amount=100
+        if message.content.startswith('s/purge ') and not message.content[8:]=='':
+            message_amount=int(message.content[8:])
+        deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
+        await client.send_message(message.channel, 'Deleted {} message(s)'.format(len(deleted)))  
 
 # Multiple Commands
 @client.event
@@ -518,10 +527,6 @@ async def on_message(message):
         em = discord.Embed(description='Hey there buddy! :wave:', color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
-    # Purge
-    if message.content == 's/purge':
-        deleted = await client.purge_from(message.channel, limit=100, check=on_message)
-        await client.send_message(message.channel, 'Deleted {} message(s)'.format(len(deleted)))
     # Vote
     if ('s/vote') in message.content:
         em = discord.Embed(description='You can vote here: https://discordbots.org/bot/496214977267630080/vote', color=0xffffff)
