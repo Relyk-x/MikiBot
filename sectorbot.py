@@ -10,12 +10,12 @@ from discord import Game
 from itertools import cycle
 
 Client = discord.client
-client = commands.Bot(command_prefix = 's/')
+bot = commands.Bot(command_prefix = 's/')
 Clientdiscord = discord.Client()
 servers = list(client.servers)
 
 status = ['for: s/help | v0.1.7', 'for bot suggestions',]
-# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.7,6 ##
+# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.8,3 ##
 
 async def change_status():
   await client.wait_until_ready()
@@ -27,7 +27,7 @@ async def change_status():
      await asyncio.sleep(10)
       
 # Start Up
-@client.event
+@bot.event
 async def on_member_join(member):
     print("Connected on " + str(len(client.servers)) + " servers:")
     for x in range(len(servers)):
@@ -37,15 +37,20 @@ async def on_ready():
    print('Sector Bot is up and running with ' + str(len(client.servers)) + ' servers connected!')
     
 #purge
-@client.event
+@bot.event
 async def on_m(message):
     if message.content.startswith('s/purge ') and not message.content[8:]=='':
         message_amount = int(message.content[8:])
         deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
         await client.send_message(message.channel, 'Deleted {} message(s)'.format(len(deleted)))
-
+# Say
+@bot.event
+async def on_message(message):
+    content = message.content
+    if content.startswith('s/say'):
+        await bot.send_message(message.channel, content[5:])
 # Multiple Commands
-@client.event
+@bot.event
 async def on_message(message):
     # Memes
     if ('s/meme') in message.content:
@@ -69,194 +74,6 @@ async def on_message(message):
         em.set_image(url='%s' %(random.choice(randomlist),))
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
-    # Re Write
-    if message.content.startswith('s/rewrite '):
-        result = ''
-        for letter in message.content[10:]:
-            if letter in 'A':
-                result = result + 'A'
-            if letter in 'a':
-                result = result + 'a'
-            if letter in 'B':
-                result = result + 'B'
-            if letter in 'b':
-                result = result + 'b'
-            if letter in 'C':
-                result = result + 'C'
-            if letter in 'c':
-                result = result + 'c'
-            if letter in 'D':
-                result = result + 'D'
-            if letter in 'd':
-                result = result + 'd'
-            if letter in 'E':
-                result = result + 'E'
-            if letter in 'e':
-                result = result + 'e'
-            if letter in 'F':
-                result = result + 'F'
-            if letter in 'f':
-                result = result + 'f'
-            if letter in 'G':
-                result = result + 'G'
-            if letter in 'g':
-                result = result + 'g'
-            if letter in 'H':
-                result = result + 'H'
-            if letter in 'h':
-                result = result + 'h'
-            if letter in 'I':
-                result = result + 'I'
-            if letter in 'i':
-                result = result + 'i'
-            if letter in 'J':
-                result = result + 'J'
-            if letter in 'j':
-                result = result + 'j'
-            if letter in 'K':
-                result = result + 'K'
-            if letter in 'k':
-                result = result + 'k'
-            if letter in 'L':
-                result = result + 'L'
-            if letter in 'l':
-                result = result + 'l'
-            if letter in 'M':
-                result = result + 'M'
-            if letter in 'm':
-                result = result + 'm'
-            if letter in 'N':
-                result = result + 'N'
-            if letter in 'n':
-                result = result + 'n'
-            if letter in 'O':
-                result = result + 'O'
-            if letter in 'o':
-                result = result + 'o'
-            if letter in 'P':
-                result = result + 'P'
-            if letter in 'p':
-                result = result + 'p'
-            if letter in 'Q':
-                result = result + 'Q'
-            if letter in 'q':
-                result = result + 'q'
-            if letter in 'R':
-                result = result + 'R'
-            if letter in 'r':
-                result = result + 'r'
-            if letter in 'S':
-                result = result + 'S'
-            if letter in 's':
-                result = result + 's'
-            if letter in 'T':
-                result = result + 'T'
-            if letter in 't':
-                result = result + 't'
-            if letter in 'U':
-                result = result + 'U'
-            if letter in 'u':
-                result = result + 'u'
-            if letter in 'V':
-                result = result + 'V'
-            if letter in 'v':
-                result = result + 'v'
-            if letter in 'W':
-                result = result + 'W'
-            if letter in 'w':
-                result = result + 'w'
-            if letter in 'X':
-                result = result + 'X'
-            if letter in 'x':
-                result = result + 'x'
-            if letter in 'Y':
-                result = result + 'Y'
-            if letter in 'y':
-                result = result + 'y'
-            if letter in 'Z':
-                result = result + 'Z'
-            if letter in 'z':
-                result = result + 'z'
-            if letter in '1':
-                result = result + '1'
-            if letter in '2':
-                result = result + '2'
-            if letter in '3':
-                result = result + '3'
-            if letter in '4':
-                result = result + '4'
-            if letter in '5':
-                result = result + '5'
-            if letter in '6':
-                result = result + '6'
-            if letter in '7':
-                result = result + '7'
-            if letter in '8':
-                result = result + '8'
-            if letter in '9':
-                result = result + '9'
-            if letter in '0':
-                result = result + '0'
-            if letter in ' ':
-                result = result + ' '
-            if letter in '@':
-                result = result + '@'
-            if letter in '!':
-                result = result + '!'
-            if letter in '.':
-                result = result + '.'
-            if letter in ',':
-                result = result + ','
-            if letter in '#':
-                result = result + '#'
-            if letter in '$':
-                result = result + '$'
-            if letter in '%':
-                result = result + '%'
-            if letter in '^':
-                result = result + '^'
-            if letter in '&':
-                result = result + '&'
-            if letter in '*':
-                result = result + '*'
-            if letter in '(':
-                result = result + '('
-            if letter in ')':
-                result = result + ')'
-            if letter in '-':
-                result = result + '-'
-            if letter in '+':
-                result = result + '+'
-            if letter in '_':
-                result = result + '_'
-            if letter in '=':
-                result = result + '='
-            if letter in '[':
-                result = result + '['
-            if letter in ']':
-                result = result + ']'
-            if letter in '{':
-                result = result + '{'
-            if letter in '}':
-                result = result + '}'
-            if letter in ';':
-                result = result + ';'
-            if letter in ':':
-                result = result + ':'
-            if letter in '|':
-                result = result + '|'
-            if letter in '<':
-                result = result + '<'
-            if letter in '>':
-                result = result + '>'
-            if letter in '`':
-                result = result + '`'
-            if letter in '~':
-                result = result + '~'
-            if letter in '?':
-                result = result + '?'
-        await client.send_message(message.channel, result)
-        await client.delete_message(message)
     # Emoji Lettering
     if message.content.startswith('s/emojify '):
         result = ''
