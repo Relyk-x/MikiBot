@@ -14,8 +14,8 @@ bot = commands.Bot(command_prefix = 's/')
 Clientdiscord = discord.Client()
 servers = list(bot.servers)
 
-status = ['for: s/help | v0.1.7', 'for bot suggestions',]
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.1.8,6 ##
+status = ['for: s/help | v0.1.9', 'for bot suggestions',]
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.1.9,2 ##
 
 async def change_status():
   await bot.wait_until_ready()
@@ -349,7 +349,7 @@ async def on_message(message):
         await bot.send_message(message.channel, embed=em)
 ##### Version
     if ('s/version') in message.content:
-        em = discord.Embed(description='The current version of Sector Bot is: `v0.1.7`', color=0xffffff)
+        em = discord.Embed(description='The current version of Sector Bot is: `v0.1.9`', color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await bot.send_message(message.channel, embed=em)
     # Purge
