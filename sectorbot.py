@@ -39,10 +39,10 @@ async def on_ready():
 #purge
 @client.event
 async def on_m(message):
-        if message.content.startswith('s/purge ') and not message.content[8:]=='':
-            message_amount=int(message.content[8:])
-        deleted = await client.purge_from(message.channel, limit=message_amount, check=on_m)
-        await client.send_message(message.channel, 'Deleted {} message(s)'.format(len(deleted)))  
+    if message.content.startswith('s/purge ') and not message.content[8:]=='':
+        message_amount = int(message.content[8:])
+        deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
+        await client.send_message(message.channel, 'Deleted {} message(s)'.format(len(deleted)))
 
 # Multiple Commands
 @client.event
@@ -534,6 +534,11 @@ async def on_message(message):
         em = discord.Embed(description='The current version of Sector Bot is: `v0.1.7`', color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
+    # Purge
+    if message.content.startswith('s/purge ') and not message.content[8:]=='':
+        message_amount = int(message.content[8:])
+        deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
+        await client.send_message(message.channel, 'Deleted {} message(s)'.format(len(deleted)))
     # Dice Roll
     if ('s/diceroll') in message.content or ('s/dr') in message.content:
         randomlist = ['1','2','3','4','5','6',]
