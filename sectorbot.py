@@ -60,6 +60,7 @@ async def on_message(message):
         await client.send_message(message.channel, 'Deleted {} message(s)'.format(len(deleted)))
     # Say
     if content.startswith('s/say '):
+        content = message.content
         await client.send_message(message.channel, content[6:])
     # Memes
     if ('s/meme') in message.content:
