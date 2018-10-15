@@ -15,7 +15,7 @@ Clientdiscord = discord.Client()
 servers = list(client.servers)
 
 status = ['for: s/help | v0.1.7', 'for bot suggestions',]
-# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.7,3 ##
+# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.7,6 ##
 
 async def change_status():
   await client.wait_until_ready()
@@ -520,8 +520,8 @@ async def on_message(message):
         await client.send_message(message.channel, embed=em)
     # Purge
     if message.content == 's/purge':
-        deleted = await client.purge_from(channel, limit=100, check=on_message)
-        await client.send_message(channel, 'Deleted {} message(s)'.format(len(deleted)))
+        deleted = await client.purge_from(message.channel, limit=100, check=on_message)
+        await client.send_message(message.channel, 'Deleted {} message(s)'.format(len(deleted)))
     # Vote
     if ('s/vote') in message.content:
         em = discord.Embed(description='You can vote here: https://discordbots.org/bot/496214977267630080/vote', color=0xffffff)
