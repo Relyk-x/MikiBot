@@ -13,7 +13,6 @@ Client = discord.client
 client = commands.Bot(command_prefix = 's/')
 Clientdiscord = discord.Client()
 servers = list(client.servers)
-content = message.content
 
 status = ['for: s/help | v0.1.9', 'for bot suggestions',]
 # WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.1.9,7 ##
@@ -54,6 +53,7 @@ async def on_ready():
 # Multiple Commands
 @client.event
 async def on_message(message):
+    content = message.content
     # Purge
     if message.content.startswith('s/purge ') and not message.content[8:]=='':
         message_amount = int(message.content[8:])
