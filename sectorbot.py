@@ -15,21 +15,21 @@ Clientdiscord = discord.Client()
 servers = list(bot.servers)
 
 status = ['for: s/help | v0.1.7', 'for bot suggestions',]
-# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.8,6 ##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.1.8,6 ##
 
 async def change_status():
-  await client.wait_until_ready()
+  await bot.wait_until_ready()
   msgs = cycle(status)
 
   while not client.is_closed:
      current_status = next(msgs)
-     await client.change_presence(game=discord.Game(name=current_status, url="https://www.twitch.tv/streamer",type=3))
+     await bot.change_presence(game=discord.Game(name=current_status, url="https://www.twitch.tv/streamer",type=3))
      await asyncio.sleep(10)
       
 # Start Up
 @bot.event
 async def on_member_join(member):
-    print("Connected on " + str(len(client.servers)) + " servers:")
+    print("Connected on " + str(len(bot.servers)) + " servers:")
     for x in range(len(servers)):
      print(' ' + servers[x-1].name)
     await bot.send_message(member, "Hey there I'm Sector Bot")
