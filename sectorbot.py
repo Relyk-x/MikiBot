@@ -15,7 +15,7 @@ Clientdiscord = discord.Client()
 
 servers = list(client.servers)
 status = ['for s/help | v0.1.5', 'for bot suggestions']
-# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.5,7 ##
+# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.5,8 ##
 
 async def change_status():
   await client.wait_until_ready()
@@ -126,8 +126,6 @@ async def on_message(message):
         em = discord.Embed(description='Currently watching over ' + str(len(client.servers)) + ' servers', color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
-    # Listed Servers
-    
     # Hello
     if ('s/greet') in message.content:
         em = discord.Embed(description='Hey there buddy! :wave:', color=0xffffff)
@@ -159,7 +157,11 @@ async def on_message(message):
         await client.send_message(message.channel, embed=em)
     # Russian Roulette
         # coming soon #
-# Help
+# Helo
+@client.event
+@bot.command()
+@commands.guild_only()
+async def on_message(message):
     if ('s/help') in message.content:
         em = discord.Embed(title="Discord Server", description="For any other help please join our Discord server...", url="https://discord.gg/eRHsyFg", color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
@@ -174,7 +176,7 @@ async def on_message(message):
         em.add_field(name="password", value="Generates a random password.", inline=False)
         em.add_field(name="diceroll", value="Rolls a six sided die.", inline=False)
         em.add_field(name="coinflip", value="Flips a coin, could be heads could be tails.", inline=False)
-        await client.send_message(message.author, embed=em)
+        await client.send_message(message.channel embed=em)
 
 #Bot Token
 client.loop.create_task(change_status())
