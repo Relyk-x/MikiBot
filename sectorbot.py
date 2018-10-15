@@ -36,7 +36,7 @@ async def on_member_join(member):
 async def on_ready():
    print('Sector Bot is up and running with ' + str(len(client.servers)) + ' servers connected!')
     
-#purge
+# Purge
 @bot.event
 async def on_message(message):
     if message.content.startswith('s/purge ') and not message.content[8:]=='':
