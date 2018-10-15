@@ -15,7 +15,7 @@ Clientdiscord = discord.Client()
 servers = list(client.servers)
 
 status = ['for s/help | v0.1.6', 'for bot suggestions', 'over 3 servers']
-# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.6,4 ##
+# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.6,6 ##
 
 async def change_status():
   await client.wait_until_ready()
@@ -213,7 +213,7 @@ async def on_message(message):
                 result = result + '&'
             if letter in '?':
                 result = result + '?'
-        await client.edit_message(emojimsg, result)
+        await client.edit_message(message.channel, result)
         await client.delete_message(message)
     # Emoji Lettering
     if message.content.startswith('s/emojify '):
@@ -313,7 +313,7 @@ async def on_message(message):
                 result = result + '🌀'
             if letter in '?':
                 result = result + '❔'
-        await client.edit_message(emojimsg, result)
+        await client.edit_message(message.channel, result)
         await client.delete_message(message)
     # Tiny Letters
     if message.content.startswith('s/compress '):
