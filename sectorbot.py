@@ -14,7 +14,7 @@ client = commands.Bot(command_prefix = 's/')
 Clientdiscord = discord.Client()
 
 servers = list(client.servers)
-status = ['for s/help | v0.1.5', 'for bot suggestions']
+status = ['for s/help | v0.1.5', 'for bot suggestions', 'over ' + str(len(client.servers)) + ' servers']
 # WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.5,9 ##
 
 async def change_status():
@@ -29,13 +29,11 @@ async def change_status():
 # Start Up
 @client.event
 async def on_member_join(member):
-    print('Sent message to ' + member.name)
     servers = list(client.servers)
     print("Connected on " + str(len(client.servers)) + " servers:")
     for x in range(len(servers)):
      print(' ' + servers[x-1].name)
     await client.send_message(member, "Hey there I'm Sector Bot")
-    print('Sent message to ' + member.name)
 async def on_ready():
    print('Sector Bot is up and running with ' + str(len(client.servers)) + ' servers connected!')
 
@@ -158,10 +156,6 @@ async def on_message(message):
     # Russian Roulette
         # coming soon #
 # Helo
-@client.event
-@client.command()
-@commands.guild_only()
-async def on_message(message):
     if ('s/help') in message.content:
         em = discord.Embed(title="Discord Server", description="For any other help please join our Discord server...", url="https://discord.gg/eRHsyFg", color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
