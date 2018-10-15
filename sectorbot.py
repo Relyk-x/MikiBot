@@ -62,6 +62,7 @@ async def on_message(message):
     # Say
     if content.startswith('s/say '):
         await client.send_message(message.channel, content[6:])
+        await client.delete_message(message)
     # Memes
     if ('s/meme') in message.content:
         randomlist = ['https://goo.gl/dwJD8o',  #Batman
