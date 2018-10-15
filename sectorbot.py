@@ -10,49 +10,57 @@ from discord import Game
 from itertools import cycle
 
 Client = discord.client
-bot = commands.Bot(command_prefix = 's/')
+client = commands.Bot(command_prefix = 's/')
 Clientdiscord = discord.Client()
-servers = list(bot.servers)
+servers = list(client.servers)
 
 status = ['for: s/help | v0.1.9', 'for bot suggestions',]
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.1.9,2 ##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.1.9,5 ##
 
 async def change_status():
-  await bot.wait_until_ready()
+  await client.wait_until_ready()
   msgs = cycle(status)
 
-  while not bot.is_closed:
+  while not client.is_closed:
      current_status = next(msgs)
-     await bot.change_presence(game=discord.Game(name=current_status, url="https://www.twitch.tv/streamer",type=3))
+     await client.change_presence(game=discord.Game(name=current_status, url="https://www.twitch.tv/streamer",type=3))
      await asyncio.sleep(10)
       
 # Start Up
-@bot.event
+@client.event
 async def on_member_join(member):
     print("Connected on " + str(len(bot.servers)) + " servers:")
     for x in range(len(servers)):
      print(' ' + servers[x-1].name)
-    await bot.send_message(member, "Hey there I'm Sector Bot")
+    await client.send_message(member, "Hey there I'm Sector Bot")
 async def on_ready():
-   print('Sector Bot is up and running with ' + str(len(bot.servers)) + ' servers connected!')
+   print('Sector Bot is up and running with ' + str(len(client.servers)) + ' servers connected!')
     
 # Purge
-@bot.event
-async def on_purge(message):
-    if message.content.startswith('s/purge ') and not message.content[8:]=='':
-        message_amount = int(message.content[8:])
-        deleted = await bot.purge_from(message.channel, limit=message_amount, check=on_purge)
-        await bot.send_message(message.channel, 'Deleted {} message(s)'.format(len(deleted)))
+#@client.event
+#async def on_purge(message):
+#    if message.content.startswith('s/purge ') and not message.content[8:]=='':
+#        message_amount = int(message.content[8:])
+#        deleted = await bot.purge_from(message.channel, limit=message_amount, check=on_purge)
+#       await client.send_message(message.channel, 'Deleted {} message(s)'.format(len(deleted)))
 # Say
-@bot.event
-async def on_say(message):
-    content = message.content
-    if content.startswith('s/say '):
-        await bot.send_message(message.channel, content[6:])
+#@client.event
+#async def on_say(message):
+#    if content.startswith('s/say '):
+#        con = message.content
+#        await client.send_message(message.channel, con[6:])
 
 # Multiple Commands
-@bot.event
+@client.event
 async def on_message(message):
+    # Purge
+    if message.content.startswith('s/purge ') and not message.content[8:]=='':
+        message_amount = int(message.content[8:])
+        deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
+        await client.send_message(message.channel, 'Deleted {} message(s)'.format(len(deleted)))
+    # Say
+    if content.startswith('s/say '):
+        await client.send_message(message.channel, content[6:])
     # Memes
     if ('s/meme') in message.content:
         randomlist = ['https://goo.gl/dwJD8o',  #Batman
@@ -74,7 +82,7 @@ async def on_message(message):
         em = discord.Embed(title= 'Meme:',  color=0xffffff,)
         em.set_image(url='%s' %(random.choice(randomlist),))
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
-        await bot.send_message(message.channel, embed=em)
+        await client.send_message(message.channel, embed=em)
     # Emoji Lettering
     if message.content.startswith('s/emojify '):
         result = ''
@@ -173,8 +181,8 @@ async def on_message(message):
                 result = result + '🌀'
             if letter in '?':
                 result = result + '❔'
-        await bot.send_message(message.channel, result)
-        await bot.delete_message(message)
+        await client.send_message(message.channel, result)
+        await client.delete_message(message)
     # Tiny Letters
     if message.content.startswith('s/compress '):
         result = ''
@@ -273,8 +281,8 @@ async def on_message(message):
                 result = result + '&'
             if letter in '?':
                 result = result + '?'
-        await bot.send_message(message.channel, result)
-        await bot.delete_message(message)
+        await client.send_message(message.channel, result)
+        await client.delete_message(message)
     # Password Generator
     if ('s/password') in message.content:
         encryptkey = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',]
@@ -323,7 +331,7 @@ async def on_message(message):
         encryptedpass = (key1 + key2 + key3 + key4 + key5 + key6 + key7 + key8)
         em = discord.Embed(description='Here is your randomly generated password: ' + '`' + encryptedpass + '`', color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
-        await bot.send_message(message.author, embed=em)
+        await client.send_message(message.author, embed=em)
         f = open('authpass.txt','a')
         f.write('\n' + 'Password: ' + encryptedpass + ' was generated by ' + str(message.author))
         f.close()
@@ -331,41 +339,41 @@ async def on_message(message):
     if ('s/invite') in message.content:
         em = discord.Embed(description="If you'd like to add Sector Bot to your server, Click here: https://goo.gl/2rp6n2", color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
-        await bot.send_message(message.channel, embed=em)
+        await client.send_message(message.channel, embed=em)
     # Server Count
     if ('s/servercount') in message.content:
         em = discord.Embed(description='Currently watching over ' + str(len(client.servers)) + ' servers', color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
-        await bot.send_message(message.channel, embed=em)
+        await client.send_message(message.channel, embed=em)
     # Hello
     if ('s/greet') in message.content:
         em = discord.Embed(description='Hey there buddy! :wave:', color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
-        await bot.send_message(message.channel, embed=em)
+        await client.send_message(message.channel, embed=em)
     # Vote
     if ('s/vote') in message.content:
         em = discord.Embed(description='You can vote here: https://discordbots.org/bot/496214977267630080/vote', color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
-        await bot.send_message(message.channel, embed=em)
+        await client.send_message(message.channel, embed=em)
 ##### Version
     if ('s/version') in message.content:
         em = discord.Embed(description='The current version of Sector Bot is: `v0.1.9`', color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
-        await bot.send_message(message.channel, embed=em)
+        await client.send_message(message.channel, embed=em)
     # Dice Roll
     if ('s/diceroll') in message.content or ('s/dr') in message.content:
         randomlist = ['1','2','3','4','5','6',]
         em = discord.Embed(title ='**Game: Dice Roll**', color=0xffffff, description="<:die:500434709835153408> You rolled the number... %s" %(random.choice(randomlist),))
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         em.add_field(name="Other Games:", value="s/coinflip | Coin Flip", inline=True)
-        await bot.send_message(message.channel, embed=em)
+        await client.send_message(message.channel, embed=em)
     # Coin Flip
     elif ('s/coinflip') in message.content or ('s/cf') in message.content:
         randomlist = ['Heads','Tails',]
         em = discord.Embed(title ='**Game: Coin Flip**', color=0xffffff, description="<:token:500434456734203904> You flipped... %s" %(random.choice(randomlist),))
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         em.add_field(name="Other Games:", value="s/dicerole | Dice Roll", inline=True)
-        await bot.send_message(message.channel, embed=em)
+        await client.send_message(message.channel, embed=em)
     # Russian Roulette
         # coming soon #
 # Helo
@@ -387,8 +395,8 @@ async def on_message(message):
         em.add_field(name="s/password", value="Generates a random password.", inline=False)
         em.add_field(name="s/diceroll", value="Rolls a six sided die.", inline=False)
         em.add_field(name="s/coinflip", value="Flips a coin, could be heads could be tails.", inline=False)
-        await bot.send_message(message.channel, embed=em)
+        await client.send_message(message.channel, embed=em)
 
 #Bot Token
-bot.loop.create_task(change_status())
-bot.run(os.getenv('BOT_TOKEN'))
+client.loop.create_task(change_status())
+client.run(os.getenv('BOT_TOKEN'))
