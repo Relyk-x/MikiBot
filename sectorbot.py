@@ -15,7 +15,7 @@ Clientdiscord = discord.Client()
 servers = list(client.servers)
 
 status = ['for s/help | v0.1.6', 'for bot suggestions', 'over 3 servers']
-# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.6,1 ##
+# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.6,4 ##
 
 async def change_status():
   await client.wait_until_ready()
@@ -69,7 +69,7 @@ async def on_message(message):
         for letter in message.content[9:]:
             if letter in 'A':
                 result = result + 'A'
-            if letter in 'a'
+            if letter in 'a':
                 result =  result + 'a'
             if letter in 'B':
                 result = result + 'B'
