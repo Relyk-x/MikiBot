@@ -41,7 +41,7 @@ async def on_ready():
 async def on_message(message):
     if message.content.startswith('s/purge ') and not message.content[8:]=='':
         message_amount = int(message.content[8:])
-        deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
+        deleted = await bot.purge_from(message.channel, limit=message_amount, check=on_message)
         await bot.send_message(message.channel, 'Deleted {} message(s)'.format(len(deleted)))
 # Say
 @bot.event
@@ -49,6 +49,7 @@ async def on_message(message):
     content = message.content
     if content.startswith('s/say '):
         await bot.send_message(message.channel, content[6:])
+
 # Multiple Commands
 @bot.event
 async def on_message(message):
