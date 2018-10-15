@@ -47,8 +47,8 @@ async def on_message(message):
 @bot.event
 async def on_message(message):
     content = message.content
-    if content.startswith('s/say'):
-        await bot.send_message(message.channel, content[5:])
+    if content.startswith('s/say '):
+        await bot.send_message(message.channel, content[6:])
 # Multiple Commands
 @bot.event
 async def on_message(message):
