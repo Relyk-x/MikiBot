@@ -148,7 +148,7 @@ async def on_message(message):
             if letter in 't':
                 result = result + 't'
             if letter in 'U':
-                result = result + 'U
+                result = result + 'U'
             if letter in 'u':
                 result = result + 'u'
             if letter in 'V':
