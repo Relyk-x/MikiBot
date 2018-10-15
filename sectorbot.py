@@ -39,8 +39,6 @@ async def on_ready():
 #purge
 @client.event
 async def on_m(message):
-    if message.content.startswith('s/purge'):
-        message_amount=100
         if message.content.startswith('s/purge ') and not message.content[8:]=='':
             message_amount=int(message.content[8:])
         deleted = await client.purge_from(message.channel, limit=message_amount, check=on_m)
