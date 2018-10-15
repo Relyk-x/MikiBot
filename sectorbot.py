@@ -37,14 +37,14 @@ async def on_ready():
    print('Sector Bot is up and running with ' + str(len(client.servers)) + ' servers connected!')
     
 #purge
-@client.evemt
+@client.event
 async def on_m(message):
     return m.author == client.user
     if message.content.startswith('s/purge'):
         message_amount=100
         if message.content.startswith('s/purge ') and not message.content[8:]=='':
             message_amount=int(message.content[8:])
-        deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
+        deleted = await client.purge_from(message.channel, limit=message_amount, check=on_m)
         await client.send_message(message.channel, 'Deleted {} message(s)'.format(len(deleted)))  
 
 # Multiple Commands
