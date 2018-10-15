@@ -15,7 +15,7 @@ Clientdiscord = discord.Client()
 servers = list(client.servers)
 
 status = ['for s/help | v0.1.6', 'for bot suggestions', 'over 3 servers']
-# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.6,8 ##
+# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.6,9 ##
 
 async def change_status():
   await client.wait_until_ready()
@@ -70,7 +70,7 @@ async def on_message(message):
             if letter in 'A':
                 result = result + 'A'
             if letter in 'a':
-                result =  result + 'a'
+                result = result + 'a'
             if letter in 'B':
                 result = result + 'B'
             if letter in 'b':
@@ -211,6 +211,42 @@ async def on_message(message):
                 result = result + '^'
             if letter in '&':
                 result = result + '&'
+            if letter in '*':
+                result = result + '*'
+            if letter in '(':
+                result = result + '('
+            if letter in ')':
+                result = result + ')'
+            if letter in '-':
+                result = result + '-'
+            if letter in '+':
+                result = result + '+'
+            if letter in '_':
+                result = result + '_'
+            if letter in '=':
+                result = result + '='
+            if letter in '[':
+                result = result + '['
+            if letter in ']':
+                result = result + ']'
+            if letter in '{':
+                result = result + '{'
+            if letter in '}':
+                result = result + '}'
+            if letter in ';':
+                result = result + ';'
+            if letter in ':':
+                result = result + ':'
+            if letter in '|':
+                result = result + '|'
+            if letter in '<':
+                result = result + '<'
+            if letter in '>':
+                result = result + '>'
+            if letter in '`':
+                result = result + '`'
+            if letter in '~':
+                result = result + '~'
             if letter in '?':
                 result = result + '?'
         await client.send_message(message.channel, result)
