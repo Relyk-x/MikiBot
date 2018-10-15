@@ -159,7 +159,7 @@ async def on_message(message):
         # coming soon #
 # Helo
 @client.event
-@bot.command()
+@client.command()
 @commands.guild_only()
 async def on_message(message):
     if ('s/help') in message.content:
