@@ -81,7 +81,7 @@ async def on_message(message):
                       'https://goo.gl/N9m7kF',  #Slut
                       'https://goo.gl/UFNkSe',  #Shaggy, Weed
                     ]
-        em = discord.Embed(title= 'Meme:',  color=0xffffff,)
+        em = discord.Embed(title= 'Meme:', color=0xb8ff00,)
         em.set_image(url='%s' %(random.choice(randomlist),))
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
@@ -331,7 +331,7 @@ async def on_message(message):
             key8 = (random.choice(encryptcode))
     # There are about 23,535,820 different password combinations that can be generated.
         encryptedpass = (key1 + key2 + key3 + key4 + key5 + key6 + key7 + key8)
-        em = discord.Embed(description='Here is your randomly generated password: ' + '`' + encryptedpass + '`', color=0xffffff)
+        em = discord.Embed(description='Here is your randomly generated password: ' + '`' + encryptedpass + '`', color=0xb8ff00)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.author, embed=em)
         f = open('authpass.txt','a')
@@ -339,40 +339,40 @@ async def on_message(message):
         f.close()
     # Invite
     if ('s/invite') in message.content:
-        em = discord.Embed(description="If you'd like to add Sector Bot to your server, Click here: https://goo.gl/2rp6n2", color=0xffffff)
+        em = discord.Embed(description="If you'd like to add Sector Bot to your server, Click here: https://goo.gl/2rp6n2", color=0xb8ff00)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
     # Server Count
     if ('s/servercount') in message.content:
-        em = discord.Embed(description='Currently watching over ' + str(len(client.servers)) + ' servers', color=0xffffff)
+        em = discord.Embed(description='Currently watching over ' + str(len(client.servers)) + ' servers', color=0xb8ff00)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
     # Hello
     if ('s/greet') in message.content:
-        em = discord.Embed(description='Hey there buddy! :wave:', color=0xffffff)
+        em = discord.Embed(description='Hey there buddy! :wave:', color=0xb8ff00)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
     # Vote
     if ('s/vote') in message.content:
-        em = discord.Embed(description='You can vote here: https://discordbots.org/bot/496214977267630080/vote', color=0xffffff)
+        em = discord.Embed(description='You can vote here: https://discordbots.org/bot/496214977267630080/vote', color=0xb8ff00)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
 ##### Version
     if ('s/version') in message.content:
-        em = discord.Embed(description='The current version of Sector Bot is: `v0.1.9`', color=0xffffff)
+        em = discord.Embed(description='The current version of Sector Bot is: `v0.1.9`', color=0xb8ff00)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
     # Dice Roll
     if ('s/diceroll') in message.content or ('s/dr') in message.content:
         randomlist = ['1','2','3','4','5','6',]
-        em = discord.Embed(title ='**Game: Dice Roll**', color=0xffffff, description="<:die:500434709835153408> You rolled the number... %s" %(random.choice(randomlist),))
+        em = discord.Embed(title ='**Game: Dice Roll**', color=0xb8ff00, description="<:die:500434709835153408> You rolled the number... %s" %(random.choice(randomlist),))
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         em.add_field(name="Other Games:", value="s/coinflip | Coin Flip", inline=True)
         await client.send_message(message.channel, embed=em)
     # Coin Flip
     elif ('s/coinflip') in message.content or ('s/cf') in message.content:
         randomlist = ['Heads','Tails',]
-        em = discord.Embed(title ='**Game: Coin Flip**', color=0xffffff, description="<:token:500434456734203904> You flipped... %s" %(random.choice(randomlist),))
+        em = discord.Embed(title ='**Game: Coin Flip**', color=0xb8ff00, description="<:token:500434456734203904> You flipped... %s" %(random.choice(randomlist),))
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         em.add_field(name="Other Games:", value="s/dicerole | Dice Roll", inline=True)
         await client.send_message(message.channel, embed=em)
@@ -380,7 +380,7 @@ async def on_message(message):
         # coming soon #
 # Helo
     if ('s/help') in message.content:
-        em = discord.Embed(title="Discord Server", description="For any other help please join our Discord server...", url="https://discord.gg/eRHsyFg", color=0xffffff)
+        em = discord.Embed(title="Discord Server", description="For any other help please join our Discord server...", url="https://discord.gg/eRHsyFg", color=0xb8ff00)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         em.add_field(name="Prefix:", value="`s/`", inline=True)
         em.add_field(name="Commands:", value="`s/<command>`", inline =True)
