@@ -14,8 +14,8 @@ client = commands.Bot(command_prefix = 's/')
 Clientdiscord = discord.Client()
 servers = list(client.servers)
 
-status = ['for s/help | v0.1.6', 'for bot suggestions', 'over 3 servers']
-# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.6,9 ##
+status = ['for: s/help | v0.1.7', 'for bot suggestions',]
+# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.7,0 ##
 
 async def change_status():
   await client.wait_until_ready()
@@ -518,6 +518,9 @@ async def on_message(message):
         em = discord.Embed(description='Hey there buddy! :wave:', color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
+    # Purge
+    #if ('s/purge'in message.content:
+        
     # Vote
     if ('s/vote') in message.content:
         em = discord.Embed(description='You can vote here: https://discordbots.org/bot/496214977267630080/vote', color=0xffffff)
@@ -525,7 +528,7 @@ async def on_message(message):
         await client.send_message(message.channel, embed=em)
 ##### Version
     if ('s/version') in message.content:
-        em = discord.Embed(description='The current version of Sector Bot is: `v0.1.6`', color=0xffffff)
+        em = discord.Embed(description='The current version of Sector Bot is: `v0.1.7`', color=0xffffff)
         em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/499771629396688909/500484058367655945/arrow.png")
         await client.send_message(message.channel, embed=em)
     # Dice Roll
