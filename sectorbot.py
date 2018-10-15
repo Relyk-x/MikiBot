@@ -15,7 +15,7 @@ Clientdiscord = discord.Client()
 
 servers = list(client.servers)
 status = ['for s/help | v0.1.5', 'for bot suggestions']
-# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.5,8 ##
+# WATCHING 'over ' + str(len(client.servers)) + ' servers' ## v0.1.5,9 ##
 
 async def change_status():
   await client.wait_until_ready()
@@ -176,7 +176,7 @@ async def on_message(message):
         em.add_field(name="password", value="Generates a random password.", inline=False)
         em.add_field(name="diceroll", value="Rolls a six sided die.", inline=False)
         em.add_field(name="coinflip", value="Flips a coin, could be heads could be tails.", inline=False)
-        await client.send_message(message.channel embed=em)
+        await client.send_message(message.channel, embed=em)
 
 #Bot Token
 client.loop.create_task(change_status())
