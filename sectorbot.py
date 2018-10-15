@@ -13,9 +13,10 @@ Client = discord.client
 client = commands.Bot(command_prefix = 's/')
 Clientdiscord = discord.Client()
 servers = list(client.servers)
+content = message.content
 
 status = ['for: s/help | v0.1.9', 'for bot suggestions',]
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.1.9,5 ##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.1.9,7 ##
 
 async def change_status():
   await client.wait_until_ready()
@@ -60,7 +61,6 @@ async def on_message(message):
         await client.send_message(message.channel, 'Deleted {} message(s)'.format(len(deleted)))
     # Say
     if content.startswith('s/say '):
-        content = message.content
         await client.send_message(message.channel, content[6:])
     # Memes
     if ('s/meme') in message.content:
