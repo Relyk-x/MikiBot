@@ -14,8 +14,8 @@ client = commands.Bot(command_prefix = 's/')
 Clientdiscord = discord.Client()
 servers = list(client.servers)
 
-status = ['for: s/help | v0.2.0', 'for bot suggestions',]
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.1,0 ##
+status = ['for: s/help | v0.2.1', 'for bot suggestions',]
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.1,1 ##
 
 async def change_status():
   await client.wait_until_ready()
@@ -58,9 +58,9 @@ async def on_message(message):
     if message.content.startswith('s/purge ') and not message.content[8:]=='':
         message_amount = int(message.content[8:])
         deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
-        await client.send_message(message.channel, 'Deleted {} message(s)'.format(len(deleted)))
+        em = discord.Embed(description=''Deleted {} message(s)'.format(len(deleted)))
         await client.delete_message(message)
-        selfdel = await client.send_message(message.channel, 'Deleted {} message(s)'.format(len(deleted)))
+        selfdel = await client.send_message(message.channel, embed=em)
         time.sleep(10)
         await client.delete_message(selfdel)
     # Say
@@ -363,7 +363,7 @@ async def on_message(message):
         await client.send_message(message.channel, embed=em)
 ##### Version
     if ('s/version') in message.content:
-        em = discord.Embed(description='The current version of Sector Bot is: `v0.1.9`', color=0xb8ff00)
+        em = discord.Embed(description='The current version of Sector Bot is: `v0.2.1`', color=0xb8ff00)
         em.set_author(name="Sector Bot", icon_url="https://goo.gl/34WWBc")
         await client.send_message(message.channel, embed=em)
     # Dice Roll
