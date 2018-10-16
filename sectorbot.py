@@ -368,14 +368,14 @@ async def on_message(message):
         em.set_author(name="Sector Bot", icon_url="https://goo.gl/34WWBc")
         await client.send_message(message.channel, embed=em)
     # Dice Roll
-    if (';diceroll') in message.content or ('?dr') in message.content:
+    if (';diceroll') in message.content or (';dr') in message.content:
         randomlist = ['1','2','3','4','5','6',]
         em = discord.Embed(title ='**Game: Dice Roll**', color=0xb8ff00, description="<:die:500434709835153408> You rolled the number... %s" %(random.choice(randomlist),))
         em.set_author(name="Sector Bot", icon_url="https://goo.gl/34WWBc")
         em.add_field(name="Other Games:", value="s/coinflip | Coin Flip", inline=True)
         await client.send_message(message.channel, embed=em)
     # Coin Flip
-    elif (';coinflip') in message.content or ('?cf') in message.content:
+    elif (';coinflip') in message.content or (';cf') in message.content:
         randomlist = ['Heads','Tails',]
         em = discord.Embed(title ='**Game: Coin Flip**', color=0xb8ff00, description="<:token:500434456734203904> You flipped... %s" %(random.choice(randomlist),))
         em.set_author(name="Sector Bot", icon_url="https://goo.gl/34WWBc")
