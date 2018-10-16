@@ -15,7 +15,7 @@ Clientdiscord = discord.Client()
 servers = list(client.servers)
 
 status = ['for: s/help | v0.2.0', 'for bot suggestions',]
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.0,9 ##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.1,0 ##
 
 async def change_status():
   await client.wait_until_ready()
@@ -59,6 +59,8 @@ async def on_message(message):
         message_amount = int(message.content[8:])
         deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
         await client.send_message(message.channel, 'Deleted {} message(s)'.format(len(deleted)))
+        await client.delete_message(message)
+        selfdel = await client.send_message(message.channel, 'Deleted {} message(s)'.format(len(deleted)))
         time.sleep(10)
         await client.delete_message(selfdel)
     # Say
