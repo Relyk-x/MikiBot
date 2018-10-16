@@ -59,7 +59,7 @@ async def on_message(message):
     if message.content.startswith('s/purge ') and not message.content[8:]=='':
         message_amount = int(message.content[8:])
         deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
-        em = discord.Embed(description='⚠️ Purged {} message(s) from this channel'.format(len(deleted)), color=0xb8ff00,)
+        em = discord.Embed(description='Purged {} message(s) from this channel ⚠ U+26A0'.format(len(deleted)), color=0xb8ff00,)
         em.set_author(name="Sector Bot", icon_url="https://goo.gl/34WWBc")
         selfdel = await client.send_message(message.channel, embed=em)
         await asyncio.sleep(10)
