@@ -15,7 +15,7 @@ Clientdiscord = discord.Client()
 servers = list(client.servers)
 
 status = ['for: ;help | v0.2.2', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.2,8##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.2,9##
 
 async def change_status():
   await client.wait_until_ready()
@@ -349,7 +349,7 @@ async def on_message(message):
         await client.send_message(message.channel, embed=em)
     # Server Count
     if (';servercount') in message.content:
-        em = discord.Embed(description='Currently watching over ' + str(len(client.servers)) + ' servers', color=0xb8ff00)
+        em = discord.Embed(description='Currently watching over ' + str(len(client.servers)) + ' servers <:discordp:500719998172659713>', color=0xb8ff00)
         em.set_author(name="Sector Bot", icon_url="https://goo.gl/34WWBc")
         await client.send_message(message.channel, embed=em)
     # Hello
