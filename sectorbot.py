@@ -11,14 +11,12 @@ from itertools import cycle
 Client = discord.client
 client = commands.Bot(command_prefix = ';')
 Clientdiscord = discord.Client()
-servers = list(client.servers)
-content = message.content
-status = ['for: ;help | v0.2.3', 'for: bot suggestions', 'for: @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.3,7##
 
 # Setting Bot status 'Watching'
 async def change_status():
   await client.wait_until_ready()
+  status = ['for: ;help | v0.2.3', 'for: bot suggestions', 'for: @Relyk-x#2896']
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.3,8##
   msgs = cycle(status)
 
   while not client.is_closed:
@@ -29,6 +27,7 @@ async def change_status():
 # Start Up
 @client.event
 async def on_member_join(member):
+    servers = list(client.servers)
     print("Connected on " + str(len(bot.servers)) + " servers:")
     for x in range(len(servers)):
      print(' ' + servers[x-1].name)
@@ -53,6 +52,7 @@ async def on_message(message):
         await client.delete_message(selfdel)
         
     # Say
+    content = message.content
     if content.startswith(';say '):
         await client.send_message(message.channel, content[5:])
         await client.delete_message(message)
