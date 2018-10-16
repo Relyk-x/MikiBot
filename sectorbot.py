@@ -14,8 +14,8 @@ client = commands.Bot(command_prefix = 's/')
 Clientdiscord = discord.Client()
 servers = list(client.servers)
 
-status = ['for: s/help | v0.2.1', 'for bot suggestions',]
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.1,5 ##
+status = ['for: s/help | v0.2.1', 'for bot suggestions', 'the owner @Relyk-x#2896']
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.1,7 ##
 
 async def change_status():
   await client.wait_until_ready()
