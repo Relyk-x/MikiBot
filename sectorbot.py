@@ -15,7 +15,7 @@ Clientdiscord = discord.Client()
 servers = list(client.servers)
 
 status = ['for: ;help | v0.2.2', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.2,7##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.2,8##
 
 async def change_status():
   await client.wait_until_ready()
@@ -69,7 +69,7 @@ async def on_message(message):
         await client.send_message(message.channel, content[5:])
         await client.delete_message(message)
     # Memes
-    if ('?meme') in message.content:
+    if (';meme') in message.content:
         randomlist = ['https://goo.gl/dwJD8o',  #Batman
                       'https://goo.gl/1wezZw',  #Dr. Phill
                       'https://goo.gl/nB6oCw',  #Gandalf
