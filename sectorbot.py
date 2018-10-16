@@ -14,8 +14,8 @@ client = commands.Bot(command_prefix = ';')
 Clientdiscord = discord.Client()
 servers = list(client.servers)
 
-status = ['for: ;help | v0.2.2', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.2,9##
+status = ['for: ;help | v0.2.3', 'for bot suggestions', 'for @Relyk-x#2896']
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.3,0##
 
 async def change_status():
   await client.wait_until_ready()
@@ -364,7 +364,7 @@ async def on_message(message):
         await client.send_message(message.channel, embed=em)
 ##### Version
     if (';version') in message.content:
-        em = discord.Embed(description='The current version of Sector Bot is: `v0.2.2`', color=0xb8ff00)
+        em = discord.Embed(description='The current version of Sector Bot is: `v0.2.3`', color=0xb8ff00)
         em.set_author(name="Sector Bot", icon_url="https://goo.gl/34WWBc")
         await client.send_message(message.channel, embed=em)
     # Dice Roll
@@ -387,8 +387,8 @@ async def on_message(message):
     if (';help') in message.content:
         em = discord.Embed(title="Discord Server", description="For any other help please join our Discord server...", url="https://discord.gg/eRHsyFg", color=0xb8ff00)
         em.set_author(name="Sector Bot", icon_url="https://goo.gl/34WWBc")
-        em.add_field(name="Prefix:", value="`?`", inline=True)
-        em.add_field(name="Commands:", value="`?<command>`", inline =True)
+        em.add_field(name="Prefix:", value="`;`", inline=True)
+        em.add_field(name="Commands:", value="`;<command>`", inline =True)
         em.add_field(name="greet", value="Sends a greeting in the channel.", inline=False)
         em.add_field(name="invite", value="Sends the invite to add Sector Bot to your server.", inline=False)
         em.add_field(name="servercount", value="Shows how many servers this bot occupies.", inline=False)
