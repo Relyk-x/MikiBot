@@ -15,7 +15,7 @@ Clientdiscord = discord.Client()
 servers = list(client.servers)
 
 status = ['for: s/help | v0.2.1', 'for bot suggestions',]
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.1,2 ##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.1,5 ##
 
 async def change_status():
   await client.wait_until_ready()
@@ -54,11 +54,13 @@ async def on_ready():
 @client.event
 async def on_message(message):
     content = message.content
+    
     # Purge
     if message.content.startswith('s/purge ') and not message.content[8:]=='':
         message_amount = int(message.content[8:])
         deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
         em = discord.Embed(description='⚠️ Deleted {} message(s)'.format(len(deleted)))
+        em.set_author(name="Purge")
         selfdel = await client.send_message(message.channel, embed=em)
         await asyncio.sleep(10)
         await client.delete_message(selfdel)
