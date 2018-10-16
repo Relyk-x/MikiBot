@@ -38,20 +38,18 @@ async def on_ready():
     
 
 @client.event
-async def on_purge(message):
+async def on_message(message):
+    content = message.content
 # Purge
     if message.content.startswith('purge ') and not message.content[8:]=='':
         message_amount = int(message.content[8:])
         deleted = await bot.purge_from(message.channel, limit=message_amount, check=on_purge)
         await client.send_message(message.channel, 'Deleted {} message(s)'.format(len(deleted)))
-# Say
-async def on_say(message):    
-    content = message.content
+# Say   
     if content.startswith('say '):
         con = message.content
         await client.send_message(message.channel, con[6:])
 # Memes
-async def on_message(message):
     if ('meme') in message.content:
         randomlist = ['https://goo.gl/dwJD8o',  #Batman
                       'https://goo.gl/1wezZw',  #Dr. Phill
