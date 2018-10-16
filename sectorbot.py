@@ -59,7 +59,7 @@ async def on_message(message):
     if message.content.startswith('s/purge ') and not message.content[8:]=='':
         message_amount = int(message.content[8:])
         deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
-        em = discord.Embed(description='⚠️ Deleted {} message(s)'.format(len(deleted)))
+        em = discord.Embed(description='⚠️ Deleted {} message(s)'.format(len(deleted)), color=0xb8ff00,)
         em.set_author(name="Purge")
         selfdel = await client.send_message(message.channel, embed=em)
         await asyncio.sleep(10)
