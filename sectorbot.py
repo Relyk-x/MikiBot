@@ -372,14 +372,41 @@ async def on_message(message):
         randomlist = ['1','2','3','4','5','6',]
         em = discord.Embed(title ='**Game: Dice Roll**', color=0xb8ff00, description="<:die:500434709835153408> You rolled the number... %s" %(random.choice(randomlist),))
         em.set_author(name="Sector Bot", icon_url="https://goo.gl/34WWBc")
-        em.add_field(name="Other Games:", value="s/coinflip | Coin Flip", inline=True)
+        em.add_field(name="Other Games:", value=";coinflip | Coin Flip \n ;8ball | 8 Ball", inline=True)
         await client.send_message(message.channel, embed=em)
     # Coin Flip
     elif (';coinflip') in message.content or (';cf') in message.content:
         randomlist = ['Heads','Tails',]
         em = discord.Embed(title ='**Game: Coin Flip**', color=0xb8ff00, description="<:token:500434456734203904> You flipped... %s" %(random.choice(randomlist),))
         em.set_author(name="Sector Bot", icon_url="https://goo.gl/34WWBc")
-        em.add_field(name="Other Games:", value="s/dicerole | Dice Roll", inline=True)
+        em.add_field(name="Other Games:", value=";dicerole | Dice Roll \n ;8ball | 8 Ball", inline=True)
+        await client.send_message(message.channel, embed=em)
+    # 8 Ball
+    elif (';8ball') in message.content or (';cf') in message.content:
+        randomlist = ['It is certain.',
+                      'It is decidedly so.',
+                      'Without a doubt.',
+                      'Yes - definitely.',
+                      'You may rely on it.',
+                      'As I see it, yes.',
+                      'Most likely.',
+                      'Outlook good.',
+                      'Yes.',
+                      'Signs point to yes.',
+                      'Reply hazy, try again',
+                      'Ask again later.',
+                      'Better not tell you now.',
+                      'Cannot predict now.',
+                      'Concentrate and ask again.',
+                      "Don't count on it.",
+                      'My reply is no.',
+                      'My sources say no.',
+                      'Outlook not so good.',
+                      'Very doubtful.',
+                     ]
+        em = discord.Embed(title ='**Game: 8 Ball**', color=0xb8ff00, description=":8ball: *shake, shake* your answer is... %s" %(random.choice(randomlist),))
+        em.set_author(name="Sector Bot", icon_url="https://goo.gl/34WWBc")
+        em.add_field(name="Other Games:", value=";dicerole | Dice Roll \n ;coinflip | Coin Flip", inline=True)
         await client.send_message(message.channel, embed=em)
     # Russian Roulette
         # coming soon #
