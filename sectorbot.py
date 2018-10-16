@@ -51,7 +51,7 @@ async def on_say(message):
         con = message.content
         await client.send_message(message.channel, con[6:])
 # Memes
-aaync def on_message(message):
+async def on_message(message):
     if ('s/meme') in message.content:
         randomlist = ['https://goo.gl/dwJD8o',  #Batman
                       'https://goo.gl/1wezZw',  #Dr. Phill
