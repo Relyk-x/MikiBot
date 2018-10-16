@@ -382,7 +382,7 @@ async def on_message(message):
         em.add_field(name="Other Games:", value=";dicerole | Dice Roll \n ;8ball | 8 Ball", inline=True)
         await client.send_message(message.channel, embed=em)
     # 8 Ball
-    elif (';8ball') in message.content or (';cf') in message.content:
+    elif (';8ball') in message.content or (';8b') in message.content:
         randomlist = ['It is certain.',
                       'It is decidedly so.',
                       'Without a doubt.',
