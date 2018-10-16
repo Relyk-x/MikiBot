@@ -14,8 +14,8 @@ client = commands.Bot(command_prefix = '?')
 Clientdiscord = discord.Client()
 servers = list(client.servers)
 
-status = ['for: s/help | v0.2.1', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.1,9##
+status = ['for: s/help | v0.2.2', 'for bot suggestions', 'for @Relyk-x#2896']
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.2,4##
 
 async def change_status():
   await client.wait_until_ready()
@@ -56,8 +56,8 @@ async def on_message(message):
     content = message.content
     
     # Purge
-    if message.content.startswith('?purge ') and not message.content[8:]=='':
-        message_amount = int(message.content[8:])
+    if message.content.startswith('?purge ') and not message.content[7:]=='':
+        message_amount = int(message.content[7:])
         deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
         em = discord.Embed(description='Purged {} message(s) from this channel ⚠'.format(len(deleted)), color=0xb8ff00,)
         em.set_author(name="Sector Bot", icon_url="https://goo.gl/34WWBc")
@@ -66,7 +66,7 @@ async def on_message(message):
         await client.delete_message(selfdel)
     # Say
     if content.startswith('?say '):
-        await client.send_message(message.channel, content[6:])
+        await client.send_message(message.channel, content[5:])
         await client.delete_message(message)
     # Memes
     if ('?meme') in message.content:
@@ -93,7 +93,7 @@ async def on_message(message):
     # Emoji Lettering
     if message.content.startswith('?emojify '):
         result = ''
-        for letter in message.content[10:]:
+        for letter in message.content[9:]:
             if letter in 'aA':
                 result = result + '🅰'
             if letter in 'bB':
@@ -193,7 +193,7 @@ async def on_message(message):
     # Tiny Letters
     if message.content.startswith('?compress '):
         result = ''
-        for letter in message.content[11:]:
+        for letter in message.content[10:]:
             if letter in 'aA':
                 result = result + 'ᴀ'
             if letter in 'bB':
@@ -364,7 +364,7 @@ async def on_message(message):
         await client.send_message(message.channel, embed=em)
 ##### Version
     if ('?version') in message.content:
-        em = discord.Embed(description='The current version of Sector Bot is: `v0.2.1`', color=0xb8ff00)
+        em = discord.Embed(description='The current version of Sector Bot is: `v0.2.2`', color=0xb8ff00)
         em.set_author(name="Sector Bot", icon_url="https://goo.gl/34WWBc")
         await client.send_message(message.channel, embed=em)
     # Dice Roll
@@ -384,7 +384,7 @@ async def on_message(message):
     # Russian Roulette
         # coming soon #
 # Helo
-    if ('s/help') in message.content:
+    if ('?help') in message.content:
         em = discord.Embed(title="Discord Server", description="For any other help please join our Discord server...", url="https://discord.gg/eRHsyFg", color=0xb8ff00)
         em.set_author(name="Sector Bot", icon_url="https://goo.gl/34WWBc")
         em.add_field(name="Prefix:", value="`?`", inline=True)
