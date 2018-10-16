@@ -59,6 +59,7 @@ async def on_message(message):
         message_amount = int(message.content[8:])
         deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
         await client.send_message(message.channel, 'Deleted {} message(s)'.format(len(deleted)))
+        time.sleep(10)
     # Say
     if content.startswith('s/say '):
         await client.send_message(message.channel, content[6:])
