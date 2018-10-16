@@ -427,8 +427,9 @@ async def on_message(message):
         em.add_field(name="say <text>", value="rewrites your text.", inline=False)
         em.add_field(name="purge <amount>", value="purges a specific amount of messages in a channel", inline=False)
         em.add_field(name="password", value="Generates a random password.", inline=False)
-        em.add_field(name="diceroll", value="Rolls a six sided die.", inline=False)
-        em.add_field(name="coinflip", value="Flips a coin, could be heads could be tails.", inline=False)
+        em.add_field(name="diceroll / dr", value="Rolls a six sided die.", inline=False)
+        em.add_field(name="coinflip / cf", value="Flips a coin, could be heads could be tails.", inline=False)
+        em.add_field(name="8ball / 8b", value="Ask a question and shake the 8 Ball.", inline=False)
         await client.send_message(message.channel, embed=em)
 
 #Bot Token
