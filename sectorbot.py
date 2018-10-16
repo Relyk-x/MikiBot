@@ -59,9 +59,8 @@ async def on_message(message):
         message_amount = int(message.content[8:])
         deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
         em = discord.Embed(description='Deleted {} message(s)'.format(len(deleted)))
-        await client.delete_message(message)
         selfdel = await client.send_message(message.channel, embed=em)
-        time.sleep(10)
+        await asyncio.sleep(3)
         await client.delete_message(selfdel)
     # Say
     if content.startswith('s/say '):
