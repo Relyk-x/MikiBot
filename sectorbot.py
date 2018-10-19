@@ -46,7 +46,6 @@ async def on_message(message):
         message_amount = int(message.content[7:])
         deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
         em = discord.Embed(description='Purged {} message(s) from this channel ⚠'.format(len(deleted)), color=0xe9b820,)
-        em.set_author(name="Sector Bot", icon_url="https://goo.gl/34WWBc")
         selfdel = await client.send_message(message.channel, embed=em)
         await asyncio.sleep(10)
         await client.delete_message(selfdel)
