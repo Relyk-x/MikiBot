@@ -216,6 +216,7 @@ async def on_message(message):
         await client.send_message(message.channel, embed=em)
     if ('!help') in message.content:
         em = discord.Embed(title"Rythm Bot", description="Commands for Rythm bot...", url="https://rythmbot.co/", colour=)
+        emb.set_author(name="Rythm Bot", url="https://rythmbot.co/", icon_url="https://rythmbot.co/assets/img/rythm-header.png")
         em.add_field(name="Prefix:", value="`!`", inline=True)
         em.add_field(name="Commands:", value="`!<command>`", inline =True)
         em.add_field(name="play", value="Plays a song with the given name or url.", inline=False)
