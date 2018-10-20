@@ -214,7 +214,7 @@ async def on_message(message):
         em.add_field(name="coinflip / cf", value="Flips a coin, could be heads could be tails.", inline=False)
         em.add_field(name="8ball / 8b", value="Ask a question and shake the 8 Ball.", inline=False)
         await client.send_message(message.channel, embed=em)
-    if ('!help') in message.content
+    if ('!help') in message.content:
         em = discord.Embed(title"Rythm Bot", description="Commands for Rythm bot...", url="https://rythmbot.co/", colour=)
         em.add_field(name="Prefix:", value="`!`", inline=True)
         em.add_field(name="Commands:", value="`!<command>`", inline =True)
