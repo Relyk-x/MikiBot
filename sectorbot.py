@@ -253,8 +253,8 @@ async def on_message(message):
         em.add_field(name="playskip", value="Adds a song to the top of the queue then skips to it.", inline=False)
         em.add_field(name="invite", value="Links!", inline=False)
         em.add_field(name="shuffle", value="Shuffles the queue.", inline=False)
-        em.add_field(name="queue", value="View the queue. To view different pages, type the ", inline=False)command with the specified page number after it (queue 2).", inline=False)
-        em.add_field(name="leavecleanup", value="Removes absent user's songs from the Queue.
+        em.add_field(name="queue", value="View the queue. To view different pages, type the command with the specified page number after it (queue 2).", inline=False)
+        em.add_field(name="leavecleanup", value="Removes absent user's songs from the Queue.", inline=False)
         await client.send_message(message.channel, embed=em)
 #Bot Token
 client.loop.create_task(change_status())
