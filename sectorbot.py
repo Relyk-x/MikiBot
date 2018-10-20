@@ -222,7 +222,7 @@ async def on_message(message):
         em.add_field(name="play", value="Plays a song with the given name or url.", inline=False)
         em.add_field(name="disconnect",	value="Disconnect the bot from the voice channel it is in.", inline=False)
         em.add_field(name="np", value="Shows what song the bot is currently playing.", inline=False)
-        em.add_field(name="aliases", value="List command aliases." inline=False)
+        em.add_field(name="aliases", value="List command aliases.", inline=False)
         em.add_field(name="ping", value="Checks the bot's response time to Discord.", inline=False)
         em.add_field(name="skip", value="Skips the currently playing song.", inline=False)
         em.add_field(name="seek", value="Seeks to a certain point in the current track.", inline=False)
