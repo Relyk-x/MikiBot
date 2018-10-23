@@ -75,7 +75,6 @@ async def on_message(message):
                       'https://goo.gl/UFNkSe',  #Shaggy, Weed
                     ]
         em = discord.Embed(title= 'Meme:', color=0xe9b820,)
-        em.set_author(name="Sector Bot", icon_url="https://goo.gl/34WWBc")
         await client.send_message(message.channel, embed=em)
         
     # Password Generator
@@ -198,7 +197,8 @@ async def on_message(message):
       
 # Help
     if (';help') in message.content:
-        em = discord.Embed(title="Sector Bot", description="For any other help please join our Discord server...", url="https://discord.gg/eRHsyFg", color=0xe9b820)
+        em = discord.Embed(title="- click here for help -", description="For any other help please join our Discord server...", url="https://discord.gg/eRHsyFg", color=0xe9b820)
+        em.set_author(name="Sector Bot", icon_url="https://cdn.discordapp.com/attachments/453031246210007042/504300428008357918/arrow5.png")
         em.add_field(name="Prefix:", value="`;`", inline=True)
         em.add_field(name="Commands:", value="`;<command>`", inline =True)
         em.add_field(name="greet", value="Sends a greeting in the channel.", inline=False)
