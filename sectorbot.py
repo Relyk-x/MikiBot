@@ -17,7 +17,7 @@ Clientdiscord = discord.Client()
 async def change_status():
   await client.wait_until_ready()
   status = ['for: ;help | v0.2.6', 'for: bot suggestions', 'for: @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.6,7##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.6,8##
   msgs = cycle(status)
 
   while not client.is_closed:
@@ -396,11 +396,11 @@ async def on_message(message):
         
     # Vote
     if message.content == ';vote':
-        em = discord.Embed(description='You can vote here: :point_right: https://discordbots.org/bot/496214977267630080/vote :point_left:', color=0xffafc9)
+        em = discord.Embed(description='You can vote here: \n\n:point_right: https://discordbots.org/bot/496214977267630080/vote :point_left:', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
     # Donate
     if message.content == ';donate':
-        em = discord.Embed(description='You can donate by purchasing roles from the MikiBot Help server here: :point_right: https://donatebot.io/checkout/499771629396688907?buyer=257784039795064833 :point_left:', color=0xffafc9)
+        em = discord.Embed(description='You can donate by purchasing roles from the MikiBot Help server here: \n\n:point_right: https://donatebot.io/checkout/499771629396688907?buyer=257784039795064833 :point_left:', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
 ##### Version
     if message.content == ';version':
