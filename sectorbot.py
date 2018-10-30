@@ -17,7 +17,7 @@ Clientdiscord = discord.Client()
 async def change_status():
   await client.wait_until_ready()
   status = ['for: ;help | v0.2.5', 'for: bot suggestions', 'for: @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.5,8##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.6,4##
   msgs = cycle(status)
 
   while not client.is_closed:
@@ -415,14 +415,14 @@ async def on_message(message):
         await client.send_message(message.channel, embed=em)
     
     # Coin Flip
-    elif message.content == ';coinflip') or message.content == ';cf':
+    elif message.content == ';coinflip' or message.content == ';cf':
         randomlist = ['Heads','Tails',]
         em = discord.Embed(title ='**Game: Coin Flip**', color=0xffafc9, description=":moneybag: You flipped... %s" %(random.choice(randomlist),))
         em.add_field(name="Other Games:", value=";dicerole | Dice Roll \n ;8ball | 8 Ball", inline=True)
         await client.send_message(message.channel, embed=em)
     
     # 8 Ball
-    elif message.content == ';8ball')or message.content == ';8b':
+    elif message.content == ';8ball' or message.content == ';8b':
         randomlist = ['It is certain.',
                       'It is decidedly so.',
                       'Without a doubt.',
