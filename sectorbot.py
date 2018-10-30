@@ -328,7 +328,7 @@ async def on_message(message):
         await client.send_message(message.channel, embed=em)
     
     # Password Generator
-    if (';password') in message.content:
+    if message.content == ';password':
         encryptkey = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',]
         encryptcode = ['1','2','3','4','5','6','7','8','9',]
         count1 = random.randint(1, 26)
@@ -380,46 +380,49 @@ async def on_message(message):
         f.close()
         
     # Invite
-    if (';invite') in message.content:
+    if message.content == ';invite':
         em = discord.Embed(description="If you'd like to add Sector Bot to your server, Click here: https://goo.gl/2rp6n2", color=0xffafc9)
         await client.send_message(message.channel, embed=em)
         
     # Server Count
-    if (';servercount') in message.content:
+    if message.content == ';servercount':
         em = discord.Embed(description='Currently watching over ' + str(len(client.servers)) + ' Discord servers <:discord:501956002158215198>', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
         
     # Greet
-    if (';greet') in message.content:
+    if message.content == ';greet':
         em = discord.Embed(description='Hey there buddy! :wave:', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
         
     # Vote
-    if (';vote') in message.content:
-        em = discord.Embed(description='You can vote here: https://discordbots.org/bot/496214977267630080/vote', color=0xffafc9)
+    if message.content == ';vote':
+        em = discord.Embed(description='You can vote here: :point_right: https://discordbots.org/bot/496214977267630080/vote :point_left:', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
-        
+    # Donate
+    if message.content == ';donate':
+        em = discord.Embed(description='You can donate by purchasing roles from the MikiBot Help server here: :point_right: https://donatebot.io/checkout/499771629396688907?buyer=257784039795064833 :point_left:', color=0xffafc9)
+        await client.send_message(message.channel, embed=em)
 ##### Version
-    if (';version') in message.content:
+    if message.content == ';version':
         em = discord.Embed(description='The current version of Sector Bot is: `v0.2.5`', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
     
     # Dice Roll
-    if (';diceroll') in message.content or (';dr') in message.content:
+    if message.content == ';diceroll' or message.content == ';dr':
         randomlist = ['1','2','3','4','5','6',]
         em = discord.Embed(title ='**Game: Dice Roll**', color=0xffafc9, description=":game_die: You rolled the number... %s" %(random.choice(randomlist),))
         em.add_field(name="Other Games:", value=";coinflip | Coin Flip \n ;8ball | 8 Ball", inline=True)
         await client.send_message(message.channel, embed=em)
     
     # Coin Flip
-    elif (';coinflip') in message.content or (';cf') in message.content:
+    elif message.content == ';coinflip') or message.content == ';cf':
         randomlist = ['Heads','Tails',]
         em = discord.Embed(title ='**Game: Coin Flip**', color=0xffafc9, description=":moneybag: You flipped... %s" %(random.choice(randomlist),))
         em.add_field(name="Other Games:", value=";dicerole | Dice Roll \n ;8ball | 8 Ball", inline=True)
         await client.send_message(message.channel, embed=em)
     
     # 8 Ball
-    elif (';8ball') in message.content or (';8b') in message.content:
+    elif message.content == ';8ball')or message.content == ';8b':
         randomlist = ['It is certain.',
                       'It is decidedly so.',
                       'Without a doubt.',
@@ -448,7 +451,7 @@ async def on_message(message):
         # coming soon #
       
 # Help
-    if (';help') in message.content:
+    if message.content == ';help':
         em = discord.Embed(title="- click here for help -", description="For any other help please join our Discord server...", url="https://discord.gg/eRHsyFg", color=0xffafc9)
         em.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         em.add_field(name="Prefix:", value="`;`", inline=True)
