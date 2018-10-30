@@ -17,7 +17,7 @@ Clientdiscord = discord.Client()
 async def change_status():
   await client.wait_until_ready()
   status = ['for: ;help | v0.2.6', 'for: bot suggestions', 'for: @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.6,5##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.6,7##
   msgs = cycle(status)
 
   while not client.is_closed:
