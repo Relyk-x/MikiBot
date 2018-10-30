@@ -15,8 +15,8 @@ Clientdiscord = discord.Client()
 # Setting Bot status 'Watching'
 async def change_status():
   await client.wait_until_ready()
-  status = ['for: ;help | v0.2.3', 'for: bot suggestions', 'for: @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.3,8##
+  status = ['for: ;help | v0.2.5', 'for: bot suggestions', 'for: @Relyk-x#2896']
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.5,4##
   msgs = cycle(status)
 
   while not client.is_closed:
@@ -151,7 +151,7 @@ async def on_message(message):
         
 ##### Version
     if (';version') in message.content:
-        em = discord.Embed(description='The current version of Sector Bot is: `v0.2.3`', color=0xffafc9)
+        em = discord.Embed(description='The current version of Sector Bot is: `v0.2.5`', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
     
     # Dice Roll
@@ -198,7 +198,7 @@ async def on_message(message):
 # Help
     if (';help') in message.content:
         em = discord.Embed(title="- click here for help -", description="For any other help please join our Discord server...", url="https://discord.gg/eRHsyFg", color=0xffafc9)
-        em.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/453031246210007042/504300428008357918/arrow5.png")
+        em.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         em.add_field(name="Prefix:", value="`;`", inline=True)
         em.add_field(name="Commands:", value="`;<command>`", inline =True)
         em.add_field(name="greet", value="Sends a greeting in the channel.", inline=False)
