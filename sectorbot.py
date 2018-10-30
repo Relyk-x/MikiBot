@@ -16,14 +16,15 @@ Clientdiscord = discord.Client()
 # Setting Bot status 'Watching'
 async def change_status():
   await client.wait_until_ready()
-  status = ['for: ;help | v0.2.6', 'for: bot suggestions', 'for: @Relyk-x#2896']
+  status = 'over ' + str(len(bot.servers)) + ' servers - ;help | v0.2.6'
 # WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.6,9##
-  msgs = cycle(status)
+# WATCHING 'for: ;help | v0.2.6', 'for: bot suggestions', 'for: @Relyk-x#2896'
+  #msgs = cycle(status)
 
   while not client.is_closed:
-     current_status = next(msgs)
-     await client.change_presence(game=discord.Game(name=current_status, url="https://www.twitch.tv/streamer",type=3))
-     await asyncio.sleep(10)
+     #current_status = next(msgs)
+     await client.change_presence(game=discord.Game(name=status, url="https://www.twitch.tv/streamer",type=3))
+     #await asyncio.sleep(10)
       
 # Start Up
 @client.event
