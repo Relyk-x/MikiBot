@@ -3,10 +3,24 @@ import discord
 from discord.ext import commands
 import asyncio
 import time
-import os
 import random
 from discord import Game
 from itertools import cycle
+import json
+import os
+import urllib3
+
+http = urllib3.PoolManager()
+
+url = "https://api.thecatapi.com/v1/images/search"
+
+querystring = {"format":"json"}
+
+headers = {
+    'Content-Type': "application/json",
+    'x-api-key': "bc77e012-c69d-4dc9-ba73-42e710028838"
+    }
+
 
 Client = discord.client
 client = commands.Bot(command_prefix = ';')
@@ -16,7 +30,7 @@ Clientdiscord = discord.Client()
 async def change_status():
   await client.wait_until_ready()
   status = ['for: ;help | v0.2.5', 'for: bot suggestions', 'for: @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.5,7##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.5,8##
   msgs = cycle(status)
 
   while not client.is_closed:
