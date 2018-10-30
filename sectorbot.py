@@ -16,8 +16,8 @@ Clientdiscord = discord.Client()
 # Setting Bot status 'Watching'
 async def change_status():
   await client.wait_until_ready()
-  status = 'over ' + str(len(bot.servers)) + ' servers - ;help | v0.2.6'
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.6,9##
+  status = 'over ' + str(len(client.servers)) + ' servers - ;help | v0.2.7'
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.7,1##
 # WATCHING 'for: ;help | v0.2.6', 'for: bot suggestions', 'for: @Relyk-x#2896'
   #msgs = cycle(status)
 
@@ -523,5 +523,5 @@ async def on_message(message):
         #em.add_field(name="leavecleanup", value="Removes absent user's songs from the Queue.", inline=False)
         #await client.send_message(message.channel, embed=em)
 #Bot Token
-client.loop.create_task(change_status())
+#client.loop.create_task(change_status())
 client.run(os.getenv('BOT_TOKEN'))
