@@ -391,8 +391,8 @@ async def on_message(message):
         em = discord.Embed(description='Currently watching over ' + str(len(client.servers)) + ' Discord servers <:discord:501956002158215198>', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
         
-    # Greet
-    if message.content == ';greet':
+    # Hello
+    if message.content == ';Hello':
         em = discord.Embed(description='Hey there buddy! :wave:', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
         
