@@ -392,7 +392,7 @@ async def on_message(message):
         await client.send_message(message.channel, embed=em)
         
     # Hello
-    if message.content == ';Hello':
+    if message.content == ';hello':
         em = discord.Embed(description='Hey there buddy! :wave:', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
         
@@ -458,7 +458,7 @@ async def on_message(message):
         em.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         em.add_field(name="Prefix:", value="`;`", inline=True)
         em.add_field(name="Commands:", value="`;<command>`", inline =True)
-        em.add_field(name="greet", value="Sends a greeting in the channel.", inline=False)
+        em.add_field(name="hello", value="Sends a greeting in the channel.", inline=False)
         em.add_field(name="invite", value="Sends the invite to add Sector Bot to your server.", inline=False)
         em.add_field(name="servercount", value="Shows how many servers this bot occupies.", inline=False)
         em.add_field(name="version", value="The current version of Sector Bot", inline=False)
