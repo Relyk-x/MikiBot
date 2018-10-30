@@ -17,15 +17,15 @@ Clientdiscord = discord.Client()
 async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
-  status = 'over ' + str(len(client.servers)) + ' servers - ;help | v0.2.7'
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.7,3##
+  status = ['for ;help | v0.2.6', 'for bot suggestions', 'for @Relyk-x#2896']
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.7,4##
 # WATCHING 'for: ;help | v0.2.6', 'for: bot suggestions', 'for: @Relyk-x#2896'
-  #msgs = cycle(status)
+  msgs = cycle(status)
 
   while not client.is_closed:
-     #current_status = next(msgs)
+     current_status = next(msgs)
      await client.change_presence(game=discord.Game(name=current_status, url="https://www.twitch.tv/streamer",type=3))
-     #await asyncio.sleep(10)
+     await asyncio.sleep(10)
       
 # Start Up
 @client.event
@@ -524,5 +524,5 @@ async def on_message(message):
         #em.add_field(name="leavecleanup", value="Removes absent user's songs from the Queue.", inline=False)
         #await client.send_message(message.channel, embed=em)
 #Bot Token
-#client.loop.create_task(change_status())
+client.loop.create_task(change_status())
 client.run(os.getenv('BOT_TOKEN'))
