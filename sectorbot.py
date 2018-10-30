@@ -16,8 +16,8 @@ Clientdiscord = discord.Client()
 # Setting Bot status 'Watching'
 async def change_status():
   await client.wait_until_ready()
-  status = ['for: ;help | v0.2.5', 'for: bot suggestions', 'for: @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.6,4##
+  status = ['for: ;help | v0.2.6', 'for: bot suggestions', 'for: @Relyk-x#2896']
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.6,5##
   msgs = cycle(status)
 
   while not client.is_closed:
@@ -404,7 +404,7 @@ async def on_message(message):
         await client.send_message(message.channel, embed=em)
 ##### Version
     if message.content == ';version':
-        em = discord.Embed(description='The current version of Sector Bot is: `v0.2.5`', color=0xffafc9)
+        em = discord.Embed(description='The current version of Sector Bot is: `v0.2.6`', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
     
     # Dice Roll
