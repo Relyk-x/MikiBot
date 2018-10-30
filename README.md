@@ -1,2 +1,2 @@
-# sector-bot
-Discord bot.
+# MikiBot
+A new Discord bot.
