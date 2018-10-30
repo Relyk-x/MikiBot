@@ -18,7 +18,7 @@ async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
   status = ['for ;help | v0.2.7', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.7,8##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.7,9##
 # WATCHING 'for: ;help | v0.2.7', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
@@ -419,7 +419,7 @@ async def on_message(message):
     # Coin Flip
     elif message.content == ';coinflip' or message.content == ';cf':
         randomlist = ['Heads','Tails',]
-        em = discord.Embed(title ='**Game: Coin Flip**', color=0xffafc9, description=":moneybag: *flips a cain* \nYou flipped... %s" %(random.choice(randomlist),))
+        em = discord.Embed(title ='**Game: Coin Flip**', color=0xffafc9, description=":moneybag: *flips a coin* \nYou flipped... %s" %(random.choice(randomlist),))
         em.add_field(name="Other Games:", value=";dicerole | Dice Roll \n ;8ball | 8 Ball", inline=True)
         await client.send_message(message.channel, embed=em)
     
