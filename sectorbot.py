@@ -8,19 +8,6 @@ from discord import Game
 from itertools import cycle
 import json
 import os
-import urllib3
-
-http = urllib3.PoolManager()
-
-url = "https://api.thecatapi.com/v1/images/search"
-
-querystring = {"format":"json"}
-
-headers = {
-    'Content-Type': "application/json",
-    'x-api-key': "bc77e012-c69d-4dc9-ba73-42e710028838"
-    }
-
 
 Client = discord.client
 client = commands.Bot(command_prefix = ';')
@@ -340,12 +327,6 @@ async def on_message(message):
         em.set_image(url='http://replygif.net/i/' + str(random.randint(90, 1100)) + '.gif')
         await client.send_message(message.channel, embed=em)
     
-    
-    # Random Kitten - http://www.randomkittengenerator.com/cats/rotator.php
-    if message.content == ';kitten':
-        r = http.request('GET', 'https://api.thecatapi.com/v1/images/search')
-        await client.send_message(message.channel,r.data)
-    
     # Password Generator
     if (';password') in message.content:
         encryptkey = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',]
@@ -478,7 +459,6 @@ async def on_message(message):
         em.add_field(name="version", value="The current version of Sector Bot", inline=False)
         em.add_field(name="vote", value="Vote for this bot.", inline=False)
         em.add_field(name="meme", value="Sends a random meme from Sector Bot’s stash.", inline=False)
-        em.add.field(name="kitten", value="Sends a random pic of a kitten.", inline=False)
         em.add_field(name="randimg", value="Generates a random image.", inline=False)
         em.add_field(name="randwallpaper", value="Generate a random wallpaper.", inline=False)
         em.add_field(name="blurwallpaper", value="Generate a random wallpaper.", inline=False)
