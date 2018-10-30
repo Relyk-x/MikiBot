@@ -16,7 +16,7 @@ Clientdiscord = discord.Client()
 async def change_status():
   await client.wait_until_ready()
   status = ['for: ;help | v0.2.5', 'for: bot suggestions', 'for: @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.5,6##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.5,7##
   msgs = cycle(status)
 
   while not client.is_closed:
@@ -59,7 +59,7 @@ async def on_message(message):
     # Oofify
     if message.content.startswith(';oofify '):
         result = ''
-        for letter in message.content[9:]:
+        for letter in message.content[8:]:
             if letter in 'aA':
                 result = result + '🅰'
             if letter in 'bB':
