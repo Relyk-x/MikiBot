@@ -16,7 +16,7 @@ Clientdiscord = discord.Client()
 async def change_status():
   await client.wait_until_ready()
   status = ['for: ;help | v0.2.5', 'for: bot suggestions', 'for: @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.5,4##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.5,6##
   msgs = cycle(status)
 
   while not client.is_closed:
@@ -55,7 +55,214 @@ async def on_message(message):
     if content.startswith(';say '):
         await client.send_message(message.channel, content[5:])
         await client.delete_message(message)
-        
+    
+    # Oofify
+    if message.content.startswith(';oofify '):
+        result = ''
+        for letter in message.content[9:]:
+            if letter in 'aA':
+                result = result + '🅰'
+            if letter in 'bB':
+                result = result + '🅱'
+            if letter in 'cC':
+                result = result + '🅲'
+            if letter in 'dD':
+                result = result + '🅳'
+            if letter in 'eE':
+                result = result + '🅴'
+            if letter in 'fF':
+                result = result + '🅵'
+            if letter in 'gG':
+                result = result + '🅶'
+            if letter in 'hH':
+                result = result + '🅷'
+            if letter in 'iI':
+                result = result + '🅸'
+            if letter in 'jJ':
+                result = result + '🅹'
+            if letter in 'Kk':
+                result = result + '🅺'
+            if letter in 'lL':
+                result = result + '🅻'
+            if letter in 'mM':
+                result = result + '🅼'
+            if letter in 'nN':
+                result = result + '🅽'
+            if letter in 'oO':
+                result = result + '🅾'
+            if letter in 'pP':
+                result = result + '🅿'
+            if letter in 'qQ':
+                result = result + '🆀'
+            if letter in 'rR':
+                result = result + '🆁'
+            if letter in 'sS':
+                result = result + '🆂'
+            if letter in 'tT':
+                result = result + '🆃'
+            if letter in 'uU':
+                result = result + '🆄'
+            if letter in 'Vv':
+                result = result + '🆅'
+            if letter in 'wW':
+                result = result + '🆆'
+            if letter in 'xX':
+                result = result + '🆇'
+            if letter in 'Yy':
+                result = result + '🆈'
+            if letter in 'zZ':
+                result = result + '🆉'
+            if letter in '1':
+                result = result + '1️⃣'
+            if letter in '2':
+                result = result + '2️⃣'
+            if letter in '3':
+                result = result + '3️⃣'
+            if letter in '4':
+                result = result + '4️⃣'
+            if letter in '5':
+                result = result + '5️⃣'
+            if letter in '6':
+                result = result + '6️⃣'
+            if letter in '7':
+                result = result + '7️⃣'
+            if letter in '8':
+                result = result + '8️⃣'
+            if letter in '9':
+                result = result + '9️⃣'
+            if letter in '0':
+                result = result + '0️⃣'
+            if letter in ' ':
+                result = result + ' '
+            if letter in '@':
+                result = result + '🕒'
+            if letter in '!':
+                result = result + '❗️'
+            if letter in '.':
+                result = result + '▫️'
+            if letter in ',':
+                result = result + '🔸'
+            if letter in '#':
+                result = result + '#️⃣'
+            if letter in '$':
+                result = result + '💲'
+            if letter in '%':
+                result = result + '💮'
+            if letter in '^':
+                result = result + '🔺'
+            if letter in '&':
+                result = result + '🌀'
+            if letter in '?':
+                result = result + '❔'
+        asyncio.sleep(2)
+        oofmsg = await client.send_message(message.channel,'Processing > ☑️')
+        asyncio.sleep(5)
+        await client.edit_message(oofmsg,"Error > ❌ > [Invalid Characters detected]")
+        asyncio.sleep(1)
+        await client.edit_message(oofmsg, result)
+        await client.delete_message(message)
+    
+    # Tiny Caps
+    if message.content.startswith(';tiny '):
+        result = ''
+        for letter in message.content[6:]:
+            if letter in 'aA':
+                result = result + 'ᴀ'
+            if letter in 'bB':
+                result = result + 'ʙ'
+            if letter in 'cC':
+                result = result + 'ᴄ'
+            if letter in 'dD':
+                result = result + 'ᴅ'
+            if letter in 'eE':
+                result = result + 'ᴇ'
+            if letter in 'fF':
+                result = result + 'ғ'
+            if letter in 'gG':
+                result = result + 'ɢ'
+            if letter in 'hH':
+                result = result + 'ʜ'
+            if letter in 'iI':
+                result = result + 'ɪ'
+            if letter in 'jJ':
+                result = result + 'ᴊ'
+            if letter in 'Kk':
+                result = result + 'ᴋ'
+            if letter in 'lL':
+                result = result + 'ʟ'
+            if letter in 'mM':
+                result = result + 'ᴍ'
+            if letter in 'nN':
+                result = result + 'ɴ'
+            if letter in 'oO':
+                result = result + 'ᴏ'
+            if letter in 'pP':
+                result = result + 'ᴘ'
+            if letter in 'qQ':
+                result = result + 'ǫ'
+            if letter in 'rR':
+                result = result + 'ʀ'
+            if letter in 'sS':
+                result = result + 's'
+            if letter in 'tT':
+                result = result + 'ᴛ'
+            if letter in 'uU':
+                result = result + 'ᴜ'
+            if letter in 'Vv':
+                result = result + 'ᴠ'
+            if letter in 'wW':
+                result = result + 'ᴡ'
+            if letter in 'xX':
+                result = result + 'x'
+            if letter in 'Yy':
+                result = result + 'ʏ'
+            if letter in 'zZ':
+                result = result + 'ᴢ'
+            if letter in '1':
+                result = result + '➊'
+            if letter in '2':
+                result = result + '➋'
+            if letter in '3':
+                result = result + '➌'
+            if letter in '4':
+                result = result + '➍'
+            if letter in '5':
+                result = result + '➎'
+            if letter in '6':
+                result = result + '➏'
+            if letter in '7':
+                result = result + '➐'
+            if letter in '8':
+                result = result + '➑'
+            if letter in '9':
+                result = result + '➒'
+            if letter in '0':
+                result = result + '⓪'
+            if letter in ' ':
+                result = result + ' '
+            if letter in '@':
+                result = result + '@'
+            if letter in '!':
+                result = result + '!'
+            if letter in '.':
+                result = result + '.'
+            if letter in ',':
+                result = result + ','
+            if letter in '#':
+                result = result + '#'
+            if letter in '$':
+                result = result + '$'
+            if letter in '%':
+                result = result + '%'
+            if letter in '^':
+                result = result + '^'
+            if letter in '&':
+                result = result + '&'
+            if letter in '?':
+                result = result + '?'
+        await client.send_message(message.channel, result)
+        await client.delete_message(message)
+    
     # Memes
     if (';meme') in message.content:
         randomlist = ['https://goo.gl/1wezZw',  #Dr. Phill
@@ -76,7 +283,55 @@ async def on_message(message):
         em = discord.Embed(title= 'Meme:', color=0xffafc9,)
         em.set_image(url='%s' %(random.choice(randomlist),))
         await client.send_message(message.channel, embed=em)
+    
+    # Greyscale Wallpaper
+    if message.content == ';gswallpaper':
+        em = discord.Embed(description='Right click and then click open link in order to get redirected to the page and download it :yum: ')
+        em.set_image(url='https://picsum.photos/g/1280/720/?image=' + str(random.randint(1, 999)))
+        await client.send_message(message.channel, embed=em)
         
+    # Greyscale Image
+    if message.content == ';gsimg':
+        em = discord.Embed(description='Fresh Grayscale image to fit your photo frame! ')
+        em.set_image(url='https://picsum.photos/g/200/300/?image=' + str(random.randint(1, 999)))
+        await client.send_message(message.channel, embed=em)
+        
+    # Random Wallpaper
+    if message.content == ';randwallpaper':
+        em = discord.Embed(description='Right click and then click open link in order to get redirected to the page and download it :yum: ')
+        em.set_image(url='https://picsum.photos/1280/720/?image=' + str(random.randint(1, 999)))
+        await client.send_message(message.channel, embed=em)
+
+    # Random Image
+    if message.content == ';randimg':
+        em = discord.Embed(description='Fresh image to fit your photo frame! ')
+        em.set_image(url='https://picsum.photos/200/300/?image=' + str(random.randint(1, 999)))
+        await client.send_message(message.channel, embed=em)
+    
+    # Blur Wallpaper
+    if message.content == ';blurwallpaper':
+        em = discord.Embed(description='Right click and then click open link in order to get redirected to the page and download it :yum: ')
+        em.set_image(url='https://picsum.photos/1280/720/?blur=' + str(random.randint(1, 999)))
+        await client.send_message(message.channel, embed=em)
+    
+    # Blur Image
+    if message.content == ';blurimg':
+        em = discord.Embed(description='Fresh Blurry image to fit your photo frame! ')
+        em.set_image(url='https://picsum.photos/200/300/?blur=' + str(random.randint(1, 999)))
+        await client.send_message(message.channel, embed=em)
+    
+    # Random Gif
+    if message.content == ';randgif':
+        em = discord.Embed(description='Here is a fun gif i just randomly generated for you :)')
+        em.set_image(url='http://replygif.net/i/' + str(random.randint(90, 1100)) + '.gif')
+        await client.send_message(message.channel, embed=em)
+    
+    
+    # Random Kitten - http://www.randomkittengenerator.com/cats/rotator.php
+    if message.content == ';kitten':
+        r = http.request('GET', 'https://api.thecatapi.com/v1/images/search')
+        await client.send_message(message.channel,r.data)
+    
     # Password Generator
     if (';password') in message.content:
         encryptkey = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',]
@@ -136,10 +391,10 @@ async def on_message(message):
         
     # Server Count
     if (';servercount') in message.content:
-        em = discord.Embed(description='Currently watching over ' + str(len(client.servers)) + 'Discord servers <:discordp:500719998172659713>', color=0xffafc9)
+        em = discord.Embed(description='Currently watching over ' + str(len(client.servers)) + ' Discord servers <:discord:501956002158215198>', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
         
-    # Hello
+    # Greet
     if (';greet') in message.content:
         em = discord.Embed(description='Hey there buddy! :wave:', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
@@ -160,12 +415,14 @@ async def on_message(message):
         em = discord.Embed(title ='**Game: Dice Roll**', color=0xffafc9, description=":game_die: You rolled the number... %s" %(random.choice(randomlist),))
         em.add_field(name="Other Games:", value=";coinflip | Coin Flip \n ;8ball | 8 Ball", inline=True)
         await client.send_message(message.channel, embed=em)
+    
     # Coin Flip
     elif (';coinflip') in message.content or (';cf') in message.content:
         randomlist = ['Heads','Tails',]
         em = discord.Embed(title ='**Game: Coin Flip**', color=0xffafc9, description=":moneybag: You flipped... %s" %(random.choice(randomlist),))
         em.add_field(name="Other Games:", value=";dicerole | Dice Roll \n ;8ball | 8 Ball", inline=True)
         await client.send_message(message.channel, embed=em)
+    
     # 8 Ball
     elif (';8ball') in message.content or (';8b') in message.content:
         randomlist = ['It is certain.',
@@ -213,6 +470,15 @@ async def on_message(message):
         em.add_field(name="diceroll / dr", value="Rolls a six sided die.", inline=False)
         em.add_field(name="coinflip / cf", value="Flips a coin, could be heads could be tails.", inline=False)
         em.add_field(name="8ball / 8b", value="Ask a question and shake the 8 Ball.", inline=False)
+        em.add_field(name="randimg", value="Generates a random image.", inline=False)
+        em.add_field(name="randwallpaper", value="Generate a random wallpaper.", inline=False)
+        em.add_field(name="blurwallpaper", value="Generate a random wallpaper.", inline=False)
+        em.add_field(name="gswallpaper", value="Generate a random wallpaper.", inline=False)
+        em.add_field(name="gsimg", value="Generate a random image.", inline=False)
+        em.add_field(name="blurimg", value="Generate a random image.", inline=False)
+        em.add_field(name="randgif", value="Generate a random image.", inline=False)
+        em.add_field(name="oofify", value="Emojifies your text.", inline=False)
+        em.add_field(name="tiny", value="Decorates your text.", inline=False)
         await client.send_message(message.channel, embed=em)
     #if ('!help') in message.content:
         #em = discord.Embed(title="https://rythmbot.co/", description="Commands for Rythm bot...", url="https://rythmbot.co/", colour=0xff0000)
