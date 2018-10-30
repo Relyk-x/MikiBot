@@ -18,7 +18,7 @@ async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
   status = ['for ;help | v0.2.7', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.7,7##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.7,8##
 # WATCHING 'for: ;help | v0.2.7', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
@@ -34,11 +34,11 @@ async def on_member_join(member):
     print("Connected on " + str(len(client.servers)) + " servers:")
     for x in range(len(servers)):
      print(' ' + servers[x-1].name)
-    await client.send_message(member, "Hey there I'm Sector Bot")
+    await client.send_message(member, "Hey there I'm MikiBot")
     
 # Checking if bot is online    
 async def on_ready():
-   print('Sector Bot is up and running with ' + str(len(client.servers)) + ' servers connected!')
+   print('MikiBot is up and running with ' + str(len(client.servers)) + ' servers connected!')
 
 # Multiple Commands
 @client.event
@@ -412,14 +412,14 @@ async def on_message(message):
     # Dice Roll
     if message.content == ';diceroll' or message.content == ';dr':
         randomlist = ['1','2','3','4','5','6',]
-        em = discord.Embed(title ='**Game: Dice Roll**', color=0xffafc9, description=":game_die: You rolled the number... %s" %(random.choice(randomlist),))
+        em = discord.Embed(title ='**Game: Dice Roll**', color=0xffafc9, description=":game_die: *rolls a six sided die* \nYou rolled the number... %s" %(random.choice(randomlist),))
         em.add_field(name="Other Games:", value=";coinflip | Coin Flip \n ;8ball | 8 Ball", inline=True)
         await client.send_message(message.channel, embed=em)
     
     # Coin Flip
     elif message.content == ';coinflip' or message.content == ';cf':
         randomlist = ['Heads','Tails',]
-        em = discord.Embed(title ='**Game: Coin Flip**', color=0xffafc9, description=":moneybag: You flipped... %s" %(random.choice(randomlist),))
+        em = discord.Embed(title ='**Game: Coin Flip**', color=0xffafc9, description=":moneybag: *flips a cain* \nYou flipped... %s" %(random.choice(randomlist),))
         em.add_field(name="Other Games:", value=";dicerole | Dice Roll \n ;8ball | 8 Ball", inline=True)
         await client.send_message(message.channel, embed=em)
     
@@ -446,7 +446,7 @@ async def on_message(message):
                       'Outlook not so good.',
                       'Very doubtful.',
                      ]
-        em = discord.Embed(title ='**Game: 8 Ball**', color=0xffafc9, description=":8ball: *shake, shake* your answer is... %s" %(random.choice(randomlist),))
+        em = discord.Embed(title ='**Game: 8 Ball**', color=0xffafc9, description=":8ball: *shake, shake* \nyour answer is... %s" %(random.choice(randomlist),))
         em.add_field(name="Other Games:", value=";dicerole | Dice Roll \n ;coinflip | Coin Flip", inline=True)
         await client.send_message(message.channel, embed=em)
     # Russian Roulette
