@@ -18,7 +18,7 @@ async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
   status = ['for ;help | v0.3.2', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.2,7##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.2,8##
 # WATCHING 'for: ;help | v0.3.2', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
@@ -62,10 +62,8 @@ async def on_message(message):
     # Server List
     if message.content == '':
         servers = list(client.servers)
-        await client.send_message(message.content, "Connected on " + str(len(client.servers)) + " servers:")
         for x in range(len(servers)):
-         await client.send_message(mesage.content, ' ' + servers[x-1].name)
-        await client.send_message(member, "Hey there I'm MikiBot")
+          await client.send_message(mesage.content, ' ' + servers[x-1].name)
     
     # About
     if message.content == ';about':
