@@ -402,8 +402,7 @@ async def on_message(message):
         
     # Hello
     if message.content == ';hello':
-        em = discord.Embed(description='H-hello >\\<', color=0xffafc9)
-        await client.send_message(message.channel, embed=em)
+        await client.send_message(message.channel, 'H-hello >\\<')
         
     # Vote
     if message.content == ';vote':
