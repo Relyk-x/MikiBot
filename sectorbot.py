@@ -17,9 +17,9 @@ Clientdiscord = discord.Client()
 async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
-  status = ['for ;help | v0.2.7', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.7,9##
-# WATCHING 'for: ;help | v0.2.7', 'for: bot suggestions', 'for: @Relyk-x#2896'
+  status = ['for ;help | v0.2.8', 'for bot suggestions', 'for @Relyk-x#2896']
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.8,6##
+# WATCHING 'for: ;help | v0.2.8', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
   while not client.is_closed:
@@ -406,7 +406,7 @@ async def on_message(message):
         await client.send_message(message.channel, embed=em)
 ##### Version
     if message.content == ';version':
-        em = discord.Embed(description='The current version of Sector Bot is: `v0.2.7`', color=0xffafc9)
+        em = discord.Embed(description='The current version of Sector Bot is: `v0.2.8`', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
     
     # Dice Roll
@@ -470,7 +470,7 @@ async def on_message(message):
         em.add_field(name="Fun", value=" meme – Sends a random meme from Sector Bot’s stash. \n password – Generates a random password. \n randimg – Generates a random image. \n randwallpaper – Generate a random wallpaper. \n blurimg – Generate a random blury image. \n blurwallpaper – Generate a random blury wallpaper. \n gsimg – Generate a random greyscale image. \n gswallpaper – Generate a random greyscale wallpaper. \n randgif – Generate a random gif. \n ════════════════════════════════════════", inline=False)
         
         #Games
-        em.add_field(name="Games", value=" diceroll – Rolls a six sided die. \n coinflip – Flips a coin, could be heads could be tails. \n 8ball – Ask a question and shake the 8 Ball., \n ════════════════════════════════════════", inline=False)
+        em.add_field(name="Games", value=" diceroll – Rolls a six sided die. \n coinflip – Flips a coin, could be heads could be tails. \n 8ball – Ask a question and shake the 8 Ball. \n ════════════════════════════════════════", inline=False)
         await client.send_message(message.channel, embed=em)
     
 #Bot Token
