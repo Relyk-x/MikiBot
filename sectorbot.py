@@ -18,7 +18,7 @@ async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
   status = ['for ;help | v0.3.3', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.3,1##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.3,4##
 # WATCHING 'for: ;help | v0.3.3', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
@@ -58,16 +58,6 @@ async def on_message(message):
     if content.startswith(';say '):
         await client.send_message(message.channel, content[5:])
         await client.delete_message(message)
-        
-    # Server List
-    if message.content.startswith('b!servername'):
-        servers = list(client.servers)
-        em = discord.Embed(title="- click here for help -", url="https://discord.gg/eRHsyFg", description="For any other help please join our Discord server...", color=0xffafc9)
-        em.set_author(name="MikiBot", url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
-        for x in range(len(servers)):
-         em.add_field(name="Server List", value='● ' + servers[x-1].name + ' [ServerID]: ' + servers[x-1].id)
-         asyncio.sleep(10)
-         await client.send_message(message.channel, embed=em)
         
     # About
     if message.content == ';about':
@@ -410,6 +400,13 @@ async def on_message(message):
         em = discord.Embed(description='Currently watching over ' + str(len(client.servers)) + ' Discord servers <:discord:501956002158215198>', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
         
+    # Server List
+    if message.content.startswith(';serverlist'):
+        servers = list(client.servers)
+        await client.send_message(message.channel,'Servers watching over: `' + str(len(client.servers)) + '`')
+        for x in range(len(servers)):
+         await client.send_message(message.channel,('```' + '● ' + servers[x-1].name) + ' | ServerID: ' + servers[x-1].id + '```')
+    
     # Hello
     if message.content == 'Hello' or message.content == 'Hey' or message.content == 'Hi' or message.content == 'hello' or message.content == 'hey' or message.content == 'hi':
         await client.send_message(message.channel, 'H-hello >//<')
