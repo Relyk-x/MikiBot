@@ -62,9 +62,14 @@ async def on_message(message):
     # Server List
     if message.content.startswith('b!servername'):
         servers = list(client.servers)
-        await client.send_message(message.channel,"Watching over `" + str(len(client.servers)) + " ` servers:")
+        em = discord.Embed(title="- click here for help -", url="https://discord.gg/eRHsyFg", description="For any other help please join our Discord server...", color=0xffafc9)
+        em.set_author(name="MikiBot", url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
+        em.add_field(name="Server Count", value="Watching over " + str(len(client.servers)) + " servers:")
+        em.add_field(name="Server List", value='● ' + servers[x-1].name) + ' [ServerID]: ' + servers[x-1].id)             
+        await client.send_message(message.channel, embed=em)
         for x in range(len(servers)):
-         await client.send_message(message.channel,('' + '`' + servers[x-1].name) + ' [ServerID]: ' + servers[x-1].id + '`')
+         em.add_field(name="Server List", value='● ' + servers[x-1].name) + ' [ServerID]: ' + servers[x-1].id)
+         await client.send_message(message.channel, embed=em)
         
     # About
     if message.content == ';about':
