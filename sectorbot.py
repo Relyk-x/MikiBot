@@ -66,6 +66,7 @@ async def on_message(message):
         em.set_author(name="MikiBot", url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         for x in range(len(servers)):
          em.add_field(name="Server List", value='● ' + servers[x-1].name + ' [ServerID]: ' + servers[x-1].id)
+         asyncio.sleep(10)
          await client.send_message(message.channel, embed=em)
         
     # About
