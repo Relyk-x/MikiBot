@@ -18,7 +18,7 @@ async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
   status = ['for ;help | v0.3.0', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.0,8##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.0,9##
 # WATCHING 'for: ;help | v0.3.0', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
@@ -469,7 +469,7 @@ async def on_message(message):
         em.add_field(name="Bot", value=" Prefix: `;` \n Commands: `;<command>` \n ════════════════════════════════════════", inline=True)
         
         # Social
-        em.add_field(name="💬 Social", value=" hello – Sends a greeting in the channel. \n oofify – Emojifies your text. \n tiny – Decorates your text. \n say <text> – rewrites your text. \n ════════════════════════════════════════", inline=False)
+        em.add_field(name="💬 Social", value=" hello – Sends a greeting in the channel. \n oofify <text> – Emojifies your text. \n tiny <text> – Decorates your text. \n say <text> – rewrites your text. \n ════════════════════════════════════════", inline=False)
         
         # Server
         em.add_field(name="📂 Server", value=" about – Shows the About description of MikiBot. \n invite – Sends the invite to add MikiBot to your server. \n servercount – Shows how many servers this bot occupies. \n version – The current version of Sector Bot. \n vote – Vote for MikiBot. \n donate – Donate to MikiBot. \n purge <amount> – `DISABLED` \n ════════════════════════════════════════", inline=False)
