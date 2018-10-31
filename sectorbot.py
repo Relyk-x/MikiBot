@@ -459,28 +459,18 @@ async def on_message(message):
         em.add_field(name="Prefix:", value="`;` \n ════════════════════════════════════════", inline=True)
         em.add_field(name="Commands:", value="`;<command>`", inline =True)
         
-        Social
+        # Social
         em.add_field(name="Social", value="hello – Sends a greeting in the channel. \n oofify – Emojifies your text. \n tiny – Decorates your text. \n say <text> – rewrites your text. \n ════════════════════════════════════════", inline=False)
         
-        Server
+        # Server
         em.add_field(name="Server", value="invite – Sends the invite to add MikiBot to your server. \n servercount – Shows how many servers this bot occupies. \n version – The current version of Sector Bot. \n vote – Vote for MikiBot. \n donate – Donate to MikiBot. \n purge <amount> – `DISABLED` \n ════════════════════════════════════════", inline=False)
         #purges a specific amount of messages in a channel
         
-        Fun
-        em.add_field(name="randimg", value="Generates a random image.", inline=False)
-        em.add_field(name="randwallpaper", value="Generate a random wallpaper.", inline=False)
-        em.add_field(name="blurwallpaper", value="Generate a random wallpaper.", inline=False)
-        em.add_field(name="gswallpaper", value="Generate a random wallpaper.", inline=False)
-        em.add_field(name="gsimg", value="Generate a random image.", inline=False)
-        em.add_field(name="blurimg", value="Generate a random image.", inline=False)
-        em.add_field(name="randgif", value="Generate a random image.", inline=False)
-        em.add_field(name="password", value="Generates a random password.", inline=False)
-        em.add_field(name="meme", value="Sends a random meme from Sector Bot’s stash.", inline=False)
+        #Fun
+        em.add_field(name="Fun", value="meme – Sends a random meme from Sector Bot’s stash. \n password – Generates a random password. \n randimg – Generates a random image. \n randwallpaper – Generate a random wallpaper. \n blurimg – Generate a random blury image. \n blurwallpaper – Generate a random blury wallpaper. \n gsimg – Generate a random greyscale image. \n gswallpaper – Generate a random greyscale wallpaper. \n randgif – Generate a random gif. \n ════════════════════════════════════════", inline=False)
         
-        Games
-        em.add_field(name="diceroll / dr", value="Rolls a six sided die.", inline=False)
-        em.add_field(name="coinflip / cf", value="Flips a coin, could be heads could be tails.", inline=False)
-        em.add_field(name="8ball / 8b", value="Ask a question and shake the 8 Ball.", inline=False)
+        #Games
+        em.add_field(name="Games", value=" diceroll – Rolls a six sided die. \n coinflip – Flips a coin, could be heads could be tails. \n 8ball – Ask a question and shake the 8 Ball., \n ════════════════════════════════════════", inline=False)
         await client.send_message(message.channel, embed=em)
     #if ('!help') in message.content:
         #em = discord.Embed(title="https://rythmbot.co/", description="Commands for Rythm bot...", url="https://rythmbot.co/", colour=0xff0000)
