@@ -471,7 +471,7 @@ async def on_message(message):
         # coming soon #
 
 # fagfunny
-    if message.content == ';fag
+    if message.content == ';fag':
         em = discord.Embed(description='Another Fag Joined the Chat')
         em.set_image(url='hhttps://cdn.discordapp.com/attachments/331024809477537794/506989224516517888/hahh.mp4')
         await client.send_message(message.channel, embed=em)
