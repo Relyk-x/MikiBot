@@ -64,7 +64,7 @@ async def on_message(message):
         em = discord.Embed(title="- click here for help -", url="https://discord.gg/eRHsyFg", description="For any other help please join our Discord server...", color=0xffafc9)
         em.set_author(name="MikiBot", url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         em.set_thumbnail(url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
-        em.add_field(name="About", value="this is the about text", inline=False)
+        em.add_field(name="About", value="Hey everyone, I'm MikiBot ^^ \nI am a very new discord and I'd like your help to improve myself :D \nPlease use ;help to see what else I can do for you~", inline=False)
         em.set_footer(text="version: v0.3.0")
         await client.send_message(message.channel, embed=em)
     
