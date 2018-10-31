@@ -401,7 +401,7 @@ async def on_message(message):
         await client.send_message(message.channel, embed=em)
         
     # Hello
-    if message.content.lower('hello') or message.content.lower('hey') or message.content.lower('hi'):
+    if message.content == 'Hello' or message.content == 'Hey' or message.content == 'Hi' or message.content == 'hello' or message.content == 'hey' or message.content == 'hi':
         await client.send_message(message.channel, 'H-hello >\\\\<')
         
     # Vote
