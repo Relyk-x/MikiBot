@@ -402,16 +402,18 @@ async def on_message(message):
         
     # Hello
     if message.content == ';hello':
-        await client.send_message(message.channel, 'H-hello >\\<')
+        await client.send_message(message.channel, 'H-hello >\\\<')
         
     # Vote
     if message.content == ';vote':
         em = discord.Embed(description='You can vote here: \n\n:point_right: https://discordbots.org/bot/496214977267630080/vote :point_left:', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
+    
     # Donate
     if message.content == ';donate':
         em = discord.Embed(description='You can donate by purchasing roles from the MikiBot Help server here: \n\n:point_right: https://goo.gl/wGG82o :point_left:', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
+        
 ##### Version
     if message.content == ';version':
         em = discord.Embed(description='The current version of Sector Bot is: `v0.3.1`', color=0xffafc9)
