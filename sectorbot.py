@@ -18,7 +18,7 @@ async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
   status = ['for ;help | v0.3.2', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.2,3##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.2,4##
 # WATCHING 'for: ;help | v0.3.2', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
@@ -402,7 +402,7 @@ async def on_message(message):
         
     # Hello
     if message.content == 'Hello' or message.content == 'Hey' or message.content == 'Hi' or message.content == 'hello' or message.content == 'hey' or message.content == 'hi':
-        await client.send_message(message.channel, 'H-hello >\\\\<')
+        await client.send_message(message.channel, 'H-hello >//<')
         
     # Vote
     if message.content == ';vote':
