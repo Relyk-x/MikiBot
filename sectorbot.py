@@ -18,7 +18,7 @@ async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
   status = ['for ;help | v0.3.3', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.3,6##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.3,8##
 # WATCHING 'for: ;help | v0.3.3', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
@@ -406,7 +406,7 @@ async def on_message(message):
         em = discord.Embed(description='Currently watching over ' + str(len(client.servers)) + ' Discord servers <:discord:501956002158215198>', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
         for x in range(len(servers)):
-         await client.send_message(message.channel,('```' + '● ' + servers[x-1].name) + ' | ServerID: ' + servers[x-1].id + '```')
+         await client.send_message(message.channel,(servers[x-1].name) + '\n ● ServerID: ' + servers[x-1].id + '')
     
     # Hello
     if message.content == 'Hello' or message.content == 'Hey' or message.content == 'Hi' or message.content == 'hello' or message.content == 'hey' or message.content == 'hi':
