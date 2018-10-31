@@ -421,14 +421,14 @@ async def on_message(message):
     # Dice Roll
     if message.content == ';diceroll' or message.content == ';dr':
         randomlist = ['1','2','3','4','5','6',]
-        em = discord.Embed(title ='**Game: Dice Roll**', color=0xffafc9, description=":game_die: *rolls a six sided die* \nYou rolled the number... %s" %(random.choice(randomlist),))
+        em = discord.Embed(title ='**Game: Dice Roll**', color=0xffafc9, description=":game_die: *rolls a dice* \nYou rolled a dice and it landed on a %s \n ════════════════════════════════════════" %(random.choice(randomlist),))
         em.add_field(name="Other Games:", value=";coinflip | Coin Flip \n ;8ball | 8 Ball", inline=True)
         await client.send_message(message.channel, embed=em)
     
     # Coin Flip
     elif message.content == ';coinflip' or message.content == ';cf':
         randomlist = ['Heads','Tails',]
-        em = discord.Embed(title ='**Game: Coin Flip**', color=0xffafc9, description=":moneybag: *flips a coin* \nYou flipped... %s" %(random.choice(randomlist),))
+        em = discord.Embed(title ='**Game: Coin Flip**', color=0xffafc9, description=":moneybag: *flips a coin* \nYou flipped a coin and and landed on %s \n ════════════════════════════════════════" %(random.choice(randomlist),))
         em.add_field(name="Other Games:", value=";dicerole | Dice Roll \n ;8ball | 8 Ball", inline=True)
         await client.send_message(message.channel, embed=em)
     
@@ -455,7 +455,7 @@ async def on_message(message):
                       'Outlook not so good.',
                       'Very doubtful.',
                      ]
-        em = discord.Embed(title ='**Game: 8 Ball**', color=0xffafc9, description=":8ball: *shake, shake* \nyour answer is... %s" %(random.choice(randomlist),))
+        em = discord.Embed(title ='**Game: 8 Ball**', color=0xffafc9, description=":8ball: *shake, shake* \n**Answer:** %s \n ════════════════════════════════════════" %(random.choice(randomlist),))
         em.add_field(name="Other Games:", value=";dicerole | Dice Roll \n ;coinflip | Coin Flip", inline=True)
         await client.send_message(message.channel, embed=em)
     # Russian Roulette
@@ -466,7 +466,7 @@ async def on_message(message):
         em = discord.Embed(title="- click here for help -", description="For any other help please join our Discord server...", url="https://discord.gg/eRHsyFg", color=0xffafc9)
         em.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         # Bot
-        em.add_field(name="Bot", value=" Prefix: `;` Commands: `;<command>` \n ════════════════════════════════════════", inline=True)
+        em.add_field(name="Bot", value=" Prefix: `;` \n Commands: `;<command>` \n ════════════════════════════════════════", inline=True)
         
         # Social
         em.add_field(name="Social", value=" hello – Sends a greeting in the channel. \n oofify – Emojifies your text. \n tiny – Decorates your text. \n say <text> – rewrites your text. \n ════════════════════════════════════════", inline=False)
