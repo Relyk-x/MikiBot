@@ -17,9 +17,9 @@ Clientdiscord = discord.Client()
 async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
-  status = ['for ;help | v0.3.2', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.2,9##
-# WATCHING 'for: ;help | v0.3.2', 'for: bot suggestions', 'for: @Relyk-x#2896'
+  status = ['for ;help | v0.3.3', 'for bot suggestions', 'for @Relyk-x#2896']
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.3,1##
+# WATCHING 'for: ;help | v0.3.3', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
   while not client.is_closed:
@@ -65,7 +65,6 @@ async def on_message(message):
         em = discord.Embed(title="- click here for help -", url="https://discord.gg/eRHsyFg", description="For any other help please join our Discord server...", color=0xffafc9)
         em.set_author(name="MikiBot", url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         em.add_field(name="Server Count", value="Watching over " + str(len(client.servers)) + " servers:")
-        em.add_field(name="Server List", value='● ' + servers[x-1].name) + ' [ServerID]: ' + servers[x-1].id)             
         await client.send_message(message.channel, embed=em)
         for x in range(len(servers)):
          em.add_field(name="Server List", value='● ' + servers[x-1].name) + ' [ServerID]: ' + servers[x-1].id)
@@ -77,7 +76,7 @@ async def on_message(message):
         em.set_author(name="MikiBot", url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         em.set_thumbnail(url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         em.add_field(name="About", value="Hey everyone, I'm MikiBot ^^ \nI'm also very new discord and I'd like your help to improve myself :D \nPlease use ;help to see what else I can do for you~", inline=False)
-        em.set_footer(text="version: v0.3.2")
+        em.set_footer(text="version: v0.3.3")
         await client.send_message(message.channel, embed=em)
     
     # Oofify
@@ -428,7 +427,7 @@ async def on_message(message):
         
 ##### Version
     if message.content == ';version':
-        em = discord.Embed(description='The current version of Sector Bot is: `v0.3.1`', color=0xffafc9)
+        em = discord.Embed(description='The current version of Sector Bot is: `v0.3.3`', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
     
     # Dice Roll
@@ -494,7 +493,7 @@ async def on_message(message):
         #Games
         em.add_field(name="🎭 Games", value=" diceroll – Rolls a six sided die. \n coinflip – Flips a coin, could be heads could be tails. \n 8ball – Ask a question and shake the 8 Ball. \n ════════════════════════════════════════", inline=False)
         
-        em.set_footer(text="version: v0.3.2")
+        em.set_footer(text="version: v0.3.3")
         await client.send_message(message.channel, embed=em)
     
 #Bot Token
