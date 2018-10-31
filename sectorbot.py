@@ -52,12 +52,20 @@ async def on_message(message):
 #        selfdel = await client.send_message(message.channel, embed=em)
 #        await asyncio.sleep(10)
 #        await client.delete_message(selfdel)
-        
+    
     # Say
     content = message.content
     if content.startswith(';say '):
         await client.send_message(message.channel, content[5:])
         await client.delete_message(message)
+        
+    # Server List
+    if message.content == '':
+        servers = list(client.servers)
+        await client.send_message(message.content, "Connected on " + str(len(client.servers)) + " servers:")
+        for x in range(len(servers)):
+         await client.send_message(mesage.content, ' ' + servers[x-1].name)
+        await client.send_message(member, "Hey there I'm MikiBot")
     
     # About
     if message.content == ';about':
