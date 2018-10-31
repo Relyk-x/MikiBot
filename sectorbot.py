@@ -18,7 +18,7 @@ async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
   status = ['for ;help | v0.2.9', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.9,1##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.9,2##
 # WATCHING 'for: ;help | v0.2.9', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
@@ -63,8 +63,8 @@ async def on_message(message):
     em=discord.Embed(title="- click here for help -", url="https://discord.gg/eRHsyFg", description="For any other help please join our Discord server...", color=0xffafc9)
     em.set_author(name="MikiBot", url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
     em.set_thumbnail(url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
-    em.add_field(name=About, value=this is the about text, inline=False)
-    em.set_footer(text="version: v2.9.1")
+    em.add_field(name="About", value="this is the about text", inline=False)
+    em.set_footer(text="version: v0.2.9")
     await self.bot.say(embed=em)
     
     # Oofify
@@ -471,7 +471,7 @@ async def on_message(message):
         em.add_field(name="Social", value=" hello – Sends a greeting in the channel. \n oofify – Emojifies your text. \n tiny – Decorates your text. \n say <text> – rewrites your text. \n ════════════════════════════════════════", inline=False)
         
         # Server
-        em.add_field(name="Server", value=" invite – Sends the invite to add MikiBot to your server. \n servercount – Shows how many servers this bot occupies. \n version – The current version of Sector Bot. \n vote – Vote for MikiBot. \n donate – Donate to MikiBot. \n purge <amount> – `DISABLED` \n ════════════════════════════════════════", inline=False)
+        em.add_field(name="Server", value=" about – Shows the About description of MikiBot. \n invite – Sends the invite to add MikiBot to your server. \n servercount – Shows how many servers this bot occupies. \n version – The current version of Sector Bot. \n vote – Vote for MikiBot. \n donate – Donate to MikiBot. \n purge <amount> – `DISABLED` \n ════════════════════════════════════════", inline=False)
         #purges a specific amount of messages in a channel
         
         #Fun
@@ -480,7 +480,7 @@ async def on_message(message):
         #Games
         em.add_field(name="Games", value=" diceroll – Rolls a six sided die. \n coinflip – Flips a coin, could be heads could be tails. \n 8ball – Ask a question and shake the 8 Ball. \n ════════════════════════════════════════", inline=False)
         
-        em.set_footer(text="version: v2.9.1")
+        em.set_footer(text="version: v0.2.9")
         await client.send_message(message.channel, embed=em)
     
 #Bot Token
