@@ -18,7 +18,7 @@ async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
   status = ['for ;help | v0.3.2', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.2,8##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.2,9##
 # WATCHING 'for: ;help | v0.3.2', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
@@ -60,11 +60,12 @@ async def on_message(message):
         await client.delete_message(message)
         
     # Server List
-    if message.content == '':
+    if message.content.startswith('b!servername'):
         servers = list(client.servers)
+        await client.send_message(message.channel,"Watching over `" + str(len(client.servers)) + " ` servers:")
         for x in range(len(servers)):
-          await client.send_message(mesage.content, ' ' + servers[x-1].name)
-    
+         await client.send_message(message.channel,('' + '`' + servers[x-1].name) + ' [ServerID]: ' + servers[x-1].id + '`')
+        
     # About
     if message.content == ';about':
         em = discord.Embed(title="- click here for help -", url="https://discord.gg/eRHsyFg", description="For any other help please join our Discord server...", color=0xffafc9)
