@@ -457,63 +457,22 @@ async def on_message(message):
         em = discord.Embed(title="- click here for help -", description="For any other help please join our Discord server...", url="https://discord.gg/eRHsyFg", color=0xffafc9)
         em.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         # Bot
-        em.add_field(name="Bot", value="Prefix: `;`        Commands: `;<command>` \n ════════════════════════════════════════", inline=True)
+        em.add_field(name="Bot", value=" Prefix: `;`        Commands: `;<command>` \n ════════════════════════════════════════", inline=True)
         
         # Social
-        em.add_field(name="Social", value="hello – Sends a greeting in the channel. \n oofify – Emojifies your text. \n tiny – Decorates your text. \n say <text> – rewrites your text. \n ════════════════════════════════════════", inline=False)
+        em.add_field(name="Social", value=" hello – Sends a greeting in the channel. \n oofify – Emojifies your text. \n tiny – Decorates your text. \n say <text> – rewrites your text. \n ════════════════════════════════════════", inline=False)
         
         # Server
-        em.add_field(name="Server", value="invite – Sends the invite to add MikiBot to your server. \n servercount – Shows how many servers this bot occupies. \n version – The current version of Sector Bot. \n vote – Vote for MikiBot. \n donate – Donate to MikiBot. \n purge <amount> – `DISABLED` \n ════════════════════════════════════════", inline=False)
+        em.add_field(name="Server", value=" invite – Sends the invite to add MikiBot to your server. \n servercount – Shows how many servers this bot occupies. \n version – The current version of Sector Bot. \n vote – Vote for MikiBot. \n donate – Donate to MikiBot. \n purge <amount> – `DISABLED` \n ════════════════════════════════════════", inline=False)
         #purges a specific amount of messages in a channel
         
         #Fun
-        em.add_field(name="Fun", value="meme – Sends a random meme from Sector Bot’s stash. \n password – Generates a random password. \n randimg – Generates a random image. \n randwallpaper – Generate a random wallpaper. \n blurimg – Generate a random blury image. \n blurwallpaper – Generate a random blury wallpaper. \n gsimg – Generate a random greyscale image. \n gswallpaper – Generate a random greyscale wallpaper. \n randgif – Generate a random gif. \n ════════════════════════════════════════", inline=False)
+        em.add_field(name="Fun", value=" meme – Sends a random meme from Sector Bot’s stash. \n password – Generates a random password. \n randimg – Generates a random image. \n randwallpaper – Generate a random wallpaper. \n blurimg – Generate a random blury image. \n blurwallpaper – Generate a random blury wallpaper. \n gsimg – Generate a random greyscale image. \n gswallpaper – Generate a random greyscale wallpaper. \n randgif – Generate a random gif. \n ════════════════════════════════════════", inline=False)
         
         #Games
-        em.add_field(name="Games", value="diceroll – Rolls a six sided die. \n coinflip – Flips a coin, could be heads could be tails. \n 8ball – Ask a question and shake the 8 Ball., \n ════════════════════════════════════════", inline=False)
+        em.add_field(name="Games", value=" diceroll – Rolls a six sided die. \n coinflip – Flips a coin, could be heads could be tails. \n 8ball – Ask a question and shake the 8 Ball., \n ════════════════════════════════════════", inline=False)
         await client.send_message(message.channel, embed=em)
-    #if ('!help') in message.content:
-        #em = discord.Embed(title="https://rythmbot.co/", description="Commands for Rythm bot...", url="https://rythmbot.co/", colour=0xff0000)
-        #em.set_author(name="Rythm Bot", url="https://rythmbot.co/", icon_url="https://rythmbot.co/assets/img/rythm-header.png")
-        #em.add_field(name="Prefix:", value="`!`", inline=True)
-        #em.add_field(name="Commands:", value="`!<command>`", inline =True)
-        #em.add_field(name="play", value="Plays a song with the given name or url.", inline=False)
-        #em.add_field(name="disconnect",	value="Disconnect the bot from the voice channel it is in.", inline=False)
-        #em.add_field(name="np", value="Shows what song the bot is currently playing.", inline=False)
-        #em.add_field(name="aliases", value="List command aliases.", inline=False)
-        #em.add_field(name="ping", value="Checks the bot's response time to Discord.", inline=False)
-        #em.add_field(name="skip", value="Skips the currently playing song.", inline=False)
-        #em.add_field(name="seek", value="Seeks to a certain point in the current track.", inline=False)
-        #em.add_field(name="soundcloud", value="Searches soundcloud for a song.", inline=False)
-        #em.add_field(name="remove", value="Removes a certain entry from the queue.", inline=False)
-        #em.add_field(name="loopqueue", value="Loops the whole queue.", inline=False)
-        #em.add_field(name="search", value="Searches YouTube for results of a URL.", inline=False)
-        #em.add_field(name="stats", value="Shows the stats of the bot.", inline=False)
-        #em.add_field(name="loop", value="Loop the currently playing song.", inline=False)
-        #em.add_field(name="donate", value="Info about donating to support Rythm!", inline=False)
-        #em.add_field(name="shard", value="Checks the shard you are on.", inline=False)
-        #em.add_field(name="join", value="Summons the bot to your voice channel.", inline=False)
-        #em.add_field(name="lyrics", value="Gets the lyrics of the current playing song.", inline=False)
-        #em.add_field(name="info", value="Info about Rythm!", inline=False)
-        #em.add_field(name="resume", value="Resume paused music.", inline=False)
-        #em.add_field(name="settings", value="Change Rythm's settings.", inline=False)
-        #em.add_field(name="move", value="Moves a certain song to the first position in the queue or to a chosen position.", inline=False)
-        #em.add_field(name="forward", value="Forwards by a certain amount in the current track.", inline=False)
-        #em.add_field(name="skipto",	value="Skips to a certain position in the queue.", inline=False)
-        #em.add_field(name="clear", value="Clears the queue.", inline=False)
-        #em.add_field(name="replay", value="Reset the progress of the current song", inline=False)
-        #em.add_field(name="clean", value="Deletes the bot's messages and commands.", inline=False)
-        #em.add_field(name="pause", value="Pauses the currently playing track.", inline=False)
-        #em.add_field(name="removedupes", value="Removes duplicate songs from the queue.", inline=False)
-        #em.add_field(name="volume", value="Check or change the current volume.", inline=False)
-        #em.add_field(name="rewind", value="Rewinds by a certain amount in the current track.", inline=False)
-        #em.add_field(name="playtop", value="Like the play command, but queues from the top.", inline=False)
-        #em.add_field(name="playskip", value="Adds a song to the top of the queue then skips to it.", inline=False)
-        #em.add_field(name="invite", value="Links!", inline=False)
-        #em.add_field(name="shuffle", value="Shuffles the queue.", inline=False)
-        #em.add_field(name="queue", value="View the queue. To view different pages, type the command with the specified page number after it (queue 2).", inline=False)
-        #em.add_field(name="leavecleanup", value="Removes absent user's songs from the Queue.", inline=False)
-        #await client.send_message(message.channel, embed=em)
+    
 #Bot Token
 client.loop.create_task(change_status())
 client.run(os.getenv('BOT_TOKEN'))
