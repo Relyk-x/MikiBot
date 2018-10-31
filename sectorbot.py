@@ -18,7 +18,7 @@ async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
   status = ['for ;help | v0.2.9', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.9,6##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.9,8##
 # WATCHING 'for: ;help | v0.2.9', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
@@ -422,14 +422,14 @@ async def on_message(message):
     if message.content == ';diceroll' or message.content == ';dr':
         randomlist = ['1','2','3','4','5','6',]
         em = discord.Embed(title ='**Game: Dice Roll**', color=0xffafc9, description=":game_die: *rolls a dice* \nYou rolled a dice and it landed on a %s \n ════════════════════════════════════════" %(random.choice(randomlist),))
-        em.add_field(name="Other Games:", value=";coinflip | Coin Flip \n ;8ball | 8 Ball", inline=True)
+        em.add_field(name="Other Games:", value="Coin Flip | ;coinflip \n 8 Ball | ;8ball", inline=True)
         await client.send_message(message.channel, embed=em)
     
     # Coin Flip
     elif message.content == ';coinflip' or message.content == ';cf':
         randomlist = ['Heads','Tails',]
         em = discord.Embed(title ='**Game: Coin Flip**', color=0xffafc9, description=":moneybag: *flips a coin* \nYou flipped a coin and and landed on %s \n ════════════════════════════════════════" %(random.choice(randomlist),))
-        em.add_field(name="Other Games:", value=";dicerole | Dice Roll \n ;8ball | 8 Ball", inline=True)
+        em.add_field(name="Other Games:", value="Dice Roll | ;dicerole \n 8 Ball | ;8ball", inline=True)
         await client.send_message(message.channel, embed=em)
     
     # 8 Ball
@@ -456,7 +456,7 @@ async def on_message(message):
                       'Very doubtful.',
                      ]
         em = discord.Embed(title ='**Game: 8 Ball**', color=0xffafc9, description=":8ball: *shake, shake* \n**Answer:** %s \n ════════════════════════════════════════" %(random.choice(randomlist),))
-        em.add_field(name="Other Games:", value=";dicerole | Dice Roll \n ;coinflip | Coin Flip", inline=True)
+        em.add_field(name="Other Games:", value="Dice Roll | ;dicerole \n Coin Flip | ;coinflip", inline=True)
         await client.send_message(message.channel, embed=em)
     # Russian Roulette
         # coming soon #
