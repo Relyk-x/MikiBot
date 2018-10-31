@@ -18,7 +18,7 @@ async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
   status = ['for ;help | v0.3.0', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.0,2##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.0,5##
 # WATCHING 'for: ;help | v0.3.0', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
@@ -65,7 +65,7 @@ async def on_message(message):
         em.set_author(name="MikiBot", url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         em.set_thumbnail(url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         em.add_field(name="About", value="this is the about text", inline=False)
-        em.set_footer(text="version: v0.2.9")
+        em.set_footer(text="version: v0.3.0")
         await client.send_message(message.channel, embed=em)
     
     # Oofify
@@ -481,7 +481,7 @@ async def on_message(message):
         #Games
         em.add_field(name="Games", value=" diceroll – Rolls a six sided die. \n coinflip – Flips a coin, could be heads could be tails. \n 8ball – Ask a question and shake the 8 Ball. \n ════════════════════════════════════════", inline=False)
         
-        em.set_footer(text="version: v0.2.9")
+        em.set_footer(text="version: v0.3.0")
         await client.send_message(message.channel, embed=em)
     
 #Bot Token
