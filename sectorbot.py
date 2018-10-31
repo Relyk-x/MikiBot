@@ -457,7 +457,7 @@ async def on_message(message):
         em = discord.Embed(title="- click here for help -", description="For any other help please join our Discord server...", url="https://discord.gg/eRHsyFg", color=0xffafc9)
         em.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         # Bot
-        em.add_field(name="Bot", value=" Prefix: `;`        Commands: `;<command>` \n ════════════════════════════════════════", inline=True)
+        em.add_field(name="Bot", value=" Prefix: `;`        Commands: `;<command>`                        v0.2.8 \n ════════════════════════════════════════", inline=True)
         
         # Social
         em.add_field(name="Social", value=" hello – Sends a greeting in the channel. \n oofify – Emojifies your text. \n tiny – Decorates your text. \n say <text> – rewrites your text. \n ════════════════════════════════════════", inline=False)
