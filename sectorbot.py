@@ -17,8 +17,8 @@ Clientdiscord = discord.Client()
 async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
-  status = ['for ;help | v0.2.8', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.8,6##
+  status = ['for ;help | v0.2.9', 'for bot suggestions', 'for @Relyk-x#2896']
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.9,0##
 # WATCHING 'for: ;help | v0.2.8', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
@@ -406,7 +406,7 @@ async def on_message(message):
         await client.send_message(message.channel, embed=em)
 ##### Version
     if message.content == ';version':
-        em = discord.Embed(description='The current version of Sector Bot is: `v0.2.8`', color=0xffafc9)
+        em = discord.Embed(description='The current version of Sector Bot is: `v0.2.9`', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
     
     # Dice Roll
@@ -457,7 +457,7 @@ async def on_message(message):
         em = discord.Embed(title="- click here for help -", description="For any other help please join our Discord server...", url="https://discord.gg/eRHsyFg", color=0xffafc9)
         em.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         # Bot
-        em.add_field(name="Bot", value=" Prefix: `;` Commands: `;<command>` \n Version: `v0.2.8` \n ════════════════════════════════════════", inline=True)
+        em.add_field(name="Bot", value=" Version: `v0.2.8` \n Prefix: `;` Commands: `;<command>` \n ════════════════════════════════════════", inline=True)
         
         # Social
         em.add_field(name="Social", value=" hello – Sends a greeting in the channel. \n oofify – Emojifies your text. \n tiny – Decorates your text. \n say <text> – rewrites your text. \n ════════════════════════════════════════", inline=False)
