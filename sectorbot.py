@@ -456,15 +456,17 @@ async def on_message(message):
     if message.content == ';help':
         em = discord.Embed(title="- click here for help -", description="For any other help please join our Discord server...", url="https://discord.gg/eRHsyFg", color=0xffafc9)
         em.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
-        em.add_field(name="Prefix:", value="`;` \n ════════════════════", inline=True)
+        em.add_field(name="Prefix:", value="`;` \n ════════════════════════════════════════", inline=True)
         em.add_field(name="Commands:", value="`;<command>`", inline =True)
-        em.add_field(name="hello", value="Sends a greeting in the channel.", inline=False)
-        em.add_field(name="invite", value="Sends the invite to add Sector Bot to your server.", inline=False)
-        em.add_field(name="servercount", value="Shows how many servers this bot occupies.", inline=False)
-        em.add_field(name="version", value="The current version of Sector Bot", inline=False)
-        em.add_field(name="vote", value="Vote for MikiBot.", inline=False)
-        em.add_field(name="vote", value="Donate to MikiBot.", inline=False)
-        em.add_field(name="meme", value="Sends a random meme from Sector Bot’s stash.", inline=False)
+        
+        Social
+        em.add_field(name="Social", value="hello – Sends a greeting in the channel. \n oofify – Emojifies your text. \n tiny – Decorates your text. \n say <text> – rewrites your text. \n ════════════════════════════════════════", inline=False)
+        
+        Server
+        em.add_field(name="Server", value="invite – Sends the invite to add MikiBot to your server. \n servercount – Shows how many servers this bot occupies. \n version – The current version of Sector Bot. \n vote – Vote for MikiBot. \n donate – Donate to MikiBot. \n purge <amount> – `DISABLED` \n ════════════════════════════════════════", inline=False)
+        #purges a specific amount of messages in a channel
+        
+        Fun
         em.add_field(name="randimg", value="Generates a random image.", inline=False)
         em.add_field(name="randwallpaper", value="Generate a random wallpaper.", inline=False)
         em.add_field(name="blurwallpaper", value="Generate a random wallpaper.", inline=False)
@@ -472,11 +474,10 @@ async def on_message(message):
         em.add_field(name="gsimg", value="Generate a random image.", inline=False)
         em.add_field(name="blurimg", value="Generate a random image.", inline=False)
         em.add_field(name="randgif", value="Generate a random image.", inline=False)
-        em.add_field(name="oofify", value="Emojifies your text.", inline=False)
-        em.add_field(name="tiny", value="Decorates your text.", inline=False)
-        em.add_field(name="say <text>", value="rewrites your text.", inline=False)
-        em.add_field(name="purge <amount>", value="`DISABLED`", inline=False) #purges a specific amount of messages in a channel
         em.add_field(name="password", value="Generates a random password.", inline=False)
+        em.add_field(name="meme", value="Sends a random meme from Sector Bot’s stash.", inline=False)
+        
+        Games
         em.add_field(name="diceroll / dr", value="Rolls a six sided die.", inline=False)
         em.add_field(name="coinflip / cf", value="Flips a coin, could be heads could be tails.", inline=False)
         em.add_field(name="8ball / 8b", value="Ask a question and shake the 8 Ball.", inline=False)
