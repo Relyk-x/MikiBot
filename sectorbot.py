@@ -66,7 +66,7 @@ async def on_message(message):
         em.set_thumbnail(url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         em.add_field(name="About", value="this is the about text", inline=False)
         em.set_footer(text="version: v0.2.9")
-    await client.send_message(message.channel, embed=em)
+        await client.send_message(message.channel, embed=em)
     
     # Oofify
     if message.content.startswith(';oofify '):
