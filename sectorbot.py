@@ -18,7 +18,7 @@ async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
   status = ['for ;help | v0.2.9', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.9,3##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.2.9,4##
 # WATCHING 'for: ;help | v0.2.9', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
@@ -60,11 +60,12 @@ async def on_message(message):
         await client.delete_message(message)
     
     # About
-    em=discord.Embed(title="- click here for help -", url="https://discord.gg/eRHsyFg", description="For any other help please join our Discord server...", color=0xffafc9)
-    em.set_author(name="MikiBot", url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
-    em.set_thumbnail(url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
-    em.add_field(name="About", value="this is the about text", inline=False)
-    em.set_footer(text="version: v0.2.9")
+    if message.content == ';about':
+        em = discord.Embed(title="- click here for help -", url="https://discord.gg/eRHsyFg", description="For any other help please join our Discord server...", color=0xffafc9)
+        em.set_author(name="MikiBot", url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
+        em.set_thumbnail(url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
+        em.add_field(name="About", value="this is the about text", inline=False)
+        em.set_footer(text="version: v0.2.9")
     await client.send_message(message.channel, embed=em)
     
     # Oofify
@@ -275,7 +276,7 @@ async def on_message(message):
         await client.delete_message(message)
     
     # Memes
-    if (';meme') in message.content:
+    if message.content == ';meme':
         randomlist = ['https://goo.gl/1wezZw',  #Dr. Phill
                       'https://goo.gl/nB6oCw',  #Gandalf
                       'https://goo.gl/viStSC',  #Zach Galifianakis
