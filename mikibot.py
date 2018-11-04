@@ -17,9 +17,9 @@ Clientdiscord = discord.Client()
 async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
-  status = ['for ;help | v0.3.5', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.5,9##
-# WATCHING 'for: ;help | v0.3.5', 'for: bot suggestions', 'for: @Relyk-x#2896'
+  status = ['for ;help | v0.3.6', 'for bot suggestions', 'for @Relyk-x#2896']
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.6,0##
+# WATCHING 'for: ;help | v0.3.6', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
   while not client.is_closed:
@@ -46,7 +46,7 @@ async def on_message(message):
     
     # Purge
     if message.content.startswith(';purge '):
-         await client.send_message(message.channel, '`PURGE: DISABLED 🔪`')
+         await client.send_message(message.channel, '`PURGE: DISABLED`')
 #   if message.content.startswith(';purge ') and not message.content[7:]=='':
 #        message_amount = int(message.content[7:])
 #        deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
@@ -426,7 +426,7 @@ async def on_message(message):
         
 ##### Version
     if message.content == ';version':
-        em = discord.Embed(description='The current version of Sector Bot is: `v0.3.5`', color=0xffafc9)
+        em = discord.Embed(description='The current version of Sector Bot is: `v0.3.6`', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
     
     # Dice Roll
@@ -493,7 +493,7 @@ async def on_message(message):
         #Games
         em.add_field(name="🎭 Games", value=" diceroll – Rolls a six sided die. \n coinflip – Flips a coin, could be heads could be tails. \n 8ball – Ask a question and shake the 8 Ball. \n ════════════════════════════════════════", inline=False)
         
-        em.set_footer(text="version: v0.3.5")
+        em.set_footer(text="version: v0.3.6")
         await client.send_message(message.channel, embed=em)
     
 #Bot Token
