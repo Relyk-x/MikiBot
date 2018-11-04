@@ -18,7 +18,7 @@ async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
   status = ['for ;help | v0.3.6', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.6,4##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.6,6##
 # WATCHING 'for: ;help | v0.3.6', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
@@ -63,10 +63,10 @@ async def on_message(message):
         
     # About
     if message.content == ';about':
-        em = discord.Embed(title="https://discord.gg/UjuGRB9", description="For any other help please join our Discord server... \n\n<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask here.", url="https://discord.gg/UjuGRB9", color=0xffafc9)
+        em = discord.Embed(title="https://discord.gg/UjuGRB9", description="For any other help please join our Discord server...", url="https://discord.gg/UjuGRB9", color=0xffafc9)
         em.set_author(name="MikiBot", url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         em.set_thumbnail(url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
-        em.add_field(name="About", value="Hey everyone, I'm MikiBot ^^ \nI'm also very new discord and I'd like your help to improve myself :D \nPlease use ;help to see what else I can do for you~ \n\nYou can follow me on twitter: \n<:twitter:508515087330312193> Twitter: https://twitter.com/MikiDiscord :3", inline=False)
+        em.add_field(name="About", value="Hey everyone, I'm MikiBot ^^ \nI'm also very new discord and I'd like your help to improve myself :D \nPlease use ;help to see what else I can do for you~ \n\n<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask here. \n\nYou can follow me on twitter: \n<:twitter:508515087330312193> Twitter: https://twitter.com/MikiDiscord :3", inline=False)
         em.set_footer(text="version: v0.3.6")
         await client.send_message(message.channel, embed=em)
     
@@ -475,7 +475,7 @@ async def on_message(message):
       
 # Help
     if message.content == ';help':
-        em = discord.Embed(title="https://discord.gg/UjuGRB9", description="For any other help please join our Discord server... \n\n<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask here.", url="https://discord.gg/UjuGRB9", color=0xffafc9)
+        em = discord.Embed(title="https://discord.gg/UjuGRB9", description="For any other help please join our Discord server...", url="https://discord.gg/UjuGRB9", color=0xffafc9)
         em.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         # Bot
         em.add_field(name="Bot", value=" Prefix: `;` \n Commands: `;<command>` \n ════════════════════════════════════════", inline=True)
@@ -491,7 +491,7 @@ async def on_message(message):
         em.add_field(name="🎉 Fun", value=" meme – Sends a random meme from Sector Bot’s stash. \n password – Generates a random password. \n randimg – Generates a random image. \n randwallpaper – Generate a random wallpaper. \n blurimg – Generate a random blury image. \n blurwallpaper – Generate a random blury wallpaper. \n gsimg – Generate a random greyscale image. \n gswallpaper – Generate a random greyscale wallpaper. \n randgif – Generate a random gif. \n ════════════════════════════════════════", inline=False)
         
         #Games
-        em.add_field(name="🎭 Games", value=" diceroll – Rolls a six sided die. \n coinflip – Flips a coin, could be heads could be tails. \n 8ball – Ask a question and shake the 8 Ball. \n ════════════════════════════════════════", inline=False)
+        em.add_field(name="🎭 Games", value=" diceroll – Rolls a six sided die. \n coinflip – Flips a coin, could be heads could be tails. \n 8ball – Ask a question and shake the 8 Ball. \n ════════════════════════════════════════ \n\n<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask here. \n\nYou can follow me on twitter: \n<:twitter:508515087330312193> Twitter: https://twitter.com/MikiDiscord :3", inline=False)
         
         em.set_footer(text="version: v0.3.6")
         await client.send_message(message.channel, embed=em)
