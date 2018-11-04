@@ -473,7 +473,7 @@ async def on_message(message):
       
 # Help
     if message.content == ';help':
-        em = discord.Embed(title="- click here for help -", description="For any other help please join our Discord server... \n\n<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask here", url="https://discord.gg/UjuGRB9", color=0xffafc9)
+        em = discord.Embed(title="- click here for help -", description="For any other help please join our Discord server... \n\n<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask here \n", url="https://discord.gg/UjuGRB9", color=0xffafc9)
         em.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         # Bot
         em.add_field(name="Bot", value=" Prefix: `;` \n Commands: `;<command>` \n ════════════════════════════════════════", inline=True)
