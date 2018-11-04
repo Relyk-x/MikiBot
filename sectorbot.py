@@ -61,7 +61,7 @@ async def on_message(message):
         
     # About
     if message.content == ';about':
-        em = discord.Embed(title="- click here for help -", url=" https://discord.gg/UjuGRB9", description="For any other help please join our Discord server...", color=0xffafc9)
+        em = discord.Embed(title="https://discord.gg/UjuGRB9", url="https://discord.gg/UjuGRB9", description="For any other help please join our Discord server...", color=0xffafc9)
         em.set_author(name="MikiBot", url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         em.set_thumbnail(url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         em.add_field(name="About", value="Hey everyone, I'm MikiBot ^^ \nI'm also very new discord and I'd like your help to improve myself :D \nPlease use ;help to see what else I can do for you~", inline=False)
@@ -473,7 +473,7 @@ async def on_message(message):
       
 # Help
     if message.content == ';help':
-        em = discord.Embed(title="- click here for help -", description="For any other help please join our Discord server... \n\n<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask here \n", url="https://discord.gg/UjuGRB9", color=0xffafc9)
+        em = discord.Embed(title="https://discord.gg/UjuGRB9", description="For any other help please join our Discord server... \n\n<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask here \n", url="https://discord.gg/UjuGRB9", color=0xffafc9)
         em.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         # Bot
         em.add_field(name="Bot", value=" Prefix: `;` \n Commands: `;<command>` \n ════════════════════════════════════════", inline=True)
