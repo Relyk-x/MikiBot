@@ -18,7 +18,7 @@ async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
   status = ['for ;help | v0.3.6', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.6,0##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.6,4##
 # WATCHING 'for: ;help | v0.3.6', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
@@ -66,7 +66,7 @@ async def on_message(message):
         em = discord.Embed(title="https://discord.gg/UjuGRB9", url="https://discord.gg/UjuGRB9", description="For any other help please join our Discord server...", color=0xffafc9)
         em.set_author(name="MikiBot", url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         em.set_thumbnail(url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
-        em.add_field(name="About", value="Hey everyone, I'm MikiBot ^^ \nI'm also very new discord and I'd like your help to improve myself :D \nPlease use ;help to see what else I can do for you~ \n\nYou can follow me on twitter: \n<:twitter:508515087330312193> Twitter: https://twitter.com/MikiDiscord :3", inline=False)
+        em.add_field(name="About", value="Hey everyone, I'm MikiBot ^^ \nI'm also very new discord and I'd like your help to improve myself :D \nPlease use ;help to see what else I can do for you~ \n\nYou can follow me on twitter: \n<:twitter:508515087330312193> Twitter: https://twitter.com/MikiDiscord :3 \n\n<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask them here.", inline=False)
         em.set_footer(text="version: v0.3.6")
         await client.send_message(message.channel, embed=em)
     
