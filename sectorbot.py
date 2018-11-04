@@ -45,9 +45,9 @@ async def on_ready():
 async def on_message(message):
     
     # Purge
-     if message.content.startswith(';purge '):
+    if message.content.startswith(';purge '):
          await client.send_message(message.channel, '`PURGE: DISABLED`')
-#    if message.content.startswith(';purge ') and not message.content[7:]=='':
+#   if message.content.startswith(';purge ') and not message.content[7:]=='':
 #        message_amount = int(message.content[7:])
 #        deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
 #        em = discord.Embed(description='Purged {} message(s) from this channel ⚠'.format(len(deleted)), color=0xffafc9,)
