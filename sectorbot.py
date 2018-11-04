@@ -45,7 +45,7 @@ async def on_ready():
 async def on_message(message):
     
     # Purge
-     if message.content.startswith(';purge')
+     if message.content.startswith(';purge '):
          await client.send_message(message.channel, '`PURGE: DISABLED`')
 #    if message.content.startswith(';purge ') and not message.content[7:]=='':
 #        message_amount = int(message.content[7:])
