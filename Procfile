@@ -1,1 +1,1 @@
-worker: python sectorbot.py
+worker: python mikibot.py
