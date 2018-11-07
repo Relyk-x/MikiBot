@@ -18,7 +18,7 @@ async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
   status = ['for ;help | v0.3.6', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.6,6##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.6,7##
 # WATCHING 'for: ;help | v0.3.6', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
@@ -410,8 +410,8 @@ async def on_message(message):
         for x in range(len(servers)):
          await client.send_message(message.channel,('```' + servers[x-1].name) + '\n ● ServerID: ' + servers[x-1].id + '```')
     
-    # Hello
-    if message.content == 'Hello' or message.content == 'Hey' or message.content == 'Hi' or message.content == 'hello' or message.content == 'hey' or message.content == 'hi':
+    # Greet
+    if message.content == ';greet':
         await client.send_message(message.channel, 'H-hello >//<')
         
     # Vote
@@ -481,7 +481,7 @@ async def on_message(message):
         em.add_field(name="Bot", value=" Prefix: `;` \n Commands: `;<command>` \n ════════════════════════════════════════", inline=True)
         
         # Social
-        em.add_field(name="💬 Social", value=" hello – Sends a greeting in the channel. \n oofify <text> – Emojifies your text. \n tiny <text> – Decorates your text. \n say <text> – rewrites your text. \n ════════════════════════════════════════", inline=False)
+        em.add_field(name="💬 Social", value=" greet – Sends a greeting in the channel. \n oofify <text> – Emojifies your text. \n tiny <text> – Decorates your text. \n say <text> – rewrites your text. \n ════════════════════════════════════════", inline=False)
         
         # Server
         em.add_field(name="📂 Server", value=" about – Shows the About description of MikiBot. \n invite – Sends the invite to add MikiBot to your server. \n servercount – Shows how many servers this bot occupies. \n version – The current version of MikiBot. \n vote – Vote for MikiBot. \n donate – Donate to MikiBot. \n purge <amount> – `DISABLED` \n ════════════════════════════════════════", inline=False)
