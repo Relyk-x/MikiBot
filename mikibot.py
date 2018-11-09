@@ -18,7 +18,7 @@ async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
   status = ['for ;help | v0.3.7', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.7,0##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.7,1##
 # WATCHING 'for: ;help | v0.3.7', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
@@ -299,7 +299,7 @@ async def on_message(message):
         
     # Random Gif
     if message.content == ';gif':
-        em = discord.Embed(dtitle='Gif:', color=0xffafc9,)
+        em = discord.Embed(title='Gif:', color=0xffafc9,)
         em.set_image(url='http://replygif.net/i/' + str(random.randint(90, 1100)) + '.gif')
         await client.send_message(message.channel, embed=em)
     
