@@ -45,15 +45,8 @@ async def on_ready():
 async def on_message(message):
     
     # Purge
-    if message.content.startswith(';purge '):
+    if message.content.startswith(';purge ') or message.content.startswith(';purge'):
          await client.send_message(message.channel, '`PURGE: DISABLED`')
-#   if message.content.startswith(';purge ') and not message.content[7:]=='':
-#        message_amount = int(message.content[7:])
-#        deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
-#        em = discord.Embed(description='Purged {} message(s) from this channel ⚠'.format(len(deleted)), color=0xffafc9,)
-#        selfdel = await client.send_message(message.channel, embed=em)
-#        await asyncio.sleep(10)
-#        await client.delete_message(selfdel)
     
     # Say
     content = message.content
@@ -297,45 +290,15 @@ async def on_message(message):
         em = discord.Embed(title= 'Meme:', color=0xffafc9,)
         em.set_image(url='%s' %(random.choice(randomlist),))
         await client.send_message(message.channel, embed=em)
-    
-    # Greyscale Wallpaper
-    if message.content == ';gswallpaper':
-        em = discord.Embed(description='Right click and then click open link in order to get redirected to the page and download it :yum: ')
-        em.set_image(url='https://picsum.photos/g/1280/720/?image=' + str(random.randint(1, 999)))
-        await client.send_message(message.channel, embed=em)
-        
-    # Greyscale Image
-    if message.content == ';gsimg':
-        em = discord.Embed(description='Fresh Grayscale image to fit your photo frame! ')
-        em.set_image(url='https://picsum.photos/g/200/300/?image=' + str(random.randint(1, 999)))
-        await client.send_message(message.channel, embed=em)
         
     # Random Wallpaper
-    if message.content == ';randwallpaper':
+    if message.content == ';wallpaper':
         em = discord.Embed(description='Right click and then click open link in order to get redirected to the page and download it :yum: ')
         em.set_image(url='https://picsum.photos/1280/720/?image=' + str(random.randint(1, 999)))
         await client.send_message(message.channel, embed=em)
-
-    # Random Image
-    if message.content == ';randimg':
-        em = discord.Embed(description='Fresh image to fit your photo frame! ')
-        em.set_image(url='https://picsum.photos/200/300/?image=' + str(random.randint(1, 999)))
-        await client.send_message(message.channel, embed=em)
-    
-    # Blur Wallpaper
-    if message.content == ';blurwallpaper':
-        em = discord.Embed(description='Right click and then click open link in order to get redirected to the page and download it :yum: ')
-        em.set_image(url='https://picsum.photos/1280/720/?blur=' + str(random.randint(1, 999)))
-        await client.send_message(message.channel, embed=em)
-    
-    # Blur Image
-    if message.content == ';blurimg':
-        em = discord.Embed(description='Fresh Blurry image to fit your photo frame! ')
-        em.set_image(url='https://picsum.photos/200/300/?blur=' + str(random.randint(1, 999)))
-        await client.send_message(message.channel, embed=em)
-    
+        
     # Random Gif
-    if message.content == ';randgif':
+    if message.content == ';gif':
         em = discord.Embed(description='Here is a fun gif i just randomly generated for you :)')
         em.set_image(url='http://replygif.net/i/' + str(random.randint(90, 1100)) + '.gif')
         await client.send_message(message.channel, embed=em)
@@ -472,6 +435,47 @@ async def on_message(message):
     # Russian Roulette
         # coming soon #
 
+########## CUT OUT CONTENT NEEDS REVIEW #########
+
+    # Purge
+#   if message.content.startswith(';purge ') and not message.content[7:]=='':
+#        message_amount = int(message.content[7:])
+#        deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
+#        em = discord.Embed(description='Purged {} message(s) from this channel ⚠'.format(len(deleted)), color=0xffafc9,)
+#        selfdel = await client.send_message(message.channel, embed=em)
+#        await asyncio.sleep(10)
+#        await client.delete_message(selfdel)
+
+    # Greyscale Wallpaper
+#    if message.content == ';gswallpaper':
+#        em = discord.Embed(description='Right click and then click open link in order to get redirected to the page and download it :yum: ')
+#        em.set_image(url='https://picsum.photos/g/1280/720/?image=' + str(random.randint(1, 999)))
+#        await client.send_message(message.channel, embed=em)
+        
+    # Greyscale Image
+#    if message.content == ';gsimg':
+#        em = discord.Embed(description='Fresh Grayscale image to fit your photo frame! ')
+#        em.set_image(url='https://picsum.photos/g/200/300/?image=' + str(random.randint(1, 999)))
+#        await client.send_message(message.channel, embed=em)
+
+    # Random Image
+#    if message.content == ';randimg':
+#        em = discord.Embed(description='Fresh image to fit your photo frame! ')
+#        em.set_image(url='https://picsum.photos/200/300/?image=' + str(random.randint(1, 999)))
+#        await client.send_message(message.channel, embed=em)
+    
+    # Blur Wallpaper
+#    if message.content == ';blurwallpaper':
+#        em = discord.Embed(description='Right click and then click open link in order to get redirected to the page and download it :yum: ')
+#        em.set_image(url='https://picsum.photos/1280/720/?blur=' + str(random.randint(1, 999)))
+#        await client.send_message(message.channel, embed=em)
+    
+    # Blur Image
+#    if message.content == ';blurimg':
+#        em = discord.Embed(description='Fresh Blurry image to fit your photo frame! ')
+#        em.set_image(url='https://picsum.photos/200/300/?blur=' + str(random.randint(1, 999)))
+#        await client.send_message(message.channel, embed=em)
+
       
 # Help
     if message.content == ';help':
@@ -488,7 +492,7 @@ async def on_message(message):
         #purges a specific amount of messages in a channel
         
         #Fun
-        em.add_field(name="🎉 Fun", value=" meme – Sends a random meme from Sector Bot’s stash. \n password – Generates a random password. \n randimg – Generates a random image. \n randwallpaper – Generate a random wallpaper. \n blurimg – Generate a random blury image. \n blurwallpaper – Generate a random blury wallpaper. \n gsimg – Generate a random greyscale image. \n gswallpaper – Generate a random greyscale wallpaper. \n randgif – Generate a random gif. \n ════════════════════════════════════════", inline=False)
+        em.add_field(name="🎉 Fun", value=" meme – Sends a random meme from Sector Bot’s stash. \n password – Generates a random password. \n wallpaper – Generate a random wallpaper. \n gif – Generate a random gif. \n ════════════════════════════════════════", inline=False)
         
         #Games
         em.add_field(name="🎭 Games", value=" diceroll – Rolls a six sided die. \n coinflip – Flips a coin, could be heads could be tails. \n 8ball – Ask a question and shake the 8 Ball. \n ════════════════════════════════════════ \n\n<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask here. \n\n<:twitter:508515087330312193> Twitter: https://twitter.com/MikiDiscord \n - You can follow me on twitter here.", inline=False)
