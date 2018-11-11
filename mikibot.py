@@ -8,10 +8,30 @@ from discord import Game
 from itertools import cycle
 import json
 import os
+import bs4, requests
+
 
 Client = discord.client
 client = commands.Bot(command_prefix = ';')
 Clientdiscord = discord.Client()
+
+headers = {
+    'Content-Type': "application/json",
+    'x-api-key': "bc77e012-c69d-4dc9-ba73-42e710028838"
+    }
+def fortnite_tracker_api(platform, nickname):
+  URL = 'https://api.fortnitetracker.com/v1/profile/' + platform + '/' + nickname
+  req = requests.get(URL, headers={"TRN-Api-Key": FORTNITE_API_TOKEN})
+
+  if req.status_code == 200:
+    try:
+      print(req.json())
+      lifetime_stats = req.json()['lifeTimeStats']
+      return lifetime_stats[7:]
+    except KeyError:
+      return False
+  else:
+return False
 
 # Setting Bot status 'Watching'
 async def change_status():
@@ -434,6 +454,47 @@ async def on_message(message):
         await client.send_message(message.channel, embed=em)
     # Russian Roulette
         # coming soon #
+      
+    # Fortnite
+    if message.content.startswith(COMMAND_PREFIX + 'stats'):
+      words = message.content.split(' ', 2)
+
+      if len(words) < 3:
+        await client.send_message(message.channel, 'Usage: ' + COMMAND_PREFIX + 'stats <pc,xbl,psn> <nickname>')
+        return
+
+      platform = words[1].lower()
+
+      # more acceptable platform names
+      if platform == 'xbox':
+        platform = 'xbl'
+      elif platform == 'ps4':
+        platform = 'psn'
+
+      if platform not in ('pc','xbl','psn'):
+        await client.send_message(message.channel, 'Usage: ' + COMMAND_PREFIX + 'stats <pc,xbl,psn> <nickname>')
+        return
+      else:
+        res = fortnite_tracker_api(platform,words[2])
+
+        if res:
+          matches_played = res[0]['value']
+          wins = res[1]['value']
+          win_percent = res[2]['value']
+          kills = res[3]['value']
+          kd = res[4]['value']
+
+          embed = discord.Embed(title="Lifetime Stats for " + words[2], color=0x00ff00)
+
+          embed.add_field(name="Matches Played", value=matches_played + '\n', inline=False)
+          embed.add_field(name="Wins", value=wins + '\n', inline=False)
+          embed.add_field(name="Win percent", value=win_percent + '\n', inline=False)
+          embed.add_field(name="Kills", value=kills + '\n', inline=False)
+          embed.add_field(name="K/D", value=kd + '\n', inline=False)
+          await client.send_message(message.channel, embed=embed)
+        else:
+          await client.send_message(message.channel, 'Failed to get data. Double check spelling of your nickname.')
+
 
 ########## CUT OUT CONTENT NEEDS REVIEW #########
 
