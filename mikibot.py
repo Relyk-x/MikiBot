@@ -9,6 +9,7 @@ from itertools import cycle
 import json
 import os
 import bs4, requests
+from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
@@ -427,7 +428,7 @@ async def on_message(message):
             await client.send_message(message.channel, 'The server time now is: **' + int(wholetime-12) + resttime + 'PM. GMTTIME(0:00)**')
 
     # YouTube
-    if message.content.startswith('b!youtube '):
+    if message.content.startswith(';youtube '):
         name = message.content[10:]
         fullcontent = ('http://www.youtube.com/results?search_query=' + name)
         text = requests.get(fullcontent).text
