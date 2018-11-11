@@ -442,9 +442,9 @@ async def on_message(message):
         title = (a[0]['title'])
         a0 = [ x for x in div[0].find_all('a') if x.has_attr('title') ][0]
         url= ('http://www.youtube.com'+a0['href'])
-        em = discord.Embed(title=title, color=0xffafc9)
+        em = discord.Embed(title=title, url=url, color=0xffafc9)
         em.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
-        em.set_image(url=url)
+        em.set_image(*, url)
         em.set_footer(text="idk yet...")
         await client.send_message(message.channel, embed=em)
     
