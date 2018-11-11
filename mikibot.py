@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.3.9' #v0.3.9,6
+VERSION = 'v0.3.9' #v0.3.9,7
 
 querystring = {"format":"json"}
 
@@ -443,7 +443,7 @@ async def on_message(message):
         a0 = [ x for x in div[0].find_all('a') if x.has_attr('title') ][0]
         url= ('http://www.youtube.com'+a0['href'])
         em = discord.Embed(title=title, url=url, color=0xffafc9)
-        em.set_author(name='YouTube') #icon_url=''
+        em.set_author(name='YouTube', icon_url='https://cdn.discordapp.com/attachments/499771919059648588/511153841346052126/yt.png')
         em.set_thumbnail(url=imgurl)
         em.add_field(name='YouTube Channel', value='<channel name>', inline=True)
         em.add_field(name='Duration', value='<duration of video>', inline=True)
