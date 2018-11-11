@@ -40,9 +40,9 @@ def fortnite_tracker_api(platform, nickname):
 async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
-  status = ['for ;help | v0.3.7', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.7,9##
-# WATCHING 'for: ;help | v0.3.7', 'for: bot suggestions', 'for: @Relyk-x#2896'
+  status = ['for ;help | v0.3.8', 'for bot suggestions', 'for @Relyk-x#2896']
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.8,0##
+# WATCHING 'for: ;help | v0.3.8', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
   while not client.is_closed:
@@ -83,7 +83,7 @@ async def on_message(message):
         em.set_author(name="MikiBot", url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         em.set_thumbnail(url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         em.add_field(name="About", value="Hey everyone, I'm MikiBot ^^ \nI'm also very new discord and I'd like your help to improve myself :D \nPlease use ;help to see what else I can do for you~ \n\n<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask here. \n\n<:twitter:508515087330312193> Twitter: https://twitter.com/MikiDiscord \n - You can follow me on twitter here.", inline=False)
-        em.set_footer(text="version: v0.3.7")
+        em.set_footer(text="version: v0.3.8")
         await client.send_message(message.channel, embed=em)
     
     # Oofify
@@ -412,7 +412,7 @@ async def on_message(message):
         
 ##### Version
     if message.content == ';version':
-        em = discord.Embed(description='The current version of Sector Bot is: `v0.3.7`', color=0xffafc9)
+        em = discord.Embed(description='The current version of Sector Bot is: `v0.3.8`', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
     
     # Dice Roll
@@ -561,7 +561,7 @@ async def on_message(message):
         #Games
         em.add_field(name="🎭 Games", value=" diceroll – Rolls a six sided die. \n coinflip – Flips a coin, could be heads could be tails. \n 8ball – Ask a question and shake the 8 Ball. \n ════════════════════════════════════════ \n\n<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask here. \n\n<:twitter:508515087330312193> Twitter: https://twitter.com/MikiDiscord \n - You can follow me on twitter here.", inline=False)
         
-        em.set_footer(text="version: v0.3.7")
+        em.set_footer(text="version: v0.3.8")
         await client.send_message(message.channel, embed=em)
     
 #Bot Token
