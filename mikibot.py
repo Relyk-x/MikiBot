@@ -42,7 +42,7 @@ async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
   status = ['for ;help | v0.3.8', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.8,4##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.8,5##
 # WATCHING 'for: ;help | v0.3.8', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
@@ -395,7 +395,7 @@ async def on_message(message):
         em = discord.Embed(description='Currently watching over ' + str(len(client.servers)) + ' Discord servers <:discord:501956002158215198>', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
         for x in range(len(servers)):
-         await client.send_message(message.channel,('```' + servers[x-1].name) + '\n ● ServerID: ' + servers[x-1].id + '```')
+         await client.send_message(message.channel,('```css' + servers[x-1].name) + '\n ● ServerID: ' + servers[x-1].id + '```')
     
     # Greet
     if message.content == ';greet':
