@@ -31,7 +31,7 @@ def fortnite_tracker_api(platform, nickname):
     except KeyError:
       return False
   else:
-return False
+    return False
 
 # Setting Bot status 'Watching'
 async def change_status():
