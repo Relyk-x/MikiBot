@@ -42,7 +42,7 @@ async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
   status = ['for ;help | v0.3.8', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.8,7##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.8,8##
 # WATCHING 'for: ;help | v0.3.8', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
@@ -415,6 +415,36 @@ async def on_message(message):
     if message.content == ';version':
         em = discord.Embed(description='The current version of Sector Bot is: `v0.3.8`', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
+    
+    # Time
+    if message.content == ';time':
+        dash = strftime("%H:%M", gmtime())
+        wholetime = dash[0] + dash[1]
+        resttime = dash[2:]
+        if int(wholetime) < 12:
+            await client.send_message(message.channel, 'The server time now is: **' + wholetime + resttime + 'AM. GMTIME(0:00)**')
+        else:
+            await client.send_message(message.channel, 'The server time now is: **' + int(wholetime-12) + resttime + 'PM. GMTTIME(0:00)**')
+
+    # YouTube
+    if message.content.startswith('b!youtube '):
+        name = message.content[10:]
+        fullcontent = ('http://www.youtube.com/results?search_query=' + name)
+        text = requests.get(fullcontent).text
+        soup = bs4.BeautifulSoup(text, 'html.parser')
+        img = soup.find_all('img')
+        div = [ d for d in soup.find_all('div') if d.has_attr('class') and 'yt-lockup-dismissable' in d['class']]
+        img0 = div[0].find_all('img')[0]
+        imgurl = (img0['src'])
+        a = [ x for x in div[0].find_all('a') if x.has_attr('title') ]
+        title = (a[0]['title'])
+        a0 = [ x for x in div[0].find_all('a') if x.has_attr('title') ][0]
+        url= ('http://www.youtube.com'+a0['href'])
+        embed=discord.Embed(title=title, url=url, color=0x101cad)
+        embed.set_author(name=message.author, icon_url='http://www.clker.com/cliparts/2/k/n/l/C/Q/transparent-green-checkmark-md.png')
+        embed.set_thumbnail(url=imgurl)
+        embed.set_footer(text="~ Powered by Converse Foundation")
+        await client.send_message(message.channel, embed=embed)
     
     # Dice Roll
     if message.content == ';diceroll' or message.content == ';dr':
