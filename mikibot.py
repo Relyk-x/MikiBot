@@ -41,7 +41,7 @@ async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
   status = ['for ;help | v0.3.8', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.8,0##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.8,2##
 # WATCHING 'for: ;help | v0.3.8', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
@@ -475,7 +475,7 @@ async def on_message(message):
         platform = 'psn'
 
       if platform not in ('pc','xbl','psn'):
-        await client.send_message(message.channel, 'Usage: ' + ';stats <pc,xbl,psn> <nickname>')
+        await client.send_message(message.channel, 'Usage: ' + COMMAND_PREFIX + 'stats <pc,xbl,psn> <nickname>')
         return
       else:
         res = fortnite_tracker_api(platform,words[2])
@@ -487,8 +487,8 @@ async def on_message(message):
           kills = res[3]['value']
           kd = res[4]['value']
 
-          embed = discord.Embed(title="Lifetime Stats for " + words[2], color=0x00ff00)
-
+          embed = discord.Embed(title="Lifetime Stats for " + words[2], color=0xffafc9)
+            
           embed.add_field(name="Matches Played", value=matches_played + '\n', inline=False)
           embed.add_field(name="Wins", value=wins + '\n', inline=False)
           embed.add_field(name="Win percent", value=win_percent + '\n', inline=False)
