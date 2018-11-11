@@ -15,6 +15,9 @@ Client = discord.client
 client = commands.Bot(command_prefix = ';')
 Clientdiscord = discord.Client()
 
+FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
+COMMAND_PREFIX = 'b!'
+
 headers = {
     'Content-Type': "application/json",
     'x-api-key': "bc77e012-c69d-4dc9-ba73-42e710028838"
@@ -38,7 +41,7 @@ async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
   status = ['for ;help | v0.3.7', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.7,5##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.7,9##
 # WATCHING 'for: ;help | v0.3.7', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
@@ -472,7 +475,7 @@ async def on_message(message):
         platform = 'psn'
 
       if platform not in ('pc','xbl','psn'):
-        await client.send_message(message.channel, 'Usage: ' + COMMAND_PREFIX + 'stats <pc,xbl,psn> <nickname>')
+        await client.send_message(message.channel, 'Usage: ' + ';stats <pc,xbl,psn> <nickname>')
         return
       else:
         res = fortnite_tracker_api(platform,words[2])
