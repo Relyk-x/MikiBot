@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.1' #v0.4.1,6
+VERSION = 'v0.4.1' #v0.4.1,7
 
 querystring = {"format":"json"}
 
@@ -430,7 +430,7 @@ async def on_message(message):
 
     # YouTube
     if message.content.startswith(';youtube '):
-        name = message.content[10:]
+        name = message.content[9:]
         fullcontent = ('http://www.youtube.com/results?search_query=' + name)
         text = requests.get(fullcontent).text
         soup = bs4.BeautifulSoup(text, 'html.parser')
