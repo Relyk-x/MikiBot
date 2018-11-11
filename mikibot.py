@@ -38,7 +38,7 @@ async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
   status = ['for ;help | v0.3.7', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.7,1##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.7,5##
 # WATCHING 'for: ;help | v0.3.7', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
