@@ -10,13 +10,10 @@ import json
 import os
 import bs4, requests
 
-
-Client = discord.client
-client = commands.Bot(command_prefix = ';')
-Clientdiscord = discord.Client()
-
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
-COMMAND_PREFIX = 'b!'
+COMMAND_PREFIX = ';'
+
+querystring = {"format":"json"}
 
 headers = {
     'Content-Type': "application/json",
@@ -36,12 +33,16 @@ def fortnite_tracker_api(platform, nickname):
   else:
     return False
 
+Client = discord.client
+client = commands.Bot(command_prefix = ';')
+Clientdiscord = discord.Client()
+
 # Setting Bot status 'Watching'
 async def change_status():
   await client.wait_until_ready()
   servers = list(client.servers)
   status = ['for ;help | v0.3.8', 'for bot suggestions', 'for @Relyk-x#2896']
-# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.8,2##
+# WATCHING 'over ' + str(len(bot.servers)) + ' servers' ## v0.3.8,3##
 # WATCHING 'for: ;help | v0.3.8', 'for: bot suggestions', 'for: @Relyk-x#2896'
   msgs = cycle(status)
 
