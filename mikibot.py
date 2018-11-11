@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.1' #v0.4.1,3
+VERSION = 'v0.4.1' #v0.4.1,5
 
 querystring = {"format":"json"}
 
@@ -487,7 +487,7 @@ async def on_message(message):
                       'Outlook not so good.',
                       'Very doubtful.',
                      ]
-        em = discord.Embed(title ='**Game: 8 Ball**', color=0xffafc9, description="`🎱` *shakes the 8 Ball up...*` \n\nYou shook the 8 ball and it shows you... \n Answer: **%s** \n\n ════════════════════════════════════════" %(random.choice(randomlist),))
+        em = discord.Embed(title ='**Game: 8 Ball**', color=0xffafc9, description="`🎱` *shakes the 8 Ball up...*` \n\nYou shook the 8 ball and it shows you... \n Answer: **%s** \n ════════════════════════════════════════" %(random.choice(randomlist),))
         em.add_field(name="Other Games:", value="Dice Roll | ;dicerole \n Coin Flip | ;coinflip", inline=True)
         await client.send_message(message.channel, embed=em)
     # Russian Roulette
