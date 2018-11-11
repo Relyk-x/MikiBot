@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.0' #v0.4.0,6
+VERSION = 'v0.4.0' #v0.4.0,9
 
 querystring = {"format":"json"}
 
@@ -453,14 +453,14 @@ async def on_message(message):
     # Dice Roll
     if message.content == ';diceroll' or message.content == ';dr':
         randomlist = ['1','2','3','4','5','6',]
-        em = discord.Embed(title ='**Game: Dice Roll**', color=0xffafc9, description=":game_die: *rolls a dice* \n\nYou rolled a dice and it landed on a \n Side: **%s** \n\n ════════════════════════════════════════" %(random.choice(randomlist),))
+        em = discord.Embed(title ='**Game: 🎲  Dice Roll**', color=0xffafc9, description="*rolls a dice* \n\nYou rolled a dice and it landed on a \n Side: **%s** \n\n ════════════════════════════════════════" %(random.choice(randomlist),))
         em.add_field(name="Other Games:", value="Coin Flip | ;coinflip \n 8 Ball | ;8ball", inline=True)
         await client.send_message(message.channel, embed=em)
     
     # Coin Flip
     elif message.content == ';coinflip' or message.content == ';cf':
         randomlist = ['Heads','Tails',]
-        em = discord.Embed(title ='**Game: Coin Flip**', color=0xffafc9, description=":moneybag: *flips a coin* \n\nYou flipped a coin and it landed on \n Face: **%s** \n\n ════════════════════════════════════════" %(random.choice(randomlist),))
+        em = discord.Embed(title ='**Game: 💰  Coin Flip**', color=0xffafc9, description="*flips a coin* \n\nYou flipped a coin and it landed on \n Face: **%s** \n\n ════════════════════════════════════════" %(random.choice(randomlist),))
         em.add_field(name="Other Games:", value="Dice Roll | ;dicerole \n 8 Ball | ;8ball", inline=True)
         await client.send_message(message.channel, embed=em)
     
@@ -487,7 +487,7 @@ async def on_message(message):
                       'Outlook not so good.',
                       'Very doubtful.',
                      ]
-        em = discord.Embed(title ='**Game: 8 Ball**', color=0xffafc9, description=":8ball: *shakes the 8 Ball up...* \n\nYou shook the 8 ball and it shows you... \n Answer: **%s** \n\n ════════════════════════════════════════" %(random.choice(randomlist),))
+        em = discord.Embed(title ='**Game: 🎱  8 Ball**', color=0xffafc9, description="*shakes the 8 Ball up...* \n\nYou shook the 8 ball and it shows you... \n Answer: **%s** \n\n ════════════════════════════════════════" %(random.choice(randomlist),))
         em.add_field(name="Other Games:", value="Dice Roll | ;dicerole \n Coin Flip | ;coinflip", inline=True)
         await client.send_message(message.channel, embed=em)
     # Russian Roulette
