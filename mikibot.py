@@ -444,7 +444,7 @@ async def on_message(message):
         yt= ('http://www.youtube.com'+a0['href'])
         em = discord.Embed(title=title, url=yt, color=0xffafc9)
         em.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
-        em.set_image(url=yt)
+        em.set_video(url=yt)
         em.set_footer(text="idk yet...")
         await client.send_message(message.channel, embed=em)
     
