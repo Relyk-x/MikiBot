@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.2' #v0.4.5,0
+VERSION = 'v0.4.2' #v0.4.5,1
 
 querystring = {"format":"json"}
 
@@ -81,7 +81,9 @@ async def on_message(message):
             await client.delete_message(selfdel)
          else:
             await client.send_message(message.channel,'You dont have the permissions to use this command')
-            
+            selfdel = await client.send_message(message.channel,'You dont have the permissions to use this command')
+            await asyncio.sleep(10)
+            await client.delete_message(selfdel)
     # Say
     content = message.content
     if content.startswith(';say '):
