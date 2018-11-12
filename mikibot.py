@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.2' #v0.4.2,6
+VERSION = 'v0.4.2' #v0.4.2,7
 
 querystring = {"format":"json"}
 
@@ -497,7 +497,7 @@ async def on_message(message):
 
       if len(words) < 3:
         em = discord.Embed(description='platform: pc | xbox | ps4 \nnickname: your fortnite player name')
-        em.add_field(name='Usage' value=COMMAND_PREFIX + 'fortnite | <platform> | <nickname> |')
+        em.add_field(name='Usage', value=COMMAND_PREFIX + 'fortnite | <platform> | <nickname> |')
         await client.send_message(message.channel, embed=em)
         return
 
@@ -511,7 +511,7 @@ async def on_message(message):
 
       if platform not in ('pc','xbl','psn'):
         em = discord.Embed(description='platform: pc | xbox | ps4 \nnickname: your fortnite player name')
-        em.add_field(name='Usage' value=COMMAND_PREFIX + 'fortnite | <platform> | <nickname> |')
+        em.add_field(name='Usage', value=COMMAND_PREFIX + 'fortnite | <platform> | <nickname> |')
         await client.send_message(message.channel, embed=em)
         return
       else:
