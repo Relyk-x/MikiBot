@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.2' #v0.4.3,2
+VERSION = 'v0.4.2' #v0.4.3,3
 
 querystring = {"format":"json"}
 
@@ -498,7 +498,6 @@ async def on_message(message):
       if len(words) < 3:
         em = discord.Embed(description='Error', color=0xffafc9)
         em.set_author(name='⚔️   Fortnite')
-        em.set_thumbnail(url='https://cdn.discordapp.com/attachments/499771919059648588/511373423541354497/fortnite.png')
         em.add_field(name='platform', value='pc | xbox | ps4', inline=True)
         em.add_field(name='nickname', value='your fortnite player name', inline=True)
         em.add_field(name='Usage', value=COMMAND_PREFIX + 'fortnite <platform> | <nickname>', inline=False)
@@ -516,7 +515,6 @@ async def on_message(message):
       if platform not in ('pc','xbl','psn'):
         em = discord.Embed(description='Error', color=0xffafc9)
         em.set_author(name='⚔️   Fortnite')
-        em.set_thumbnail(url='https://cdn.discordapp.com/attachments/499771919059648588/511373423541354497/fortnite.png')
         em.add_field(name='platform', value='pc | xbox | ps4', inline=True)
         em.add_field(name='nickname', value='your fortnite player name', inline=True)
         em.add_field(name='Usage', value=COMMAND_PREFIX + 'fortnite <platform> | <nickname>', inline=False)
