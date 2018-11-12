@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.2' #v0.4.3,0
+VERSION = 'v0.4.2' #v0.4.3,2
 
 querystring = {"format":"json"}
 
@@ -532,7 +532,7 @@ async def on_message(message):
           kills = res[3]['value']
           kd = res[4]['value']
 
-          em = discord.Embed(description="In game Stats for " + words[2] + ':', color=0xffafc9)
+          em = discord.Embed(description="In game stats for " + words[2] + ':', color=0xffafc9)
           em.set_author(name='⚔️   Fortnite')
           em.set_thumbnail(url='https://cdn.discordapp.com/attachments/499771919059648588/511373423541354497/fortnite.png')
           em.add_field(name="Matches Played", value=matches_played + '\n', inline=False)
