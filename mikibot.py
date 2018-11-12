@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.2' #v0.4.4,4
+VERSION = 'v0.4.2' #v0.4.4,5
 
 querystring = {"format":"json"}
 
@@ -615,7 +615,7 @@ async def on_message(message):
         em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:discord:501956002158215198> **Server** \nabout – Shows the About description of MikiBot. \ninvite – Sends the invite to add MikiBot to your server. \nservercount – Shows how many servers this bot occupies. \nversion – The current version of MikiBot. \nvote – Vote for MikiBot. \ndonate – Donate to MikiBot. \npurge <amount> – `DISABLED`", inline=False) # purges a specific amount of messages in a channel
         
         # Fun
-        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="🎉 **Fun** \nmeme – Sends a random meme from Sector Bot’s stash. \nyoutube <search> – Searches youtube for the most relevent video. \nfortnite <platform> <nickname> – Displays fortnite stats of the entered user. \npassword – Generates a random password. \nwallpaper – Generate a random wallpaper. \ngif – Generate a random gif.", inline=False)
+        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:fun:511452358186762251> **Fun** \nmeme – Sends a random meme from Sector Bot’s stash. \nyoutube <search> – Searches youtube for the most relevent video. \nfortnite <platform> <nickname> – Displays fortnite stats of the entered user. \npassword – Generates a random password. \nwallpaper – Generate a random wallpaper. \ngif – Generate a random gif.", inline=False)
         
         # Games
         em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:game:511448070005981204> **Games** \ndiceroll – Rolls a six sided die. \ncoinflip – Flips a coin, could be heads could be tails. \n8ball – Ask a question and shake the 8 Ball.", inline=False)
