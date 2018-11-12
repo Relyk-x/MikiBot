@@ -497,11 +497,11 @@ async def on_message(message):
 
       if len(words) < 3:
         em = discord.Embed(description='Error', color=0xffafc9)
-        em.set_author(name='⚔️  Fortnite')
+        em.set_author(name='⚔️   Fortnite')
         em.set_thumbnail(url='https://cdn.discordapp.com/attachments/499771919059648588/511373423541354497/fortnite.png')
         em.add_field(name='platform', value='pc | xbox | ps4', inline=True)
         em.add_field(name='nickname', value='your fortnite player name', inline=True)
-        em.add_field(name='Usage', value=COMMAND_PREFIX + 'fortnite | <platform> | <nickname> |', inline=False)
+        em.add_field(name='Usage', value=COMMAND_PREFIX + 'fortnite <platform> | <nickname>', inline=False)
         await client.send_message(message.channel, embed=em)
         return
 
@@ -515,11 +515,11 @@ async def on_message(message):
 
       if platform not in ('pc','xbl','psn'):
         em = discord.Embed(description='Error', color=0xffafc9)
-        em.set_author(name='⚔️  Fortnite')
+        em.set_author(name='⚔️   Fortnite')
         em.set_thumbnail(url='https://cdn.discordapp.com/attachments/499771919059648588/511373423541354497/fortnite.png')
         em.add_field(name='platform', value='pc | xbox | ps4', inline=True)
         em.add_field(name='nickname', value='your fortnite player name', inline=True)
-        em.add_field(name='Usage', value=COMMAND_PREFIX + 'fortnite | <platform> | <nickname> |', inline=False)
+        em.add_field(name='Usage', value=COMMAND_PREFIX + 'fortnite <platform> | <nickname>', inline=False)
         await client.send_message(message.channel, embed=em)
         return
       else:
@@ -533,7 +533,7 @@ async def on_message(message):
           kd = res[4]['value']
 
           em = discord.Embed(description="In game Stats for " + words[2] + ':', color=0xffafc9)
-          em.set_author(name='⚔️  Fortnite')
+          em.set_author(name='⚔️   Fortnite')
           em.set_thumbnail(url='https://cdn.discordapp.com/attachments/499771919059648588/511373423541354497/fortnite.png')
           em.add_field(name="Matches Played", value=matches_played + '\n', inline=False)
           em.add_field(name="Wins", value=wins + '\n', inline=True)
@@ -610,20 +610,20 @@ async def on_message(message):
         em = discord.Embed(title="https://discord.gg/UjuGRB9", description="For any other help please join our Discord server...", url="https://discord.gg/UjuGRB9", color=0xffafc9)
         em.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         # Bot
-        em.add_field(name="Bot", value=" Prefix: `;` \n Commands: `;<command>` \n ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", inline=True)
+        em.add_field(name="Bot", value=" Prefix:`;` \n Commands: `;<command>`\n ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", inline=True)
         
         # Social
-        em.add_field(name="💬 Social", value=" greet – Sends a greeting in the channel. \n oofify <text> – Emojifies your text. \n tiny <text> – Decorates your text. \n say <text> – rewrites your text. \n ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", inline=False)
+        em.add_field(name="💬 Social", value="greet – Sends a greeting in the channel. \noofify <text> – Emojifies your text. \ntiny <text> – Decorates your text. \nsay <text> – rewrites your text. \n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", inline=False)
         
         # Server
-        em.add_field(name="📂 Server", value=" about – Shows the About description of MikiBot. \n invite – Sends the invite to add MikiBot to your server. \n servercount – Shows how many servers this bot occupies. \n version – The current version of MikiBot. \n vote – Vote for MikiBot. \n donate – Donate to MikiBot. \n purge <amount> – `DISABLED` \n ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", inline=False)
+        em.add_field(name="📂 Server", value="about – Shows the About description of MikiBot. \ninvite – Sends the invite to add MikiBot to your server. \nservercount – Shows how many servers this bot occupies. \nversion – The current version of MikiBot. \nvote – Vote for MikiBot. \ndonate – Donate to MikiBot. \npurge <amount> – `DISABLED` \n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", inline=False)
         #purges a specific amount of messages in a channel
         
         #Fun
-        em.add_field(name="🎉 Fun", value=" meme – Sends a random meme from Sector Bot’s stash. \n password – Generates a random password. \n wallpaper – Generate a random wallpaper. \n gif – Generate a random gif. \n ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", inline=False)
+        em.add_field(name="🎉 Fun", value="meme – Sends a random meme from Sector Bot’s stash. \npassword – Generates a random password. \nwallpaper – Generate a random wallpaper. \ngif – Generate a random gif. \n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", inline=False)
         
         #Games
-        em.add_field(name="🎭 Games", value=" diceroll – Rolls a six sided die. \n coinflip – Flips a coin, could be heads could be tails. \n 8ball – Ask a question and shake the 8 Ball. \n ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ \n\n<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask here. \n\n<:twitter:508515087330312193> Twitter: https://twitter.com/MikiDiscord \n - You can follow me on twitter here.", inline=False)
+        em.add_field(name="🎭 Games", value="diceroll – Rolls a six sided die. \ncoinflip – Flips a coin, could be heads could be tails. \n8ball – Ask a question and shake the 8 Ball. \n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ \n\n<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask here. \n\n<:twitter:508515087330312193> Twitter: https://twitter.com/MikiDiscord \n - You can follow me on twitter here.", inline=False)
         
         em.set_footer(text="version: " + VERSION)
         await client.send_message(message.channel, embed=em)
