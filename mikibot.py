@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.2' #v0.4.4,0
+VERSION = 'v0.4.2' #v0.4.4,1
 
 querystring = {"format":"json"}
 
@@ -605,10 +605,8 @@ async def on_message(message):
       
 # Help
     if message.content == ';help':
-        em = discord.Embed(title="https://discord.gg/UjuGRB9", description="For any other help please join our Discord server...", url="https://discord.gg/UjuGRB9", color=0xffafc9)
+        em = discord.Embed(title="https://discord.gg/UjuGRB9", description="For any other help please join our Discord server...\n\nPrefix:`;` \nCommands: `;<command>`", url="https://discord.gg/UjuGRB9", color=0xffafc9) # Bot
         em.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
-        # Bot
-        em.add_field(name="Bot", value=" Prefix:`;` \n Commands: `;<command>`", inline=True)
         
         # Social
         em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="💬 **Social** \ngreet – Sends a greeting in the channel. \noofify <text> – Emojifies your text. \ntiny <text> – Decorates your text. \nsay <text> – rewrites your text.", inline=False)
