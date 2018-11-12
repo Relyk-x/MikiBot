@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.2' #v0.4.5,1
+VERSION = 'v0.4.2' #v0.4.5,2
 
 querystring = {"format":"json"}
 
@@ -80,10 +80,8 @@ async def on_message(message):
             await asyncio.sleep(10)
             await client.delete_message(selfdel)
          else:
-            await client.send_message(message.channel,'You dont have the permissions to use this command')
-            selfdel = await client.send_message(message.channel,'You dont have the permissions to use this command')
-            await asyncio.sleep(10)
-            await client.delete_message(selfdel)
+            await client.send_message(message.channel,"You don't have the permissions to use this command")
+            
     # Say
     content = message.content
     if content.startswith(';say '):
@@ -508,12 +506,7 @@ async def on_message(message):
       words = message.content.split(' ', 2)
 
       if len(words) < 3:
-        em = discord.Embed(description='`ERROR`', color=0xffafc9)
-        em.set_author(name='⚔️   Fortnite')
-        em.add_field(name='platform', value='pc | xbox | ps4', inline=True)
-        em.add_field(name='nickname', value='your fortnite player name', inline=True)
-        em.add_field(name='Usage', value=COMMAND_PREFIX + 'fortnite <platform> | <nickname>', inline=False)
-        await client.send_message(message.channel, embed=em)
+        await client.send_message(message.channel, '`FORTNITE: ERROR` \nplatform: pc | xbox | ps4    nickname: your fortnite player name. \nUsage' + COMMAND_PREFIX + 'fortnite <platform> | <nickname>')
         return
 
       platform = words[1].lower()
@@ -525,12 +518,7 @@ async def on_message(message):
         platform = 'psn'
 
       if platform not in ('pc','xbl','psn'):
-        em = discord.Embed(description='`ERROR`', color=0xffafc9)
-        em.set_author(name='⚔️   Fortnite')
-        em.add_field(name='platform', value='pc | xbox | ps4', inline=True)
-        em.add_field(name='nickname', value='your fortnite player name', inline=True)
-        em.add_field(name='Usage', value=COMMAND_PREFIX + 'fortnite <platform> | <nickname>', inline=False)
-        await client.send_message(message.channel, embed=em)
+        await client.send_message(message.channel, '`FORTNITE: ERROR` \nplatform: pc | xbox | ps4    nickname: your fortnite player name. \nUsage' + COMMAND_PREFIX + 'fortnite <platform> | <nickname>')
         return
       else:
         res = fortnite_tracker_api(platform,words[2])
