@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.2' #v0.4.3,8
+VERSION = 'v0.4.2' #v0.4.3,9
 
 querystring = {"format":"json"}
 
@@ -608,20 +608,19 @@ async def on_message(message):
         em = discord.Embed(title="https://discord.gg/UjuGRB9", description="For any other help please join our Discord server...", url="https://discord.gg/UjuGRB9", color=0xffafc9)
         em.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         # Bot
-        em.add_field(name="Bot", value=" Prefix:`;` \n Commands: `;<command>`\n ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", inline=True)
+        em.add_field(name="Bot", value=" Prefix:`;` \n Commands: `;<command>`", inline=True)
         
         # Social
-        em.add_field(name="💬 Social", value="greet – Sends a greeting in the channel. \noofify <text> – Emojifies your text. \ntiny <text> – Decorates your text. \nsay <text> – rewrites your text. \n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", inline=False)
+        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="💬 **Social** \ngreet – Sends a greeting in the channel. \noofify <text> – Emojifies your text. \ntiny <text> – Decorates your text. \nsay <text> – rewrites your text. \n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", inline=False)
         
         # Server
-        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:discord:501956002158215198> **Server** \nabout – Shows the About description of MikiBot. \ninvite – Sends the invite to add MikiBot to your server. \nservercount – Shows how many servers this bot occupies. \nversion – The current version of MikiBot. \nvote – Vote for MikiBot. \ndonate – Donate to MikiBot. \npurge <amount> – `DISABLED` \n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", inline=False)
-        #purges a specific amount of messages in a channel
+        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:discord:501956002158215198> **Server** \nabout – Shows the About description of MikiBot. \ninvite – Sends the invite to add MikiBot to your server. \nservercount – Shows how many servers this bot occupies. \nversion – The current version of MikiBot. \nvote – Vote for MikiBot. \ndonate – Donate to MikiBot. \npurge <amount> – `DISABLED` \n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", inline=False) # purges a specific amount of messages in a channel
         
         #Fun
-        em.add_field(name="🎉 Fun", value="meme – Sends a random meme from Sector Bot’s stash. \nyoutube <search> – Searches youtube for the most relevent video. \nfortnite <platform> <nickname> – Displays fortnite stats of the entered user. \npassword – Generates a random password. \nwallpaper – Generate a random wallpaper. \ngif – Generate a random gif. \n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", inline=False)
+        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="🎉 **Fun** \nmeme – Sends a random meme from Sector Bot’s stash. \nyoutube <search> – Searches youtube for the most relevent video. \nfortnite <platform> <nickname> – Displays fortnite stats of the entered user. \npassword – Generates a random password. \nwallpaper – Generate a random wallpaper. \ngif – Generate a random gif. \n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", inline=False)
         
         #Games
-        em.add_field(name="🎭 Games", value="diceroll – Rolls a six sided die. \ncoinflip – Flips a coin, could be heads could be tails. \n8ball – Ask a question and shake the 8 Ball. \n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ \n\n<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask here. \n\n<:twitter:508515087330312193> Twitter: https://twitter.com/MikiDiscord \n - You can follow me on twitter here.", inline=False)
+        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="🎭 **Games** \ndiceroll – Rolls a six sided die. \ncoinflip – Flips a coin, could be heads could be tails. \n8ball – Ask a question and shake the 8 Ball. \n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ \n\n<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask here. \n\n<:twitter:508515087330312193> Twitter: https://twitter.com/MikiDiscord \n - You can follow me on twitter here.", inline=False)
         
         em.set_footer(text="version: " + VERSION)
         await client.send_message(message.channel, embed=em)
