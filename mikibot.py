@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.2' #v0.4.4,6
+VERSION = 'v0.4.2' #v0.4.4,9
 
 querystring = {"format":"json"}
 
@@ -71,9 +71,17 @@ async def on_ready():
 async def on_message(message):
     
     # Purge
-    if message.content.startswith(';purge ') or message.content.startswith(';purge'):
-         await client.send_message(message.channel, '`PURGE: DISABLED`')
-    
+    if message.content.startswith(';purge ') and not message.content[7:]=='':
+         if message.author.id == '257784039795064833':
+            message_amount = int(message.content[7:])
+            deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
+            em = discord.Embed(description='Purged {} message(s) from this channel ⚠'.format(len(deleted)), color=0xffafc9,)
+            selfdel = await client.send_message(message.channel, embed=em)
+            await asyncio.sleep(10)
+            await client.delete_message(selfdel)
+        else:
+            await client.send_message(message.channel,'You dont have the permissions to use this command')
+            
     # Say
     content = message.content
     if content.startswith(';say '):
@@ -565,15 +573,6 @@ async def on_message(message):
         
 ########## CUT OUT CONTENT NEEDS REVIEW #########
 
-    # Purge
-#   if message.content.startswith(';purge ') and not message.content[7:]=='':
-#        message_amount = int(message.content[7:])
-#        deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
-#        em = discord.Embed(description='Purged {} message(s) from this channel ⚠'.format(len(deleted)), color=0xffafc9,)
-#        selfdel = await client.send_message(message.channel, embed=em)
-#        await asyncio.sleep(10)
-#        await client.delete_message(selfdel)
-
     # Greyscale Wallpaper
 #    if message.content == ';gswallpaper':
 #        em = discord.Embed(description='Right click and then click open link in order to get redirected to the page and download it :yum: ')
@@ -614,7 +613,7 @@ async def on_message(message):
         em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:social:511456438296641536> **Social** \ngreet – Sends a greeting in the channel. \noofify <text> – Emojifies your text. \ntiny <text> – Decorates your text. \nsay <text> – rewrites your text.", inline=False)
         
         # Server
-        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:discord:501956002158215198> **Server** \nabout – Shows the About description of MikiBot. \ninvite – Sends the invite to add MikiBot to your server. \nservercount – Shows how many servers this bot occupies. \nversion – The current version of MikiBot. \nvote – Vote for MikiBot. \ndonate – Donate to MikiBot. \npurge <amount> – `DISABLED`", inline=False) # purges a specific amount of messages in a channel
+        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:discord:501956002158215198> **Server** \nabout – Shows the About description of MikiBot. \ninvite – Sends the invite to add MikiBot to your server. \nservercount – Shows how many servers this bot occupies. \nversion – The current version of MikiBot. \nvote – Vote for MikiBot. \ndonate – Donate to MikiBot. \npurge <amount> – purges a specific amount of messages in a channel", inline=False)
         
         # Fun
         em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:fun:511457443939614721> **Fun** \nmeme – `DISABLED` \nyoutube <search> – Searches youtube for the most relevent video. \nfortnite <platform> <nickname> – Displays fortnite stats of the entered user. \npassword – Generates a random password. \nwallpaper – Generate a random wallpaper. \ngif – Generate a random gif.", inline=False)
