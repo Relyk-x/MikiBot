@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.2' #v0.4.5,2
+VERSION = 'v0.4.2' #v0.4.5,3
 
 querystring = {"format":"json"}
 
@@ -518,7 +518,7 @@ async def on_message(message):
         platform = 'psn'
 
       if platform not in ('pc','xbl','psn'):
-        await client.send_message(message.channel, '`FORTNITE: ERROR` \nplatform: pc | xbox | ps4    nickname: your fortnite player name. \nUsage' + COMMAND_PREFIX + 'fortnite <platform> | <nickname>')
+        await client.send_message(message.channel, '`FORTNITE: ERROR` \n`platform: pc | xbox | ps4       nickname: your fortnite player name.` \n\nUsage: ' + COMMAND_PREFIX + 'fortnite <platform> | <nickname>')
         return
       else:
         res = fortnite_tracker_api(platform,words[2])
