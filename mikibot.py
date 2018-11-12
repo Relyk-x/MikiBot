@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.2' #v0.4.4,9
+VERSION = 'v0.4.2' #v0.4.5,0
 
 querystring = {"format":"json"}
 
@@ -79,7 +79,7 @@ async def on_message(message):
             selfdel = await client.send_message(message.channel, embed=em)
             await asyncio.sleep(10)
             await client.delete_message(selfdel)
-        else:
+         else:
             await client.send_message(message.channel,'You dont have the permissions to use this command')
             
     # Say
