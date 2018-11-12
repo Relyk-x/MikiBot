@@ -508,7 +508,9 @@ async def on_message(message):
         platform = 'psn'
 
       if platform not in ('pc','xbl','psn'):
-        await client.send_message(message.channel, 'Usage: ' + COMMAND_PREFIX + 'fortnite `<pc | xbl | psn>` `<nickname>`')
+        em = discord.Embed(title='Fortnite: Error', description='platform: pc, xbox or ps4 \nnickname: your fortnite player name')
+        em.add_field(name='command', value=COMMAND_PREFIX + 'fortnite | <platform> | <nickname> |', inline=True)
+        await client.send_message(message.channel, embed=em)
         return
       else:
         res = fortnite_tracker_api(platform,words[2])
@@ -520,7 +522,7 @@ async def on_message(message):
           kills = res[3]['value']
           kd = res[4]['value']
 
-          em = discord.Embed(title="In game Stats for " + words[2] + ':', color=0xffafc9)
+          em = discord.Embed(description="In game Stats for " + words[2] + ':', color=0xffafc9)
           em.set_author(name='⚔️  Fortnite')
           em.set_thumbnail(url='https://cdn.discordapp.com/attachments/499771919059648588/511373423541354497/fortnite.png')
           em.add_field(name="Matches Played", value=matches_played + '\n', inline=False)
