@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.1' #v0.4.1,7
+VERSION = 'v0.4.1' #v0.4.1,8
 
 querystring = {"format":"json"}
 
@@ -453,14 +453,14 @@ async def on_message(message):
     # Dice Roll
     if message.content == ';diceroll' or message.content == ';dr':
         randomlist = ['1','2','3','4','5','6',]
-        em = discord.Embed(title ='**Game: Dice Roll**', color=0xffafc9, description="🎲 *rolls a dice* \n\nYou rolled a dice and it landed on a \n Side: **%s** \n ════════════════════════════════════════" %(random.choice(randomlist),))
+        em = discord.Embed(title ='**Game: Dice Roll**', color=0xffafc9, description="🎲 *rolls a dice* \n\nYou rolled a dice and it landed on a \n Side: **%s** \n ________________________________________" %(random.choice(randomlist),))
         em.add_field(name="Other Games:", value="Coin Flip | ;coinflip \n 8 Ball | ;8ball", inline=True)
         await client.send_message(message.channel, embed=em)
     
     # Coin Flip
     elif message.content == ';coinflip' or message.content == ';cf':
         randomlist = ['Heads','Tails',]
-        em = discord.Embed(title ='**Game: Coin Flip**', color=0xffafc9, description="💰 *flips a coin* \n\nYou flipped a coin and it landed on \n Face: **%s** \n ════════════════════════════════════════" %(random.choice(randomlist),))
+        em = discord.Embed(title ='**Game: Coin Flip**', color=0xffafc9, description="💰 *flips a coin* \n\nYou flipped a coin and it landed on \n Face: **%s** \n ________________________________________" %(random.choice(randomlist),))
         em.add_field(name="Other Games:", value="Dice Roll | ;dicerole \n 8 Ball | ;8ball", inline=True)
         await client.send_message(message.channel, embed=em)
     
@@ -487,7 +487,7 @@ async def on_message(message):
                       'Outlook not so good.',
                       'Very doubtful.',
                      ]
-        em = discord.Embed(title ='**Game: 8 Ball**', color=0xffafc9, description="🎱 *shakes the 8 Ball up...*` \n\nYou shook the 8 ball and it shows you... \n Answer: **%s** \n ════════════════════════════════════════" %(random.choice(randomlist),))
+        em = discord.Embed(title ='**Game: 8 Ball**', color=0xffafc9, description="🎱 *shakes the 8 Ball up...*` \n\nYou shook the 8 ball and it shows you... \n Answer: **%s** \n ________________________________________" %(random.choice(randomlist),))
         em.add_field(name="Other Games:", value="Dice Roll | ;dicerole \n Coin Flip | ;coinflip", inline=True)
         await client.send_message(message.channel, embed=em)
       
@@ -596,20 +596,20 @@ async def on_message(message):
         em = discord.Embed(title="https://discord.gg/UjuGRB9", description="For any other help please join our Discord server...", url="https://discord.gg/UjuGRB9", color=0xffafc9)
         em.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         # Bot
-        em.add_field(name="Bot", value=" Prefix: `;` \n Commands: `;<command>` \n ════════════════════════════════════════", inline=True)
+        em.add_field(name="Bot", value=" Prefix: `;` \n Commands: `;<command>` \n ________________________________________", inline=True)
         
         # Social
-        em.add_field(name="💬 Social", value=" greet – Sends a greeting in the channel. \n oofify <text> – Emojifies your text. \n tiny <text> – Decorates your text. \n say <text> – rewrites your text. \n ════════════════════════════════════════", inline=False)
+        em.add_field(name="💬 Social", value=" greet – Sends a greeting in the channel. \n oofify <text> – Emojifies your text. \n tiny <text> – Decorates your text. \n say <text> – rewrites your text. \n ________________________________________", inline=False)
         
         # Server
-        em.add_field(name="📂 Server", value=" about – Shows the About description of MikiBot. \n invite – Sends the invite to add MikiBot to your server. \n servercount – Shows how many servers this bot occupies. \n version – The current version of MikiBot. \n vote – Vote for MikiBot. \n donate – Donate to MikiBot. \n purge <amount> – `DISABLED` \n ════════════════════════════════════════", inline=False)
+        em.add_field(name="📂 Server", value=" about – Shows the About description of MikiBot. \n invite – Sends the invite to add MikiBot to your server. \n servercount – Shows how many servers this bot occupies. \n version – The current version of MikiBot. \n vote – Vote for MikiBot. \n donate – Donate to MikiBot. \n purge <amount> – `DISABLED` \n ________________________________________", inline=False)
         #purges a specific amount of messages in a channel
         
         #Fun
-        em.add_field(name="🎉 Fun", value=" meme – Sends a random meme from Sector Bot’s stash. \n password – Generates a random password. \n wallpaper – Generate a random wallpaper. \n gif – Generate a random gif. \n ════════════════════════════════════════", inline=False)
+        em.add_field(name="🎉 Fun", value=" meme – Sends a random meme from Sector Bot’s stash. \n password – Generates a random password. \n wallpaper – Generate a random wallpaper. \n gif – Generate a random gif. \n ________________________________________", inline=False)
         
         #Games
-        em.add_field(name="🎭 Games", value=" diceroll – Rolls a six sided die. \n coinflip – Flips a coin, could be heads could be tails. \n 8ball – Ask a question and shake the 8 Ball. \n ════════════════════════════════════════ \n\n<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask here. \n\n<:twitter:508515087330312193> Twitter: https://twitter.com/MikiDiscord \n - You can follow me on twitter here.", inline=False)
+        em.add_field(name="🎭 Games", value=" diceroll – Rolls a six sided die. \n coinflip – Flips a coin, could be heads could be tails. \n 8ball – Ask a question and shake the 8 Ball. \n ________________________________________ \n\n<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask here. \n\n<:twitter:508515087330312193> Twitter: https://twitter.com/MikiDiscord \n - You can follow me on twitter here.", inline=False)
         
         em.set_footer(text="version: " + VERSION)
         await client.send_message(message.channel, embed=em)
