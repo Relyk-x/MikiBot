@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.2' #v0.4.2,1
+VERSION = 'v0.4.2' #v0.4.2,2
 
 querystring = {"format":"json"}
 
@@ -520,14 +520,15 @@ async def on_message(message):
           kills = res[3]['value']
           kd = res[4]['value']
 
-          embed = discord.Embed(title="Lifetime Stats for " + words[2], color=0xffafc9)
-            
-          embed.add_field(name="Matches Played", value=matches_played + '\n', inline=False)
-          embed.add_field(name="Wins", value=wins + '\n', inline=False)
-          embed.add_field(name="Win percent", value=win_percent + '\n', inline=False)
-          embed.add_field(name="Kills", value=kills + '\n', inline=False)
-          embed.add_field(name="K/D", value=kd + '\n', inline=False)
-          await client.send_message(message.channel, embed=embed)
+          em = discord.Embed(title="In game Stats for " + words[2] +':', color=0xffafc9)
+          em.set_author(name='⚔️  Fortnite')
+          em.set_thumbnail(url='https://cdn.discordapp.com/attachments/499771919059648588/511371236220338206/fortnite.png')
+          em.add_field(name="Matches Played", value=matches_played + '\n', inline=False)
+          em.add_field(name="Wins", value=wins + '\n', inline=True)
+          em.add_field(name="Win percent", value=win_percent + '\n', inline=True)
+          em.add_field(name="Kills", value=kills + '\n', inline=False)
+          em.add_field(name="K/D", value=kd + '\n', inline=True)
+          await client.send_message(message.channel, embed=em)
         else:
           await client.send_message(message.channel, 'Failed to get data. Double check spelling of your nickname.')
 
