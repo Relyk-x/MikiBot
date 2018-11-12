@@ -297,25 +297,27 @@ async def on_message(message):
         await client.delete_message(message)
     
     # Memes
-    if message.content == ';meme':
-        randomlist = ['https://goo.gl/1wezZw',  #Dr. Phill
-                      'https://goo.gl/nB6oCw',  #Gandalf
-                      'https://goo.gl/viStSC',  #Zach Galifianakis
-                      'https://goo.gl/U3pEhp',  #Chuck Norris
-                      'https://goo.gl/YZSPxx',  #Fat Controller
-                      'https://goo.gl/n2Hajn',  #Ocean
-                      'https://goo.gl/CDwmTj',  #Austin Powers
-                      'https://goo.gl/pjkwqZ',  #Nemo
-                      'https://goo.gl/79AANm',  #Knights
-                      'https://goo.gl/AxaSrv',  #Carl, Wheels
-                      'https://goo.gl/WB1PTd',  #Carl, Vader
-                      'https://goo.gl/Kx7auW',  #Carl, Pew
-                      'https://goo.gl/N9m7kF',  #Slut
-                      'https://goo.gl/UFNkSe',  #Shaggy, Weed
-                    ]
-        em = discord.Embed(title='Meme:', color=0xffafc9,)
-        em.set_image(url='%s' %(random.choice(randomlist),))
-        await client.send_message(message.channel, embed=em)
+    if message.content.startswith(';meme'):
+         await client.send_message(message.channel, '`MEME: DISABLED`')
+#    if message.content == ';meme':
+#        randomlist = ['https://goo.gl/1wezZw',  #Dr. Phill
+#                      'https://goo.gl/nB6oCw',  #Gandalf
+#                      'https://goo.gl/viStSC',  #Zach Galifianakis
+#                      'https://goo.gl/U3pEhp',  #Chuck Norris
+#                      'https://goo.gl/YZSPxx',  #Fat Controller
+#                      'https://goo.gl/n2Hajn',  #Ocean
+#                      'https://goo.gl/CDwmTj',  #Austin Powers
+#                      'https://goo.gl/pjkwqZ',  #Nemo
+#                      'https://goo.gl/79AANm',  #Knights
+#                      'https://goo.gl/AxaSrv',  #Carl, Wheels
+#                      'https://goo.gl/WB1PTd',  #Carl, Vader
+#                      'https://goo.gl/Kx7auW',  #Carl, Pew
+#                      'https://goo.gl/N9m7kF',  #Slut
+#                      'https://goo.gl/UFNkSe',  #Shaggy, Weed
+#                    ]
+#        em = discord.Embed(title='Meme:', color=0xffafc9,)
+#        em.set_image(url='%s' %(random.choice(randomlist),))
+#        await client.send_message(message.channel, embed=em)
         
     # Random Wallpaper
     if message.content == ';wallpaper':
@@ -615,7 +617,7 @@ async def on_message(message):
         em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:discord:501956002158215198> **Server** \nabout – Shows the About description of MikiBot. \ninvite – Sends the invite to add MikiBot to your server. \nservercount – Shows how many servers this bot occupies. \nversion – The current version of MikiBot. \nvote – Vote for MikiBot. \ndonate – Donate to MikiBot. \npurge <amount> – `DISABLED`", inline=False) # purges a specific amount of messages in a channel
         
         # Fun
-        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:fun:511457443939614721> **Fun** \nmeme – Sends a random meme from Sector Bot’s stash. \nyoutube <search> – Searches youtube for the most relevent video. \nfortnite <platform> <nickname> – Displays fortnite stats of the entered user. \npassword – Generates a random password. \nwallpaper – Generate a random wallpaper. \ngif – Generate a random gif.", inline=False)
+        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:fun:511457443939614721> **Fun** \nmeme – `DISABLED` \nyoutube <search> – Searches youtube for the most relevent video. \nfortnite <platform> <nickname> – Displays fortnite stats of the entered user. \npassword – Generates a random password. \nwallpaper – Generate a random wallpaper. \ngif – Generate a random gif.", inline=False)
         
         # Games
         em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:game:511448070005981204> **Games** \ndiceroll – Rolls a six sided die. \ncoinflip – Flips a coin, could be heads could be tails. \n8ball – Ask a question and shake the 8 Ball.", inline=False)
