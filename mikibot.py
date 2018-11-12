@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.2' #v0.4.4,3
+VERSION = 'v0.4.2' #v0.4.4,4
 
 querystring = {"format":"json"}
 
@@ -618,7 +618,7 @@ async def on_message(message):
         em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="🎉 **Fun** \nmeme – Sends a random meme from Sector Bot’s stash. \nyoutube <search> – Searches youtube for the most relevent video. \nfortnite <platform> <nickname> – Displays fortnite stats of the entered user. \npassword – Generates a random password. \nwallpaper – Generate a random wallpaper. \ngif – Generate a random gif.", inline=False)
         
         # Games
-        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="🎭 **Games** \ndiceroll – Rolls a six sided die. \ncoinflip – Flips a coin, could be heads could be tails. \n8ball – Ask a question and shake the 8 Ball.", inline=False)
+        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:game:511448070005981204> **Games** \ndiceroll – Rolls a six sided die. \ncoinflip – Flips a coin, could be heads could be tails. \n8ball – Ask a question and shake the 8 Ball.", inline=False)
         
         # Links
         em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask here. \n\n<:twitter:508515087330312193> Twitter: https://twitter.com/MikiDiscord \n - You can follow me on twitter here.", inline=False)
