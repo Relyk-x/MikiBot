@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.2' #v0.4.5,5
+VERSION = 'v0.4.2' #v0.4.5,6
 
 querystring = {"format":"json"}
 
@@ -546,7 +546,7 @@ async def on_message(message):
           await client.send_message(message.channel, embed=em)
     
     # Fortnite Help
-    if message.content == ';fortnite help':
+    if message.content == ';help fortnite':
       em = dicord.Embed(description='`FORTNITE: ERROR` \nplatform: pc | xbox | ps4        nickname: your fortnite player name. \nUsage: ' + COMMAND_PREFIX + 'fortnite <platform> | <nickname>')
       await client.send_message(message.channel, embed=em)
        
