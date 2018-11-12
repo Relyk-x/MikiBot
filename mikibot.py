@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.2' #v0.4.2,5
+VERSION = 'v0.4.2' #v0.4.2,6
 
 querystring = {"format":"json"}
 
@@ -496,7 +496,9 @@ async def on_message(message):
       words = message.content.split(' ', 2)
 
       if len(words) < 3:
-        await client.send_message(message.channel, 'Usage: ' + COMMAND_PREFIX + 'fortnite `<pc | xbl | psn>` `<nickname>`')
+        em = discord.Embed(description='platform: pc | xbox | ps4 \nnickname: your fortnite player name')
+        em.add_field(name='Usage' value=COMMAND_PREFIX + 'fortnite | <platform> | <nickname> |')
+        await client.send_message(message.channel, embed=em)
         return
 
       platform = words[1].lower()
@@ -508,8 +510,8 @@ async def on_message(message):
         platform = 'psn'
 
       if platform not in ('pc','xbl','psn'):
-        em = discord.Embed(title='Fortnite: Error', description='platform: pc, xbox or ps4 \nnickname: your fortnite player name')
-        em.add_field(name='command', value=COMMAND_PREFIX + 'fortnite | <platform> | <nickname> |', inline=True)
+        em = discord.Embed(description='platform: pc | xbox | ps4 \nnickname: your fortnite player name')
+        em.add_field(name='Usage' value=COMMAND_PREFIX + 'fortnite | <platform> | <nickname> |')
         await client.send_message(message.channel, embed=em)
         return
       else:
@@ -532,7 +534,8 @@ async def on_message(message):
           em.add_field(name="K/D", value=kd + '\n', inline=True)
           await client.send_message(message.channel, embed=em)
         else:
-          await client.send_message(message.channel, 'Failed to get data. Double check spelling of your nickname.')
+          em = discord.Embed(description='Failed to get data. Double check spelling of your nickname.', colour=0xffafc9)
+          await client.send_message(message.channel, embed=em)
 
 ########## COMMING SOON ##########
 
