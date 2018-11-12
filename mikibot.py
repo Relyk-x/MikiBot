@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.2' #v0.4.5,7
+VERSION = 'v0.4.5' #v0.4.5,8
 
 querystring = {"format":"json"}
 
@@ -547,7 +547,7 @@ async def on_message(message):
     
     # Fortnite Help
     if message.content == ';help fortnite':
-      em = discord.Embed(description='`FORTNITE: ERROR` \nplatform: pc | xbox | ps4        nickname: your fortnite player name. \nUsage: ' + COMMAND_PREFIX + 'fortnite <platform> | <nickname>')
+      em = discord.Embed(tittle='Fortnite Help', description='**platform:** \npc | xbox | ps4 \n**nickname:** \nyour fortnite player name. \n**Usage:** \n`' + COMMAND_PREFIX + 'fortnite <platform> | <nickname>`', color=0xffafc9)
       await client.send_message(message.channel, embed=em)
        
 ########## COMMING SOON ##########
@@ -566,6 +566,7 @@ async def on_message(message):
         # Never Have I Ever
         # Slots
         # Dungeons and Dragons
+        # Chess
         # Jokes
         
 ########## CUT OUT CONTENT NEEDS REVIEW #########
@@ -617,9 +618,6 @@ async def on_message(message):
         
         # Games
         em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:game:511448070005981204> **Games** \ndiceroll – Rolls a six sided die. \ncoinflip – Flips a coin, could be heads could be tails. \n8ball – Ask a question and shake the 8 Ball.", inline=False)
-        
-        # Links
-        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask here. \n\n<:twitter:508515087330312193> Twitter: https://twitter.com/MikiDiscord \n - You can follow me on twitter here.", inline=False)
         
         em.set_footer(text="version: " + VERSION)
         await client.send_message(message.channel, embed=em)
