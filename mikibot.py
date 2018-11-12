@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.2' #v0.4.2,3
+VERSION = 'v0.4.2' #v0.4.2,5
 
 querystring = {"format":"json"}
 
