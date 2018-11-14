@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.6' #v0.4.6,4
+VERSION = 'v0.4.6' #v0.4.6,5
 
 querystring = {"format":"json"}
 
@@ -457,7 +457,7 @@ async def on_message(message):
         em.set_thumbnail(url=imgurl)
         em.add_field(name='Channel', value='<channel name>', inline=True)
         em.add_field(name='Duration', value='<duration of video>', inline=True)
-        em.set_footer(text="not yet opperational...")
+        em.set_footer(text="not yet fully opperational...")
         await client.send_message(message.channel, embed=em)
     
     # Dice Roll
@@ -616,11 +616,14 @@ async def on_message(message):
         # Server
         em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:discord:501956002158215198> **Server** \nabout – Shows the About description of MikiBot. \ninvite – Sends the invite to add MikiBot to your server. \nservercount – Shows how many servers this bot occupies. \nversion – The current version of MikiBot. \nvote – Vote for MikiBot. \ndonate – Donate to MikiBot. \npurge <amount> – purges a specific amount of messages in a channel", inline=False)
         
+        # Youtube
+        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:youtube:511430654139957258> **youtube** \nyoutube <search> – Searches youtube for the most relevent video.", inline=False)
+        
         # Fortnite
         em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:fortnite:512104441546145794> **Fortnite** \nfortnite <platform> <nickname> – Displays fortnite stats of the entered user. \nhelp fortnite – Shows a how to of the command if you are stuck.", inline=False)
         
         # Fun
-        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:fun:511457443939614721> **Fun** \nmeme – `DISABLED` \nyoutube <search> – Searches youtube for the most relevent video. \nfortnite <platform> <nickname> – Displays fortnite stats of the entered user. \npassword – Generates a random password. \nwallpaper – Generate a random wallpaper. \ngif – Generate a random gif.", inline=False)
+        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:fun:511457443939614721> **Fun** \nmeme – `DISABLED` \npassword – Generates a random password. \nwallpaper – Generate a random wallpaper. \ngif – Generate a random gif.", inline=False)
         
         # Games
         em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:game:511448070005981204> **Games** \ndiceroll – Rolls a six sided die. \ncoinflip – Flips a coin, could be heads could be tails. \n8ball – Ask a question and shake the 8 Ball.", inline=False)
