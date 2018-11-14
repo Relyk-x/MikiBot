@@ -13,8 +13,11 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.6' #v0.4.6,9
+VERSION = 'v0.4.7' #v0.4.7,1
 
+Client = discord.client
+client = commands.Bot(command_prefix = ';')
+Clientdiscord = discord.Client()
 querystring = {"format":"json"}
 
 headers = {
@@ -34,10 +37,6 @@ def fortnite_tracker_api(platform, nickname):
       return False
   else:
     return False
-
-Client = discord.client
-client = commands.Bot(command_prefix = ';')
-Clientdiscord = discord.Client()
 
 # Setting Bot status 'Watching'
 async def change_status():
@@ -60,7 +59,12 @@ async def on_member_join(member):
     print("Connected on " + str(len(client.servers)) + " servers:")
     for x in range(len(servers)):
      print(' ' + servers[x-1].name)
-    await client.send_message(member, "Hey there I'm MikiBot")
+    em = discord.Embed(title="https://discord.gg/UjuGRB9", description="Invite your friends!!", url="https://discord.gg/UjuGRB9", color=0xffafc9)
+    em.set_author(name="MikiBot", url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
+    em.set_thumbnail(url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
+    em.add_field(name="About", value="Hey there, I'm MikiBot ^^ \nI'm also very new discord and I'd like your help to improve myself :D \nPlease use ;help to see what else I can do for you~ \n\n<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask here. \n\n<:twitter:508515087330312193> Twitter: https://twitter.com/MikiDiscord \n - You can follow me on twitter here.", inline=False)
+    em.set_footer(text="version: " + VERSION)
+    await client.send_message(member, embed=em)
     
 # Checking if bot is online    
 async def on_ready():
@@ -70,37 +74,22 @@ async def on_ready():
 @client.event
 async def on_message(message):
     
-    # Purge
-    if message.content.startswith(';purge ') and not message.content[7:]=='':
-         if message.author.id == '257784039795064833':
-            message_amount = int(message.content[7:])
-            deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
-            em = discord.Embed(description='Purged {} message(s) from this channel ⚠'.format(len(deleted)), color=0xffafc9,)
-            selfdel = await client.send_message(message.channel, embed=em)
-            await asyncio.sleep(10)
-            await client.delete_message(selfdel)
-         else:
-            await client.send_message(message.channel,"You don't have the permissions to use this command")
-            
+############################## S O C I A L ##############################
+    
+    # Greet
+    if message.content == ';greet':
+        await client.send_message(message.channel, 'H-hello >//<')
+     
     # Say
     content = message.content
     if content.startswith(';say '):
         await client.send_message(message.channel, content[5:])
         await client.delete_message(message)
-        
-    # About
-    if message.content == ';about':
-        em = discord.Embed(title="https://discord.gg/UjuGRB9", description="For any other help please join our Discord server...", url="https://discord.gg/UjuGRB9", color=0xffafc9)
-        em.set_author(name="MikiBot", url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
-        em.set_thumbnail(url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
-        em.add_field(name="About", value="Hey everyone, I'm MikiBot ^^ \nI'm also very new discord and I'd like your help to improve myself :D \nPlease use ;help to see what else I can do for you~ \n\n<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask here. \n\n<:twitter:508515087330312193> Twitter: https://twitter.com/MikiDiscord \n - You can follow me on twitter here.", inline=False)
-        em.set_footer(text="version: " + VERSION)
-        await client.send_message(message.channel, embed=em)
     
-    # Oofify
-    if message.content.startswith(';oofify '):
+    # emojify
+    if message.content.startswith(';emojify '):
         result = ''
-        for letter in message.content[8:]:
+        for letter in message.content[9:]:
             if letter in 'aA':
                 result = result + '🅰'
             if letter in 'bB':
@@ -303,6 +292,145 @@ async def on_message(message):
                 result = result + '?'
         await client.send_message(message.channel, result)
         await client.delete_message(message)
+                
+############################## S E R V E R ##############################
+    
+    # About
+    if message.content == ';about':
+        em = discord.Embed(title="https://discord.gg/UjuGRB9", description="For any other help please join our Discord server...", url="https://discord.gg/UjuGRB9", color=0xffafc9)
+        em.set_author(name="MikiBot", url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
+        em.set_thumbnail(url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
+        em.add_field(name="About", value="Hey everyone, I'm MikiBot ^^ \nI'm also very new discord and I'd like your help to improve myself :D \nPlease use ;help to see what else I can do for you~ \n\n<:curiouscat:508516637700259850> Curious Cat: https://curiouscat.me/MikiDiscord \n - If you have any questions please ask here. \n\n<:twitter:508515087330312193> Twitter: https://twitter.com/MikiDiscord \n - You can follow me on twitter here.", inline=False)
+        em.set_footer(text="version: " + VERSION)
+        await client.send_message(message.channel, embed=em) 
+    
+    # Invite
+    if message.content == ';invite':
+        em = discord.Embed(description="If you'd like to add MikiBot to your server, Click here: https://goo.gl/2rp6n2", color=0xffafc9)
+        await client.send_message(message.channel, embed=em)
+    
+    # Server Count
+    if message.content == ';servercount':
+        em = discord.Embed(description='Currently watching over ' + str(len(client.servers)) + ' Discord servers <:discord:501956002158215198>', color=0xffafc9)
+        await client.send_message(message.channel, embed=em)
+    
+    # Server List
+    if message.content.startswith(';serverlist'):
+        if message.author.id == '257784039795064833':
+            servers = list(client.servers)
+            em = discord.Embed(description='Currently watching over ' + str(len(client.servers)) + ' Discord servers <:discord:501956002158215198>', color=0xffafc9)
+            await client.send_message(message.channel, embed=em)
+            for x in range(len(servers)):
+             await client.send_message(message.channel,('```md\n# ' + servers[x-1].name) + '\n ● ServerID: ' + servers[x-1].id + '```')
+        else:
+            await client.send_message(message.channel,"You don't have the permissions to use this command")
+    
+##### Version #####
+    if message.content == ';version':
+        em = discord.Embed(description='The current version of Sector Bot is: `' + VERSION + '`', color=0xffafc9)
+        await client.send_message(message.channel, embed=em)
+    
+    # Vote
+    if message.content == ';vote':
+        em = discord.Embed(description='You can vote here: \n\n:point_right: https://discordbots.org/bot/496214977267630080/vote :point_left:', color=0xffafc9)
+        await client.send_message(message.channel, embed=em)
+    
+    # Donate
+    if message.content == ';donate':
+        em = discord.Embed(description='You can donate by purchasing roles from the MikiBot Help server here: \n\n:point_right: https://goo.gl/wGG82o :point_left:', color=0xffafc9)
+        await client.send_message(message.channel, embed=em)
+    
+    # Purge
+    if message.content.startswith(';purge ') and not message.content[7:]=='':
+         if message.author.id == '257784039795064833':
+             message_amount = int(message.content[7:])
+             deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
+             em = discord.Embed(description='Purged {} message(s) from this channel ⚠'.format(len(deleted)), color=0xffafc9,)
+             selfdel = await client.send_message(message.channel, embed=em)
+             await asyncio.sleep(10)
+             await client.delete_message(selfdel)
+         else:
+             await client.send_message(message.channel,"You don't have the permissions to use this command")
+    
+############################## Y O U T U B E ##############################    
+    
+    # YouTube
+    if message.content.startswith(';youtube '):
+        name = message.content[9:]
+        fullcontent = ('http://www.youtube.com/results?search_query=' + name)
+        text = requests.get(fullcontent).text
+        soup = bs4.BeautifulSoup(text, 'html.parser')
+        img = soup.find_all('img')
+        div = [ d for d in soup.find_all('div') if d.has_attr('class') and 'yt-lockup-dismissable' in d['class']]
+        img0 = div[0].find_all('img')[0]
+        imgurl = (img0['src'])
+        a = [ x for x in div[0].find_all('a') if x.has_attr('title') ]
+        title = (a[0]['title'])
+        a0 = [ x for x in div[0].find_all('a') if x.has_attr('title') ][0]
+        url= ('http://www.youtube.com'+a0['href'])
+        em = discord.Embed(title=title, url=url, color=0xdd342f)
+        em.set_author(name='📺   YouTube Search')
+        em.set_thumbnail(url=imgurl)
+        em.add_field(name='Channel', value='<channel name>', inline=True)
+        em.add_field(name='Duration', value='<duration of video>', inline=True)
+        em.set_footer(text="not yet fully opperational...")
+        await client.send_message(message.channel, embed=em)
+
+############################## F O R T N I T E ##############################
+
+    # Fortnite
+    if message.content.startswith(COMMAND_PREFIX + 'fortnite'):
+      words = message.content.split(' ', 2)
+
+      if len(words) < 3:
+        em = discord.Embed(description='Failed to get data. Please use `' + COMMAND_PREFIX + 'fortnite <platform> <nickname>`', color=0x6234b2)
+        await client.send_message(message.channel, embed=em)
+        return
+
+      platform = words[1].lower()
+
+      # more acceptable platform names
+      if platform == 'xbox':
+        platform = 'xbl'
+      elif platform == 'ps4':
+        platform = 'psn'
+
+      if platform not in ('pc','xbl','psn'):
+        em = discord.Embed(description='Failed to get data. Please use `' + COMMAND_PREFIX + 'fortnite <platform> <nickname>`', color=0x6234b2)
+        await client.send_message(message.channel, embed=em)
+        return
+      else:
+        res = fortnite_tracker_api(platform,words[2])
+
+        if res:
+          matches_played = res[0]['value']
+          wins = res[1]['value']
+          win_percent = res[2]['value']
+          kills = res[3]['value']
+          kd = res[4]['value']
+
+          em = discord.Embed(description="In game stats for " + words[2] + ':', color=0x6234b2)
+          em.set_author(name='⚔️   Fortnite')
+          em.set_thumbnail(url='https://cdn.discordapp.com/attachments/499771919059648588/511427912738799635/fortnite.png')
+          em.add_field(name="Matches Played", value=matches_played + '\n', inline=False)
+          em.add_field(name="Wins", value=wins + '\n', inline=True)
+          em.add_field(name="Win percent", value=win_percent + '\n', inline=True)
+          em.add_field(name="Kills", value=kills + '\n', inline=True)
+          em.add_field(name="K/D", value=kd + '\n', inline=True)
+          await client.send_message(message.channel, embed=em)
+        else:
+          em = discord.Embed(description='Failed to get data. Double check spelling of your nickname.', colour=0x6234b2)
+          await client.send_message(message.channel, embed=em)
+    
+    # Fortnite Help
+    if message.content == ';help fortnite':
+      em = discord.Embed(title='Fortnite Help', color=0x6234b2)
+      em.add_field(name='platform', value='pc | xbox | ps4', inline=True)
+      em.add_field(name='nickname', value='your fortnite player name.', inline=True)
+      em.add_field(name='Usage', value='`' + COMMAND_PREFIX + 'fortnite <platform> | <nickname>`', inline=False)
+      await client.send_message(message.channel, embed=em)
+    
+##########
     
     # Memes
     if message.content.startswith(';meme'):
@@ -390,45 +518,10 @@ async def on_message(message):
         f = open('authpass.txt','a')
         f.write('\n' + 'Password: ' + encryptedpass + ' was generated by ' + str(message.author))
         f.close()
-        
-    # Invite
-    if message.content == ';invite':
-        em = discord.Embed(description="If you'd like to add MikiBot to your server, Click here: https://goo.gl/2rp6n2", color=0xffafc9)
-        await client.send_message(message.channel, embed=em)
-        
-    # Server Count
-    if message.content == ';servercount':
-        em = discord.Embed(description='Currently watching over ' + str(len(client.servers)) + ' Discord servers <:discord:501956002158215198>', color=0xffafc9)
-        await client.send_message(message.channel, embed=em)
-        
-    # Server List
-    if message.content.startswith(';serverlist'):
-        if message.author.id == '257784039795064833':
-            servers = list(client.servers)
-            em = discord.Embed(description='Currently watching over ' + str(len(client.servers)) + ' Discord servers <:discord:501956002158215198>', color=0xffafc9)
-            await client.send_message(message.channel, embed=em)
-            for x in range(len(servers)):
-             await client.send_message(message.channel,('```md\n# ' + servers[x-1].name) + '\n ● ServerID: ' + servers[x-1].id + '```')
-        else:
-            await client.send_message(message.channel,"You don't have the permissions to use this command")
-            
-    # Greet
-    if message.content == ';greet':
-        await client.send_message(message.channel, 'H-hello >//<')
-        
-    # Vote
-    if message.content == ';vote':
-        em = discord.Embed(description='You can vote here: \n\n:point_right: https://discordbots.org/bot/496214977267630080/vote :point_left:', color=0xffafc9)
-        await client.send_message(message.channel, embed=em)
-    
+               
     # Donate
     if message.content == ';donate':
         em = discord.Embed(description='You can donate by purchasing roles from the MikiBot Help server here: \n\n:point_right: https://goo.gl/wGG82o :point_left:', color=0xffafc9)
-        await client.send_message(message.channel, embed=em)
-        
-##### Version
-    if message.content == ';version':
-        em = discord.Embed(description='The current version of Sector Bot is: `' + VERSION + '`', color=0xffafc9)
         await client.send_message(message.channel, embed=em)
     
     # Time
@@ -441,28 +534,6 @@ async def on_message(message):
         else:
             await client.send_message(message.channel, 'The server time now is: **' + int(wholetime-12) + resttime + 'PM. GMTTIME(0:00)**')
 
-    # YouTube
-    if message.content.startswith(';youtube '):
-        name = message.content[9:]
-        fullcontent = ('http://www.youtube.com/results?search_query=' + name)
-        text = requests.get(fullcontent).text
-        soup = bs4.BeautifulSoup(text, 'html.parser')
-        img = soup.find_all('img')
-        div = [ d for d in soup.find_all('div') if d.has_attr('class') and 'yt-lockup-dismissable' in d['class']]
-        img0 = div[0].find_all('img')[0]
-        imgurl = (img0['src'])
-        a = [ x for x in div[0].find_all('a') if x.has_attr('title') ]
-        title = (a[0]['title'])
-        a0 = [ x for x in div[0].find_all('a') if x.has_attr('title') ][0]
-        url= ('http://www.youtube.com'+a0['href'])
-        em = discord.Embed(title=title, url=url, color=0xdd342f)
-        em.set_author(name='📺   YouTube Search')
-        em.set_thumbnail(url=imgurl)
-        em.add_field(name='Channel', value='<channel name>', inline=True)
-        em.add_field(name='Duration', value='<duration of video>', inline=True)
-        em.set_footer(text="not yet fully opperational...")
-        await client.send_message(message.channel, embed=em)
-    
     # Dice Roll
     if message.content == ';diceroll' or message.content == ';dr':
         randomlist = ['1','2','3','4','5','6',]
@@ -503,58 +574,6 @@ async def on_message(message):
         em = discord.Embed(title ='**Game: 8 Ball**', color=0xffafc9, description="🎱 *shakes the 8 Ball up...*` \n\nYou shook the 8 ball and it shows you... \n Answer: **%s** \n ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿" %(random.choice(randomlist),))
         em.add_field(name="Other Games:", value="Dice Roll | ;dicerole \n Coin Flip | ;coinflip", inline=True)
         await client.send_message(message.channel, embed=em)
-      
-    # Fortnite
-    if message.content.startswith(COMMAND_PREFIX + 'fortnite'):
-      words = message.content.split(' ', 2)
-
-      if len(words) < 3:
-        em = discord.Embed(description='Failed to get data. Please use `' + COMMAND_PREFIX + 'fortnite <platform> <nickname>`', color=0x6234b2)
-        await client.send_message(message.channel, embed=em)
-        return
-
-      platform = words[1].lower()
-
-      # more acceptable platform names
-      if platform == 'xbox':
-        platform = 'xbl'
-      elif platform == 'ps4':
-        platform = 'psn'
-
-      if platform not in ('pc','xbl','psn'):
-        em = discord.Embed(description='Failed to get data. Please use `' + COMMAND_PREFIX + 'fortnite <platform> <nickname>`', color=0x6234b2)
-        await client.send_message(message.channel, embed=em)
-        return
-      else:
-        res = fortnite_tracker_api(platform,words[2])
-
-        if res:
-          matches_played = res[0]['value']
-          wins = res[1]['value']
-          win_percent = res[2]['value']
-          kills = res[3]['value']
-          kd = res[4]['value']
-
-          em = discord.Embed(description="In game stats for " + words[2] + ':', color=0x6234b2)
-          em.set_author(name='⚔️   Fortnite')
-          em.set_thumbnail(url='https://cdn.discordapp.com/attachments/499771919059648588/511427912738799635/fortnite.png')
-          em.add_field(name="Matches Played", value=matches_played + '\n', inline=False)
-          em.add_field(name="Wins", value=wins + '\n', inline=True)
-          em.add_field(name="Win percent", value=win_percent + '\n', inline=True)
-          em.add_field(name="Kills", value=kills + '\n', inline=True)
-          em.add_field(name="K/D", value=kd + '\n', inline=True)
-          await client.send_message(message.channel, embed=em)
-        else:
-          em = discord.Embed(description='Failed to get data. Double check spelling of your nickname.', colour=0x6234b2)
-          await client.send_message(message.channel, embed=em)
-    
-    # Fortnite Help
-    if message.content == ';help fortnite':
-      em = discord.Embed(title='Fortnite Help', color=0x6234b2)
-      em.add_field(name='platform', value='pc | xbox | ps4', inline=True)
-      em.add_field(name='nickname', value='your fortnite player name.', inline=True)
-      em.add_field(name='Usage', value='`' + COMMAND_PREFIX + 'fortnite <platform> | <nickname>`', inline=False)
-      await client.send_message(message.channel, embed=em)
        
 ########## COMMING SOON ##########
 
@@ -614,7 +633,7 @@ async def on_message(message):
         em.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         
         # Social
-        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:social:511456438296641536> **Social** \ngreet – Sends a greeting in the channel. \noofify <text> – Emojifies your text. \ntiny <text> – Decorates your text. \nsay <text> – rewrites your text.", inline=False)
+        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:social:511456438296641536> **Social** \ngreet – Sends a greeting in the channel. \nemojify <text> – Emojifies your text. \ntiny <text> – Decorates your text. \nsay <text> – rewrites your text.", inline=False)
         
         # Server
         em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:discord:501956002158215198> **Server** \nabout – Shows the About description of MikiBot. \ninvite – Sends the invite to add MikiBot to your server. \nservercount – Shows how many servers this bot occupies. \nserverlist – Shows a list of all the connected servers. \nversion – The current version of MikiBot. \nvote – Vote for MikiBot. \ndonate – Donate to MikiBot. \npurge <amount> – purges a specific amount of messages in a channel", inline=False)
