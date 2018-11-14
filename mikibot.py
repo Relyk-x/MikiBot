@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.6' #v0.4.6,2
+VERSION = 'v0.4.6' #v0.4.6,3
 
 querystring = {"format":"json"}
 
@@ -506,7 +506,7 @@ async def on_message(message):
       words = message.content.split(' ', 2)
 
       if len(words) < 3:
-        em = discord.Embed(description='Failed to get data. Please use `' + COMMAND_PREFIX + 'fortnite <platform> <nickname>`', color=0xffafc9)
+        em = discord.Embed(description='Failed to get data. Please use `' + COMMAND_PREFIX + 'fortnite <platform> <nickname>`', color=0x6234b2)
         await client.send_message(message.channel, embed=em)
         return
 
@@ -547,7 +547,7 @@ async def on_message(message):
     
     # Fortnite Help
     if message.content == ';help fortnite':
-      em = discord.Embed(title='Fortnite Help', color=0xffafc9)
+      em = discord.Embed(title='Fortnite Help', color=0x6234b2)
       em.add_field(name='platform', value='pc | xbox | ps4', inline=True)
       em.add_field(name='nickname', value='your fortnite player name.', inline=True)
       em.add_field(name='Usage', value='`' + COMMAND_PREFIX + 'fortnite <platform> | <nickname>`', inline=False)
