@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.7' #v0.4.7,2
+VERSION = 'v0.4.7' #v0.4.7,3
 
 Client = discord.client
 client = commands.Bot(command_prefix = ';')
@@ -354,7 +354,7 @@ async def on_message(message):
     if message.content.startswith(';purge ') and not message.content[7:]=='':
         if message.author.id == '257784039795064833':
           message_amount = int(message.content[7:])
-           deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
+          deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
           em = discord.Embed(description='Purged {} message(s) from this channel ⚠'.format(len(deleted)), color=0xffafc9,)
           selfdel = await client.send_message(message.channel, embed=em)
           await asyncio.sleep(10)
@@ -630,10 +630,10 @@ async def on_message(message):
         em.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
         
         # Social
-        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:social:511456438296641536> **Social** \ngreet – Sends a greeting in the channel. \nsay <text> – rewrites your text. \nemojify <text> – Emojifies your text. \ntiny <text> – Decorates your text.", inline=False)
+        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:social:511456438296641536> **Social** \ngreet – Sends a greeting in the channel. \nsay <text> – Rewrites your text. \nemojify <text> – Emojifies your text. \ntiny <text> – Decorates your text.", inline=False)
         
         # Server
-        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:discord:501956002158215198> **Server** \nabout – Shows the About description of MikiBot. \ninvite – Sends the invite to add MikiBot to your server. \nservercount – Shows how many servers this bot occupies. \nserverlist – Shows a list of all the connected servers. \nversion – The current version of MikiBot. \nvote – Vote for MikiBot. \ndonate – Donate to MikiBot. \ntime – displays the current time of the server. \npurge <amount> – purges a specific amount of messages in a channel.", inline=False)
+        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:discord:501956002158215198> **Server** \nabout – Shows the About description of MikiBot. \ninvite – Sends the invite to add MikiBot to your server. \nservercount – Shows how many servers this bot occupies. \nserverlist – Shows a list of all the connected servers. \nversion – The current version of MikiBot. \nvote – Vote for MikiBot. \ndonate – Donate to MikiBot. \ntime – Displays the current time of the server. \npurge <amount> – Purges a specific amount of messages in a channel.", inline=False)
         
         # Youtube
         em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:youtube:511430654139957258> **YouTube** \nyoutube <search> – Searches youtube for the most relevent video.", inline=False)
