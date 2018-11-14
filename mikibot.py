@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.6' #v0.4.6,8
+VERSION = 'v0.4.6' #v0.4.6,9
 
 querystring = {"format":"json"}
 
@@ -393,7 +393,7 @@ async def on_message(message):
         
     # Invite
     if message.content == ';invite':
-        em = discord.Embed(description="If you'd like to add Sector Bot to your server, Click here: https://goo.gl/2rp6n2", color=0xffafc9)
+        em = discord.Embed(description="If you'd like to add MikiBot to your server, Click here: https://goo.gl/2rp6n2", color=0xffafc9)
         await client.send_message(message.channel, embed=em)
         
     # Server Count
@@ -403,12 +403,15 @@ async def on_message(message):
         
     # Server List
     if message.content.startswith(';serverlist'):
-        servers = list(client.servers)
-        em = discord.Embed(description='Currently watching over ' + str(len(client.servers)) + ' Discord servers <:discord:501956002158215198>', color=0xffafc9)
-        await client.send_message(message.channel, embed=em)
-        for x in range(len(servers)):
-         await client.send_message(message.channel,('```md\n# ' + servers[x-1].name) + '\n ● ServerID: ' + servers[x-1].id + '```')
-    
+        if message.author.id == '257784039795064833':
+            servers = list(client.servers)
+            em = discord.Embed(description='Currently watching over ' + str(len(client.servers)) + ' Discord servers <:discord:501956002158215198>', color=0xffafc9)
+            await client.send_message(message.channel, embed=em)
+            for x in range(len(servers)):
+             await client.send_message(message.channel,('```md\n# ' + servers[x-1].name) + '\n ● ServerID: ' + servers[x-1].id + '```')
+        else:
+            await client.send_message(message.channel,"You don't have the permissions to use this command")
+            
     # Greet
     if message.content == ';greet':
         await client.send_message(message.channel, 'H-hello >//<')
@@ -614,7 +617,7 @@ async def on_message(message):
         em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:social:511456438296641536> **Social** \ngreet – Sends a greeting in the channel. \noofify <text> – Emojifies your text. \ntiny <text> – Decorates your text. \nsay <text> – rewrites your text.", inline=False)
         
         # Server
-        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:discord:501956002158215198> **Server** \nabout – Shows the About description of MikiBot. \ninvite – Sends the invite to add MikiBot to your server. \nservercount – Shows how many servers this bot occupies. \nversion – The current version of MikiBot. \nvote – Vote for MikiBot. \ndonate – Donate to MikiBot. \npurge <amount> – purges a specific amount of messages in a channel", inline=False)
+        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:discord:501956002158215198> **Server** \nabout – Shows the About description of MikiBot. \ninvite – Sends the invite to add MikiBot to your server. \nservercount – Shows how many servers this bot occupies. \nserverlist – Shows a list of all the connected servers. \nversion – The current version of MikiBot. \nvote – Vote for MikiBot. \ndonate – Donate to MikiBot. \npurge <amount> – purges a specific amount of messages in a channel", inline=False)
         
         # Youtube
         em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:youtube:511430654139957258> **YouTube** \nyoutube <search> – Searches youtube for the most relevent video.", inline=False)
@@ -623,7 +626,7 @@ async def on_message(message):
         em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:fortnite:512113103387754509> **Fortnite** \nfortnite <platform> <nickname> – Displays fortnite stats of the entered user. \nhelp fortnite – Shows a how to of the command if you are stuck.", inline=False)
         
         # Fun
-        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:fun:511457443939614721> **Fun** \nmeme – `DISABLED` \npassword – Generates a random password. \nwallpaper – Generate a random wallpaper. \ngif – Generate a random gif.", inline=False)
+        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:fun:511457443939614721> **Fun** \n~~meme~~ – `DISABLED` \npassword – Generates a random password. \nwallpaper – Generate a random wallpaper. \ngif – Generate a random gif.", inline=False)
         
         # Games
         em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:game:511448070005981204> **Games** \ndiceroll – Rolls a six sided die. \ncoinflip – Flips a coin, could be heads could be tails. \n8ball – Ask a question and shake the 8 Ball.", inline=False)
