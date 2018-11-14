@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.6' #v0.4.6,1
+VERSION = 'v0.4.6' #v0.4.6,2
 
 querystring = {"format":"json"}
 
@@ -519,7 +519,7 @@ async def on_message(message):
         platform = 'psn'
 
       if platform not in ('pc','xbl','psn'):
-        em = discord.Embed(description='Failed to get data. Please use `' + COMMAND_PREFIX + 'fortnite <platform> <nickname>`', color=0xffafc9)
+        em = discord.Embed(description='Failed to get data. Please use `' + COMMAND_PREFIX + 'fortnite <platform> <nickname>`', color=0x6234b2)
         await client.send_message(message.channel, embed=em)
         return
       else:
@@ -532,7 +532,7 @@ async def on_message(message):
           kills = res[3]['value']
           kd = res[4]['value']
 
-          em = discord.Embed(description="In game stats for " + words[2] + ':', color=0xffafc9)
+          em = discord.Embed(description="In game stats for " + words[2] + ':', color=0x6234b2)
           em.set_author(name='⚔️   Fortnite')
           em.set_thumbnail(url='https://cdn.discordapp.com/attachments/499771919059648588/511427912738799635/fortnite.png')
           em.add_field(name="Matches Played", value=matches_played + '\n', inline=False)
