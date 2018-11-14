@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.6' #v0.4.6,0
+VERSION = 'v0.4.6' #v0.4.6,1
 
 querystring = {"format":"json"}
 
@@ -452,7 +452,7 @@ async def on_message(message):
         title = (a[0]['title'])
         a0 = [ x for x in div[0].find_all('a') if x.has_attr('title') ][0]
         url= ('http://www.youtube.com'+a0['href'])
-        em = discord.Embed(title=title, url=url, color=0xffafc9)
+        em = discord.Embed(title=title, url=url, color=0xdd342f)
         em.set_author(name='📺   YouTube Search')
         em.set_thumbnail(url=imgurl)
         em.add_field(name='Channel', value='<channel name>', inline=True)
@@ -542,7 +542,7 @@ async def on_message(message):
           em.add_field(name="K/D", value=kd + '\n', inline=True)
           await client.send_message(message.channel, embed=em)
         else:
-          em = discord.Embed(description='Failed to get data. Double check spelling of your nickname.', colour=0xffafc9)
+          em = discord.Embed(description='Failed to get data. Double check spelling of your nickname.', colour=0x6234b2)
           await client.send_message(message.channel, embed=em)
     
     # Fortnite Help
