@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.6' #v0.4.6,7
+VERSION = 'v0.4.6' #v0.4.6,8
 
 querystring = {"format":"json"}
 
@@ -620,7 +620,7 @@ async def on_message(message):
         em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:youtube:511430654139957258> **YouTube** \nyoutube <search> – Searches youtube for the most relevent video.", inline=False)
         
         # Fortnite
-        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:fortnite:512112211456557079> **Fortnite** \nfortnite <platform> <nickname> – Displays fortnite stats of the entered user. \nhelp fortnite – Shows a how to of the command if you are stuck.", inline=False)
+        em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:fortnite:512113103387754509> **Fortnite** \nfortnite <platform> <nickname> – Displays fortnite stats of the entered user. \nhelp fortnite – Shows a how to of the command if you are stuck.", inline=False)
         
         # Fun
         em.add_field(name="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿", value="<:fun:511457443939614721> **Fun** \nmeme – `DISABLED` \npassword – Generates a random password. \nwallpaper – Generate a random wallpaper. \ngif – Generate a random gif.", inline=False)
