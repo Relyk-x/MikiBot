@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.7' #v0.4.7,1
+VERSION = 'v0.4.7' #v0.4.7,2
 
 Client = discord.client
 client = commands.Bot(command_prefix = ';')
@@ -346,21 +346,21 @@ async def on_message(message):
         wholetime = dash[0] + dash[1]
         resttime = dash[2:]
         if int(wholetime) < 12:
-            await client.send_message(message.channel, 'The server time now is: **' + wholetime + resttime + 'AM. GMTIME(0:00)**')
+          await client.send_message(message.channel, 'The server time now is: **' + wholetime + resttime + 'AM. GMTIME(0:00)**')
         else:
-            await client.send_message(message.channel, 'The server time now is: **' + int(wholetime-12) + resttime + 'PM. GMTTIME(0:00)**')
+          await client.send_message(message.channel, 'The server time now is: **' + int(wholetime-12) + resttime + 'PM. GMTTIME(0:00)**')
     
     # Purge
     if message.content.startswith(';purge ') and not message.content[7:]=='':
-         if message.author.id == '257784039795064833':
-             message_amount = int(message.content[7:])
-             deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
-             em = discord.Embed(description='Purged {} message(s) from this channel ⚠'.format(len(deleted)), color=0xffafc9,)
-             selfdel = await client.send_message(message.channel, embed=em)
-             await asyncio.sleep(10)
-             await client.delete_message(selfdel)
-         else:
-             await client.send_message(message.channel,"You don't have the permissions to use this command")
+        if message.author.id == '257784039795064833':
+          message_amount = int(message.content[7:])
+           deleted = await client.purge_from(message.channel, limit=message_amount, check=on_message)
+          em = discord.Embed(description='Purged {} message(s) from this channel ⚠'.format(len(deleted)), color=0xffafc9,)
+          selfdel = await client.send_message(message.channel, embed=em)
+          await asyncio.sleep(10)
+          await client.delete_message(selfdel)
+        else:
+          await client.send_message(message.channel,"You don't have the permissions to use this command")
     
 ############################## Y O U T U B E ##############################    
     
