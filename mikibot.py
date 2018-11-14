@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.7' #v0.4.7,5
+VERSION = 'v0.4.7' #v0.4.7,6
 
 Client = discord.client
 client = commands.Bot(command_prefix = ';')
@@ -348,7 +348,7 @@ async def on_message(message):
         if int(wholetime) < 12:
             await client.send_message(message.channel, 'The server time now is: **' + wholetime + resttime + 'AM. GMTIME(0:00)**')
         else:
-            await client.send_message(message.channel, 'The server time now is: **' + int(wholetime - 12) + resttime + 'PM. GMTTIME(0:00)**')
+            await client.send_message(message.channel, 'The server time now is: **' + int(wholetime-12) + resttime + 'PM. GMTTIME(0:00)**')
 
     # Purge
     if message.content.startswith(';purge ') and not message.content[7:]=='':
