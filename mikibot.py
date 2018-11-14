@@ -13,7 +13,7 @@ from time import gmtime, strftime
 
 FORTNITE_API_TOKEN = os.getenv('FORTNITETOKEN')
 COMMAND_PREFIX = ';'
-VERSION = 'v0.4.7' #v0.4.7,6
+VERSION = 'v0.4.7' #v0.4.7,7
 
 Client = discord.client
 client = commands.Bot(command_prefix = ';')
@@ -341,7 +341,7 @@ async def on_message(message):
         await client.send_message(message.channel, embed=em)
     
     # Time
-    if message.content == 'b!time':
+    if message.content == ';time':
         dash = strftime("%H:%M", gmtime())
         wholetime = dash[0] + dash[1]
         resttime = dash[2:]
