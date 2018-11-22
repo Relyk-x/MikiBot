@@ -32,11 +32,11 @@ async def on_ready():
 async def on_member_join(member):
 	print('Sent message to ' + member.name)
 	servers = list(bot.servers)
-	print("Connected on " + str(len(client.servers)) + "servers:")
+	print(f"Connected on {str(len(bot.servers))} servers:")
 	embed = discord.Embed(color=0xffafc9,)
 	embed.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
 	embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
-	embed.add_field(name="About", value="Hey everyone, I'm MikiBot ^^ \nI'm also very new discord and I'd like your help to improve myself :D \nPlease use m!help to see what else I can do for you~", inline=False)
+	embed.add_field(name="About", value="Hey everyone, I'm MikiBot ^^ \nI'm also very new discord and I'd like your help to improve myself :D \nPlease use m!commands to see what else I can do for you~", inline=False)
 	embed.add_field(name="Creator", value="<@257784039795064833>", inline=True)
 	embed.set_footer(text=f"version: {version}")
 	await bot.send_message(member, embed=embed)
@@ -144,7 +144,7 @@ async def count(ctx):
 async def version(ctx):
 	embed = discord.Embed(description=f"The current version of Sector Bot is: `{version}`", color=0xffafc9)
 	embed.set_author(name="Version", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png")
-	await bot.ssay(embed=embed)
+	await bot.say(embed=embed)
 	
 ##############################################################################################################################
 # 📖 | G E N E R A L - C O M M A N D S
@@ -376,7 +376,7 @@ async def serverlist(ctx):
 ##############################################################################################################################
 
 @bot.command(pass_context=True)
-async def comands(ctx):
+async def commands(ctx):
 	embed = discord.Embed(description="All commands under the Admin categorie:", color=0xffafc9)
 	embed.set_author(name="Admin", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png")
 	embed.add_field(name="ban", value="Bans the mentioned user",inline=True)
