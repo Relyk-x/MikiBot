@@ -393,7 +393,7 @@ async def commands(ctx):
 	embed.add_field(name="avatar", value="Displays the profile pic of the mentioned user", inline=True)
 	embed.add_field(name="about", value="Displays the About description of MikiBot",inline=True)
 	embed.add_field(name="invite", value="Sends the invite link to add MikiBot to your server", inline=True)
-	embed.add_field(name="vote", value="Sends the voting link for MikiBot", inlin=True)
+	embed.add_field(name="vote", value="Sends the voting link for MikiBot", inline=True)
 	embed.add_field(name="donate", value="Sends the donate link for Mikibot", inline=True)
 	await bot.say(embed=embed)
 	embed = discord.Embed(description="All commands under the Fun categorie:", color=0xffafc9)
