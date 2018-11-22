@@ -30,8 +30,8 @@ twitter = "https://cdn.discordapp.com/attachments/499771950764261396/51499620271
 patreon = "https://cdn.discordapp.com/attachments/499771950764261396/513936104357888000/icon_color_variations.jpg"
 general = "https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png"
 fun = "https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png"
-youtube = "https://cdn.discordapp.com/attachments/499771950764261396/515290591848955905/yt.png"
-google = "https://cdn.discordapp.com/attachments/499771950764261396/515292396679069711/google.png"
+you_be = "https://cdn.discordapp.com/attachments/499771950764261396/515290591848955905/yt.png"
+goo_gl = "https://cdn.discordapp.com/attachments/499771950764261396/515292396679069711/google.png"
 
 @bot.event
 async def on_ready():
@@ -285,7 +285,7 @@ async def google(ctx,*args):
 	x = f"https://www.google.com/search?rlz=1C1CHBF_enUS753US753&ei=n62RW536KpL2swWl1IKIBg&q={args}&oq=google+search&gs_l=psy-ab.3..0i71l8.0.0..8290...0.0..0.0.0.......0......gws-wiz.vtjc2PzIHFg"
 	y = x.replace(" ","+")
 	embed = discord.Embed(color=0xffffff,)
-	embed.set_author(name="Google", icon_url=google)
+	embed.set_author(name="Google", icon_url=goo_gl)
 	embed.add_field(name="Link:", value=y)
 	await bot.say(embed=embed)
 
@@ -294,7 +294,7 @@ async def youtube(ctx,*args):
 	x = f"https://www.youtube.com/results?search_query={args}"
 	y = x.replace(" ","+")
 	embed = discord.Embed(color=0xff0000,)
-	embed.set_author(name="YouTube", icon_url=youtube)
+	embed.set_author(name="YouTube", icon_url=you_be)
 	embed.add_field(name="Link:", value=y)
 	await bot.say(embed=embed)
 
