@@ -17,7 +17,7 @@ import os
 bot = commands.Bot(command_prefix='v!')
 msglimit = 100
 now = datetime.now()
-ver = "v0.5.1" #3
+ver = "v0.5.1"#7
 botname = "Vixen"
 
 #Emoji
@@ -162,7 +162,7 @@ async def count(ctx):
 
 @bot.command(pass_context=True)
 async def version(ctx):
-	embed = discord.Embed(title="Version", description=f"The current version of {botname} is: `{version}`", color=0xffffff)
+	embed = discord.Embed(title="Version", description=f"The current version of {botname} is: `{ver}`", color=0xffffff)
 	embed.set_author(name="Bot Logs", icon_url=warning)
 	await bot.say(embed=embed)
 	
