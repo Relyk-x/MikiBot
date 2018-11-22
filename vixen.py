@@ -17,7 +17,7 @@ import os
 bot = commands.Bot(command_prefix='v!')
 msglimit = 100
 now = datetime.now()
-version = "v0.5.0"#6
+version = "v0.5.1"#3
 botname = "Vixen"
 
 #Emoji
@@ -229,7 +229,8 @@ async def about(ctx):
 	embed = discord.Embed(color=0xffffff,)
 	embed.set_author(name=botname, icon_url=vixen)
 	embed.set_thumbnail(url=vixen)
-	embed.add_field(name="About", value=f"{botname} - needs development", inline=False)
+	embed.add_field(name="About", value="v!commands for help", inline=True)
+	embed.add_field(name="Prefix", value="v!", inline=True)
 	embed.add_field(name="Creator", value="<@257784039795064833>", inline=True)
 	embed.set_footer(text=f"version: {version}")
 	await bot.say(embed=embed)
