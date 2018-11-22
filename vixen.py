@@ -291,10 +291,6 @@ async def google(ctx,*args):
 async def youtube(ctx,*args):
 	x = f"https://www.youtube.com/results?search_query={args}"
 	y = x.replace(" ","+")
-	y = x.replace("(","")
-	y = x.replace(")","")
-	y = x.replace(",","")
-	y = x.replace("'","")
 	embed = discord.Embed(color=0xff0000,)
 	embed.set_author(name="YouTube", icon_url=dis_cord)
 	embed.add_field(name="Link:", value=y)
