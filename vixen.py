@@ -17,7 +17,7 @@ import os
 bot = commands.Bot(command_prefix='v!')
 msglimit = 100
 now = datetime.now()
-version = "v0.4.8"#3
+version = "v0.5.0"#6
 botname = "Vixen"
 
 @bot.event
@@ -153,6 +153,12 @@ async def version(ctx):
 ##############################################################################################################################
 
 @bot.command(pass_context=True)
+async def prefix(ctx):
+	embed = discord.Embed(description="v!", color=0xffffff
+	emebd.set_author(name="Prefix", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png"
+	await bot.say(embed=embed)
+			 
+@bot.command(pass_context=True)
 async def server(ctx):
 	bots = 0
 	members = 0
@@ -243,15 +249,6 @@ async def donate(ctx):
 	embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/499771950764261396/513936104357888000/icon_color_variations.jpg")
 	await bot.say(embed=embed)
 	
-@bot.command(pass_context=True)
-async def time(ctx):
-	time = now.strftime("%I:%M %p")
-	date = now.strftime("%a, %d %b %Y")
-	embed = discord.Embed(title="🕗 Clock", color=0xffffff)
-	embed.add_field(name="Time", value=time, inline=True)
-	embed.add_field(name="Date", value=date, inline=True)
-	embed.set_footer(text=f"Requested by {ctx.message.author}", icon_url=ctx.message.author.avatar_url) 
-	await bot.say(embed=embed)
 	
 ##############################################################################################################################
 # 😜 | F U N - C O M M A N D S													      
@@ -283,6 +280,16 @@ async def greet(ctx):
                      ]
 	await bot.say("%s" %(random.choice(randomlist),))
 
+@bot.command(pass_context=True)
+async def time(ctx):
+	time = now.strftime("%I:%M %p")
+	date = now.strftime("%a, %d %b %Y")
+	embed = discord.Embed(title="🕗 Clock", color=0xffffff)
+	embed.add_field(name="Time", value=time, inline=True)
+	embed.add_field(name="Date", value=date, inline=True)
+	embed.set_footer(text=f"Requested by {ctx.message.author}", icon_url=ctx.message.author.avatar_url) 
+	await bot.say(embed=embed)
+	
 @bot.command(pass_context=True)
 async def kawaii(ctx):
 	embed = discord.Embed(title="Kawaii Emoji", description="Find more here: https://kawaiiface.net/", color=0xffffff,)
@@ -392,18 +399,20 @@ async def commands(ctx):
 	embed.add_field(name="unban", value="Unbans the mentioned user", inline=False)
 	embed.add_field(name="kick", value="Kicks the mentioned user", inline=False)
 	embed.add_field(name="clear", value="Clears a specific amount of messages in a channel", inline=False)
-	embed.add_field(name="ping", value="Displays current ping of MikiBot", inline=False)
+	embed.add_field(name="ping", value=f"Displays current ping of {botname}", inline=False)
 	embed.add_field(name="count", value="Displays the amount of members in the current server", inline=False)
+	embed.add_field(name="version", value=f"Displays the current version of {botname}", inline=False)
 	await bot.say(embed=embed)
 	embed = discord.Embed(description="All commands under the General categorie:", color=0xffffff)
 	embed.set_author(name="General", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png")
+	embed.add_field(name="prefix", value="Displays the current prefix", inline=False)
 	embed.add_field(name="server", value="Displays the info of the current server", inline=False)
 	embed.add_field(name="user", value="Displays a profile of the mentioned user", inline=False)
 	embed.add_field(name="avatar", value="Displays the profile pic of the mentioned user", inline=False)
-	embed.add_field(name="about", value="Displays the About description of MikiBot", inline=False)
-	embed.add_field(name="invite", value="Sends the invite link to add MikiBot to your server", inline=False)
-	embed.add_field(name="vote", value="Sends the voting link for MikiBot", inline=False)
-	embed.add_field(name="donate", value="Sends the donate link for Mikibot", inline=False)
+	embed.add_field(name="about", value=f"Displays the About description of {botname}", inline=False)
+	embed.add_field(name="invite", value=f"Sends the invite link to add {botname} to your server", inline=False)
+	embed.add_field(name="vote", value=f"Sends the voting link for {botname}", inline=False)
+	embed.add_field(name="donate", value=f"Sends the donate link for {botname}", inline=False)
 	await bot.say(embed=embed)
 	embed = discord.Embed(description="All commands under the Fun categorie:", color=0xffffff)
 	embed.set_author(name="Fun", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png")
