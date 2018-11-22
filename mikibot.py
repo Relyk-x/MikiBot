@@ -347,16 +347,36 @@ async def eightball(ctx):
 	await bot.say(embed=embed)
 
 ##############################################################################################################################
+# 🛠️ | O W N E R - C O M M A N D S	
+##############################################################################################################################
+
+@bot.command(pass_context=True)
+async def servercount(ctx):
+	embed = discord.Embed(description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0xffafc9)
+	embed.set_author(name="Server Count", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png")
+	await bot.say(embed=embed)
+	
+@bot.command(pass_context=True)
+async def serverlist(ctx):
+	serv = list(bot.servers)
+	embed = discord.Embed(title="Server List", description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0xffafc9)
+	embed.set_author(name="Server List", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png")
+	await bot.say(embed=embed)
+	for x in range(len(serv)):
+	 embed = discord.Embed(title=serv[x-1].name, description=f"● ServerID: {serv[x-1].id}", color=0x7289da)
+	 await bot.say(embed=embed)
+	
+##############################################################################################################################
 # 🚫 | R E M O V E D - C O M M A N D S
 ##############################################################################################################################
 
-@bot.remove_command("help")
-	
+
 ##############################################################################################################################
 # ℹ️ | H E L P - C O M M A N D S	
 ##############################################################################################################################
 
 @bot.command(pass_context=True)
+@bot.remove_command("help")
 async def help(ctx):
 	embed = discord.Embed(description="All commands under the Admin categorie:", color=0xffafc9)
 	embed.set_author(name="Admin", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png")
@@ -390,25 +410,5 @@ async def help(ctx):
 	embed.add_field(name="coinflip", value="Flips a coin, could be heads could be tails", inline=True)
 	embed.add_field(name="eightball", value="Ask a question and shake the 8 Ball", inline=True)
 	await bot.say(embed=embed)
-	
-##############################################################################################################################
-# 🛠️ | O W N E R - C O M M A N D S	
-##############################################################################################################################
-
-@bot.command(pass_context=True)
-async def servercount(ctx):
-	embed = discord.Embed(description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0xffafc9)
-	embed.set_author(name="Server Count", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png")
-	await bot.say(embed=embed)
-	
-@bot.command(pass_context=True)
-async def serverlist(ctx):
-	serv = list(bot.servers)
-	embed = discord.Embed(title="Server List", description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0xffafc9)
-	embed.set_author(name="Server List", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png")
-	await bot.say(embed=embed)
-	for x in range(len(serv)):
-	 embed = discord.Embed(title=serv[x-1].name, description=f"● ServerID: {serv[x-1].id}", color=0x7289da)
-	 await bot.say(embed=embed)
 	
 bot.run(os.getenv("BOT_TOKEN"))
