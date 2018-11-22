@@ -10,6 +10,7 @@ import random
 import json
 import datetime
 from datetime import datetime
+import bs4, requests
 import time
 import os
 
