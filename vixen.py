@@ -17,7 +17,7 @@ import os
 bot = commands.Bot(command_prefix='v!')
 msglimit = 100
 now = datetime.now()
-ver = "v0.5.1"#7
+ver = "v0.5.1"#8
 botname = "Vixen"
 
 #Emoji
@@ -49,9 +49,9 @@ async def on_member_join(member):
 	embed = discord.Embed(color=0xffffff,)
 	embed.set_author(name=botname, icon_url=vixen)
 	embed.set_thumbnail(url=vixen)
-	embed.add_field(name="About", value="v!commands for help", inline=True)
-	embed.add_field(name="Prefix", value="v!", inline=True)
+	embed.add_field(name="Prefix", value="v! | v!commands for help", inline=True)
 	embed.add_field(name="Creator", value="<@257784039795064833>", inline=True)
+	embed.add_field(name="About", value="Hey, this is Vixen a new bot in need of more users.\nShare our bot or join our help server!", inline=True)
 	embed.set_footer(text=f"version: {ver}",)
 	await bot.send_message(member, embed=embed)
 	
@@ -189,7 +189,7 @@ async def server(ctx):
 	  members += 1
 	  total += 1
 	embed = discord.Embed(description="Here's what I could find.", color=0xffffff)
-	emebd.set_author(name="Server Info", icon_url=dis_cord)
+	embed.set_author(name="Server Info", icon_url=dis_cord)
 	embed.set_thumbnail(url=ctx.message.server.icon_url)
 	embed.add_field(name="Name:", value=ctx.message.server.name, inline=True)
 	embed.add_field(name="ID:", value=ctx.message.server.id, inline=True)
@@ -229,9 +229,9 @@ async def about(ctx):
 	embed = discord.Embed(color=0xffffff,)
 	embed.set_author(name=botname, icon_url=vixen)
 	embed.set_thumbnail(url=vixen)
-	embed.add_field(name="About", value="v!commands for help", inline=True)
-	embed.add_field(name="Prefix", value="v!", inline=True)
+	embed.add_field(name="Prefix", value="v! | v!commands for help", inline=True)
 	embed.add_field(name="Creator", value="<@257784039795064833>", inline=True)
+	embed.add_field(name="About", value="Hey, this is Vixen a new bot in need of more users.\nShare our bot or join our help server!", inline=True)
 	embed.set_footer(text=f"version: {ver}",)
 	await bot.say(embed=embed)
 	
@@ -274,7 +274,6 @@ async def donate(ctx):
 	embed.set_thumbnail(url=patreon)
 	await bot.say(embed=embed)
 	
-	
 ##############################################################################################################################
 # 😜 | F U N - C O M M A N D S													      
 ##############################################################################################################################
@@ -283,13 +282,23 @@ async def donate(ctx):
 async def google(ctx,*args):
 	x = f"https://www.google.com/search?rlz=1C1CHBF_enUS753US753&ei=n62RW536KpL2swWl1IKIBg&q={args}&oq=google+search&gs_l=psy-ab.3..0i71l8.0.0..8290...0.0..0.0.0.......0......gws-wiz.vtjc2PzIHFg"
 	y = x.replace(" ","+")
-	await bot.say(y)
+	embed = discord.Embed(color=0xffffff,)
+	embed.set_author(name="Google", icon_url=dis_cord)
+	embed.add_field(name="Link:", value=y)
+	await bot.say(embed=embed)
 
 @bot.command(pass_context=True)
 async def youtube(ctx,*args):
 	x = f"https://www.youtube.com/results?search_query={args}"
 	y = x.replace(" ","+")
-	await bot.say(y)
+	y = x.replace("(","")
+	y = x.replace(")",""
+	y = x.replace(",","")
+	y = x.replace("'","")
+	embed = discord.Embed(color=0xff0000,)
+	embed.set_author(name="YouTube", icon_url=dis_cord)
+	embed.add_field(name="Link:", value=y)
+	await bot.say(embed=embed)
 
 @bot.command(pass_context=True)
 async def greet(ctx):
