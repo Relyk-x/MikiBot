@@ -23,9 +23,9 @@ botname = "Vixen"
 async def on_ready():
 	servers = list(bot.servers)
 	status = f"over {str(len(bot.servers))} servers"
-	print (f"MikiBot is up on {str(len(bot.servers))} servers!")
 	print (f"Bot Name: {bot.user.name}")
 	print (f"Bot ID: {bot.user.id}")
+	print (f"{botname} is up on {str(len(bot.servers))} servers!")
 	print ("Ready when you are...")
 	await bot.change_presence(game=discord.Game(name=status,type=3))
 	
