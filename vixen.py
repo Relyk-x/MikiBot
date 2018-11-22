@@ -32,6 +32,8 @@ general = "https://cdn.discordapp.com/attachments/499771950764261396/50048557879
 fun = "https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png"
 you_be = "https://cdn.discordapp.com/attachments/499771950764261396/515290591848955905/yt.png"
 goo_gl = "https://cdn.discordapp.com/attachments/499771950764261396/515292396679069711/google.png"
+gear = "https://cdn.discordapp.com/attachments/499771950764261396/515299978072293405/gear.png"
+spark = "https://cdn.discordapp.com/attachments/499771950764261396/515302914240282625/spark.png"
 
 @bot.event
 async def on_ready():
@@ -437,7 +439,7 @@ async def commands(ctx):
 	embed.add_field(name="version", value=f"Displays the current version of {botname}", inline=False)
 	await bot.say(embed=embed)
 	embed = discord.Embed(description="All commands under the General categorie:", color=0xffffff)
-	embed.set_author(name="General", icon_url=general)
+	embed.set_author(name="General", icon_url=dear)
 	embed.add_field(name="prefix", value="Displays the current prefix", inline=False)
 	embed.add_field(name="server", value="Displays the info of the current server", inline=False)
 	embed.add_field(name="user", value="Displays a profile of the mentioned user", inline=False)
@@ -448,7 +450,7 @@ async def commands(ctx):
 	embed.add_field(name="donate", value=f"Sends the donate link for {botname}", inline=False)
 	await bot.say(embed=embed)
 	embed = discord.Embed(description="All commands under the Fun categorie:", color=0xffffff)
-	embed.set_author(name="Fun", icon_url=fun)
+	embed.set_author(name="Fun", icon_url=spark)
 	embed.add_field(name="google", value="Googles your search", inline=False)
 	embed.add_field(name="youtube", value="Searches for the most relevant youtube video", inline=False)
 	embed.add_field(name="greet", value="Generates a greeting response", inline=False)
