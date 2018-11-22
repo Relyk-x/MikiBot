@@ -71,7 +71,7 @@ async def on_member_join(member):
 @commands.has_permissions(ban_members = True)
 async def ban(ctx, user: discord.Member):
 	embed = discord.Embed(title="Ban", description = f"{user.mention} has been banned by {ctx.message.author}", color=0xffffff,)
-	embed.set_author(name="Bot Logs", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/515263052686557185/warning.png"
+	embed.set_author(name="Bot Logs", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/515263052686557185/warning.png")
 	seldel = await bot.say(embed=embed)
 	await bot.ban(user)
 	await asyncio.sleep(10)
@@ -81,7 +81,7 @@ async def ban(ctx, user: discord.Member):
 @commands.has_permissions(ban_members=True)
 async def unban(ctx, user: discord.Member):
 	embed = discord.Embed(title="Unban", description="{0.name} has been unbanned from the server".format(user), color=0xffffff,)
-	embed.set_author(name="Bot Logs", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/515263052686557185/warning.png"
+	embed.set_author(name="Bot Logs", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/515263052686557185/warning.png")
 	seldel = await bot.say(embed=embed)
 	await bot.unban(user)
 	await asyncio.sleep(10)
@@ -91,7 +91,7 @@ async def unban(ctx, user: discord.Member):
 @commands.has_permissions(kick_members=True)
 async def kick(ctx, user: discord.Member):
 	embed = discord.Embed(title="Kick", description="**{}** has been kicked from the server".format(user.name), color=0xffffff,)
-	embed.set_author(name="Bot Logs", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/515263052686557185/warning.png"
+	embed.set_author(name="Bot Logs", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/515263052686557185/warning.png")
 	selfdel = await bot.say(embed=embed)
 	await bot.kick(user)
 	await asyncio.sleep(10)
@@ -102,7 +102,7 @@ async def kick(ctx, user: discord.Member):
 async def clear(ctx, msglimit : int):
 	deleted = await bot.purge_from(ctx.message.channel, limit=msglimit)
 	embed = discord.Embed(title="Clear", description='Cleared **{}** message(s) from the channel'.format(len(deleted)), color=0xffffff,)
-	embed.set_author(name="Bot Logs", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/515263052686557185/warning.png"
+	embed.set_author(name="Bot Logs", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/515263052686557185/warning.png")
 	selfdel = await bot.say(embed=embed)
 	await asyncio.sleep(10)
 	await bot.delete_message(selfdel)
@@ -112,7 +112,7 @@ async def clear(ctx, msglimit : int):
 @bot.command(pass_context=True)
 async def ping(ctx):
 	embed = discord.Embed(title="Ping", description=":construction:  under construction :construction:", color=0xffffff)
-	embed.set_author(name="Bot Logs", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/515263052686557185/warning.png"
+	embed.set_author(name="Bot Logs", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/515263052686557185/warning.png")
 	await bot.say(embed=embed)
 	# Time the time required to send a message first.
 	# This is the time taken for the message to be sent, awaited, and then 
@@ -142,7 +142,7 @@ async def count(ctx):
 	  members += 1
 	  total += 1
 	embed = discord.Embed(title="Server Member Count",color=0xffffff)
-	embed.set_author(name="Bot Logs", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/515263052686557185/warning.png"
+	embed.set_author(name="Bot Logs", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/515263052686557185/warning.png")
 	embed.add_field(name="Bot Count",value=bots)
 	embed.add_field(name="Member Count",value=members)
 	embed.add_field(name="Total",value=total)
@@ -151,7 +151,7 @@ async def count(ctx):
 @bot.command(pass_context=True)
 async def version(ctx):
 	embed = discord.Embed(title="Version", description=f"The current version of {botname} is: `{version}`", color=0xffffff)
-	embed.set_author(name="Bot Logs", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/515263052686557185/warning.png"
+	embed.set_author(name="Bot Logs", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/515263052686557185/warning.png")
 	await bot.say(embed=embed)
 	
 ##############################################################################################################################
