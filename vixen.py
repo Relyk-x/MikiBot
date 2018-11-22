@@ -17,6 +17,7 @@ bot = commands.Bot(command_prefix='m!')
 msglimit = 100
 now = datetime.now()
 version = "v0.4.8"#3
+botname = "Vixen"
 
 @bot.event
 async def on_ready():
@@ -33,16 +34,16 @@ async def on_member_join(member):
 	print('Sent message to ' + member.name)
 	servers = list(bot.servers)
 	print(f"Connected on {str(len(bot.servers))} servers:")
-	embed = discord.Embed(color=0xffafc9,)
-	embed.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
-	embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
-	embed.add_field(name="About", value="Hey everyone, I'm MikiBot ^^ \nI'm also very new discord and I'd like your help to improve myself :D \nPlease use m!commands to see what else I can do for you~", inline=False)
+	embed = discord.Embed(color=0xffffff,)
+	embed.set_author(name=botname, icon_url="https://cdn.discordapp.com/attachments/499771950764261396/515112832342425610/botpic.png")
+	embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/499771950764261396/515112832342425610/botpic.png")
+	embed.add_field(name="About", value=f"Hey everyone, I'm {botname} ^^ \nI'm also very new discord and I'd like your help to improve myself :D \nPlease use m!commands to see what else I can do for you~", inline=False)
 	embed.add_field(name="Creator", value="<@257784039795064833>", inline=True)
 	embed.set_footer(text=f"version: {version}")
 	await bot.send_message(member, embed=embed)
 	
-	embed = discord.Embed(color=0xffafc9,)
-	embed.set_author(name="Website", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
+	embed = discord.Embed(color=0xffffff,)
+	embed.set_author(name="Website", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/515112832342425610/botpic.png")
 	embed.add_field(name="Link:", value="https://relykxdiscord.wixsite.com/mikibot", inline=False)
 	await bot.send_message(member, embed=embed)
 	
@@ -53,12 +54,12 @@ async def on_member_join(member):
 	
 	embed = discord.Embed(color=0xce7a1e,)
 	embed.set_author(name="Curious Cat", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/514996231647395841/curiouscat.png")
-	embed.add_field(name="Link:", value="https://curiouscat.me/MikiDiscord", inline=False)
+	embed.add_field(name="Link:", value="https://curiouscat.me/VixenDiscord", inline=False)
 	await bot.send_message(member, embed=embed)
 	
 	embed = discord.Embed(color=0x2da9e1,)
 	embed.set_author(name="Twitter", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/514996202719150088/twitter.png")
-	embed.add_field(name="Link:", value="https://twitter.com/MikiDiscord", inline=False)
+	embed.add_field(name="Link:", value="https://twitter.com/VixenDiscord", inline=False)
 	await bot.send_message(member, embed=embed)
 
 ##############################################################################################################################
@@ -68,7 +69,7 @@ async def on_member_join(member):
 @bot.command(pass_context=True)
 @commands.has_permissions(ban_members = True)
 async def ban(ctx, user: discord.Member):
-	embed = discord.Embed(title="Ban", description = f"{user.mention} has been banned by {ctx.message.author}", color=0xffafc9,)
+	embed = discord.Embed(title="Ban", description = f"{user.mention} has been banned by {ctx.message.author}", color=0xffffff,)
 	seldel = await bot.say(embed=embed)
 	await bot.ban(user)
 	await asyncio.sleep(10)
@@ -77,7 +78,7 @@ async def ban(ctx, user: discord.Member):
 @bot.command(pass_context=True)
 @commands.has_permissions(ban_members=True)
 async def unban(ctx, user: discord.Member):
-	embed = discord.Embed(title="Unban", description="{0.name} has been unbanned from the server".format(user), color=0xffafc9,)
+	embed = discord.Embed(title="Unban", description="{0.name} has been unbanned from the server".format(user), color=0xffffff,)
 	seldel = await bot.say(embed=embed)
 	await bot.unban(user)
 	await asyncio.sleep(10)
@@ -86,7 +87,7 @@ async def unban(ctx, user: discord.Member):
 @bot.command(pass_context=True)
 @commands.has_permissions(kick_members=True)
 async def kick(ctx, user: discord.Member):
-	embed = discord.Embed(title="⚠ Bot Logs", description="**{}** has been kicked from the server".format(user.name), color=0xffafc9,)
+	embed = discord.Embed(title="⚠ Bot Logs", description="**{}** has been kicked from the server".format(user.name), color=0xffffff,)
 	selfdel = await bot.say(embed=embed)
 	await bot.kick(user)
 	await asyncio.sleep(10)
@@ -96,7 +97,7 @@ async def kick(ctx, user: discord.Member):
 @commands.has_permissions(manage_messages=True)
 async def clear(ctx, msglimit : int):
 	deleted = await bot.purge_from(ctx.message.channel, limit=msglimit)
-	embed = discord.Embed(title="⚠ Bot Logs", description='Cleared **{}** message(s) from the channel'.format(len(deleted)), color=0xffafc9,)
+	embed = discord.Embed(title="⚠ Bot Logs", description='Cleared **{}** message(s) from the channel'.format(len(deleted)), color=0xffffff,)
 	selfdel = await bot.say(embed=embed)
 	await asyncio.sleep(10)
 	await bot.delete_message(selfdel)
@@ -105,7 +106,7 @@ async def clear(ctx, msglimit : int):
 
 @bot.command(pass_context=True)
 async def ping(ctx):
-	embed = discord.Embed(title=":ping_pong: Bot Ping", description=":construction:  under construction :construction:", color=0xffafc9)
+	embed = discord.Embed(title=":ping_pong: Bot Ping", description=":construction:  under construction :construction:", color=0xffffff)
 	await bot.say(embed=embed)
 	# Time the time required to send a message first.
 	# This is the time taken for the message to be sent, awaited, and then 
@@ -134,7 +135,7 @@ async def count(ctx):
 	 else:
 	  members += 1
 	  total += 1
-	embed = discord.Embed(title="Server Member Count",color=0xffafc9)
+	embed = discord.Embed(title="Server Member Count",color=0xffffff)
 	embed.add_field(name="Bot Count",value=bots)
 	embed.add_field(name="Member Count",value=members)
 	embed.add_field(name="Total",value=total)
@@ -142,7 +143,7 @@ async def count(ctx):
 
 @bot.command(pass_context=True)
 async def version(ctx):
-	embed = discord.Embed(description=f"The current version of Sector Bot is: `{version}`", color=0xffafc9)
+	embed = discord.Embed(description=f"The current version of {botname} is: `{version}`", color=0xffffff)
 	embed.set_author(name="Version", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png")
 	await bot.say(embed=embed)
 	
@@ -162,7 +163,7 @@ async def server(ctx):
 	 else:
 	  members += 1
 	  total += 1
-	embed = discord.Embed(title="Server Info", description="Here's what I could find.", color=0xffafc9)
+	embed = discord.Embed(title="Server Info", description="Here's what I could find.", color=0xffffff)
 	embed.set_thumbnail(url=ctx.message.server.icon_url)
 	embed.add_field(name="Name:", value=ctx.message.server.name, inline=True)
 	embed.add_field(name="ID:", value=ctx.message.server.id, inline=True)
@@ -179,7 +180,7 @@ async def server(ctx):
 
 @bot.command(pass_context=True)
 async def user(ctx, user: discord.Member):
-	embed = discord.Embed(title="User Info", description="Here's what I could find.", color=0xffafc9)
+	embed = discord.Embed(title="User Info", description="Here's what I could find.", color=0xffffff)
 	embed.set_thumbnail(url=user.avatar_url)
 	embed.add_field(name="Name", value=user, inline=True)
 	embed.add_field(name="ID", value=user.id, inline=True)
@@ -191,22 +192,22 @@ async def user(ctx, user: discord.Member):
 	
 @bot.command(pass_context=True)
 async def avatar(ctx, user: discord.Member):
-	embed = discord.Embed(title="User Avatar", description=f"Here it is {user.name}'s profile pic",color=0xffafc9)
+	embed = discord.Embed(title="User Avatar", description=f"Here it is {user.name}'s profile pic",color=0xffffff)
 	embed.set_image(url=user.avatar_url)
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
 async def about(ctx):
-	embed = discord.Embed(color=0xffafc9,)
-	embed.set_author(name="MikiBot", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
-	embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
-	embed.add_field(name="About", value="Hey everyone, I'm MikiBot ^^ \nI'm also very new discord and I'd like your help to improve myself :D \nPlease use m!help to see what else I can do for you~", inline=False)
+	embed = discord.Embed(color=0xffffff,)
+	embed.set_author(name=botname, icon_url="https://cdn.discordapp.com/attachments/499771950764261396/515112832342425610/botpic.png")
+	embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/499771950764261396/515112832342425610/botpic.png")
+	embed.add_field(name="About", value=f"Hey everyone, I'm {botname} ^^ \nI'm also very new discord and I'd like your help to improve myself :D \nPlease use m!help to see what else I can do for you~", inline=False)
 	embed.add_field(name="Creator", value="<@257784039795064833>", inline=True)
 	embed.set_footer(text=f"version: {version}")
 	await bot.say(embed=embed)
 	
-	embed = discord.Embed(color=0xffafc9,)
-	embed.set_author(name="Website", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/506802847791185920/miki2.png")
+	embed = discord.Embed(color=0xffffff,)
+	embed.set_author(name="Website", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/515112832342425610/botpic.png")
 	embed.add_field(name="Link:", value="https://relykxdiscord.wixsite.com/mikibot", inline=False)
 	await bot.say(embed=embed)
 	
@@ -217,27 +218,27 @@ async def about(ctx):
 	
 	embed = discord.Embed(color=0xce7a1e,)
 	embed.set_author(name="Curious Cat", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/514996231647395841/curiouscat.png")
-	embed.add_field(name="Link:", value="https://curiouscat.me/MikiDiscord", inline=False)
+	embed.add_field(name="Link:", value="https://curiouscat.me/VixenDiscord", inline=False)
 	await bot.say(embed=embed)
 	
 	embed = discord.Embed(color=0x2da9e1,)
 	embed.set_author(name="Twitter", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/514996202719150088/twitter.png")
-	embed.add_field(name="Link:", value="https://twitter.com/MikiDiscord", inline=False)
+	embed.add_field(name="Link:", value="https://twitter.com/VixenDiscord", inline=False)
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
 async def invite(ctx):
-	embed = discord.Embed(description="If you'd like to add MikiBot to your server, go to our website here: https://relykxdiscord.wixsite.com/mikibot", color=0xffafc9)
+	embed = discord.Embed(description="If you'd like to add MikiBot to your server, go to our website here: https://relykxdiscord.wixsite.com/mikibot", color=0xffffff)
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
 async def vote(ctx):
-	embed = discord.Embed(description="You can vote here: \nhttps://discordbots.org/bot/496214977267630080/vote", color=0xffafc9)
+	embed = discord.Embed(description="You can vote here: \nhttps://discordbots.org/bot/496214977267630080/vote", color=0xffffff)
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
 async def donate(ctx):
-	embed = discord.Embed(title="Patreon", description="You can donate here: \nhttps://www.patreon.com/join/mikidiscord?", color=0xffafc9)
+	embed = discord.Embed(title="Patreon", description="You can donate here: \nhttps://www.patreon.com/join/vixendiscord?", color=0xffffff)
 	embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/499771950764261396/513936104357888000/icon_color_variations.jpg")
 	await bot.say(embed=embed)
 	
@@ -245,7 +246,7 @@ async def donate(ctx):
 async def time(ctx):
 	time = now.strftime("%I:%M %p")
 	date = now.strftime("%a, %d %b %Y")
-	embed = discord.Embed(title="🕗 Clock", color=0xffafc9)
+	embed = discord.Embed(title="🕗 Clock", color=0xffffff)
 	embed.add_field(name="Time", value=time, inline=True)
 	embed.add_field(name="Date", value=date, inline=True)
 	embed.set_footer(text=f"Requested by {ctx.message.author}", icon_url=ctx.message.author.avatar_url) 
@@ -269,22 +270,21 @@ async def youtube(ctx,*args):
 
 @bot.command(pass_context=True)
 async def greet(ctx):
-	randomlist = ['>//< hellu',
-		      'hai ^^',
-		      'hewo o3o',
-		      'h-hi o-o',
-		      'hello ^-^',
-		      'hellu',
-		      'hai',
-		      'hewo',
-		      'h-hi',
-		      'hello',
+	randomlist = ['Hello',
+		      'Hey',
+		      'Heyo',
+		      'Hello there',
+		      'Hey buddy',
+		      'Hi',
+		      'Nice to meet you',
+		      "How's it going",
+		      'Heeey',
                      ]
 	await bot.say("%s" %(random.choice(randomlist),))
 
 @bot.command(pass_context=True)
 async def kawaii(ctx):
-	embed = discord.Embed(title="Kawaii Emoji", description="Find more here: https://kawaiiface.net/", color=0xffafc9,)
+	embed = discord.Embed(title="Kawaii Emoji", description="Find more here: https://kawaiiface.net/", color=0xffffff,)
 	embed.add_field(name="Happy", value="`(✿◠‿◠)` `≧◡≦` `(▰˘◡˘▰)` `(●´ω｀●)`\n`(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧` `（ミ￣ー￣ミ）` `(づ｡◕‿‿◕｡)づ`\n`✌.ʕʘ‿ʘʔ.✌` `◎[▪‿▪]◎`", inline=False)
 	embed.add_field(name="Sad", value="`ಥ_ಥ` `┐(‘～'；)┌` `◄.►` `(◕︵◕)`\n`v( ‘.’ )v` `ਉ_ਉ` `o(╥﹏╥)o` `●︿●` `(∩︵∩)`", inline=False)
 	embed.add_field(name="Mad", value="`〴⋋_⋌〵` `(◣_◢)` `☉▵☉凸` `ↁ_ↁ`\n`╚(•⌂•)╝` `ᇂﮌᇂ)` `ლ(́◉◞౪◟◉‵ლ`\n`(┛◉Д◉)┛彡┻━┻ `", inline=False)
@@ -295,27 +295,27 @@ async def kawaii(ctx):
 	
 @bot.command(pass_context=True)
 async def wallpaper(ctx):
-	embed = discord.Embed(color=0xffafc9,)
+	embed = discord.Embed(color=0xffffff,)
 	embed.set_image(url='https://picsum.photos/1280/720/?image=' + str(random.randint(1, 999)))
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
 async def gif(ctx):
-	embed = discord.Embed(color=0xffafc9,)
+	embed = discord.Embed(color=0xffffff,)
 	embed.set_image(url='http://replygif.net/i/' + str(random.randint(90, 1100)) + '.gif')
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
 async def diceroll(ctx):
 	randomlist = ['1','2','3','4','5','6',]
-	embed = discord.Embed(title ="Dice Roll", description="*rolls a dice*", color=0xffafc9,)
+	embed = discord.Embed(title ="Dice Roll", description="*rolls a dice*", color=0xffffff,)
 	embed.add_field(name="You rolled a dice and it landed on...", value="Side: **%s**" %(random.choice(randomlist),))
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
 async def coinflip(ctx):
 	randomlist = ['Heads','Tails',]
-	embed = discord.Embed(title ="Coin Flip", description="*flips a coin*", color=0xffafc9,)
+	embed = discord.Embed(title ="Coin Flip", description="*flips a coin*", color=0xffffff,)
 	embed.add_field(name="You flipped a coin and it landed on", value="Face: **%s**" %(random.choice(randomlist),))
 	await bot.say(embed=embed)
 	
@@ -342,7 +342,7 @@ async def eightball(ctx):
                       'Outlook not so good.',
                       'Very doubtful.',
                      ]
-	embed = discord.Embed(title ="8 Ball", description="*shakes the 8 Ball up...*", color=0xffafc9,)
+	embed = discord.Embed(title ="8 Ball", description="*shakes the 8 Ball up...*", color=0xffffff,)
 	embed.add_field(name="You shook the 8 ball and it shows you...", value="Answer: **%s**" %(random.choice(randomlist),))
 	await bot.say(embed=embed)
 
@@ -352,14 +352,14 @@ async def eightball(ctx):
 
 @bot.command(pass_context=True)
 async def servercount(ctx):
-	embed = discord.Embed(description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0xffafc9)
+	embed = discord.Embed(description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0xffffff)
 	embed.set_author(name="Server Count", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png")
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
 async def serverlist(ctx):
 	serv = list(bot.servers)
-	embed = discord.Embed(title="Server List", description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0xffafc9)
+	embed = discord.Embed(title="Server List", description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0xffffff)
 	embed.set_author(name="Server List", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png")
 	await bot.say(embed=embed)
 	for x in range(len(serv)):
@@ -377,7 +377,7 @@ async def serverlist(ctx):
 
 @bot.command(pass_context=True)
 async def commands(ctx):
-	embed = discord.Embed(description="All commands under the Admin categorie:", color=0xffafc9)
+	embed = discord.Embed(description="All commands under the Admin categorie:", color=0xffffff)
 	embed.set_author(name="Admin", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png")
 	embed.add_field(name="ban", value="Bans the mentioned user",inline=True)
 	embed.add_field(name="unban", value="Unbans the mentioned user",inline=True)
@@ -386,7 +386,7 @@ async def commands(ctx):
 	embed.add_field(name="ping", value="Displays current ping of MikiBot",inline=True)
 	embed.add_field(name="count", value="Displays the amount of members in the current server",inline=True)
 	await bot.say(embed=embed)
-	embed = discord.Embed(description="All commands under the General categorie:", color=0xffafc9)
+	embed = discord.Embed(description="All commands under the General categorie:", color=0xffffff)
 	embed.set_author(name="General", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png")
 	embed.add_field(name="server", value="Displays the info of the current server", inline=True)
 	embed.add_field(name="user", value="Displays a profile of the mentioned user", inline=True)
@@ -396,11 +396,11 @@ async def commands(ctx):
 	embed.add_field(name="vote", value="Sends the voting link for MikiBot", inline=True)
 	embed.add_field(name="donate", value="Sends the donate link for Mikibot", inline=True)
 	await bot.say(embed=embed)
-	embed = discord.Embed(description="All commands under the Fun categorie:", color=0xffafc9)
+	embed = discord.Embed(description="All commands under the Fun categorie:", color=0xffffff)
 	embed.set_author(name="Fun", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png")
 	embed.add_field(name="google", value="-", inline=True)
 	embed.add_field(name="youtube", value="-", inline=True)
-	embed.add_field(name="greet", value="Generates a response, for example: 'hai ^-^'", inline=True)
+	embed.add_field(name="greet", value="Generates a greeting response", inline=True)
 	embed.add_field(name="time", value="Displays the current time of the server", inline=True)
 	embed.add_field(name="kawaii", value="Displays multiple different kawaii emoji", inline=True)
 	embed.add_field(name="wallpaper", value="Generates a random wallpaper", inline=True)
