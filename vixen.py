@@ -284,7 +284,7 @@ async def donate(ctx):
 async def google(ctx,*args):
 	x = f"https://www.google.com/search?rlz=1C1CHBF_enUS753US753&ei=n62RW536KpL2swWl1IKIBg&q={args}&oq=google+search&gs_l=psy-ab.3..0i71l8.0.0..8290...0.0..0.0.0.......0......gws-wiz.vtjc2PzIHFg"
 	y = x.replace(" ","+")
-	embed = discord.Embed(color=0xffffff,)
+	embed = discord.Embed(color=0xf4c20d,)
 	embed.set_author(name="Google", icon_url=goo_gl)
 	embed.add_field(name="Link:", value=y)
 	await bot.say(embed=embed)
