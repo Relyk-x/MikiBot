@@ -292,7 +292,7 @@ async def youtube(ctx,*args):
 	x = f"https://www.youtube.com/results?search_query={args}"
 	y = x.replace(" ","+")
 	y = x.replace("(","")
-	y = x.replace(")",""
+	y = x.replace(")","")
 	y = x.replace(",","")
 	y = x.replace("'","")
 	embed = discord.Embed(color=0xff0000,)
