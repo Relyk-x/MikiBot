@@ -376,8 +376,7 @@ async def serverlist(ctx):
 ##############################################################################################################################
 
 @bot.command(pass_context=True)
-@bot.remove_command("help")
-async def help(ctx):
+async def comands(ctx):
 	embed = discord.Embed(description="All commands under the Admin categorie:", color=0xffafc9)
 	embed.set_author(name="Admin", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png")
 	embed.add_field(name="ban", value="Bans the mentioned user",inline=True)
