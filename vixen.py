@@ -298,7 +298,7 @@ async def kawaii(ctx):
 async def cat(ctx):
 	r = requests.get('https://api.thecatapi.com/v1/images/search').json()
 	url = (r[0]['url'])
-	embed = discord.Embed(description='Here is a cute kitten :D')
+	embed = discord.Embed(description='Here is a cute kitten :D', color=0xffffff,)
 	embed.set_image(url=url)
 	await bot.say(embed=embed)
 
