@@ -1,2 +1,2 @@
-# MikiBot
+# Vixen
 A new Discord bot.
