@@ -52,7 +52,7 @@ async def on_member_join(member):
 	embed.add_field(name="About", value="v!commands for help", inline=True)
 	embed.add_field(name="Prefix", value="v!", inline=True)
 	embed.add_field(name="Creator", value="<@257784039795064833>", inline=True)
-	embed.set_footer(text="version: " + version)
+	embed.set_footer(text=f"version: {version}",)
 	await bot.send_message(member, embed=embed)
 	
 	embed = discord.Embed(color=0xffffff,)
@@ -232,7 +232,7 @@ async def about(ctx):
 	embed.add_field(name="About", value="v!commands for help", inline=True)
 	embed.add_field(name="Prefix", value="v!", inline=True)
 	embed.add_field(name="Creator", value="<@257784039795064833>", inline=True)
-	embed.set_footer(text="version: " + version)
+	embed.set_footer(text=f"version: {version}",)
 	await bot.say(embed=embed)
 	
 	embed = discord.Embed(color=0xffffff,)
