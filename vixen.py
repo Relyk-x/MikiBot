@@ -13,7 +13,7 @@ from datetime import datetime
 import time
 import os
 
-bot = commands.Bot(command_prefix='m!')
+bot = commands.Bot(command_prefix='v!')
 msglimit = 100
 now = datetime.now()
 version = "v0.4.8"#3
@@ -294,6 +294,14 @@ async def kawaii(ctx):
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
+async def cat(ctx):
+        r = requests.get('https://api.thecatapi.com/v1/images/search').json()
+        url = (r[0]['url'])
+        embed = discord.Embed(description='Here is a cute kitten :D')
+        embed.set_image(url=url)
+	await bot.say(embed=embed)
+	
+@bot.command(pass_context=True)
 async def wallpaper(ctx):
 	embed = discord.Embed(color=0xffffff,)
 	embed.set_image(url='https://picsum.photos/1280/720/?image=' + str(random.randint(1, 999)))
@@ -403,7 +411,8 @@ async def commands(ctx):
 	embed.add_field(name="greet", value="Generates a greeting response", inline=True)
 	embed.add_field(name="time", value="Displays the current time of the server", inline=True)
 	embed.add_field(name="kawaii", value="Displays multiple different kawaii emoji", inline=True)
-	embed.add_field(name="wallpaper", value="Generates a random wallpaper", inline=True)
+	embed.add_field(name="cat", value="Generates a random gif", inline=True)
+	embed.add_field(name="wallpaper", value="Generates a random cat pic", inline=True)
 	embed.add_field(name="gif", value="Generates a random gif", inline=True)
 	embed.add_field(name="diceroll", value="Rolls a six sided die", inline=True)
 	embed.add_field(name="coinflip", value="Flips a coin, could be heads could be tails", inline=True)
