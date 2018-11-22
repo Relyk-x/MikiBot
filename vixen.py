@@ -295,12 +295,12 @@ async def kawaii(ctx):
 	
 @bot.command(pass_context=True)
 async def cat(ctx):
-        r = requests.get('https://api.thecatapi.com/v1/images/search').json()
-        url = (r[0]['url'])
-        embed = discord.Embed(description='Here is a cute kitten :D')
-        embed.set_image(url=url)
+	r = requests.get('https://api.thecatapi.com/v1/images/search').json()
+	url = (r[0]['url'])
+	embed = discord.Embed(description='Here is a cute kitten :D')
+	embed.set_image(url=url)
 	await bot.say(embed=embed)
-	
+
 @bot.command(pass_context=True)
 async def wallpaper(ctx):
 	embed = discord.Embed(color=0xffffff,)
