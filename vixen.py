@@ -154,7 +154,7 @@ async def version(ctx):
 
 @bot.command(pass_context=True)
 async def prefix(ctx):
-	embed = discord.Embed(description="v!", color=0xffffff
+	embed = discord.Embed(description="v!", color=0xffffff)
 	emebd.set_author(name="Prefix", icon_url="https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png")
 	await bot.say(embed=embed)
 			 
