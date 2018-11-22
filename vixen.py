@@ -177,7 +177,7 @@ async def version(ctx):
 @bot.command(pass_context=True)
 async def prefix(ctx):
 	embed = discord.Embed(description="v!", color=0xffffff)
-	emebd.set_author(name="Prefix", icon_url=dis_cord)
+	embed.set_author(name="Prefix", icon_url=dis_cord)
 	await bot.say(embed=embed)
 			 
 @bot.command(pass_context=True)
@@ -274,7 +274,7 @@ async def vote(ctx):
 @bot.command(pass_context=True)
 async def donate(ctx):
 	embed = discord.Embed(description="You can donate here: \nhttps://www.patreon.com/join/vixendiscord?", color=0xf76754)
-	emebd.set_author(name="Patreon", icon_url=patreon)
+	embed.set_author(name="Patreon", icon_url=patreon)
 	embed.set_thumbnail(url=patreon)
 	await bot.say(embed=embed)
 	
