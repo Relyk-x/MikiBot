@@ -264,21 +264,21 @@ async def about(ctx):
 async def invite(ctx):
 	embed = discord.Embed(color=0xffffff,)
 	embed.set_author(name="Invite", icon_url=dis_cord)
-	embed.set_field(name="Link:", value="https://discordapp.com/oauth2/authorize?&client_id=496214977267630080&scope=bot&permissions=8")
+	embed.add_field(name="Link:", value="https://discordapp.com/oauth2/authorize?&client_id=496214977267630080&scope=bot&permissions=8")
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
 async def vote(ctx):
 	embed = discord.Embed(color=0xffffff,)
 	embed.set_author(name="Vote", icon_url=bots)
-	embed.set_field(name="Link:", value="https://discordbots.org/bot/496214977267630080/vote")
+	embed.add_field(name="Link:", value="https://discordbots.org/bot/496214977267630080/vote")
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
 async def website(ctx):
 	embed = discord.Embed(color=0xffffff,)
 	embed.set_author(name="Website", icon_url=vixen)
-	embed.set_field(name="Link:", value="https://relykxdiscord.wixsite.com/mikibot")
+	embed.add_field(name="Link:", value="https://relykxdiscord.wixsite.com/mikibot")
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
