@@ -360,7 +360,7 @@ async def dog(ctx):
 	url = r[0]['url']
 	embed = discord.Embed(description="Here's a cute doggie :D", color=0xffffff)
 	embed.set_image(url=url)
-	await ctx.send(embed=embed)
+	await bot.say(embed=embed)
 
 @bot.command(pass_context=True)
 async def wallpaper(ctx):
