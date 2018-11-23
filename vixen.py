@@ -353,6 +353,14 @@ async def cat(ctx):
 	embed = discord.Embed(description="Here's a cute kitten :D", color=0xffffff,)
 	embed.set_image(url=url)
 	await bot.say(embed=embed)
+	
+@commands.command(brief = 'Sends a dog pic/gif')
+async def dog(self,ctx):
+	r = requests.get('https://dog.ceo/api/breeds/image/random').json()
+	url = r[0]['message']
+	embed = discord.Embed(description="Here's a cute doggie!! :D", color=0xffffff)
+	embed.set_image(url=url)
+	await ctx.send(embed=embed)
 
 @bot.command(pass_context=True)
 async def wallpaper(ctx):
