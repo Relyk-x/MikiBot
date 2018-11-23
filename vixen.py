@@ -433,7 +433,15 @@ async def serverlist(ctx):
 	embed.set_thumbnail(url=dis_cord)
 	await bot.say(embed=embed)
 	for x in range(len(serv)):
-	 embed = discord.Embed(title=serv[x-1].name, description=f"● ServerID: {serv[x-1].id}", color=0x7289da)
+	 embed = discord.Embed(color=0x7289da,)
+	 embed.set_thumbnail(url=serv[x-1].icon_url)
+	 embed.add_field(name="Name:", value=serv[x-1].name, inline=True)
+	 embed.add_field(name="ID:", value=serv[x-1].id, inline=True)
+	 embed.add_field(name="Region:", value=serv[x-1].region, inline=True)
+	 embed.add_field(name="Owner:", value=serv[x-1].owner.mention, inline=True)
+	 embed.add_field(name="Members:", value=len(serv[x-1].members, inline=True)
+	 embed.add_field(name="Roles:", value=len(serv[x-1].roles), inline=True)
+	 embed.add_field(name="Created:", value=serv[x-1].created_at, inline=False)
 	 await bot.say(embed=embed)
 	
 ##############################################################################################################################
