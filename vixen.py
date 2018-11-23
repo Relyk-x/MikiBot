@@ -316,8 +316,8 @@ async def greet(ctx):
 
 @bot.command(pass_context=True)
 async def time(ctx):
-	time = now.strftime("%I:%M %p")
-	date = now.strftime("%a, %d %b %Y")
+	time = now.strftime("%X")
+	date = now.strftime("%x")
 	embed = discord.Embed(color=0xffffff,)
 	embed.set_author(name="Clock", icon_url=clock)
 	embed.add_field(name="Time", value=time, inline=True)
