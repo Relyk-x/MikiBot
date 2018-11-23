@@ -216,7 +216,7 @@ async def user(ctx, user: discord.Member):
 	embed.add_field(name="Name", value=user, inline=True)
 	embed.add_field(name="ID", value=user.id, inline=True)
 	embed.add_field(name="Status", value=user.status, inline=False)
-	embed.add_field(name="Highest role", value=user.top_role, inline=True)
+	embed.add_field(name="Highest role", value=user.top_role, inline=False)
 	embed.add_field(name="Created", value=user.created_at, inline=True)
 	embed.add_field(name="Joined", value=user.joined_at, inline=True)
 	await bot.say(embed=embed)
