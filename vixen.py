@@ -17,7 +17,7 @@ import os
 bot = commands.Bot(command_prefix='v!')
 msglimit = 100
 now = datetime.now()
-ver = "v0.5.1"#8
+ver = "v0.5.4"#1
 botname = "Vixen"
 
 #Emoji
@@ -475,6 +475,7 @@ async def commands(ctx):
 	embed.add_field(name="time", value="Displays the current time of the server", inline=False)
 	embed.add_field(name="kawaii", value="Displays multiple different kawaii emoji", inline=False)
 	embed.add_field(name="cat", value="Generates a random cat pic", inline=False)
+	embed.add_field(name="dog", value="Generates a random dog pic", inline=False)
 	embed.add_field(name="wallpaper", value="Generates a random wallpaper", inline=False)
 	embed.add_field(name="gif", value="Generates a random gif", inline=False)
 	embed.add_field(name="diceroll", value="Rolls a six sided die", inline=False)
