@@ -354,11 +354,11 @@ async def cat(ctx):
 	embed.set_image(url=url)
 	await bot.say(embed=embed)
 	
-@bot.command(brief = 'Sends a dog pic/gif')
+@bot.command(pass_context=True)
 async def dog(ctx):
-	r = requests.get('https://dog.ceo/api/breeds/image/random').json()
-	url = r[0]['https']
-	embed = discord.Embed(description="Here's a cute doggie!! :D", color=0xffffff)
+	r = requests.get('https://api.thedogapi.com/v1/images/search').json()
+	url = r[0]['url']
+	embed = discord.Embed(description="Here's a cute doggie :D", color=0xffffff)
 	embed.set_image(url=url)
 	await ctx.send(embed=embed)
 
