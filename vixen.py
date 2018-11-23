@@ -421,14 +421,14 @@ async def eightball(ctx):
 
 @bot.command(pass_context=True)
 async def servercount(ctx):
-	embed = discord.Embed(description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0xffffff)
+	embed = discord.Embed(description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0x7289da)
 	embed.set_author(name="Server Count", icon_url=dis_cord)
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
 async def serverlist(ctx):
 	serv = list(bot.servers)
-	embed = discord.Embed(title=description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0x7289da)
+	embed = discord.Embed(description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0x7289da)
 	embed.set_author(name="Server List", icon_url=dis_cord)
 	embed.ser_thumbnail(url=dis_cord)
 	await bot.say(embed=embed)
