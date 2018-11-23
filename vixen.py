@@ -211,7 +211,7 @@ async def server(ctx):
 @bot.command(pass_context=True)
 async def user(ctx, user: discord.Member):
 	embed = discord.Embed(description="Here's what I could find.", color=0xffffff)
-	emebd.set_author(name="User Info", icon_url=dis_cord)
+	embed.set_author(name="User Info", icon_url=dis_cord)
 	embed.set_thumbnail(url=user.avatar_url)
 	embed.add_field(name="Name", value=user, inline=True)
 	embed.add_field(name="ID", value=user.id, inline=True)
@@ -224,7 +224,7 @@ async def user(ctx, user: discord.Member):
 @bot.command(pass_context=True)
 async def avatar(ctx, user: discord.Member):
 	embed = discord.Embed(description=f"Here it is {user.name}'s profile pic",color=0xffffff)
-	emebd.set_author(name="User Avatar", icon_url=dis_cord)
+	embed.set_author(name="User Avatar", icon_url=dis_cord)
 	embed.set_image(url=user.avatar_url)
 	await bot.say(embed=embed)
 	
@@ -262,13 +262,13 @@ async def about(ctx):
 @bot.command(pass_context=True)
 async def invite(ctx):
 	embed = discord.Embed(description="If you'd like to add MikiBot to your server, go to our website here: https://relykxdiscord.wixsite.com/mikibot", color=0xffffff)
-	emebd.set_author(name="Invite", icon_url=dis_cord)
+	embed.set_author(name="Invite", icon_url=dis_cord)
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
 async def vote(ctx):
 	embed = discord.Embed(description="You can vote here: \nhttps://discordbots.org/bot/496214977267630080/vote", color=0xffffff)
-	emebd.set_author(name="Vote", icon_url=dis_cord)
+	embed.set_author(name="Vote", icon_url=dis_cord)
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
@@ -319,7 +319,7 @@ async def time(ctx):
 	time = now.strftime("%I:%M %p")
 	date = now.strftime("%a, %d %b %Y")
 	embed = discord.Embed(color=0xffffff,)
-	emebd.set_author(name="Clock", icon_url=clock)
+	embed.set_author(name="Clock", icon_url=clock)
 	embed.add_field(name="Time", value=time, inline=True)
 	embed.add_field(name="Date", value=date, inline=True)
 	embed.set_footer(text=f"Requested by {ctx.message.author}", icon_url=ctx.message.author.avatar_url) 
