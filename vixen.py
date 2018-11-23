@@ -430,9 +430,8 @@ async def serverlist(ctx):
 	serv = list(bot.servers)
 	embed = discord.Embed(title="Server List", description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0x7289da)
 	embed.set_author(name="Server List", icon_url=dis_cord)
-	for x in range(len(serv)):
-	 embed.add_field(name="List", value=f"**{serv[x-1].name}**\n● ServerID: {serv[x-1].id}\n", inline=True)
-	 await bot.say(embed=embed)
+	embed.add_field(name="List", value=for x in range(len(serv)): f"**{serv[x-1].name}**\n● ServerID: {serv[x-1].id}\n", inline=True)
+	await bot.say(embed=embed)
 	
 ##############################################################################################################################
 # 🚫 | R E M O V E D - C O M M A N D S
