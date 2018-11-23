@@ -432,7 +432,6 @@ async def serverlist(ctx):
 	embed.set_author(name="Server List", icon_url=dis_cord)
 	for x in range(len(serv)):
 	 embed.add_field(name=serv[x-1].name, value=f"● ServerID: {serv[x-1].id}", inline=True)
-	 await asyncio.sleep(30)
 	 await bot.say(embed=embed)
 	
 ##############################################################################################################################
