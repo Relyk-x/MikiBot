@@ -433,7 +433,7 @@ async def serverlist(ctx):
 	for x in range(len(serv)):
 	 embed.add_field(name=serv[x-1].name, value=f"● ServerID: {serv[x-1].id}", inline=True)
 	 await asyncio.sleep(30)
-         await bot.say(embed=embed)
+	 await bot.say(embed=embed)
 	
 ##############################################################################################################################
 # 🚫 | R E M O V E D - C O M M A N D S
