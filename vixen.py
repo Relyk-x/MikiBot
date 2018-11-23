@@ -428,10 +428,13 @@ async def servercount(ctx):
 @bot.command(pass_context=True)
 async def serverlist(ctx):
 	serv = list(bot.servers)
-	embed = discord.Embed(title="Server List", description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0x7289da)
+	embed = discord.Embed(title=description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0x7289da)
 	embed.set_author(name="Server List", icon_url=dis_cord)
-	embed.add_field(name="List", value=for x in range(len(serv)): f"**{serv[x-1].name}**\n● ServerID: {serv[x-1].id}\n", inline=True)
+	embed.ser_thumbnail(url=dis_cord)
 	await bot.say(embed=embed)
+	for x in range(len(serv)):
+	 embed = discord.Embed(title=serv[x-1].name, description=f"● ServerID: {serv[x-1].id}", color=0x7289da)
+	 await bot.say(embed=embed)
 	
 ##############################################################################################################################
 # 🚫 | R E M O V E D - C O M M A N D S
