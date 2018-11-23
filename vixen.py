@@ -34,6 +34,7 @@ you_be = "https://cdn.discordapp.com/attachments/499771950764261396/515290591848
 goo_gl = "https://cdn.discordapp.com/attachments/499771950764261396/515292396679069711/google.png"
 gear = "https://cdn.discordapp.com/attachments/499771950764261396/515299978072293405/gear.png"
 spark = "https://cdn.discordapp.com/attachments/499771950764261396/515302914240282625/spark.png"
+bots = "https://cdn.discordapp.com/attachments/499771950764261396/515323392048627712/bots.png"
 
 @bot.event
 async def on_ready():
@@ -261,14 +262,23 @@ async def about(ctx):
 	
 @bot.command(pass_context=True)
 async def invite(ctx):
-	embed = discord.Embed(description="If you'd like to add MikiBot to your server, go to our website here: https://relykxdiscord.wixsite.com/mikibot", color=0xffffff)
+	embed = discord.Embed(color=0xffffff,)
 	embed.set_author(name="Invite", icon_url=dis_cord)
+	embed.set_field(name="Link:", value="https://discordapp.com/oauth2/authorize?&client_id=496214977267630080&scope=bot&permissions=8")
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
 async def vote(ctx):
-	embed = discord.Embed(description="You can vote here: \nhttps://discordbots.org/bot/496214977267630080/vote", color=0xffffff)
-	embed.set_author(name="Vote", icon_url=dis_cord)
+	embed = discord.Embed(color=0xffffff,)
+	embed.set_author(name="Vote", icon_url=bots)
+	embed.set_field(name="Link:", value="https://discordbots.org/bot/496214977267630080/vote")
+	await bot.say(embed=embed)
+	
+@bot.command(pass_context=True)
+async def website(ctx):
+	embed = discord.Embed(color=0xffffff,)
+	embed.set_author(name="Website", icon_url=vixen)
+	embed.set_field(name="Link:", value="https://relykxdiscord.wixsite.com/mikibot")
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
