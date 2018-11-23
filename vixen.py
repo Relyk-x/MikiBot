@@ -264,7 +264,7 @@ async def about(ctx):
 async def invite(ctx):
 	embed = discord.Embed(color=0xffffff,)
 	embed.set_author(name="Invite", icon_url=dis_cord)
-	embed.add_field(name="Link:", value="https://discordapp.com/oauth2/authorize?&client_id=496214977267630080&scope=bot&permissions=8")
+	embed.add_field(name="Link:", value="https://discordapp.com/oauth2/authorize?&client_id=496214977267630080&scope=bot&permissions=66186303")
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
