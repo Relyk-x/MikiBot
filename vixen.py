@@ -199,7 +199,7 @@ async def server(ctx):
 	embed.add_field(name="Name:", value=ctx.message.server.name, inline=True)
 	embed.add_field(name="ID:", value=ctx.message.server.id, inline=True)
 	embed.add_field(name="Region:", value=ctx.message.server.region, inline=True)
-	embed.add_field(name="Owner:", value=ctx.message.server.owner.mention, inline=True)
+	embed.add_field(name="Owner:", value=ctx.message.server.owner.mention, inline=False)
 # embed.add_field(name="Varification level:, value=?, inline=True)
 	embed.add_field(name="Members:", value=f"Online: {len([I for I in ctx.message.server.members if I.status is discord.Status.online])}\nBots: {bots}\nMembers: {members}\nTotal: {total}", inline=True)
 	embed.add_field(name="Roles:", value=len(ctx.message.server.roles), inline=True)
