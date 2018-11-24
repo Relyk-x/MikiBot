@@ -128,7 +128,7 @@ async def clear(ctx, msglimit : int):
 
 @bot.command(pass_context=True)
 async def ping(ctx):
-	embed = discord.Embed(title="Ping", description=":construction:  under construction :construction:", color=0xffffff)
+	embed = discord.Embed(title="Ping", description=":construction: UNDER CONSTRUCTION :construction:", color=0xffffff)
 	embed.set_author(name="Bot Logs", icon_url=warning)
 	await bot.say(embed=embed)
 	# Time the time required to send a message first.
@@ -427,21 +427,24 @@ async def servercount(ctx):
 	
 @bot.command(pass_context=True)
 async def serverlist(ctx):
-	serv = list(bot.servers)
-	embed = discord.Embed(description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0x7289da)
-	embed.set_author(name="Server List", icon_url=dis_cord)
+	embed = discord.Embed(title="Ping", description=":construction: UNDER CONSTRUCTION :construction:", color=0xffffff)
+	embed.set_author(name="Bot Logs", icon_url=warning)
 	await bot.say(embed=embed)
-	for x in range(len(serv)):
-	 embed = discord.Embed(color=0x7289da,)
-	 embed.set_thumbnail(url=serv[x-1].icon_url)
-	 embed.add_field(name="Name:", value=serv[x-1].name, inline=False)
-	 embed.add_field(name="ID:", value=serv[x-1].id, inline=False)
-	 embed.add_field(name="Region:", value=serv[x-1].region, inline=True)
-	 embed.add_field(name="Owner:", value=serv[x-1].owner, inline=False)
-	 embed.add_field(name="Members:", value=len(serv[x-1].members), inline=True)
-	 embed.add_field(name="Roles:", value=len(serv[x-1].roles), inline=True)
-	 embed.add_field(name="Created:", value=serv[x-1].created_at, inline=False)
-	 await bot.say(embed=embed)
+#	serv = list(bot.servers)
+#	embed = discord.Embed(description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0x7289da)
+#	embed.set_author(name="Server List", icon_url=dis_cord)
+#	await bot.say(embed=embed)
+#	for x in range(len(serv)):
+#	 embed = discord.Embed(color=0x7289da,)
+#	 embed.set_thumbnail(url=serv[x-1].icon_url)
+#	 embed.add_field(name="Name:", value=serv[x-1].name, inline=False)
+#	 embed.add_field(name="ID:", value=serv[x-1].id, inline=False)
+#	 embed.add_field(name="Region:", value=serv[x-1].region, inline=True)
+#	 embed.add_field(name="Owner:", value=serv[x-1].owner, inline=False)
+#	 embed.add_field(name="Members:", value=len(serv[x-1].members), inline=True)
+#	 embed.add_field(name="Roles:", value=len(serv[x-1].roles), inline=True)
+#	 embed.add_field(name="Created:", value=serv[x-1].created_at, inline=False)
+#	 await bot.say(embed=embed)
 	
 ##############################################################################################################################
 # 🚫 | R E M O V E D - C O M M A N D S
@@ -454,7 +457,7 @@ async def serverlist(ctx):
 
 @bot.command(pass_context=True)
 async def commands(ctx):
-	embed = discord.Embed(description="All commands under the Admin categorie:", color=0xffffff)
+	embed = discord.Embed(description="All commands for Admin:", color=0xffffff)
 	embed.set_author(name="Admin", icon_url=warning)
 	embed.add_field(name="ban", value="Bans the mentioned user", inline=False)
 	embed.add_field(name="unban", value="Unbans the mentioned user", inline=False)
@@ -464,7 +467,7 @@ async def commands(ctx):
 	embed.add_field(name="count", value="Displays the amount of members in the current server", inline=False)
 	embed.add_field(name="version", value=f"Displays the current version of {botname}", inline=False)
 	await bot.say(embed=embed)
-	embed = discord.Embed(description="All commands under the General categorie:", color=0xffffff)
+	embed = discord.Embed(description="All commands for General:", color=0xffffff)
 	embed.set_author(name="General", icon_url=gear)
 	embed.add_field(name="prefix", value="Displays the current prefix", inline=False)
 	embed.add_field(name="server", value="Displays the info of the current server", inline=False)
@@ -475,7 +478,7 @@ async def commands(ctx):
 	embed.add_field(name="vote", value=f"Sends the voting link for {botname}", inline=False)
 	embed.add_field(name="donate", value=f"Sends the donate link for {botname}", inline=False)
 	await bot.say(embed=embed)
-	embed = discord.Embed(description="All commands under the Fun categorie:", color=0xffffff)
+	embed = discord.Embed(description="All commands for Fun:", color=0xffffff)
 	embed.set_author(name="Fun", icon_url=spark)
 	embed.add_field(name="google", value="Googles your search", inline=False)
 	embed.add_field(name="youtube", value="Searches for the most relevant youtube video", inline=False)
