@@ -423,9 +423,9 @@ async def serverlist(ctx):
 
 @bot.command(pass_context=True)
 async def commands(ctx):
-	embed = discord.Embed(title=f"{botname} Commands", desecription=":mailbox_with_mail: Check DMs", color=0xffffff)
+	embed = discord.Embed(title=f"{botname} Commands", description=":mailbox_with_mail: Check DMs", color=0xffffff)
 	await bot.say(embed=embed)
-	embed = discord.Embed(title=f"{botname} Commands", desecription="idk yet", color=0xffffff)
+	embed = discord.Embed(title=f"{botname} Commands", description="idk yet", color=0xffffff)
 	await bot.send_message(ctx.message.author, embed=embed)
 	embed = discord.Embed(description="All commands for Admin:", color=0xffffff)
 	embed.set_author(name="Admin", icon_url=warning)
