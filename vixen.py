@@ -48,7 +48,7 @@ async def on_ready():
 	
 #@bot.event
 #async def on_member_join(member):
-#	print('Sent message to ' + member.name)
+#	print('Sent message to ' + member)
 #	servers = list(bot.servers)
 #	print(f"Connected on {str(len(bot.servers))} servers:")
 #	embed = discord.Embed(color=0xffffff,)
@@ -456,7 +456,7 @@ async def serverlist(ctx):
 ##############################################################################################################################
 
 @bot.command(pass_context=True)
-async def commands(ctx):
+async def commands(ctx, member):
 	embed = discord.Embed(description="All commands for Admin:", color=0xffffff)
 	embed.set_author(name="Admin", icon_url=warning)
 	embed.add_field(name="ban", value="Bans the mentioned user", inline=False)
@@ -492,6 +492,6 @@ async def commands(ctx):
 	embed.add_field(name="diceroll", value="Rolls a six sided die", inline=False)
 	embed.add_field(name="coinflip", value="Flips a coin, could be heads could be tails", inline=False)
 	embed.add_field(name="eightball", value="Ask a question and shake the 8 Ball", inline=False)
-	await bot.say(embed=embed)
+	await bot.send_messagr(member, embed=embed)
 	
 bot.run(os.getenv("BOT_TOKEN"))
