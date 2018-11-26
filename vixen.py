@@ -128,7 +128,7 @@ async def clear(ctx, msglimit : int):
 
 @bot.command(pass_context=True)
 async def ping(ctx):
-	embed = discord.Embed(title="Ping", description=":construction: UNDER CONSTRUCTION :construction:", color=0xffffff)
+	embed = discord.Embed(title="Ping", description=":construction: **UNDER CONSTRUCTION** :construction:", color=0xffffff)
 	embed.set_author(name="Bot Logs", icon_url=warning)
 	await bot.say(embed=embed)
 	# Time the time required to send a message first.
@@ -427,7 +427,7 @@ async def servercount(ctx):
 	
 @bot.command(pass_context=True)
 async def serverlist(ctx):
-	embed = discord.Embed(title="Ping", description=":construction: UNDER CONSTRUCTION :construction:", color=0xffffff)
+	embed = discord.Embed(title="Server List", description=":construction: **UNDER CONSTRUCTION** :construction:", color=0xffffff)
 	embed.set_author(name="Bot Logs", icon_url=warning)
 	await bot.say(embed=embed)
 #	serv = list(bot.servers)
