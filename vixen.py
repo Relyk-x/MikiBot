@@ -46,39 +46,39 @@ async def on_ready():
 	print ("Ready when you are...")
 	await bot.change_presence(game=discord.Game(name=status,type=3))
 	
-@bot.event
-async def on_member_join(member):
-	print('Sent message to ' + member.name)
-	servers = list(bot.servers)
-	print(f"Connected on {str(len(bot.servers))} servers:")
-	embed = discord.Embed(color=0xffffff,)
-	embed.set_author(name=botname, icon_url=vixen)
-	embed.set_thumbnail(url=vixen)
-	embed.add_field(name="Prefix", value="v! | v!commands for help", inline=True)
-	embed.add_field(name="Creator", value="<@257784039795064833>", inline=True)
-	embed.add_field(name="About", value="Hey, this is Vixen a new bot in need of more users.\nShare our bot or join our help server!", inline=True)
-	embed.set_footer(text=f"version: {ver}",)
-	await bot.send_message(member, embed=embed)
-	
-	embed = discord.Embed(color=0xffffff,)
-	embed.set_author(name="Website", icon_url=vixen)
-	embed.add_field(name="Link:", value="https://relykxdiscord.wixsite.com/vixen", inline=False)
-	await bot.send_message(member, embed=embed)
-	
-	embed = discord.Embed(color=0x7289da,)
-	embed.set_author(name="Server", icon_url=dis_cord)
-	embed.add_field(name="Link:", value="https://discord.gg/UjuGRB9", inline=False)
-	await bot.send_message(member, embed=embed)
-	
-	embed = discord.Embed(color=0xce7a1e,)
-	embed.set_author(name="Curious Cat", icon_url=curiouscat)
-	embed.add_field(name="Link:", value="https://curiouscat.me/VixenDiscord", inline=False)
-	await bot.send_message(member, embed=embed)
-	
-	embed = discord.Embed(color=0x2da9e1,)
-	embed.set_author(name="Twitter", icon_url=twitter)
-	embed.add_field(name="Link:", value="https://twitter.com/VixenDiscord", inline=False)
-	await bot.send_message(member, embed=embed)
+#@bot.event
+#async def on_member_join(member):
+#	print('Sent message to ' + member.name)
+#	servers = list(bot.servers)
+#	print(f"Connected on {str(len(bot.servers))} servers:")
+#	embed = discord.Embed(color=0xffffff,)
+#	embed.set_author(name=botname, icon_url=vixen)
+#	embed.set_thumbnail(url=vixen)
+#	embed.add_field(name="Prefix", value="v! | v!commands for help", inline=True)
+#	embed.add_field(name="Creator", value="<@257784039795064833>", inline=True)
+#	embed.add_field(name="About", value="Hey, this is Vixen a new bot in need of more users.\nShare our bot or join our help server!", inline=True)
+#	embed.set_footer(text=f"version: {ver}",)
+#	await bot.send_message(member, embed=embed)
+#	
+#	embed = discord.Embed(color=0xffffff,)
+#	embed.set_author(name="Website", icon_url=vixen)
+#	embed.add_field(name="Link:", value="https://relykxdiscord.wixsite.com/vixen", inline=False)
+#	await bot.send_message(member, embed=embed)
+#	
+#	embed = discord.Embed(color=0x7289da,)
+#	embed.set_author(name="Server", icon_url=dis_cord)
+#	embed.add_field(name="Link:", value="https://discord.gg/UjuGRB9", inline=False)
+#	await bot.send_message(member, embed=embed)
+#	
+#	embed = discord.Embed(color=0xce7a1e,)
+#	embed.set_author(name="Curious Cat", icon_url=curiouscat)
+#	embed.add_field(name="Link:", value="https://curiouscat.me/VixenDiscord", inline=False)
+#	await bot.send_message(member, embed=embed)
+#	
+#	embed = discord.Embed(color=0x2da9e1,)
+#	embed.set_author(name="Twitter", icon_url=twitter)
+#	embed.add_field(name="Link:", value="https://twitter.com/VixenDiscord", inline=False)
+#	await bot.send_message(member, embed=embed)
 
 ##############################################################################################################################
 # 🔑 | A D M I N - C O M M A N D S
