@@ -172,7 +172,7 @@ async def server(ctx):
 # embed.add_field(name="Channels:", value=?, inline=True)
 	embed.add_field(name="Created:", value=ctx.message.server.created_at, inline=False)
 # embed.add_field(name="Number of Emotes:", value=?, inline=True)
-	embed.set_footer(text=f"Requested by {ctx.message.author}\nversion: {ver}", icon_url=ctx.message.author.avatar_url) 
+	embed.set_footer(text=f"Requested by {ctx.message.author} | v{ver}", icon_url=ctx.message.author.avatar_url) 
 	await bot.say(embed=embed)
 
 @bot.command(pass_context=True)
@@ -203,7 +203,7 @@ async def about(ctx):
 	embed.add_field(name="Prefix", value="v! | v!commands for help", inline=True)
 	embed.add_field(name="Creator", value="<@257784039795064833>", inline=True)
 	embed.add_field(name="About", value="Hey, this is Vixen a new bot in need of more users.\nShare our bot or join our help server!", inline=True)
-	embed.set_footer(text=f"Requested by {ctx.message.author}\nversion: {ver}",)
+	embed.set_footer(text=f"Requested by {ctx.message.author} | v{ver}", icon_url=ctx.message.author.avatar_url)
 	await bot.say(embed=embed)
 	
 	embed = discord.Embed(color=0xffffff,)
@@ -298,7 +298,7 @@ async def time(ctx):
 	embed.set_author(name="Clock", icon_url=clock)
 	embed.add_field(name="Time", value=time, inline=True)
 	embed.add_field(name="Date", value=date, inline=True)
-	embed.set_footer(text=f"Requested by {ctx.message.author}\nversion: {ver}", icon_url=ctx.message.author.avatar_url) 
+	embed.set_footer(text=f"Requested by {ctx.message.author} | v{ver}", icon_url=ctx.message.author.avatar_url)
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
@@ -424,7 +424,7 @@ async def serverlist(ctx):
 @bot.command(pass_context=True)
 async def commands(ctx):
 	embed = discord.Embed(title=f"{botname} Commands", description=":mailbox_with_mail: Check DMs", color=0xffffff)
-	embed.set_footer(text=f"Requested by {ctx.message.author}\nversion: {ver}", icon_url=ctx.message.author.avatar_url)
+	embed.set_footer(text=f"Requested by {ctx.message.author} | v{ver}", icon_url=ctx.message.author.avatar_url)
 	await bot.say(embed=embed)
 	embed = discord.Embed(title=f"{botname} Commands", description="idk yet", color=0xffffff)
 	await bot.send_message(ctx.message.author, embed=embed)
