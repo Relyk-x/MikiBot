@@ -17,7 +17,7 @@ import os
 bot = commands.Bot(command_prefix='v!')
 msglimit = 100
 now = datetime.now()
-ver = "v0.5.4"#2
+ver = "0.5.4"#2
 botname = "Vixen"
 
 #Emoji
