@@ -39,7 +39,8 @@ bots = "https://cdn.discordapp.com/attachments/499771950764261396/51532339204862
 @bot.event
 async def on_ready():
 	servers = list(bot.servers)
-	status = f"over {str(len(bot.servers))} servers"
+#status = f"over {str(len(bot.servers))} servers"
+	status = "for v!commands"
 	print (f"Bot Name: {bot.user.name}")
 	print (f"Bot ID: {bot.user.id}")
 	print (f"{botname} is up on {str(len(bot.servers))} servers!")
