@@ -543,6 +543,7 @@ async def commands(ctx):
 	embed.add_field(name="google", value="Googles your search", inline=False)
 	embed.add_field(name="youtube", value="Searches for the most relevant youtube video", inline=False)
 	embed.add_field(name="greet", value="Generates a greeting response", inline=False)
+	embed.add_field(name="password", value="Generates a random password", inline=False)
 	embed.add_field(name="time", value="Displays the current time of the server", inline=False)
 	embed.add_field(name="kawaii", value="Displays multiple different kawaii emoji", inline=False)
 	embed.add_field(name="cat", value="Generates a random cat pic", inline=False)
