@@ -474,7 +474,7 @@ async def password(ctx):
 	 key9 = (random.choice(encryptcode))
 	if count10 < 26: 
 	 key10 = (random.choice(encryptkey))
-	if count03 >= 26: 
+	if count10 >= 26: 
 	 key10 = (random.choice(encryptcode))
 	if count11 < 26: 
 	 key11 = (random.choice(encryptkey))
