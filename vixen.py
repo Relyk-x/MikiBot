@@ -501,10 +501,10 @@ async def password(ctx):
 	 key16 = (random.choice(encryptkey))
 	if count16 >= 26:
 	 key16 = (random.choice(encryptcode))
-#	There are about ???,???,??? different password combinations that can be generated.
+# There are about ???,???,??? different password combinations that can be generated.
 	encryptedpass = (key1 + key2 + key3 + key4 + key5 + key6 + key7 + key8 + key9 + key10 + key11 + key12 + key13 + key14 + key15 + key16)
 	embed = discord.Embed(description='Here is your randomly generated password: ' + '`' + encryptedpass + '`', color=0xffffff)
-	await bot.say(embed=embed)
+	await bot.send_message(ctx.message.author, embed=embed)
 
 ##############################################################################################################################
 # ℹ️ | H E L P - C O M M A N D S	
