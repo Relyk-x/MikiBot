@@ -436,51 +436,71 @@ async def password(ctx):
 	count13 = random.randint(1, 52)
 	count14 = random.randint(1, 52)
 	count15 = random.randint(1, 52)
-	if count1 < 13:
+	if count1 < 26:
 	 key1 = (random.choice(encryptkey))
-	if count1 >= 13: 
+	if count1 >= 26: 
 	 key1 = (random.choice(encryptcode))
-	if count2 < 13:
+	if count2 < 26:
 	 key2 = (random.choice(encryptkey))
-	if count2 >= 13: 
+	if count2 >= 26: 
 	 key2 = (random.choice(encryptcode))
-	if count3 < 13:
+	if count3 < 26:
 	 key3 = (random.choice(encryptkey))
-	if count3 >= 13: 
+	if count3 >= 26: 
 	 key3 = (random.choice(encryptcode))
-	if count4 < 13:
+	if count4 < 26:
 	 key4 = (random.choice(encryptkey))
-	if count4 >= 13: 
+	if count4 >= 26: 
 	 key4 = (random.choice(encryptcode))
-	if count5 < 13:
+	if count5 < 26:
 	 key5 = (random.choice(encryptkey))
-	if count5 >= 13: 
+	if count5 >= 26: 
 	 key5 = (random.choice(encryptcode))
-	if count6 < 13:
+	if count6 < 26:
 	 key6 = (random.choice(encryptkey))
-	if count6 >= 13: 
+	if count6 >= 26: 
 	 key6 = (random.choice(encryptcode))
-	if count7 < 13:
+	if count7 < 26:
 	 key7 = (random.choice(encryptkey))
-	if count7 >= 13: 
+	if count7 >= 26: 
 	 key7 = (random.choice(encryptcode))
-	if count8 < 13:
+	if count8 < 26:
 	 key8 = (random.choice(encryptkey))
-	if count9 >= 13: 
+	if count8 >= 26: 
+	 key8 = (random.choice(encryptcode))
+	if count9 < 26: 
+	 key9 = (random.choice(encryptkey))
+	if count9 >= 26: 
 	 key9 = (random.choice(encryptcode))
-	if count10 >= 13: 
+	if count10 < 26: 
+	 key10 = (random.choice(encryptkey))
+	if count03 >= 26: 
 	 key10 = (random.choice(encryptcode))
-	if count11 >= 13: 
+	if count11 < 26: 
+	 key11 = (random.choice(encryptkey))
+	if count11 >= 26: 
 	 key11 = (random.choice(encryptcode))
-	if count12 >= 13: 
+	if count12 < 26:
+	 key12 = (random.choice(encryptkey))
+	if count12 >= 26:
 	 key12 = (random.choice(encryptcode))
-	if count13 >= 13: 
+	if count13 < 26:
+	 key13 = (random.choice(encryptkey))
+	if count13 >= 26:
 	 key13 = (random.choice(encryptcode))
-	if count14 >= 13: 
+	if count14 < 26:
+	 key14 = (random.choice(encryptkey))
+	if count14 >= 26:
 	 key14 = (random.choice(encryptcode))
-	if count15 >= 13: 
+	if count15 < 26:
+	 key15 = (random.choice(encryptkey))
+	if count15 >= 26:
 	 key15 = (random.choice(encryptcode))
-# There are about 23,535,820 different password combinations that can be generated.
+	if count16 < 26:
+	 key16 = (random.choice(encryptkey))
+	if count16 >= 26:
+	 key16 = (random.choice(encryptcode))
+# There are about ???,???,??? different password combinations that can be generated.
 	encryptedpass = (key1 + key2 + key3 + key4 + key5 + key6 + key7 + key8 + key9 + key10 + key11 + key12 + key13 + key14 + key15)
 	embed = discord.Embed(description='Here is your randomly generated password: ' + '`' + encryptedpass + '`', color=0xffffff)
 	await bot.say(embed=embed)
