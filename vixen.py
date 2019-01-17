@@ -17,7 +17,7 @@ import os
 bot = commands.Bot(command_prefix='v!')
 msglimit = 100
 now = datetime.now()
-ver = "0.5.8"#1
+ver = "0.5.8"#2
 botname = "Vixen"
 
 #Emoji
@@ -340,7 +340,11 @@ async def gif(ctx):
 	embed = discord.Embed(color=0xffffff,)
 	embed.set_image(url='http://replygif.net/i/' + str(random.randint(90, 1100)) + '.gif')
 	await bot.say(embed=embed)
-	
+
+##############################################################################################################################
+# 👾 | G A M E - C O M M A N D S	
+##############################################################################################################################
+
 @bot.command(pass_context=True)
 async def diceroll(ctx):
 	randomlist = ['1','2','3','4','5','6',]
@@ -414,7 +418,7 @@ async def serverlist(ctx):
 #	 await bot.say(embed=embed)
 	
 ##############################################################################################################################
-# 🚫 | R E M O V E D - C O M M A N D S
+# 🚫 | T E S T I N G - C O M M A N D S
 ##############################################################################################################################
 
 @bot.command(pass_context=True)
