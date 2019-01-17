@@ -90,8 +90,8 @@ async def clear(ctx, msglimit : int):
 	selfdel = await bot.say(embed=embed)
 	await asyncio.sleep(10)
 	await bot.delete_message(selfdel)
-# embed = discord.Embed(description="Sorry that's too much...", color=0xffafc9,)
-# await bot.say(embed=embed)
+#       embed = discord.Embed(description="Sorry that's too much...", color=0xffafc9,)
+#       await bot.say(embed=embed)
 
 @bot.command(pass_context=True)
 async def ping(ctx):
