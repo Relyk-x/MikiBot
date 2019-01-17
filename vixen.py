@@ -177,7 +177,7 @@ async def server(ctx):
 	await bot.say(embed=embed)
 
 @bot.command(pass_context=True)
-async def user(ctx, user: discord.Member):
+async def profile(ctx, user: discord.Member):
 	embed = discord.Embed(description="Here's what I could find.", color=0xffffff)
 	embed.set_author(name="User Info", icon_url=dis_cord)
 	embed.set_thumbnail(url=user.avatar_url)
