@@ -160,7 +160,7 @@ async def server(ctx):
 	 else:
 	  members += 1
 	  total += 1
-	embed = discord.Embed(description="Here's what I could find.", color=0xffffff)
+	embed = discord.Embed(description="Here's what I could find.", color=0x7289da)
 	embed.set_author(name="Server Info", icon_url=dis_cord)
 	embed.set_thumbnail(url=ctx.message.server.icon_url)
 	embed.add_field(name="Name:", value=ctx.message.server.name, inline=True)
@@ -178,7 +178,7 @@ async def server(ctx):
 
 @bot.command(pass_context=True)
 async def profile(ctx, user: discord.Member):
-	embed = discord.Embed(description="Here's what I could find.", color=0xffffff)
+	embed = discord.Embed(description="Here's what I could find.", color=0x7289da)
 	embed.set_author(name="User Info", icon_url=dis_cord)
 	embed.set_thumbnail(url=user.avatar_url)
 	embed.add_field(name="Name", value=user, inline=True)
@@ -191,7 +191,7 @@ async def profile(ctx, user: discord.Member):
 	
 @bot.command(pass_context=True)
 async def avatar(ctx, user: discord.Member):
-	embed = discord.Embed(description=f"Here it is {user.name}'s profile pic",color=0xffffff)
+	embed = discord.Embed(color=0x7289da,)
 	embed.set_author(name="User Avatar", icon_url=dis_cord)
 	embed.set_image(url=user.avatar_url)
 	await bot.say(embed=embed)
@@ -210,14 +210,14 @@ async def about(ctx):
 	
 @bot.command(pass_context=True)
 async def invite(ctx):
-	embed = discord.Embed(color=0xffffff,)
+	embed = discord.Embed(color=0x7289da,)
 	embed.set_author(name="Invite", icon_url=dis_cord)
 	embed.add_field(name="Link:", value="https://discordapp.com/oauth2/authorize?&client_id=496214977267630080&scope=bot&permissions=66186303")
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
 async def vote(ctx):
-	embed = discord.Embed(color=0xffffff,)
+	embed = discord.Embed(color=0x7289da,)
 	embed.set_author(name="Vote", icon_url=bots)
 	embed.add_field(name="Link:", value="https://discordbots.org/bot/496214977267630080/vote")
 	await bot.say(embed=embed)
