@@ -204,7 +204,7 @@ async def about(ctx):
 	embed.add_field(name="Prefix", value="v! | v!commands for help", inline=True)
 	embed.add_field(name="Creator", value="<@257784039795064833>", inline=True)
 	embed.add_field(name="About", value="Hey, this is Vixen a new bot in need of more users.\nShare our bot or join our help server!", inline=True)
-	embed.add_field(name="Links", value="<:white:535747728614096906><:vixen:535750323340312576> Website: https://relykxdiscord.wixsite.com/vixen\n<:blurple:535747202740518922><:discord:535748146761039872> Server: https://discord.gg/UjuGRB9\n<:darkorange:535747669872738314><:patreon:535785807584428032> Patreon: https://www.patreon.com/join/vixendiscord?\n<:lightorange:535747428893327370><:curiouscat:535750033597923328> Curious Cat: https://curiouscat.me/VixenDiscord\n<:lightblue:535747615573147657><:twitter:535749157323931678> Twitter: https://twitter.com/VixenDiscord", inline=True)
+	embed.add_field(name="Links", value="<:white:535747728614096906><:vixen:535750323340312576> Website: https://relykxdiscord.wixsite.com/vixen\n\n<:blurple:535747202740518922><:discord:535748146761039872> Server: https://discord.gg/UjuGRB9\n\n<:darkorange:535747669872738314><:patreon:535785807584428032> Patreon: https://www.patreon.com/join/vixendiscord?\n\n<:lightorange:535747428893327370><:curiouscat:535750033597923328> Curious Cat: https://curiouscat.me/VixenDiscord\n\n<:lightblue:535747615573147657><:twitter:535749157323931678> Twitter: https://twitter.com/VixenDiscord", inline=True)
 	embed.set_footer(text=f"Requested by {ctx.message.author} | v{ver}", icon_url=ctx.message.author.avatar_url)
 	await bot.say(embed=embed)
 	
