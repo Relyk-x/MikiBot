@@ -16,7 +16,7 @@ import os
 bot = commands.Bot(command_prefix=';')
 msglimit = 100
 now = datetime.now()
-ver = "0.5.9"#4
+ver = "0.5.9"#6
 botname = "Vixen"
 pref = ";"
 owner_id = "257784039795064833"
@@ -470,14 +470,14 @@ async def eightball(ctx):
 ##############################################################################################################################
 
 @bot.command(pass_context=True)
-@message.author.id("257784039795064833" = True)
+@message.author.id = "257784039795064833"
 async def servercount(ctx):
 	embed = discord.Embed(description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0x7289da)
 	embed.set_author(name="Server Count", icon_url=dis_cord)
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
-@message.author.id("257784039795064833" = True)
+@message.author.id = "257784039795064833"
 async def serverlist(ctx):
 	embed = discord.Embed(title="Server List", color=0x7289da)
 	embed.set_author(name="Bot Logs", icon_url=warning)
