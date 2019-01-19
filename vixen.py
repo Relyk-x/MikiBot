@@ -14,11 +14,12 @@ import bs4, requests
 import time
 import os
 
-bot = commands.Bot(command_prefix='>')
+bot = commands.Bot(command_prefix=';')
 msglimit = 100
 now = datetime.now()
-ver = "0.5.8"#6
+ver = "0.5.8"#8
 botname = "Vixen"
+pref = ";"
 
 #Emoji
 vixen = "https://cdn.discordapp.com/attachments/406045563814019093/406071077249482753/kami___render__185_by_starryskytrench-dbhote5.png"
@@ -40,7 +41,7 @@ bots = "https://cdn.discordapp.com/attachments/499771950764261396/51532339204862
 async def on_ready():
 	servers = list(bot.servers)
 #status = f"over {str(len(bot.servers))} servers"
-	status = "for >commands"
+	status = f"for {pref}commands"
 	print (f"Bot Name: {bot.user.name}")
 	print (f"Bot ID: {bot.user.id}")
 	print (f"{botname} is up on {str(len(bot.servers))} servers!")
@@ -144,7 +145,7 @@ async def version(ctx):
 
 @bot.command(pass_context=True)
 async def prefix(ctx):
-	embed = discord.Embed(description=">", color=0xffffff)
+	embed = discord.Embed(description=f"{pref}", color=0xffffff)
 	embed.set_author(name="Prefix", icon_url=dis_cord)
 	await bot.say(embed=embed)
 			 
@@ -201,7 +202,7 @@ async def about(ctx):
 	embed = discord.Embed(color=0xffffff,)
 	embed.set_author(name=botname, icon_url=vixen)
 	embed.set_thumbnail(url=vixen)
-	embed.add_field(name="Prefix", value="> | >commands for help", inline=True)
+	embed.add_field(name="Prefix", value=f"{pref} | {pref}commands for help", inline=True)
 	embed.add_field(name="Creator", value="<@257784039795064833>", inline=True)
 	embed.add_field(name="About", value="Hey, this is Vixen a new bot in need of more users.\nShare our bot or join our help server!", inline=True)
 	embed.add_field(name="Links", value="<:white:535747728614096906><:vixen:535750323340312576> Website: https://relykxdiscord.wixsite.com/vixen\n\n<:blurple:535747202740518922><:discord:535748146761039872> Help Server: https://discord.gg/UjuGRB9\n\n<:darkorange:535747669872738314><:patreon:535785807584428032> Patreon: https://www.patreon.com/join/vixendiscord?\n\n<:lightorange:535747428893327370><:curiouscat:535750033597923328> Curious Cat: https://curiouscat.me/VixenDiscord\n\n<:lightblue:535747615573147657><:twitter:535749157323931678> Twitter: https://twitter.com/VixenDiscord", inline=True)
