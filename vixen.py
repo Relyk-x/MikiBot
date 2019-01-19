@@ -124,7 +124,7 @@ async def clear(ctx, msglimit : int):
 ############################
 @bot.command(pass_context=True)
 async def ms_ping(ctx):
-channel = ctx.message.channel   
+	channel = ctx.message.channel   
 	try:
 	 t1 = time.perf_counter()
 	 await bot.send_typing(channel)
