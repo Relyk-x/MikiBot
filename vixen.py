@@ -99,8 +99,8 @@ async def clear(ctx, msglimit : int):
 #       embed = discord.Embed(description="Sorry that's too much...", color=0xffafc9,)
 #       await bot.say(embed=embed)
 
-#@bot.command(pass_context=True)
-#async def ping(ctx):
+@bot.command(pass_context=True)
+async def ping(ctx):
 #	channel = ctx.message.channel
 #	t1 = time.perf_counter()
 #	await bot.send_typing(channel)
@@ -112,14 +112,14 @@ async def clear(ctx, msglimit : int):
 	# received; this is dependant on your bot's load (the event loop latency)
 	# and generally how shit your computer is, as well as how badly discord
 	# is behaving.
-#	start = time.monotonic()
-#	msg = await ctx.send('Pinging...')
-#	millis = (time.monotonic() - start) * 1000
+	start = time.monotonic()
+	msg = await ctx.send('Pinging...')
+	millis = (time.monotonic() - start) * 1000
 
 	# Since sharded bots will have more than one latency, this will average them if needed.
-#	heartbeat = ctx.bot.latency * 1000
+	heartbeat = ctx.bot.latency * 1000
 
-#	await msg.edit(content=f'Heartbeat: {heartbeat:,.2f}ms\tACK: {millis:,.2f}ms.')
+	await msg.edit(content=f'Heartbeat: {heartbeat:,.2f}ms\tACK: {millis:,.2f}ms.')
 	
 @bot.command(pass_context=True)
 async def count(ctx):
@@ -504,13 +504,13 @@ async def serverlist(ctx):
 # 🚫 | T E S T I N G - C O M M A N D S
 ##############################################################################################################################
 
-@bot.command(pass_context=True)
-async def ping(ctx):
-	channel = ctx.message.channel
-	t1 = time.perf_counter()
-	await bot.send_typing(channel)
-	t2 = time.perf_counter()
-	await bot.say('Pong! It took {}ms.'.format(round((t2-t1))))
+#@bot.command(pass_context=True)
+#async def ping(ctx):
+#	channel = ctx.message.channel
+#	t1 = time.perf_counter()
+#	await bot.send_typing(channel)
+#	t2 = time.perf_counter()
+#	await bot.say('Pong! It took {}ms.'.format(round((t2-t1))))
 
 ##############################################################################################################################
 # ℹ️ | H E L P - C O M M A N D S	
