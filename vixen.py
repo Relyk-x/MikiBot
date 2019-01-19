@@ -18,7 +18,7 @@ import os
 bot = commands.Bot(command_prefix=';')
 msglimit = 100
 now = datetime.now()
-ver = "0.6.0"#6
+ver = "0.6.0"#7
 botname = "Vixen"
 pref = ";"
 owner_id = "257784039795064833"
@@ -182,8 +182,8 @@ async def ms_ping(ctx):
 
 	embed = discord.Embed(title="Connection", colour=0xffffff)
 	embed.add_field(name='Ping 1', value=str(ra), inline=True)
-	embed.add_field(name='Ping 2', value=str(ra2), inline=True)
-	embed.add_field(name='Ping 3', value=str(ra3), inline=False)
+	embed.add_field(name='Ping 2', value=str(ra2), inline=False)
+	embed.add_field(name='Ping 3', value=str(ra3), inline=True)
 	embed.add_field(name='Ping 4', value=str(ra4), inline=True)
 	await bot.say(embed=embed)
 ############################
