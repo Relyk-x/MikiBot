@@ -113,7 +113,7 @@ async def ping(ctx):
 	# and generally how shit your computer is, as well as how badly discord
 	# is behaving.
 	start = time.monotonic()
-	msg = await ctx.send('Pinging...')
+	msg = await bot.say('Pinging...')
 	millis = (time.monotonic() - start) * 1000
 
 	# Since sharded bots will have more than one latency, this will average them if needed.
