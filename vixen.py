@@ -224,8 +224,8 @@ async def version(ctx):
 async def prefix(ctx):
 	embed = discord.Embed(color=0x7289da,)
 	embed.set_author(name="Bot Prefix", icon_url=dis_cord)
-	embed.add_field(name="Default:", value=f"{def_pref}", inline=True)
-	embed.add_field(name="Current:", value=f"{pref}", inline=True)
+	embed.add_field(name=f"Default: `{def_pref}`", inline=True)
+	embed.add_field(name=f"Current: `{pref}`", inline=True)
 	await bot.say(embed=embed)
 			 
 @bot.command(pass_context=True)
