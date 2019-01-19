@@ -173,7 +173,7 @@ async def ms_ping(ctx):
 	 ta4 = t1d
 
 	 t2d = time.perf_counter()
-	 await Client.send_typing(channel)
+	 await bot.send_typing(channel)
 	 tb4 = t2d
 
 	 ra4 = round((tb4 - ta4) * 1000)
