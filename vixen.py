@@ -18,7 +18,7 @@ import os
 bot = commands.Bot(command_prefix=';')
 msglimit = 100
 now = datetime.now()
-ver = "0.6.0"#8
+ver = "0.6.1"#1
 botname = "Vixen"
 pref = ";"
 owner_id = "257784039795064833"
@@ -180,11 +180,12 @@ async def ms_ping(ctx):
 	finally:
 	 pass
 
-	embed = discord.Embed(title="Connection", colour=0xffffff)
+	embed = discord.Embed(color=0x7289da,)
+	embed.set_author(name="Bot Connection", icon_url=dis_cord)
 	embed.set_thumbnail(url=vixen)
 	embed.add_field(name='Ping 1', value=str(ra), inline=True)
 	embed.add_field(name='Ping 2', value=str(ra2), inline=True)
-	embed.add_field(name='Ping 3', value=str(ra3), inline=False)
+	embed.add_field(name='Ping 3', value=str(ra3), inline=True)
 	embed.add_field(name='Ping 4', value=str(ra4), inline=True)
 	await bot.say(embed=embed)
 ############################
@@ -200,7 +201,7 @@ async def count(ctx):
 	 else:
 	  members += 1
 	  total += 1
-	embed = discord.Embed(title="Server Member Count",color=0xffffff)
+	embed = discord.Embed(title="Server Member Count",color=0x7289da)
 	embed.set_author(name="Bot Logs", icon_url=warning)
 	embed.add_field(name="Bot Count",value=bots)
 	embed.add_field(name="Member Count",value=members)
@@ -219,8 +220,8 @@ async def version(ctx):
 
 @bot.command(pass_context=True)
 async def prefix(ctx):
-	embed = discord.Embed(description=f"{pref}", color=0xffffff)
-	embed.set_author(name="Prefix", icon_url=dis_cord)
+	embed = discord.Embed(description=f"{pref}", color=0x7289da)
+	embed.set_author(name="Bot Prefix", icon_url=dis_cord)
 	await bot.say(embed=embed)
 			 
 @bot.command(pass_context=True)
