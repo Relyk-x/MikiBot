@@ -281,7 +281,7 @@ async def greet(ctx):
 	await bot.say("%s" %(random.choice(randomlist),))
 
 @bot.command(pass_context=True)
-async def time(ctx):
+async def clock(ctx):
 	time = now.strftime("%X")
 	date = now.strftime("%x")
 	embed = discord.Embed(color=0xffffff,)
