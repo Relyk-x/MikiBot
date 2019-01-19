@@ -18,8 +18,9 @@ import os
 bot = commands.Bot(command_prefix=';')
 msglimit = 100
 now = datetime.now()
-ver = "0.6.1"#1
+ver = "0.6.1"#2
 botname = "Vixen"
+def_pref = ";"
 pref = ";"
 owner_id = "257784039795064833"
 
@@ -221,8 +222,10 @@ async def version(ctx):
 
 @bot.command(pass_context=True)
 async def prefix(ctx):
-	embed = discord.Embed(description=f"{pref}", color=0x7289da)
+	embed = discord.Embed(color=0x7289da,)
 	embed.set_author(name="Bot Prefix", icon_url=dis_cord)
+	embed.add_field(name="Default:", value=f"{def_pref}", inline=True)
+	embed.add_field(name="Current:", value=f"{pref}", inline=True)
 	await bot.say(embed=embed)
 			 
 @bot.command(pass_context=True)
