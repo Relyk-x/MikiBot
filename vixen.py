@@ -8,10 +8,9 @@ from discord.ext.commands import Bot
 import asyncio
 import random
 import json
-import datetime
-from datetime import datetime
+import datetime, time
 import bs4, requests
-import time
+
 import os
 
 bot = commands.Bot(command_prefix=';')
@@ -43,10 +42,13 @@ async def on_ready():
 	servers = list(bot.servers)
 #status = f"over {str(len(bot.servers))} servers"
 	status = f"for {pref}commands"
+	print ("------------------------------------")
 	print (f"Bot Name: {bot.user.name}")
 	print (f"Bot ID: {bot.user.id}")
+	print (f"Discord Version: {discord.__version__}")
 	print (f"{botname} is up on {str(len(bot.servers))} servers!")
-	print ("Ready when you are...")
+	print ("Ready when you are master...")
+	print ("------------------------------------")
 	await bot.change_presence(game=discord.Game(name=status,type=3))
 	
 ##############################################################################################################################
@@ -95,13 +97,13 @@ async def clear(ctx, msglimit : int):
 #       embed = discord.Embed(description="Sorry that's too much...", color=0xffafc9,)
 #       await bot.say(embed=embed)
 
-@bot.command(pass_context=True)
-async def ping(ctx):
-	channel = ctx.message.channel
-	t1 = time.perf_counter()
-	await bot.send_typing(channel)
-	t2 = time.perf_counter()
-	await bot.say('Pong! It took {}ms.'.format(round((t2-t1))))
+#@bot.command(pass_context=True)
+#async def ping(ctx):
+#	channel = ctx.message.channel
+#	t1 = time.perf_counter()
+#	await bot.send_typing(channel)
+#	t2 = time.perf_counter()
+#	await bot.say('Pong! It took {}ms.'.format(round((t2-t1))))
 	# Time the time required to send a message first.
 	# This is the time taken for the message to be sent, awaited, and then 
 	# for discord to send an ACK TCP header back to you to say it has been
@@ -326,90 +328,11 @@ async def gif(ctx):
 	embed.set_image(url='http://replygif.net/i/' + str(random.randint(90, 1100)) + '.gif')
 	await bot.say(embed=embed)
 
-##############################################################################################################################
-# 👾 | G A M E - C O M M A N D S	
-##############################################################################################################################
-
-@bot.command(pass_context=True)
-async def diceroll(ctx):
-	randomlist = ['1','2','3','4','5','6',]
-	embed = discord.Embed(title ="Dice Roll", description="*rolls a dice*", color=0xffffff,)
-	embed.add_field(name="You rolled a dice and it landed on...", value="Side: **%s**" %(random.choice(randomlist),))
-	await bot.say(embed=embed)
-	
-@bot.command(pass_context=True)
-async def coinflip(ctx):
-	randomlist = ['Heads','Tails',]
-	embed = discord.Embed(title ="Coin Flip", description="*flips a coin*", color=0xffffff,)
-	embed.add_field(name="You flipped a coin and it landed on", value="Face: **%s**" %(random.choice(randomlist),))
-	await bot.say(embed=embed)
-	
-@bot.command(pass_context=True)
-async def eightball(ctx):
-	randomlist = ['It is certain.',
-                      'It is decidedly so.',
-                      'Without a doubt.',
-                      'Yes - definitely.',
-                      'You may rely on it.',
-                      'As I see it, yes.',
-                      'Most likely.',
-                      'Outlook good.',
-                      'Yes.',
-                      'Signs point to yes.',
-                      'Reply hazy, try again',
-                      'Ask again later.',
-                      'Better not tell you now.',
-                      'Cannot predict now.',
-                      'Concentrate and ask again.',
-                      "Don't count on it.",
-                      'My reply is no.',
-                      'My sources say no.',
-                      'Outlook not so good.',
-                      'Very doubtful.',
-                     ]
-	embed = discord.Embed(title ="8 Ball", description="*shakes the 8 Ball up...*", color=0xffffff,)
-	embed.add_field(name="You shook the 8 ball and it shows you...", value="Answer: **%s**" %(random.choice(randomlist),))
-	await bot.say(embed=embed)
-
-##############################################################################################################################
-# 🛠️ | O W N E R - C O M M A N D S	
-##############################################################################################################################
-
-@bot.command(pass_context=True)
-@commands.has_permissions(admin = True)
-async def servercount(ctx):
-	embed = discord.Embed(description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0x7289da)
-	embed.set_author(name="Server Count", icon_url=dis_cord)
-	await bot.say(embed=embed)
-	
-@bot.command(pass_context=True)
-@commands.has_permissions(admin = True)
-async def serverlist(ctx):
-	embed = discord.Embed(title="Server List", color=0x7289da)
-	embed.set_author(name="Bot Logs", icon_url=warning)
-	await bot.say(embed=embed)
-	serv = list(bot.servers)
-	embed = discord.Embed(description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0x7289da)
-	embed.set_author(name="Server List", icon_url=dis_cord)
-	await bot.say(embed=embed)
-	for x in range(len(serv)):
-	 embed = discord.Embed(color=0x7289da,)
-	 embed.set_thumbnail(url=serv[x-1].icon_url)
-	 embed.add_field(name="Name:", value=serv[x-1].name, inline=False)
-	 embed.add_field(name="ID:", value=serv[x-1].id, inline=False)
-	 embed.add_field(name="Region:", value=serv[x-1].region, inline=True)
-	 embed.add_field(name="Owner:", value=serv[x-1].owner, inline=False)
-	 embed.add_field(name="Members:", value=len(serv[x-1].members), inline=True)
-	 embed.add_field(name="Roles:", value=len(serv[x-1].roles), inline=True)
-	 embed.add_field(name="Created:", value=serv[x-1].created_at, inline=False)
-	 await bot.say(embed=embed)
-	
-##############################################################################################################################
-# 🚫 | T E S T I N G - C O M M A N D S
-##############################################################################################################################
-
 @bot.command(pass_context=True)
 async def password(ctx):
+	embed = discord.Embed(title=f"{botname} Commands", description=":mailbox_with_mail: Check DMs", color=0xffffff)
+	embed.set_footer(text=f"Requested by {ctx.message.author} | v{ver}", icon_url=ctx.message.author.avatar_url)
+	await bot.say(embed=embed)
 	encryptkey = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',]
 	encryptcode = ['1','2','3','4','5','6','7','8','9',]
 	count1 = random.randint(1, 52)
@@ -496,6 +419,96 @@ async def password(ctx):
 	encryptedpass = (key1 + key2 + key3 + key4 + key5 + key6 + key7 + key8 + key9 + key10 + key11 + key12 + key13 + key14 + key15 + key16)
 	embed = discord.Embed(description='Here is your randomly generated password: ' + '`' + encryptedpass + '`', color=0xffffff)
 	await bot.send_message(ctx.message.author, embed=embed)
+	
+##############################################################################################################################
+# 👾 | G A M E - C O M M A N D S	
+##############################################################################################################################
+
+@bot.command(pass_context=True)
+async def diceroll(ctx):
+	randomlist = ['1','2','3','4','5','6',]
+	embed = discord.Embed(title ="Dice Roll", description="*rolls a dice*", color=0xffffff,)
+	embed.add_field(name="You rolled a dice and it landed on...", value="Side: **%s**" %(random.choice(randomlist),))
+	await bot.say(embed=embed)
+	
+@bot.command(pass_context=True)
+async def coinflip(ctx):
+	randomlist = ['Heads','Tails',]
+	embed = discord.Embed(title ="Coin Flip", description="*flips a coin*", color=0xffffff,)
+	embed.add_field(name="You flipped a coin and it landed on", value="Face: **%s**" %(random.choice(randomlist),))
+	await bot.say(embed=embed)
+	
+@bot.command(pass_context=True)
+async def eightball(ctx):
+	randomlist = ['It is certain.',
+                      'It is decidedly so.',
+                      'Without a doubt.',
+                      'Yes - definitely.',
+                      'You may rely on it.',
+                      'As I see it, yes.',
+                      'Most likely.',
+                      'Outlook good.',
+                      'Yes.',
+                      'Signs point to yes.',
+                      'Reply hazy, try again',
+                      'Ask again later.',
+                      'Better not tell you now.',
+                      'Cannot predict now.',
+                      'Concentrate and ask again.',
+                      "Don't count on it.",
+                      'My reply is no.',
+                      'My sources say no.',
+                      'Outlook not so good.',
+                      'Very doubtful.',
+                     ]
+	embed = discord.Embed(title ="8 Ball", description="*shakes the 8 Ball up...*", color=0xffffff,)
+	embed.add_field(name="You shook the 8 ball and it shows you...", value="Answer: **%s**" %(random.choice(randomlist),))
+	await bot.say(embed=embed)
+
+##############################################################################################################################
+# 🛠️ | O W N E R - C O M M A N D S	
+##############################################################################################################################
+
+@bot.command(pass_context=True)
+@message.author.id("257784039795064833" = True)
+async def servercount(ctx):
+	embed = discord.Embed(description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0x7289da)
+	embed.set_author(name="Server Count", icon_url=dis_cord)
+	await bot.say(embed=embed)
+	
+@bot.command(pass_context=True)
+@message.author.id("257784039795064833" = True)
+async def serverlist(ctx):
+	embed = discord.Embed(title="Server List", color=0x7289da)
+	embed.set_author(name="Bot Logs", icon_url=warning)
+	await bot.say(embed=embed)
+	serv = list(bot.servers)
+	embed = discord.Embed(description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0x7289da)
+	embed.set_author(name="Server List", icon_url=dis_cord)
+	await bot.say(embed=embed)
+	for x in range(len(serv)):
+	 embed = discord.Embed(color=0x7289da,)
+	 embed.set_thumbnail(url=serv[x-1].icon_url)
+	 embed.add_field(name="Name:", value=serv[x-1].name, inline=False)
+	 embed.add_field(name="ID:", value=serv[x-1].id, inline=False)
+	 embed.add_field(name="Region:", value=serv[x-1].region, inline=True)
+	 embed.add_field(name="Owner:", value=serv[x-1].owner, inline=False)
+	 embed.add_field(name="Members:", value=len(serv[x-1].members), inline=True)
+	 embed.add_field(name="Roles:", value=len(serv[x-1].roles), inline=True)
+	 embed.add_field(name="Created:", value=serv[x-1].created_at, inline=False)
+	 await bot.say(embed=embed)
+	
+##############################################################################################################################
+# 🚫 | T E S T I N G - C O M M A N D S
+##############################################################################################################################
+
+@bot.command(pass_context=True)
+async def ping(ctx):
+	channel = ctx.message.channel
+	t1 = time.perf_counter()
+	await bot.send_typing(channel)
+	t2 = time.perf_counter()
+	await bot.say('Pong! It took {}ms.'.format(round((t2-t1))))
 
 ##############################################################################################################################
 # ℹ️ | H E L P - C O M M A N D S	
