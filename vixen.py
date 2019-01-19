@@ -8,7 +8,9 @@ from discord.ext.commands import Bot
 import asyncio
 import random
 import json
-import datetime, time
+import datetime
+from datetime import datetime
+import time
 import bs4, requests
 
 import os
