@@ -373,31 +373,33 @@ async def eightball(ctx):
 ##############################################################################################################################
 
 @bot.command(pass_context=True)
+@commands.has_id("257784039795064833" = True)
 async def servercount(ctx):
 	embed = discord.Embed(description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0x7289da)
 	embed.set_author(name="Server Count", icon_url=dis_cord)
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
+@commands.has_id("257784039795064833" = True)
 async def serverlist(ctx):
-	embed = discord.Embed(title="Server List", description=":construction: **UNDER CONSTRUCTION** :construction:", color=0xffffff)
+	embed = discord.Embed(title="Server List", color=0x7289da)
 	embed.set_author(name="Bot Logs", icon_url=warning)
 	await bot.say(embed=embed)
-#	serv = list(bot.servers)
-#	embed = discord.Embed(description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0x7289da)
-#	embed.set_author(name="Server List", icon_url=dis_cord)
-#	await bot.say(embed=embed)
-#	for x in range(len(serv)):
-#	 embed = discord.Embed(color=0x7289da,)
-#	 embed.set_thumbnail(url=serv[x-1].icon_url)
-#	 embed.add_field(name="Name:", value=serv[x-1].name, inline=False)
-#	 embed.add_field(name="ID:", value=serv[x-1].id, inline=False)
-#	 embed.add_field(name="Region:", value=serv[x-1].region, inline=True)
-#	 embed.add_field(name="Owner:", value=serv[x-1].owner, inline=False)
-#	 embed.add_field(name="Members:", value=len(serv[x-1].members), inline=True)
-#	 embed.add_field(name="Roles:", value=len(serv[x-1].roles), inline=True)
-#	 embed.add_field(name="Created:", value=serv[x-1].created_at, inline=False)
-#	 await bot.say(embed=embed)
+	serv = list(bot.servers)
+	embed = discord.Embed(description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0x7289da)
+	embed.set_author(name="Server List", icon_url=dis_cord)
+	await bot.say(embed=embed)
+	for x in range(len(serv)):
+	 embed = discord.Embed(color=0x7289da,)
+	 embed.set_thumbnail(url=serv[x-1].icon_url)
+	 embed.add_field(name="Name:", value=serv[x-1].name, inline=False)
+	 embed.add_field(name="ID:", value=serv[x-1].id, inline=False)
+	 embed.add_field(name="Region:", value=serv[x-1].region, inline=True)
+	 embed.add_field(name="Owner:", value=serv[x-1].owner, inline=False)
+	 embed.add_field(name="Members:", value=len(serv[x-1].members), inline=True)
+	 embed.add_field(name="Roles:", value=len(serv[x-1].roles), inline=True)
+	 embed.add_field(name="Created:", value=serv[x-1].created_at, inline=False)
+	 await bot.say(embed=embed)
 	
 ##############################################################################################################################
 # 🚫 | T E S T I N G - C O M M A N D S
