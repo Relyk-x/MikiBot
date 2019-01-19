@@ -17,7 +17,7 @@ import os
 bot = commands.Bot(command_prefix=';')
 msglimit = 100
 now = datetime.now()
-ver = "0.5.9"#3
+ver = "0.5.9"#4
 botname = "Vixen"
 pref = ";"
 owner_id = "257784039795064833"
@@ -98,10 +98,10 @@ async def clear(ctx, msglimit : int):
 @bot.command(pass_context=True)
 async def ping(ctx):
 	channel = ctx.message.channel
-    	t1 = time.perf_counter()
-    	await bot.send_typing(channel)
-    	t2 = time.perf_counter()
-    	await bot.say('Pong! It took {}ms.'.format(round((t2-t1))))
+	t1 = time.perf_counter()
+	await bot.send_typing(channel)
+	t2 = time.perf_counter()
+	await bot.say('Pong! It took {}ms.'.format(round((t2-t1))))
 	# Time the time required to send a message first.
 	# This is the time taken for the message to be sent, awaited, and then 
 	# for discord to send an ACK TCP header back to you to say it has been
