@@ -20,6 +20,7 @@ now = datetime.now()
 ver = "0.5.8"#8
 botname = "Vixen"
 pref = ";"
+owner_id = "257784039795064833"
 
 #Emoji
 vixen = "https://cdn.discordapp.com/attachments/406045563814019093/406071077249482753/kami___render__185_by_starryskytrench-dbhote5.png"
@@ -373,14 +374,14 @@ async def eightball(ctx):
 ##############################################################################################################################
 
 @bot.command(pass_context=True)
-@commands.has_id(257784039795064833 = True)
+@commands.has_id(owner_id = True)
 async def servercount(ctx):
 	embed = discord.Embed(description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0x7289da)
 	embed.set_author(name="Server Count", icon_url=dis_cord)
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
-@commands.has_id(257784039795064833 = True)
+@commands.has_id(owner_id = True)
 async def serverlist(ctx):
 	embed = discord.Embed(title="Server List", color=0x7289da)
 	embed.set_author(name="Bot Logs", icon_url=warning)
