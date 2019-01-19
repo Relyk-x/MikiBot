@@ -17,7 +17,7 @@ import os
 bot = commands.Bot(command_prefix=';')
 msglimit = 100
 now = datetime.now()
-ver = "0.5.8"#8
+ver = "0.5.9"#3
 botname = "Vixen"
 pref = ";"
 owner_id = "257784039795064833"
@@ -97,9 +97,11 @@ async def clear(ctx, msglimit : int):
 
 @bot.command(pass_context=True)
 async def ping(ctx):
-	embed = discord.Embed(title="Ping", description=":construction: **UNDER CONSTRUCTION** :construction:", color=0xffffff)
-	embed.set_author(name="Bot Logs", icon_url=warning)
-	await bot.say(embed=embed)
+	channel = ctx.message.channel
+    	t1 = time.perf_counter()
+    	await bot.send_typing(channel)
+    	t2 = time.perf_counter()
+    	await bot.say('Pong! It took {}ms.'.format(round((t2-t1))))
 	# Time the time required to send a message first.
 	# This is the time taken for the message to be sent, awaited, and then 
 	# for discord to send an ACK TCP header back to you to say it has been
@@ -374,14 +376,14 @@ async def eightball(ctx):
 ##############################################################################################################################
 
 @bot.command(pass_context=True)
-@commands.has_id(owner_id = True)
+@commands.has_permissions(admin = True)
 async def servercount(ctx):
 	embed = discord.Embed(description=f"Currently watching over {str(len(bot.servers))} Discord servers", color=0x7289da)
 	embed.set_author(name="Server Count", icon_url=dis_cord)
 	await bot.say(embed=embed)
 	
 @bot.command(pass_context=True)
-@commands.has_id(owner_id = True)
+@commands.has_permissions(admin = True)
 async def serverlist(ctx):
 	embed = discord.Embed(title="Server List", color=0x7289da)
 	embed.set_author(name="Bot Logs", icon_url=warning)
