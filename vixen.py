@@ -15,13 +15,13 @@ import bs4, requests
 
 import os
 
-bot = commands.Bot(command_prefix=';')
+bot = commands.Bot(command_prefix='v!')
 msglimit = 100
 now = datetime.now()
-ver = "0.6.1"#4
+ver = "0.6.1"#5
 botname = "Vixen"
-def_pref = ";"
-pref = ";"
+def_pref = "v!"
+pref = "v!"
 owner_id = "257784039795064833"
 
 #Emoji
