@@ -99,8 +99,8 @@ async def clear(ctx, msglimit : int):
 #       embed = discord.Embed(description="Sorry that's too much...", color=0xffafc9,)
 #       await bot.say(embed=embed)
 
-@bot.command(pass_context=True)
-async def ping(ctx):
+#@bot.command(pass_context=True)
+#async def ping(ctx):
 #	channel = ctx.message.channel
 #	t1 = time.perf_counter()
 #	await bot.send_typing(channel)
@@ -112,15 +112,81 @@ async def ping(ctx):
 	# received; this is dependant on your bot's load (the event loop latency)
 	# and generally how shit your computer is, as well as how badly discord
 	# is behaving.
-	start = time.monotonic()
-	msg = await bot.say('Pinging...')
-	millis = (time.monotonic() - start) * 1000
+	#start = time.monotonic()
+	#msg = await bot.say('Pinging...')
+	#millis = (time.monotonic() - start) * 1000
 
 	# Since sharded bots will have more than one latency, this will average them if needed.
-	heartbeat = ctx.bot.latency * 1000
+	#heartbeat = ctx.bot.latency * 1000
 
-	await msg.edit(content=f'Heartbeat: {heartbeat:,.2f}ms\tACK: {millis:,.2f}ms.')
+	#await msg.edit(content=f'Heartbeat: {heartbeat:,.2f}ms\tACK: {millis:,.2f}ms.')
 	
+############################
+@bot.command(pass_context=True)
+async def ms_ping(ctx):
+channel = ctx.message.channel   
+	try:
+	 t1 = time.perf_counter()
+	 await bot.send_typing(channel)
+	 ta = t1
+	 t2 = time.perf_counter()
+	 await bot.send_typing(channel)
+	 tb = t2
+	 ra = round((tb - ta) * 1000)
+	finally:
+	 pass
+	try:
+	 t1a = time.perf_counter()
+	 await bot.send_typing(channel)
+	 ta1 = t1a
+	 t2a = time.perf_counter()
+	 await bot.send_typing(channel)
+	 tb1 = t2a
+	 ra1 = round((tb1 - ta1) * 1000)
+	finally:
+	 pass
+	try:
+	 t1b = time.perf_counter()
+	 await bot.send_typing(channel)
+	 ta2 = t1b
+	 t2b = time.perf_counter()
+	 await bot.send_typing(channel)
+	 tb2 = t2b
+	 ra2 = round((tb2 - ta2) * 1000)
+	finally:
+	 pass
+	try:
+	 t1c = time.perf_counter()
+	 await bot.send_typing(channel)
+	 ta3 = t1c
+
+	 t2c = time.perf_counter()
+	 await bot.send_typing(channel)
+	 tb3 = t2c
+
+	 ra3 = round((tb3 - ta3) * 1000)
+	finally:
+	 pass
+	try:
+	 t1d = time.perf_counter()
+	 await bot.send_typing(channel)
+	 ta4 = t1d
+
+	 t2d = time.perf_counter()
+	 await Client.send_typing(channel)
+	 tb4 = t2d
+
+	 ra4 = round((tb4 - ta4) * 1000)
+	finally:
+	 pass
+
+	embed = discord.Embed(title="Connection", colour=0xffffff)
+	embed.add_field(name='Ping 1', value=str(ra))
+	embed.add_field(name='Ping 2', value=str(ra2))
+	embed.add_field(name='Ping 3', value=str(ra3))
+	embed.add_field(name='Ping 4', value=str(ra4))
+	await bot.say(embed=embed)
+############################
 @bot.command(pass_context=True)
 async def count(ctx):
 	bots = 0
