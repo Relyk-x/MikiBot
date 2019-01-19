@@ -187,6 +187,7 @@ async def ms_ping(ctx):
 	embed.add_field(name='Ping 2', value=str(ra2), inline=True)
 	embed.add_field(name='Ping 3', value=str(ra3), inline=True)
 	embed.add_field(name='Ping 4', value=str(ra4), inline=True)
+	embed.set_footer(text=f"Requested by {ctx.message.author} | v{ver}", icon_url=ctx.message.author.avatar_url) 
 	await bot.say(embed=embed)
 ############################
 @bot.command(pass_context=True)
