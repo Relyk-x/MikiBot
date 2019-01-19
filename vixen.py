@@ -18,7 +18,7 @@ import os
 bot = commands.Bot(command_prefix=';')
 msglimit = 100
 now = datetime.now()
-ver = "0.6.1"#2
+ver = "0.6.1"#4
 botname = "Vixen"
 def_pref = ";"
 pref = ";"
@@ -184,10 +184,10 @@ async def ms_ping(ctx):
 	embed = discord.Embed(color=0x7289da,)
 	embed.set_author(name="Bot Connection", icon_url=dis_cord)
 	embed.set_thumbnail(url=vixen)
-	embed.add_field(name='Ping 1', value=str(ra), inline=True)
-	embed.add_field(name='Ping 2', value=str(ra2), inline=True)
-	embed.add_field(name='Ping 3', value=str(ra3), inline=True)
-	embed.add_field(name='Ping 4', value=str(ra4), inline=True)
+	embed.add_field(name='Ping 1', value=f"{str(ra)}ms", inline=True)
+	embed.add_field(name='Ping 2', value=f"{str(ra2)}ms", inline=True)
+	embed.add_field(name='Ping 3', value=f"{str(ra3)}ms", inline=True)
+	embed.add_field(name='Ping 4', value=f"{str(ra4)}ms", inline=True)
 	embed.set_footer(text=f"Requested by {ctx.message.author} | v{ver}", icon_url=ctx.message.author.avatar_url) 
 	await bot.say(embed=embed)
 ############################
