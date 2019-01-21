@@ -543,17 +543,7 @@ async def eightball(ctx):
 # 💦 | N S F W - C O M M A N D S / ( T E S T )	
 ##############################################################################################################################
 
-@bot.command(pass_context=True)
-async def testnsfw(ctx):
-	channel = discord.Channel
-	if ctx.channel.is_nsfw():
-		embed = discord.Embed(color=0xffffff,)
-		embed.add_field(name="NSFW", value="You can not use that command here!", inline=True)
-		await bot.say(embed=embed)
-	else:
-		embed = discord.Embed(color=0xffffff,)
-		embed.set_image(url="https://support.discordapp.com/hc/article_attachments/115000272351/thisisnsfw.png")
-		await bot.say(embed=embed)
+# D I S A B L E D
 
 ##############################################################################################################################
 # 🛠️ | O W N E R - C O M M A N D S	
@@ -592,6 +582,20 @@ async def serverlist(ctx):
 # 🚫 | D I S A B L E D - C O M M A N D S
 ##############################################################################################################################
 
+# 💦 | N S F W - C O M M A N D S / ( T E S T )
+
+#@bot.command(pass_context=True)
+#async def testnsfw(ctx):
+#	channel = discord.Channel
+#	if ctx.channel.is_nsfw():
+#		embed = discord.Embed(color=0xffffff,)
+#		embed.add_field(name="NSFW", value="You can not use that command here!", inline=True)
+#		await bot.say(embed=embed)
+#	else:
+#		embed = discord.Embed(color=0xffffff,)
+#		embed.set_image(url="https://support.discordapp.com/hc/article_attachments/115000272351/thisisnsfw.png")
+#		await bot.say(embed=embed)
+		
 ##############################################################################################################################
 # ℹ️ | H E L P - C O M M A N D S	
 ##############################################################################################################################
