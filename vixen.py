@@ -190,7 +190,7 @@ async def ms_ping(ctx):
 	embed.add_field(name='Ping 4', value=f"{str(ra4)}ms", inline=True)
 	embed.set_footer(text=f"Requested by {ctx.message.author} | v{ver}", icon_url=ctx.message.author.avatar_url) 
 	await bot.say(embed=embed)
-############################
+
 @bot.command(pass_context=True)
 async def count(ctx):
 	bots = 0
@@ -545,6 +545,7 @@ async def eightball(ctx):
 
 @bot.command(pass_context=True)
 async def nsfw(ctx):
+	channel = ctx.message.channel
 	if ctx.channel.is_nsfw():
 		embed = discord.Embed(color=0xffffff,)
 		embed.add_field(name="NSFW", value="You can not use that command here!", inline=True)
