@@ -544,9 +544,9 @@ async def eightball(ctx):
 ##############################################################################################################################
 
 @bot.command(pass_context=True)
-async def nsfw(ctx):
+async def testnsfw(ctx):
 	channel = discord.Channel
-	if ctx.bot.is_nsfw():
+	if ctx.channel.is_nsfw():
 		embed = discord.Embed(color=0xffffff,)
 		embed.add_field(name="NSFW", value="You can not use that command here!", inline=True)
 		await bot.say(embed=embed)
