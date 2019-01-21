@@ -595,17 +595,6 @@ async def serverlist(ctx):
 #		embed = discord.Embed(color=0xffffff,)
 #		embed.set_image(url="https://support.discordapp.com/hc/article_attachments/115000272351/thisisnsfw.png")
 #		await bot.say(embed=embed)
-
-@bot.command(pass_context=True)
-async def nsfw(ctx):
-	if message.channel.is_nsfw():
-		embed = discord.Embed(color=0xffffff,)
-		embed.add_field(name="NSFW", value="You can not use that command here!", inline=True)
-		await bot.say(embed=embed)
-	else:
-		embed = discord.Embed(color=0xffffff,)
-		embed.set_image(url="https://support.discordapp.com/hc/article_attachments/115000272351/thisisnsfw.png")
-		await bot.say(embed=embed)
 		
 ##############################################################################################################################
 # ℹ️ | H E L P - C O M M A N D S	
