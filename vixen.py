@@ -549,7 +549,7 @@ async def nsfw(ctx):
 		embed = discord.Embed(color=0xffffff,)
 		embed.add_field(name="NSFW", value="You can not use that command here!", inline=True)
 		await bot.say(embed=embed)
-	elif:
+	else:
 		embed = discord.Embed(color=0xffffff,)
 		embed.set_image(url="https://support.discordapp.com/hc/article_attachments/115000272351/thisisnsfw.png")
 		await bot.say(embed=embed)
