@@ -540,6 +540,22 @@ async def eightball(ctx):
 	await bot.say(embed=embed)
 
 ##############################################################################################################################
+# 💦 | N S F W - C O M M A N D S / ( T E S T )	
+##############################################################################################################################
+
+@bot.command(pass_context=True)
+async def nsfw(ctx):
+	channel_nsfw = await self.is_nsfw(ctx.message.channel)
+	if channel_nsfw():
+		embed = discord.Embed(color=0xffffff,)
+		embed.add_field(name="NSFW", value="You can not use that command here!", inline=True)
+		await bot.say(embed=embed)
+	elif channel_nsfw:
+		embed = discord.Embed(color=0xffffff,)
+		embed.set_image(url="https://support.discordapp.com/hc/article_attachments/115000272351/thisisnsfw.png")
+		await bot.say(embed=embed)
+
+##############################################################################################################################
 # 🛠️ | O W N E R - C O M M A N D S	
 ##############################################################################################################################
 
@@ -573,16 +589,8 @@ async def serverlist(ctx):
 	 await bot.say(embed=embed)
 	
 ##############################################################################################################################
-# 🚫 | T E S T I N G - C O M M A N D S
+# 🚫 | D I S A B L E D - C O M M A N D S
 ##############################################################################################################################
-
-#@bot.command(pass_context=True)
-#async def ping(ctx):
-#	channel = ctx.message.channel
-#	t1 = time.perf_counter()
-#	await bot.send_typing(channel)
-#	t2 = time.perf_counter()
-#	await bot.say('Pong! It took {}ms.'.format(round((t2-t1))))
 
 ##############################################################################################################################
 # ℹ️ | H E L P - C O M M A N D S	
