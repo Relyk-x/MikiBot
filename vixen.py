@@ -607,10 +607,10 @@ async def welcome(ctx):
 	await bot.say(embed=embed)
 	
 	embed = discord.Embed(color=0x7289da,)
-	embed.set_image(url="https://cdn.discordapp.com/attachments/535747082192027651/538303308406849536/music-equalizer-png-365-funny-pics.jpg")
+	embed.set_image(url=ctx.message.server.icon_url)
 	await bot.say(embed=embed)
 	
-	embed = discord.Embed(description="Welcome to my server!\nInvite your friends!", color=0x7289da,)
+	embed = discord.Embed(description=f"Welcome to {ctx.message.server.name}!\nInvite your friends!", color=0x7289da,)
 	await bot.say(embed=embed)
 	
 	await bot.say('<:discord:535748146761039872> Invite: https://discord.gg/bzyVpbd')
