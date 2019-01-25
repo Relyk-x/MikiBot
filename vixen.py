@@ -602,8 +602,7 @@ async def serverlist(ctx):
 
 @bot.command(pass_context=True)
 async def welcome(ctx):
-	await bot.say(url="https://cdn.discordapp.com/attachments/538269945096568841/538274222078951455/welcome.png")
-	await bot.say(url="http://3.bp.blogspot.com/-oDR9Iz4RnaI/ViP_OR0M4XI/AAAAAAAAfJo/5rayU0QAOSo/s1600/music-equalizer-png-365-funny-pics.jpg")
+	await bot.say("https://cdn.discordapp.com/attachments/538269945096568841/538274222078951455/welcome.png\nhttp://3.bp.blogspot.com/-oDR9Iz4RnaI/ViP_OR0M4XI/AAAAAAAAfJo/5rayU0QAOSo/s1600/music-equalizer-png-365-funny-pics.jpg")
 	await bot.say("**Welcome to my server!**\n**Invite your friends!")
 	await bot.say('<:blurple:535747202740518922><:discord:535748146761039872> Invite: https://discord.gg/bzyVpbd\n\n\n<:white:535747728614096906>:zap: Firstly please check out the #rules & #tos for all the information needed.\n\n<:white:535747728614096906>:zap: Also check out the #self-roles channel to register.\n\n<:white:535747728614096906>:zap: Lookout for notifications in #announcements  for new info.\n\n<:white:535747728614096906>:zap: If you have any problems, suggestions, or need any help feel free to ask the staff in #support.\n\n<:white:535747728614096906>:zap: Lastly why not say "Hello" in the #general-chat.')
 
