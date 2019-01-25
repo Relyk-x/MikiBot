@@ -12,7 +12,6 @@ import datetime
 from datetime import datetime
 import time
 import bs4, requests
-
 import os
 
 bot = commands.Bot(command_prefix='v!')
@@ -608,7 +607,7 @@ async def welcome(ctx):
 	await bot.say(embed=embed)
 	
 	embed = discord.Embed(color=0x7289da,)
-	embed.set_image(url="http://3.bp.blogspot.com/-oDR9Iz4RnaI/ViP_OR0M4XI/AAAAAAAAfJo/5rayU0QAOSo/s1600/music-equalizer-png-365-funny-pics.jpg")
+	embed.set_image(url="https://cdn.discordapp.com/attachments/535747082192027651/538303308406849536/music-equalizer-png-365-funny-pics.jpg")
 	await bot.say(embed=embed)
 	
 	embed = discord.Embed(description="Welcome to my server!\nInvite your friends!", color=0x7289da,)
