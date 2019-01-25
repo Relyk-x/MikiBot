@@ -603,7 +603,7 @@ async def serverlist(ctx):
 @bot.command(pass_context=True)
 async def welcome(ctx):
 	embed = discord.Embed
-	embed.set_image(url="https://cdn.discordapp.com/attachments/538269945096568841/538274222078951455/welcome.png)
+	embed.set_image(url="https://cdn.discordapp.com/attachments/538269945096568841/538274222078951455/welcome.png")
 	await bot.say(embed=embed)
 	embed = discord.Embed
 	embed.set_image(url="http://3.bp.blogspot.com/-oDR9Iz4RnaI/ViP_OR0M4XI/AAAAAAAAfJo/5rayU0QAOSo/s1600/music-equalizer-png-365-funny-pics.jpg")
