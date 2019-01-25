@@ -613,7 +613,8 @@ async def welcome(ctx):
 	embed = discord.Embed(description=f"Welcome to {ctx.message.server.name}!\nInvite your friends!", color=0x7289da,)
 	await bot.say(embed=embed)
 	
-	await bot.say('<:discord:535748146761039872> Invite: https://discord.gg/bzyVpbd')
+	discinv = await bot.create_invite(destination = ctx.message.server.channel, max_age = 0, max_uses = 0)
+	await bot.say(f'<:discord:535748146761039872> Invite: {discinv}')
 	await bot.say('● Firstly please check out the <#538265900546260993> & <#538269485467959311> for all the information needed.\n● Also check out the <#538272649256632320> channel to register.\n● Lookout for notifications in <#538265451894145024> for new info.\n● If you have any problems, suggestions, or need any help feel free to ask the staff in <#538275130980171782>.\n● Lastly why not say "Hello" in the <#538265233190289410>.')
 	
 ##############################################################################################################################
