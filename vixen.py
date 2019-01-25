@@ -602,9 +602,14 @@ async def serverlist(ctx):
 
 @bot.command(pass_context=True)
 async def welcome(ctx):
-	await bot.say("https://cdn.discordapp.com/attachments/538269945096568841/538274222078951455/welcome.png\nhttp://3.bp.blogspot.com/-oDR9Iz4RnaI/ViP_OR0M4XI/AAAAAAAAfJo/5rayU0QAOSo/s1600/music-equalizer-png-365-funny-pics.jpg")
+	embed = discord.Embed
+	embed.set_image(url="https://cdn.discordapp.com/attachments/538269945096568841/538274222078951455/welcome.png)
+	await bot.say(embed=embed)
+	embed = discord.Embed
+	embed.set_image(url="http://3.bp.blogspot.com/-oDR9Iz4RnaI/ViP_OR0M4XI/AAAAAAAAfJo/5rayU0QAOSo/s1600/music-equalizer-png-365-funny-pics.jpg")
+	await bot.say(embed=embed)
 	await bot.say("```Welcome to my server!\nInvite your friends!```")
-	await bot.say('<:blurple:535747202740518922><:discord:535748146761039872> Invite: https://discord.gg/bzyVpbd')
+	await bot.say('<:discord:535748146761039872> Invite: https://discord.gg/bzyVpbd')
 	await bot.say('● Firstly please check out the <#538265900546260993> & <#538269485467959311> for all the information needed.\n● Also check out the <#538272649256632320> channel to register.\n● Lookout for notifications in <#538265451894145024> for new info.\n● If you have any problems, suggestions, or need any help feel free to ask the staff in <#538275130980171782>.\n● Lastly why not say "Hello" in the <#538265233190289410>.')
 	
 ##############################################################################################################################
