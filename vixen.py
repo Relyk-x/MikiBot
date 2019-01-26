@@ -17,11 +17,12 @@ import os
 bot = commands.Bot(command_prefix='v!')
 msglimit = 100
 now = datetime.now()
-ver = "0.6.1"#5
+ver = "0.6.4"#9
 botname = "Vixen"
 def_pref = "v!"
 pref = "v!"
 owner_id = "257784039795064833"
+temprule = "Undefined"
 
 #Emoji
 vixen = "https://cdn.discordapp.com/attachments/406045563814019093/406071077249482753/kami___render__185_by_starryskytrench-dbhote5.png"
@@ -600,8 +601,8 @@ async def serverlist(ctx):
 ##############################################################################################################################
 
 @bot.command(pass_context=True)
+@commands.has_permissions(administrator = True)
 async def welcome(ctx):
-	
 	embed = discord.Embed(color=0x7289da,)
 	embed.set_image(url="https://cdn.discordapp.com/attachments/406045498513031168/538301536946880523/welcome.png")
 	await bot.say(embed=embed)
@@ -617,6 +618,15 @@ async def welcome(ctx):
 	await bot.say('<:discord:535748146761039872> Invite: https://discord.gg/A6hqCRq')
 	await bot.say('● Firstly please check out the <#538265900546260993> & <#538269485467959311> for all the information needed.\n● Also check out the <#538272649256632320> channel to register.\n● Lookout for notifications in <#538265451894145024> for new info.\n● If you have any problems, suggestions, or need any help feel free to ask the staff in <#538275130980171782>.\n● Lastly why not say "Hello" in the <#538265233190289410>.')
 	
+@bot.command(pass_context=True)
+@commands.has_permissions(administrator = True)
+async def rules(ctx):
+	embed = discord.Embed(color=0x7289da,)
+	embed.add_field(name="Rules", value="● Use common sense.\n● Do not advertise, regardless of here or DM.\n● Don't be rude.\n● No spam.\n● Respect the moderators.\n● Don't post any websites that are harmful, exposing, etc.\n● Please use the relevant channels provided.\n● There are no exceptions for being banned, even if you're a Moderator, Admin, etc.")
+	embed.add_field(name="Temporary Rules", value=f"● {temprule}"
+	embed.set_footer(text="Note: Do not attempt on making loopholes around the rules, that will result in either kick or ban regardless of the rule being here or not.")
+	await bot.say(embed=embed)
+
 ##############################################################################################################################
 # ℹ️ | H E L P - C O M M A N D S	
 ##############################################################################################################################
