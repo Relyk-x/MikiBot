@@ -17,7 +17,7 @@ import os
 bot = commands.Bot(command_prefix='v!')
 msglimit = 100
 now = datetime.now()
-ver = "0.6.4"#9
+ver = "0.6.5"#1
 botname = "Vixen"
 def_pref = "v!"
 pref = "v!"
@@ -622,8 +622,8 @@ async def welcome(ctx):
 @commands.has_permissions(administrator = True)
 async def rules(ctx):
 	embed = discord.Embed(color=0x7289da,)
-	embed.add_field(name="Rules", value="● Use common sense.\n● Do not advertise, regardless of here or DM.\n● Don't be rude.\n● No spam.\n● Respect the moderators.\n● Don't post any websites that are harmful, exposing, etc.\n● Please use the relevant channels provided.\n● There are no exceptions for being banned, even if you're a Moderator, Admin, etc.", inline=False)
-	embed.add_field(name="Temporary Rules", value=f"● {temprule}", inline=False)
+	embed.add_field(name="Rules", value="● Use common sense.\n● Do not advertise, regardless of here or DM.\n● Don't be rude.\n● No spam.\n● Respect the moderators.\n● Don't post any websites that are harmful, exposing, etc.\n● Please use the relevant channels provided.\n● There are no exceptions for being banned, even if you're a Moderator, Admin, etc.\n", inline=False)
+	embed.add_field(name="Temporary Rules", value=f"● {temprule}\n", inline=False)
 	embed.set_footer(text="Note: Do not attempt on making loopholes around the rules, that will result in either kick or ban regardless of the rule being here or not.")
 	await bot.say(embed=embed)
 
