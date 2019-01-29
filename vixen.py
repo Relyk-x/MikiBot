@@ -604,7 +604,7 @@ async def serverlist(ctx):
 @commands.has_permissions(administrator = True)
 async def welcome(ctx):
 	embed = discord.Embed(color=0x7289da,)
-	embed.set_image(url="https://cdn.discordapp.com/attachments/406045498513031168/538301536946880523/welcome.png")
+	embed.set_image(url="https://cdn.discordapp.com/attachments/535747082192027651/539758537770008597/welcome.png")
 	await bot.say(embed=embed)
 	
 	embed = discord.Embed(color=0x7289da,)
