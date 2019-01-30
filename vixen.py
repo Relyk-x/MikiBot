@@ -638,7 +638,7 @@ async def shop(ctx):
 	embed.add_field(name="100 Joins on your invite link", value="● A one time payment of $10 for 100 invited members.\n ‏‏‎ ", inline=False)
 	embed.add_field(name="200 Joins on your invite link", value='● You get a custom role "gang" with any name you want. This role can have any color and name, and will appear separately. You can choose up to five of your friends  to be apart of this role "gang".\n ‏‏‎ ', inline=False)
 	embed.add_field(name="@everyone Ping with an advertisement", value="$5 - however, this price will rise in correlation to the member count.\n ‏‏‎ ", inline=False)
-	embed.add_field(name=" ‏‏‎ ", value="Check your invite count with !invites in <#539810655323029514>.", inline=False
+	embed.add_field(name=" ‏‏‎ ", value="Check your invite count with !invites in <#539810655323029514>.", inline=False)
 	embed.set_footer(text="DM Relykx#2896 once you meet the criteria, or are interested in buying.")
 	await bot.say(embed=embed)
 	
