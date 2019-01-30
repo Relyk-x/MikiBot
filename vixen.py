@@ -626,7 +626,21 @@ async def rules(ctx):
 	embed.add_field(name="Temporary Rules", value=f"● {temprule}\n ‏‏‎ ", inline=False)
 	embed.set_footer(text="Note: Do not attempt on making loopholes around the rules, that will result in either kick or ban regardless of the rule being here or not.")
 	await bot.say(embed=embed)
-
+	
+@bot.command(pass_context=True)
+@commands.has_permissions(administrator = True)
+async def shop(ctx):
+	embed = discord.Embed(description="`S` `H` `O` `P`", color=0x7289da,)
+	embed.set_author(name="ИEVER WΛVE ™", icon_url=ctx.message.server.icon_url)
+	embed.add_field(name="10 Joins on your invite link", value="● Verify yourself on the server by inviting 10 members and completing a profile in <#538272649256632320>.", inline=False)
+	embed.add_field(name="25 Joins on your invite link", value="● You get a role made just for you, with any name and color you want.", inline=False)
+	embed.add_field(name="50 Joins on your invite link", value="● A friend of your choice gets a custom role.", inline=False)
+	embed.add_field(name="100 Joins on your invite link", value="● A one time payment of $10 for 100 invited members.", inline=False)
+	embed.add_field(name="200 Joins on your invite link", value='● You get a custom role "gang" with any name you want. This role can have any color and name, and will appear separately. You can choose up to five of your friends  to be apart of this role "gang".', inline=False)
+	embed.add_field(name="@everyone Ping with an advertisement", value="$5 - however, this price will rise in correlation to the member count.", inline=False)
+	embed.set_footer(text="Check your invite count with !invites in <#539810655323029514>.\nDM Relykx#2896 once you meet the criteria, or are interested in buying")
+	await bot.say(embed=embed)
+	
 ##############################################################################################################################
 # ℹ️ | H E L P - C O M M A N D S	
 ##############################################################################################################################
