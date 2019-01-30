@@ -630,16 +630,15 @@ async def rules(ctx):
 @bot.command(pass_context=True)
 @commands.has_permissions(administrator = True)
 async def shop(ctx):
-	embed = discord.Embed(description="`S` `H` `O` `P`\n ‏‏‎ ", color=0x7289da,)
+	embed = discord.Embed(description="**`S` `H` `O` `P`**\n ‏‏‎ ", color=0x7289da,)
 	embed.set_author(name=ctx.message.server.name, icon_url=ctx.message.server.icon_url)
-	embed.add_field(name="10 Joins on your invite link", value="● To become a member of the server you need to invie 10 others and complete a profile in <#538272649256632320>.\n ‏‏‎ ", inline=False)
+	embed.add_field(name="10 Joins on your invite link", value="**●** To become a member of the server you need to invie 10 others and complete a profile in <#538272649256632320>.\n ‏‏‎ ", inline=False)
 	embed.add_field(name="25 Joins on your invite link", value="● You get a role made just for you, with any name and color you want.\n ‏‏‎ ", inline=False)
 	embed.add_field(name="50 Joins on your invite link", value="● A friend of your choice gets a custom role.\n ‏‏‎ ", inline=False)
 	embed.add_field(name="100 Joins on your invite link", value="● A one time payment of $10 for 100 invited members.\n ‏‏‎ ", inline=False)
 	embed.add_field(name="200 Joins on your invite link", value='● You get a custom role "gang" with any name you want. This role can have any color and name, and will appear separately. You can choose up to five of your friends  to be apart of this role "gang".\n ‏‏‎ ', inline=False)
 	embed.add_field(name="@everyone Ping with an advertisement", value="● $5 - however, this price will rise in correlation to the member count.", inline=False)
-	embed.add_field(name=" ‏‏‎ ", value="Check your invite count with !invites in <#539810655323029514>.", inline=False)
-	embed.set_footer(text="DM Relykx#2896 once you meet the criteria, or are interested in buying.")
+	embed.add_field(name=" ‏‏‎ ", value="Check your invite count with !invites in <#539810655323029514>.\nDM Relykx#2896 once you meet the criteria, or are interested in buying.", inline=False)
 	await bot.say(embed=embed)
 	
 ##############################################################################################################################
