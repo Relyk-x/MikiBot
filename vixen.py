@@ -17,7 +17,7 @@ import os
 bot = commands.Bot(command_prefix='v!')
 msglimit = 100
 now = datetime.now()
-ver = "0.6.8"#1
+ver = "0.0.6"#82
 botname = "Vixen"
 def_pref = "v!"
 pref = "v!"
@@ -604,7 +604,8 @@ async def serverlist(ctx):
 @commands.has_permissions(administrator = True)
 async def welcome(ctx):
 	embed = discord.Embed(color=0x7289da,)
-	embed.set_image(url="https://cdn.discordapp.com/attachments/535747082192027651/539772749091045376/welc.png")
+	embed.set_image(url="https://cdn.discordapp.com/attachments/538265900546260993/540429273551339540/welcomes.png")
+	# https://cdn.discordapp.com/attachments/535747082192027651/539772749091045376/welc.png
 	await bot.say(embed=embed)
 	
 	embed = discord.Embed(color=0x7289da,)
