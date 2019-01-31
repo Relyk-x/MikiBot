@@ -17,7 +17,7 @@ import os
 bot = commands.Bot(command_prefix='v!')
 msglimit = 100
 now = datetime.now()
-ver = "0.6.6"#6
+ver = "0.6.6"#7
 botname = "Vixen"
 def_pref = "v!"
 pref = "v!"
@@ -672,7 +672,7 @@ async def faq(ctx):
 	await bot.say(embed=embed)
 
 	embed = discord.Embed(color=0x7289da,)
-	embed.add_field(name='Q. What does this emoji mean "🚧"', value="A. When you see this emoji next to a channel it means it is under maintenance and will be up shortly.", inline=False)
+	embed.add_field(name='Q. What does this emoji mean "`🚧`"', value="A. When you see this emoji next to a channel it means it is under maintenance and will be up shortly.", inline=False)
 	await bot.say(embed=embed)
 
 ##############################################################################################################################
