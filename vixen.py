@@ -17,7 +17,7 @@ import os
 bot = commands.Bot(command_prefix='v!')
 msglimit = 100
 now = datetime.now()
-ver = "0.6.6"#4
+ver = "0.6.6"#6
 botname = "Vixen"
 def_pref = "v!"
 pref = "v!"
@@ -641,6 +641,40 @@ async def shop(ctx):
 	embed.add_field(name=" ‏‏‎ ", value="Check your invite count with `!invites` in <#539810655323029514>.\nDM Relykx#2896 once you meet the criteria, or are interested in buying.", inline=False)
 	await bot.say(embed=embed)
 	
+##############################################################################################################################
+# ℹ️ | F A Q - C O M M A N D S	
+##############################################################################################################################
+
+@bot.command(pass_context=True)
+async def faq(ctx):
+	embed = discord.Embed(color=0x7289da,)
+	embed.add_field(name="Q. What is this server?", value="A. This server is a comunity based on music development and streaming, we welcome everyone to participate or just watch and listen.", inline=False)
+	await bot.say(embed=embed)
+
+	embed = discord.Embed(color=0x7289da,)
+	embed.add_field(name="Q. How do I become a moderator?", value="A. To become eligible for recruitment as a moderator you must have completed the 10 invite tier in the shop and be active within the server.", inline=False)
+	await bot.say(embed=embed)
+	
+	embed = discord.Embed(color=0x7289da,)
+	embed.add_field(name="Q. How can I get verified?", value="A. To verify you need to send a pic of a valid ID to a verified staff member;\n    ● You may blur out, Name, address and any other sensitive information. \n    ● You may not blur out your Picture or your DOB. \n    ● You may only verify with a <@&540016356515512331> or <@&538318193450680320>.", inline=False)
+	await bot.say(embed=embed)
+
+	embed = discord.Embed(color=0x7289da,)
+	embed.add_field(name="Q. How do I get roles?", value="A. Go to <#538272649256632320> and react to each of the different categories to assign yourself to them.", inline=False)
+	await bot.say(embed=embed)
+
+	embed = discord.Embed(color=0x7289da,)
+	embed.add_field(name="Q. Is this an 18+ server?", value="A. Yes and No! - As a new member the nsfw section of the server is hidden, once verified you will gain access if you pass registration.\n`(Any sensitive media will cause an instant ban if you are sending things you shouldn't)`\n<#538265849463701514> however is nsfw but not for any form of pornography.", inline=False)
+	await bot.say(embed=embed)
+
+	embed = discord.Embed(color=0x7289da,)
+	embed.add_field(name="Q. Do we do partnerships?", value="A. Yes, we do partnerships. Get in touch with one of ourPartnership Managers, Staff Members, Moderators, Administrators, Managers, or Owners to get everything set up.", inline=False)
+	await bot.say(embed=embed)
+
+	embed = discord.Embed(color=0x7289da,)
+	embed.add_field(name='Q. What does this emoji mean "🚧"', value="A. When you see this emoji next to a channel it means it is under maintenance and will be up shortly.", inline=False)
+	await bot.say(embed=embed)
+
 ##############################################################################################################################
 # ℹ️ | H E L P - C O M M A N D S	
 ##############################################################################################################################
