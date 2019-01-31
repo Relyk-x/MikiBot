@@ -672,7 +672,7 @@ async def faq(ctx):
 	await bot.say(embed=embed)
 
 	embed = discord.Embed(color=0x7289da,)
-	embed.add_field(name='Q. What does this emoji mean "`🚧`"', value="A. When you see this emoji next to a channel it means it is under maintenance and will be up shortly.", inline=False)
+	embed.add_field(name='Q. What does this "`🚧`" emoji mean?', value="A. When you see this emoji next to a channel it means it is under maintenance and will be up shortly.", inline=False)
 	await bot.say(embed=embed)
 
 ##############################################################################################################################
