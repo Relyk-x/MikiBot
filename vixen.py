@@ -656,7 +656,7 @@ async def faq(ctx):
 	await bot.say(embed=embed)
 	
 	embed = discord.Embed(color=0x7289da,)
-	embed.add_field(name="Q. How can I get verified?", value="A. To verify you need to send a pic of a valid ID to a verified staff member; ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎ \n ‏‏‎ ● You may blur out, Name, address and any other sensitive information. \n ‏‏‎ ● You may not blur out your Picture or your DOB. \n ‏‏‎ ● You may only verify with a <@&540016356515512331> or <@&538318193450680320>.", inline=False)
+	embed.add_field(name="Q. How can I get verified?", value="A. To verify you need to send a pic of a valid ID to a verified staff member; ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎ \n ‏‏‎ ● You may blur out, Name, address and any other sensitive information. \n ‏‏‎ ● You may not blur out your Picture or your DOB. \n ‏‏‎ ● You may only verify with a <@&540016356515512331> or <@&538318193450680320>.", inline=False)
 	await bot.say(embed=embed)
 
 	embed = discord.Embed(color=0x7289da,)
