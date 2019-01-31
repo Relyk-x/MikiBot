@@ -652,7 +652,7 @@ async def faq(ctx):
 	await bot.say(embed=embed)
 
 	embed = discord.Embed(color=0x7289da,)
-	embed.add_field(name="Q. How do I become a moderator?", value="A. To become eligible for recruitment as a moderator you must have completed the 10 invite tier in the shop and be active within the server.", inline=False)
+	embed.add_field(name="Q. How do I become a moderator?", value="A. To become eligible for recruitment as a moderator you must have completed the 10 invite tier in the <#539809427520487444> and be active within the server.", inline=False)
 	await bot.say(embed=embed)
 	
 	embed = discord.Embed(color=0x7289da,)
