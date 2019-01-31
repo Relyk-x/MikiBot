@@ -664,11 +664,11 @@ async def faq(ctx):
 	await bot.say(embed=embed)
 
 	embed = discord.Embed(color=0x7289da,)
-	embed.add_field(name="Q. Is this an 18+ server?", value="A. Yes and No! - As a new member the nsfw section of the server is hidden, once verified you will gain access if you pass registration.\n ‏‏‎ ● `(Any sensitive media will cause an instant ban)`\n ‏‏‎ ● <#538265849463701514> however is nsfw but not for any form of pornography.", inline=False)
+	embed.add_field(name="Q. Is this an 18+ server?", value="A. Yes and No! - As a new member the nsfw section of the server is hidden, once verified you will gain access if you pass registration.\n ‏‏‎ ● `(Any sensitive media will cause an instant ban)`.\n ‏‏‎ ● <#538265849463701514> however is nsfw but not for any form of pornography.", inline=False)
 	await bot.say(embed=embed)
 
 	embed = discord.Embed(color=0x7289da,)
-	embed.add_field(name="Q. Do we do partnerships?", value="A. Yes, we do partnerships. Get in touch with one of ourPartnership Managers, Staff Members, Moderators, Administrators, Managers, or Owners to get everything set up.", inline=False)
+	embed.add_field(name="Q. Do we do partnerships?", value="A. Yes, we do partnerships. Get in touch with one of our Partnership Managers, Staff Members, Moderators, Administrators, Managers, or Owners to get everything set up.", inline=False)
 	await bot.say(embed=embed)
 
 	embed = discord.Embed(color=0x7289da,)
