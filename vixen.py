@@ -637,7 +637,7 @@ async def shop(ctx):
 	embed.add_field(name="50 Joins on your invite link", value="● A friend of your choice gets a custom role.\n ‏‏‎ ", inline=False)
 	embed.add_field(name="100 Joins on your invite link", value="● A one time payment of $10 for 100 invited members.\n ‏‏‎ ", inline=False)
 	embed.add_field(name="200 Joins on your invite link", value='● You get a custom role "gang" with any name you want. This role can have any color and name, and will appear separately. You can choose up to five of your friends  to be apart of this role "gang".\n ‏‏‎ ', inline=False)
-	embed.add_field(name="@everyone Ping with an advertisement", value="● $5 - however, this price will rise in correlation to the member count.", inline=False)
+	embed.add_field(name="@everyone Ping with an advertisement", value="● FREE - however, this price will rise in correlation to the member count.", inline=False)
 	embed.add_field(name=" ‏‏‎ ", value="Check your invite count with `!invites` in <#539810655323029514>.\nDM Relykx#2896 once you meet the criteria, or are interested in buying.", inline=False)
 	await bot.say(embed=embed)
 	
@@ -646,31 +646,43 @@ async def shop(ctx):
 ##############################################################################################################################
 
 @bot.command(pass_context=True)
-async def faq(ctx):
+async def faq1(ctx):
 	embed = discord.Embed(color=0x7289da,)
 	embed.add_field(name="Q. What is this server?", value="A. This server is a comunity based on music development and streaming, we welcome everyone to participate or just watch and listen.", inline=False)
 	await bot.say(embed=embed)
 
+@bot.command(pass_context=True)
+async def faq2(ctx):
 	embed = discord.Embed(color=0x7289da,)
 	embed.add_field(name="Q. How do I become a moderator?", value="A. To become eligible for recruitment as a moderator you must have completed the 10 invite tier in the <#539809427520487444> and be active within the server.", inline=False)
 	await bot.say(embed=embed)
-	
+
+@bot.command(pass_context=True)
+async def faq3(ctx):
 	embed = discord.Embed(color=0x7289da,)
 	embed.add_field(name="Q. How can I get verified?", value="A. To verify you need to send a pic of a valid ID to a verified staff member; ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎  ‏‏‎ \n● You may blur out, Name, address and any other sensitive information. \n● You may not blur out your Picture or your DOB. \n● You may only verify with a <@&540016356515512331> or <@&538318193450680320>.", inline=False)
 	await bot.say(embed=embed)
 
+@bot.command(pass_context=True)
+async def faq4(ctx):
 	embed = discord.Embed(color=0x7289da,)
 	embed.add_field(name="Q. How do I get roles?", value="A. Go to <#538272649256632320> and react to each of the different categories to assign yourself to them.", inline=False)
 	await bot.say(embed=embed)
 
+@bot.command(pass_context=True)
+async def faq5(ctx):
 	embed = discord.Embed(color=0x7289da,)
-	embed.add_field(name="Q. Is this an 18+ server?", value="A. Yes and No! - As a new member the nsfw section of the server is hidden, once verified you will gain access if you pass registration.\n● `(Any sensitive media will cause an instant ban)`.\n● <#538265849463701514> however is nsfw but not for any form of pornography.", inline=False)
+	embed.add_field(name="Q. Is this an 18+ server?", value="A. Yes and No! - As a new member the nsfw section of the server is hidden, once verified you will gain access if you pass registration.\n● `(Any sensitive media will cause an instant ban)`.\n● <#538265849463701514> & <#542506187313381407> however are nsfw but not for any form of pornography.", inline=False)
 	await bot.say(embed=embed)
 
+@bot.command(pass_context=True)
+async def faq6(ctx):
 	embed = discord.Embed(color=0x7289da,)
 	embed.add_field(name="Q. Do we do partnerships?", value="A. Yes, we do partnerships. Get in touch with one of our Partnership Managers, Staff Members, Moderators, Administrators, Managers, or Owners to get everything set up.", inline=False)
 	await bot.say(embed=embed)
 
+@bot.command(pass_context=True)
+async def faq7(ctx):
 	embed = discord.Embed(color=0x7289da,)
 	embed.add_field(name='Q. What does this "🚧" emoji mean?', value="A. When you see this emoji next to a channel it means it is under maintenance and will be up shortly.", inline=False)
 	await bot.say(embed=embed)
