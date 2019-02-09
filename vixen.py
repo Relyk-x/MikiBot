@@ -14,6 +14,7 @@ import time
 import bs4, requests
 import os
 
+bot.remove_command("help")
 bot = commands.Bot(command_prefix='v!')
 msglimit = 100
 now = datetime.now()
@@ -44,7 +45,7 @@ bots = "https://cdn.discordapp.com/attachments/499771950764261396/51532339204862
 async def on_ready():
 	servers = list(bot.servers)
 #status = f"over {str(len(bot.servers))} servers"
-	status = f"for {pref}commands"
+	status = f"for {pref}help"
 	print ("------------------------------------")
 	print (f"Bot Name: {bot.user.name}")
 	print (f"Bot ID: {bot.user.id}")
@@ -601,7 +602,7 @@ async def serverlist(ctx):
 ##############################################################################################################################
 
 @bot.command(pass_context=True)
-async def commands(ctx):
+async def help(ctx):
 	embed = discord.Embed(title=f"{botname} Commands", description=":mailbox_with_mail: Check DMs", color=0x7289da,)
 	embed.set_footer(text=f"Requested by {ctx.message.author} | v{ver}", icon_url=ctx.message.author.avatar_url)
 	await bot.say(embed=embed)
