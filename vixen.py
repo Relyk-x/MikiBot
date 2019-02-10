@@ -14,7 +14,6 @@ import time
 import bs4, requests
 import os
 
-bot.remove_command("help")
 bot = commands.Bot(command_prefix='v!')
 msglimit = 100
 now = datetime.now()
@@ -24,6 +23,8 @@ def_pref = "v!"
 pref = "v!"
 owner_id = "257784039795064833"
 temprule = "Undefined"
+
+bot.remove_command("help")
 
 #Emoji
 vixen = "https://cdn.discordapp.com/attachments/406045563814019093/406071077249482753/kami___render__185_by_starryskytrench-dbhote5.png"
