@@ -28,18 +28,13 @@ bot.remove_command("help")
 
 #Emoji
 vixen = "https://cdn.discordapp.com/attachments/406045563814019093/406071077249482753/kami___render__185_by_starryskytrench-dbhote5.png"
-warning = "https://cdn.discordapp.com/attachments/499771950764261396/515272525626867722/warning.png"
 dis_cord = "https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png"
 clock = "https://cdn.discordapp.com/attachments/499771950764261396/515269664507691008/clock.png"
 curiouscat = "https://cdn.discordapp.com/attachments/499771950764261396/514996231647395841/curiouscat.png"
 twitter = "https://cdn.discordapp.com/attachments/499771950764261396/514996202719150088/twitter.png"
 patreon = "https://cdn.discordapp.com/attachments/499771950764261396/513936104357888000/icon_color_variations.jpg"
-general = "https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png"
-fun = "https://cdn.discordapp.com/attachments/499771950764261396/500485578794729482/discord_logo1600.png"
 you_be = "https://cdn.discordapp.com/attachments/499771950764261396/515290591848955905/yt.png"
 goo_gl = "https://cdn.discordapp.com/attachments/499771950764261396/515292396679069711/google.png"
-gear = "https://cdn.discordapp.com/attachments/499771950764261396/515299978072293405/gear.png"
-spark = "https://cdn.discordapp.com/attachments/499771950764261396/515302914240282625/spark.png"
 bots = "https://cdn.discordapp.com/attachments/499771950764261396/515323392048627712/bots.png"
 
 @bot.event
@@ -609,7 +604,7 @@ async def help(ctx):
 	await bot.say(embed=embed)
 	embed = discord.Embed(title=f"{botname} Commands", description="idk yet", color=0x7289da,)
 	await bot.send_message(ctx.message.author, embed=embed)
-	embed = discord.Embed(title=":warning: Admin", description="All commands for Admin:", color=0x7289da,)
+	embed = discord.Embed(title=":crown: Admin", description="All commands for Admin:", color=0x7289da,)
 	embed.add_field(name="ban", value="Bans the mentioned user", inline=False)
 	embed.add_field(name="unban", value="Unbans the mentioned user", inline=False)
 	embed.add_field(name="kick", value="Kicks the mentioned user", inline=False)
