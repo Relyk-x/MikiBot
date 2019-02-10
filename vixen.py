@@ -58,8 +58,8 @@ async def on_ready():
 @bot.command(pass_context=True)
 @commands.has_permissions(ban_members = True)
 async def ban(ctx, user: discord.Member):
-	embed = discord.Embed(title="Ban", description = f"{user.mention} has been banned by {ctx.message.author}", color=0x7289da,)
-	embed.set_author(name="Bot Logs", icon_url=warning)
+	embed = discord.Embed(title=":warning: Ban", description = f"{user.mention} has been banned by {ctx.message.author}", color=0x7289da,)
+	embed.set_author(name="Bot Logs")
 	seldel = await bot.say(embed=embed)
 	await bot.ban(user)
 	await asyncio.sleep(10)
@@ -68,8 +68,8 @@ async def ban(ctx, user: discord.Member):
 @bot.command(pass_context=True)
 @commands.has_permissions(ban_members=True)
 async def unban(ctx, user: discord.Member):
-	embed = discord.Embed(title="Unban", description="{0.name} has been unbanned from the server".format(user), color=0x7289da,)
-	embed.set_author(name="Bot Logs", icon_url=warning)
+	embed = discord.Embed(title=":warning: Unban", description="{0.name} has been unbanned from the server".format(user), color=0x7289da,)
+	embed.set_author(name="Bot Logs")
 	seldel = await bot.say(embed=embed)
 	await bot.unban(user)
 	await asyncio.sleep(10)
@@ -78,8 +78,8 @@ async def unban(ctx, user: discord.Member):
 @bot.command(pass_context=True)
 @commands.has_permissions(kick_members=True)
 async def kick(ctx, user: discord.Member):
-	embed = discord.Embed(title="Kick", description="**{}** has been kicked from the server".format(user.name), color=0x7289da,)
-	embed.set_author(name="Bot Logs", icon_url=warning)
+	embed = discord.Embed(title=":warning: Kick", description="**{}** has been kicked from the server".format(user.name), color=0x7289da,)
+	embed.set_author(name="Bot Logs",)
 	selfdel = await bot.say(embed=embed)
 	await bot.kick(user)
 	await asyncio.sleep(10)
@@ -89,8 +89,8 @@ async def kick(ctx, user: discord.Member):
 @commands.has_permissions(manage_messages=True)
 async def clear(ctx, msglimit : int):
 	deleted = await bot.purge_from(ctx.message.channel, limit=msglimit)
-	embed = discord.Embed(title="Clear", description='Cleared **{}** message(s) from the channel'.format(len(deleted)), color=0x7289da,)
-	embed.set_author(name="Bot Logs", icon_url=warning)
+	embed = discord.Embed(title=":warning: Clear", description='Cleared **{}** message(s) from the channel'.format(len(deleted)), color=0x7289da,)
+	embed.set_author(name="Bot Logs")
 	selfdel = await bot.say(embed=embed)
 	await asyncio.sleep(10)
 	await bot.delete_message(selfdel)
@@ -178,8 +178,7 @@ async def ping(ctx):
 	finally:
 	 pass
 
-	embed = discord.Embed(color=0x7289da,)
-	embed.set_author(name="Bot Connection", icon_url=dis_cord)
+	embed = discord.Embed(title="<:discord:535748146761039872> Bot Connection", color=0x7289da,)
 	embed.set_thumbnail(url=vixen)
 	embed.add_field(name='Ping 1', value=f"{str(ra)}ms", inline=True)
 	embed.add_field(name='Ping 2', value=f"{str(ra2)}ms", inline=True)
@@ -200,8 +199,8 @@ async def count(ctx):
 	 else:
 	  members += 1
 	  total += 1
-	embed = discord.Embed(title="Server Member Count",color=0x7289da)
-	embed.set_author(name="Bot Logs", icon_url=warning)
+	embed = discord.Embed(title=":warning: Server Member Count",color=0x7289da)
+	embed.set_author(name="Bot Logs")
 	embed.add_field(name="Bot Count",value=bots)
 	embed.add_field(name="Member Count",value=members)
 	embed.add_field(name="Total",value=total)
