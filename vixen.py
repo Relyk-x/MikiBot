@@ -610,7 +610,7 @@ async def help(ctx):
 	embed = discord.Embed(title=f"{botname} Commands", description="idk yet", color=0x7289da,)
 	await bot.send_message(ctx.message.author, embed=embed)
 	embed = discord.Embed(description="All commands for Admin:", color=0x7289da,)
-	embed.set_author(name="Admin", icon_url=warning)
+	embed.set_author(name=":warning: Admin")
 	embed.add_field(name="ban", value="Bans the mentioned user", inline=False)
 	embed.add_field(name="unban", value="Unbans the mentioned user", inline=False)
 	embed.add_field(name="kick", value="Kicks the mentioned user", inline=False)
