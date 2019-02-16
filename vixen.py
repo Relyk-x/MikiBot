@@ -591,7 +591,12 @@ async def serverlist(ctx):
 #		embed = discord.Embed(color=0xffffff,)
 #		embed.set_image(url="https://support.discordapp.com/hc/article_attachments/115000272351/thisisnsfw.png")
 #		await bot.say(embed=embed)
-		
+
+@bot.command(pass_context=True)
+async def invite(ctx, user: discord.Member):
+    partner = f"{user.name} fuck my pussy baby D;"
+    await bot.send_message(user, f"{partner}")
+
 ##############################################################################################################################
 # ℹ️ | H E L P - C O M M A N D S	
 ##############################################################################################################################
