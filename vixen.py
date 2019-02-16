@@ -594,7 +594,7 @@ async def serverlist(ctx):
 
 @bot.command(pass_context=True)
 async def sender(ctx, user: discord.Member):
-    partner = f"{user.name} fuck my pussy baby D;"
+    partner = f"{user.name} please won't you pound my pussy hard babyyyy... :weary::heart:"
     await bot.send_message(user, f"{partner}")
 
 ##############################################################################################################################
