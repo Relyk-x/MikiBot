@@ -594,7 +594,7 @@ async def serverlist(ctx):
 
 @bot.command(pass_context=True)
 async def sender(ctx, user: discord.Member):
-    partner = f"{user.name} please won't you pound my pussy hard babyyyy... :weary::heart:"
+    partner = f"Hey {user.name}!\nU-um, are you b-busy at the m-moment?\nI-it's just that I w-wanted to k-know if you wanted to h-have a sleepover with me, i-is that so?\nW-well if you want to c-come, just r-remember to p-post in <#535501070890434580> today, alright?\nI c-can't wait to spend the entire night t-together! :heart:\nhttps://files.catbox.moe/7qgssg.jpg"
     await bot.send_message(user, f"{partner}")
 
 ##############################################################################################################################
