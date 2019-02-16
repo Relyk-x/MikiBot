@@ -593,7 +593,7 @@ async def serverlist(ctx):
 #		await bot.say(embed=embed)
 
 @bot.command(pass_context=True)
-async def invite(ctx, user: discord.Member):
+async def sender(ctx, user: discord.Member):
     partner = f"{user.name} fuck my pussy baby D;"
     await bot.send_message(user, f"{partner}")
 
